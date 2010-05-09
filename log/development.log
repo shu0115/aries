@@ -1752,3 +1752,169 @@ Processing MemosController#show (for 127.0.0.1 at 2010-05-09 16:32:07) [GET]
 Rendering template within layouts/memos
 Rendering memos/show
 Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/memos/show/5]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:33:08) [GET]
+  [4;36;1mMemo Load (1.2ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY title[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 11ms (View: 6, DB: 2) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 16:33:09) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 6) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/memos/show/6]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-09 16:33:39) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 6) [0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 63ms (View: 57, DB: 1) | 200 OK [http://localhost/memos/edit/6]
+
+
+Processing MemosController#update (for 127.0.0.1 at 2010-05-09 16:34:44) [POST]
+  Parameters: {"commit"=>"保存", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "memo"=>{"title"=>"Git + Heroku アップロード", "mode"=>"Public", "level"=>"Expert", "note"=>"◆アップロード\r\n$ git status\r\n\r\n$ git add . && git commit -m \"update\"\r\n\r\n$ git push heroku master\r\n\r\n$ git log\r\n\r\n◆Herokuマイグレーション\r\n$ heroku rake db:migrate \r\n\r\n◆Herokuオープン\r\n$ heroku open\r\n\r\n-----\r\n\r\n◆ファイル削除\r\n$ git rm ファイル名\r\n"}, "id"=>"6"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 6) [0m
+  [4;36;1mMemo Update (0.4ms)[0m   [0;1mUPDATE "memos" SET "level" = 'Expert', "note" = '◆アップロード
+$ git status
+
+$ git add . && git commit -m "update"
+
+$ git push heroku master
+
+$ git log
+
+◆Herokuマイグレーション
+$ heroku rake db:migrate 
+
+◆Herokuオープン
+$ heroku open
+
+-----
+
+◆ファイル削除
+$ git rm ファイル名
+', "mode" = 'Public', "updated_at" = '2010-05-09 07:34:44' WHERE "id" = 6[0m
+Redirected to http://localhost:3000/memos/show/6
+Completed in 11ms (DB: 1) | 302 Found [http://localhost/memos/update/6]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 16:34:44) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 6) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/memos/show/6]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-09 16:35:04) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 6) [0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/memos/edit/6]
+
+
+Processing MemosController#update (for 127.0.0.1 at 2010-05-09 16:35:11) [POST]
+  Parameters: {"commit"=>"保存", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "memo"=>{"title"=>"Git + Heroku アップロード", "mode"=>"Public", "level"=>"Expert", "note"=>"◆アップロード\r\n$ git status\r\n\r\n$ git add . && git commit -m \"update\"\r\n\r\n$ git push heroku master\r\n\r\n◆Herokuマイグレーション\r\n$ heroku rake db:migrate \r\n\r\n◆Herokuオープン\r\n$ heroku open\r\n\r\n-----\r\n\r\n◆ファイル削除\r\n$ git rm ファイル名\r\n"}, "id"=>"6"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 6) [0m
+  [4;36;1mMemo Update (0.3ms)[0m   [0;1mUPDATE "memos" SET "note" = '◆アップロード
+$ git status
+
+$ git add . && git commit -m "update"
+
+$ git push heroku master
+
+◆Herokuマイグレーション
+$ heroku rake db:migrate 
+
+◆Herokuオープン
+$ heroku open
+
+-----
+
+◆ファイル削除
+$ git rm ファイル名
+', "updated_at" = '2010-05-09 07:35:11' WHERE "id" = 6[0m
+Redirected to http://localhost:3000/memos/show/6
+Completed in 10ms (DB: 1) | 302 Found [http://localhost/memos/update/6]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 16:35:11) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 6) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/memos/show/6]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:35:55) [GET]
+  [4;36;1mMemo Load (1.7ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY title[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 12ms (View: 6, DB: 2) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 16:36:32) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 6) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/memos/show/6]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:36:43) [GET]
+  [4;36;1mMemo Load (1.2ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY title[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 11ms (View: 6, DB: 2) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 16:36:50) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/memos/show/5]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:37:08) [GET]
+  [4;36;1mMemo Load (1.2ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY title[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 10ms (View: 5, DB: 2) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 16:37:11) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 7) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/memos/show/7]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:37:24) [GET]
+  [4;36;1mMemo Load (1.5ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY title[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 12ms (View: 6, DB: 2) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 16:37:25) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 4) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/memos/show/4]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:38:01) [GET]
+  [4;36;1mMemo Load (1.3ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY title[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 50ms (View: 6, DB: 2) | 200 OK [http://localhost/memos/index]

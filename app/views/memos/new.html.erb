@@ -5,41 +5,41 @@
 <% form_for :memo, :url => '/memos/create' do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :category, 'カテゴリ' %><br />
-    <% @categorys.each{ |category| %><%= link_to_remote( category[:category], :update => "memo_category_set", :url => { :action => :memo_category, :category => category[:category] } ) %>　<% } %><br />
-    <span id="memo_category_set"><%= f.text_field :category %></span><br />
-  </p>
+  <%= f.label :category, 'カテゴリ' %><br />
+  <% @categorys.each{ |category| %><%= link_to_remote( category[:category], :update => "memo_category_set", :url => { :action => :memo_category, :category => category[:category] } ) %>　<% } %><br />
+  <span id="memo_category_set"><%= f.text_field :category %></span><br />
+  
+  <br />
 
-  <p>
-    <%= f.label :title, 'タイトル' %><br />
-    <%= f.text_field :title %>
-  </p>
+  <%= f.label :title, 'タイトル' %><br />
+  <%= f.text_field :title %><br />
+  
+  <br />
 
-  <p>
-    <%= f.label :note, 'テキスト' %><br />
-    <%= f.text_area :note %>
-  </p>
+  <%= f.label :note, 'テキスト' %><br />
+  <%= f.text_area :note, :cols => "100", :rows => "30" %><br />
+  
+  <br />
 
-  <p>
-    <%= f.label :mode, 'モード' %>：
-    <select name="memo[mode]">
-      <option value="Private">Private</option>
-      <option value="Public">Public</option>
-    </select>
-  </p>
+  <%= f.label :mode, 'モード' %>：
+  <select name="memo[mode]">
+    <option value="Private">Private</option>
+    <option value="Public">Public</option>
+  </select><br />
 
-  <p>
-    <%= f.label :level, 'レベル' %>：
-    <select name="memo[level]">
-      <option value="Normal">Normal</option>
-      <option value="Expert">Expert</option>
-    </select>
-  </p>
+  <br />
 
-  <p>
-    <%= f.submit '作成', :disable_with => "作成中..." %>
-  </p>
+  <%= f.label :level, 'レベル' %>：
+  <select name="memo[level]">
+    <option value="Normal">Normal</option>
+    <option value="Expert">Expert</option>
+  </select><br />
+  
+  <br />
+
+  <%= f.submit '作成', :disable_with => "作成中..." %><br />
 <% end %>
+
+<br />
 
 <%= link_to '一覧', '/memos/index' %>

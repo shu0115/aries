@@ -1,0 +1,37 @@
+<h1>新規作成</h1>
+
+<% form_for :memo, :url => '/memos/create' do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title, 'タイトル' %><br />
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :note, 'テキスト' %><br />
+    <%= f.text_area :note %>
+  </p>
+
+  <p>
+    <%= f.label :mode, 'モード' %>：
+    <select name="memo[mode]">
+      <option value="Private">Private</option>
+      <option value="Public">Public</option>
+    </select>
+  </p>
+
+  <p>
+    <%= f.label :level, 'レベル' %>：
+    <select name="memo[level]">
+      <option value="Normal">Normal</option>
+      <option value="Expert">Expert</option>
+    </select>
+  </p>
+
+  <p>
+    <%= f.submit '作成', :disable_with => "作成中..." %>
+  </p>
+<% end %>
+
+<%= link_to '一覧', '/memos/index' %>

@@ -1,0 +1,1252 @@
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (20.5ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (2.8ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateMemos (20100509025135)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "memos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "note" text, "level" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100509025135')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("memos")[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-09 11:53:01) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 11:56:37) [GET]
+  [4;36;1mMemo Load (0.5ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 80ms (View: 75, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 12:00:30) [GET]
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 15ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateMemos (20100509025135)
+Migrating to CreateSessions (20100509030054)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "sessions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "session_id" varchar(255) NOT NULL, "data" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE INDEX "index_sessions_on_session_id" ON "sessions" ("session_id")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE INDEX "index_sessions_on_updated_at" ON "sessions" ("updated_at")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100509030054')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("memos")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("sessions")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_sessions_on_session_id')[0m
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 12:01:27) [GET]
+  [4;36;1mMemo Load (19.9ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 133ms (View: 75, DB: 31) | 200 OK [http://localhost/]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 14:16:29) [GET]
+  [4;35;1mMemo Load (8.6ms)[0m   [0mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 262ms (View: 194, DB: 21) | 200 OK [http://localhost/]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 14:20:33) [GET]
+  [4;36;1mMemo Load (18.9ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 164ms (View: 131, DB: 29) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 14:20:38) [GET]
+  [4;35;1mMemo Load (0.4ms)[0m   [0mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 5ms (View: 1, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 14:21:32) [GET]
+  [4;36;1mMemo Load (0.4ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/memos/index]
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateMemos (20100509025135)
+Migrating to CreateSessions (20100509030054)
+Migrating to AddColumn (20100509052256)
+  [4;36;1mSQL (12.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mALTER TABLE "memos" ADD "mode" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100509052256')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("memos")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("sessions")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_updated_at')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_sessions_on_session_id')[0m
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 14:26:18) [GET]
+  [4;36;1mMemo Load (0.5ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 131ms (View: 116, DB: 11) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#new (for 127.0.0.1 at 2010-05-09 14:26:21) [GET]
+Rendering template within layouts/memos
+Rendering memos/new
+
+ActionView::TemplateError (undefined method `memos_path' for #<ActionView::Base:0x184c514>) on line #3 of app/views/memos/new.html.erb:
+1: <h1>新規作成</h1>
+2: 
+3: <% form_for(@memo) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/memos/new.html.erb:3
+
+Rendered rescues/_trace (88.8ms)
+Rendered rescues/_request_and_response (24.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MemosController#new (for 127.0.0.1 at 2010-05-09 14:26:55) [GET]
+Rendering template within layouts/memos
+Rendering memos/new
+
+ActionView::TemplateError (undefined method `memos_path' for #<ActionView::Base:0x1947928>) on line #3 of app/views/memos/new.html.erb:
+1: <h1>新規作成</h1>
+2: 
+3: <% form_for @memo, '/memos/create' do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/memos/new.html.erb:3
+
+Rendered rescues/_trace (36.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MemosController#new (for 127.0.0.1 at 2010-05-09 14:27:32) [GET]
+Rendering template within layouts/memos
+Rendering memos/new
+Completed in 152ms (View: 135, DB: 12) | 200 OK [http://localhost/memos/new]
+
+
+Processing MemosController#new (for 127.0.0.1 at 2010-05-09 14:32:57) [GET]
+Rendering template within layouts/memos
+Rendering memos/new
+Completed in 28ms (View: 12, DB: 11) | 200 OK [http://localhost/memos/new]
+
+
+Processing MemosController#new (for 127.0.0.1 at 2010-05-09 14:34:01) [GET]
+Rendering template within layouts/memos
+Rendering memos/new
+Completed in 31ms (View: 12, DB: 13) | 200 OK [http://localhost/memos/new]
+
+
+Processing MemosController#new (for 127.0.0.1 at 2010-05-09 14:47:49) [GET]
+Rendering template within layouts/memos
+Rendering memos/new
+Completed in 27ms (View: 12, DB: 11) | 200 OK [http://localhost/memos/new]
+
+
+Processing MemosController#new (for 127.0.0.1 at 2010-05-09 14:48:24) [GET]
+Rendering template within layouts/memos
+Rendering memos/new
+Completed in 28ms (View: 12, DB: 10) | 200 OK [http://localhost/memos/new]
+
+
+Processing MemosController#new (for 127.0.0.1 at 2010-05-09 14:48:46) [GET]
+Rendering template within layouts/memos
+Rendering memos/new
+Completed in 31ms (View: 13, DB: 14) | 200 OK [http://localhost/memos/new]
+
+
+Processing MemosController#create (for 127.0.0.1 at 2010-05-09 14:49:03) [POST]
+  Parameters: {"commit"=>"作成", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "memo"=>{"title"=>"memo1", "mode"=>"Private", "level"=>"Normal", "note"=>"テスト"}}
+  [4;35;1mMemo Create (0.4ms)[0m   [0mINSERT INTO "memos" ("updated_at", "title", "mode", "level", "note", "created_at") VALUES('2010-05-09 05:49:03', 'memo1', 'Private', 'Normal', 'テスト', '2010-05-09 05:49:03')[0m
+Redirected to http://localhost:3000/memos/index
+Completed in 23ms (DB: 14) | 302 Found [http://localhost/memos/create]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 14:49:03) [GET]
+  [4;36;1mMemo Load (0.5ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 14:50:11) [GET]
+  [4;35;1mMemo Load (0.6ms)[0m   [0mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 14:50:13) [GET]
+  [4;36;1mMemo Load (0.5ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 8ms (View: 4, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 14:50:33) [GET]
+  [4;35;1mMemo Load (0.5ms)[0m   [0mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 14:50:33) [GET]
+
+ActiveRecord::RecordNotFound (Couldn't find Memo without an ID):
+  app/controllers/memos_controller.rb:14:in `show'
+
+Rendered rescues/_trace (28.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (not_found)
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 14:51:07) [GET]
+
+ActiveRecord::RecordNotFound (Couldn't find Memo without an ID):
+  app/controllers/memos_controller.rb:14:in `show'
+
+Rendered rescues/_trace (28.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 14:51:10) [GET]
+  [4;36;1mMemo Load (0.8ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 15ms (View: 9, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 14:51:58) [GET]
+  [4;35;1mMemo Load (0.7ms)[0m   [0mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 67ms (View: 60, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 14:52:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 1) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+
+ActionView::TemplateError (undefined method `edit_memo_path' for #<ActionView::Base:0x19940d4>) on line #17 of app/views/memos/show.html.erb:
+14: </p>
+15: 
+16: 
+17: <%= link_to 'Edit', edit_memo_path(@memo) %> |
+18: <%= link_to 'Back', memos_path %>
+
+    app/views/memos/show.html.erb:17
+
+Rendered rescues/_trace (34.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 14:53:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 1) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://localhost/memos/show/1]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 14:53:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 1) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 61ms (View: 55, DB: 1) | 200 OK [http://localhost/memos/show/1]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 14:54:05) [GET]
+  [4;35;1mMemo Load (0.5ms)[0m   [0mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 14:54:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 1) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 12ms (View: 6, DB: 1) | 200 OK [http://localhost/memos/show/1]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-09 14:54:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 1) [0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 14ms (View: 9, DB: 1) | 200 OK [http://localhost/memos/edit/1]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-09 14:54:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 1) [0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 15ms (View: 9, DB: 1) | 200 OK [http://localhost/memos/edit/1]
+
+
+Processing MemosController#update (for 127.0.0.1 at 2010-05-09 14:54:50) [POST]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "memo"=>{"title"=>"memo1", "mode"=>"Public", "level"=>"Expert", "note"=>"テスト"}}
+
+ActiveRecord::RecordNotFound (Couldn't find Memo without an ID):
+  app/controllers/memos_controller.rb:49:in `update'
+
+Rendered rescues/_trace (79.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-09 14:55:14) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 1) [0m
+Rendering template within layouts/memos
+Rendering memos/edit
+
+ActionView::TemplateError (undefined local variable or method `memo' for #<ActionView::Base:0x196a6a8>) on line #3 of app/views/memos/edit.html.erb:
+1: <h1>編集</h1>
+2: 
+3: <% form_for :memo, :url => "/memos/update/#{memo.id}" do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/memos/edit.html.erb:3
+
+Rendered rescues/_trace (39.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 14:55:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMemo Load (0.2ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 1) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/memos/show/1]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-09 14:55:42) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mMemo Load (0.4ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 1) [0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 61ms (View: 10, DB: 1) | 200 OK [http://localhost/memos/edit/1]
+
+
+Processing MemosController#update (for 127.0.0.1 at 2010-05-09 14:55:48) [POST]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "memo"=>{"title"=>"memo1", "mode"=>"Public", "level"=>"Expert", "note"=>"テスト"}, "id"=>"1"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 1) [0m
+  [4;35;1mMemo Update (0.3ms)[0m   [0mUPDATE "memos" SET "level" = 'Expert', "mode" = 'Public', "updated_at" = '2010-05-09 05:55:48' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/memos/show
+Completed in 10ms (DB: 1) | 302 Found [http://localhost/memos/update/1]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 14:55:48) [GET]
+
+ActiveRecord::RecordNotFound (Couldn't find Memo without an ID):
+  app/controllers/memos_controller.rb:14:in `show'
+
+Rendered rescues/_trace (35.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (not_found)
+
+
+Processing MemosController#update (for 127.0.0.1 at 2010-05-09 14:56:41) [POST]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "memo"=>{"title"=>"memo1", "mode"=>"Public", "level"=>"Expert", "note"=>"テスト"}, "id"=>"1"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 1) [0m
+Redirected to http://localhost:3000/memos/show1
+Completed in 8ms (DB: 1) | 302 Found [http://localhost/memos/update/1]
+
+
+Processing MemosController#show1 (for 127.0.0.1 at 2010-05-09 14:56:41) [GET]
+
+ActionController::UnknownAction (No action responded to show1. Actions: create, destroy, edit, index, new, show, and update):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MemosController#update (for 127.0.0.1 at 2010-05-09 14:56:57) [POST]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "memo"=>{"title"=>"memo1", "mode"=>"Public", "level"=>"Expert", "note"=>"テスト"}, "id"=>"1"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 1) [0m
+Redirected to http://localhost:3000/memos/show/1
+Completed in 8ms (DB: 1) | 302 Found [http://localhost/memos/update/1]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 14:56:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 1) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/memos/show/1]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-09 14:57:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 1) [0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/memos/edit/1]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-09 14:57:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMemo Load (0.2ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 1) [0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/memos/edit/1]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-09 14:57:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 1) [0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 15ms (View: 9, DB: 1) | 200 OK [http://localhost/memos/edit/1]
+
+
+Processing MemosController#update (for 127.0.0.1 at 2010-05-09 14:58:02) [POST]
+  Parameters: {"commit"=>"保存", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "memo"=>{"title"=>"memo1", "mode"=>"Public", "level"=>"Expert", "note"=>"テスト"}, "id"=>"1"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 1) [0m
+Redirected to http://localhost:3000/memos/edit/1
+Completed in 8ms (DB: 1) | 302 Found [http://localhost/memos/update/1]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-09 14:58:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 1) [0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 54ms (View: 49, DB: 1) | 200 OK [http://localhost/memos/edit/1]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-09 15:04:54) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 1) [0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/memos/edit/1]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-09 15:05:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mMemo Load (0.2ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 1) [0m
+Rendering template within layouts/memos
+Rendering memos/edit
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+ActionView::TemplateError (undefined method `level_choices' for #<Class:0x187e58c>) on line #23 of app/views/memos/edit.html.erb:
+20: 
+21:   <p>
+22:     <%= f.label :level, 'レベル' %>：
+23:     <%= select( :memo, :level, Memo.level_choices, :level => @memo.level ) %>
+24:   </p>
+25: 
+26:   <p>
+
+    app/views/memos/edit.html.erb:23
+    app/views/memos/edit.html.erb:3
+
+Rendered rescues/_trace (36.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-09 15:06:40) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 1) [0m
+Rendering template within layouts/memos
+Rendering memos/edit
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+ActionView::TemplateError (undefined method `level_choices' for #<Class:0x1a3996c>) on line #23 of app/views/memos/edit.html.erb:
+20: 
+21:   <p>
+22:     <%= f.label :level, 'レベル' %>：
+23:     <%= select( :memo, :level, Memo.level_choices, :level => @memo.level ) %>
+24:   </p>
+25: 
+26:   <p>
+
+    app/views/memos/edit.html.erb:23
+    app/views/memos/edit.html.erb:3
+
+Rendered rescues/_trace (35.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-09 15:07:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 1) [0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://localhost/memos/edit/1]
+
+
+Processing MemosController#update (for 127.0.0.1 at 2010-05-09 15:08:00) [POST]
+  Parameters: {"commit"=>"保存", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "memo"=>{"title"=>"memo1", "mode"=>"Public", "level"=>"Expert", "note"=>"テスト\r\nテスト"}, "id"=>"1"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 1) [0m
+  [4;35;1mMemo Update (0.3ms)[0m   [0mUPDATE "memos" SET "note" = 'テスト
+テスト', "updated_at" = '2010-05-09 06:08:00' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/memos/edit/1
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/memos/update/1]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-09 15:08:00) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 1) [0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/memos/edit/1]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 15:08:03) [GET]
+
+ActiveRecord::RecordNotFound (Couldn't find Memo without an ID):
+  app/controllers/memos_controller.rb:14:in `show'
+
+Rendered rescues/_trace (28.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (not_found)
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-09 15:09:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mMemo Load (0.2ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 1) [0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 18ms (View: 12, DB: 1) | 200 OK [http://localhost/memos/edit/1]
+
+
+Processing MemosController#update (for 127.0.0.1 at 2010-05-09 15:09:06) [POST]
+  Parameters: {"commit"=>"保存", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "memo"=>{"title"=>"memo1", "mode"=>"Public", "level"=>"Expert", "note"=>"テスト\r\nテスト"}, "id"=>"1"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 1) [0m
+Redirected to http://localhost:3000/memos/edit/1
+Completed in 8ms (DB: 1) | 302 Found [http://localhost/memos/update/1]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-09 15:09:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 1) [0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 57ms (View: 51, DB: 1) | 200 OK [http://localhost/memos/edit/1]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 15:09:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 1) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/memos/show/1]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-09 15:09:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 1) [0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/memos/edit/1]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 15:09:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mMemo Load (0.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 1) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/memos/show/1]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 15:09:44) [GET]
+  [4;35;1mMemo Load (0.5ms)[0m   [0mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 8ms (View: 4, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 15:10:17) [GET]
+  [4;36;1mMemo Load (0.6ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 16ms (View: 11, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#destroy (for 127.0.0.1 at 2010-05-09 15:10:21) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mMemo Load (0.4ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 1) [0m
+  [4;36;1mMemo Destroy (0.7ms)[0m   [0;1mDELETE FROM "memos" WHERE "id" = 1[0m
+Redirected to http://localhost:3000/memos/index
+Completed in 10ms (DB: 1) | 302 Found [http://localhost/memos/destroy/1]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 15:10:21) [GET]
+  [4;35;1mMemo Load (0.4ms)[0m   [0mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 50ms (View: 2, DB: 45) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#new (for 127.0.0.1 at 2010-05-09 15:10:23) [GET]
+Rendering template within layouts/memos
+Rendering memos/new
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/memos/new]
+
+
+Processing MemosController#create (for 127.0.0.1 at 2010-05-09 15:10:37) [POST]
+  Parameters: {"commit"=>"作成", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "memo"=>{"title"=>"memo1", "mode"=>"Public", "level"=>"Expert", "note"=>"テスト"}}
+  [4;36;1mMemo Create (0.4ms)[0m   [0;1mINSERT INTO "memos" ("updated_at", "title", "mode", "level", "note", "created_at") VALUES('2010-05-09 06:10:37', 'memo1', 'Public', 'Expert', 'テスト', '2010-05-09 06:10:37')[0m
+Redirected to http://localhost:3000/memos/index
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/memos/create]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 15:10:37) [GET]
+  [4;35;1mMemo Load (0.5ms)[0m   [0mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 8ms (View: 4, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 15:11:12) [GET]
+  [4;36;1mMemo Load (0.5ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 8ms (View: 4, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 15:11:23) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 2) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 8ms (View: 2, DB: 1) | 200 OK [http://localhost/memos/show/2]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-09 15:11:26) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 2) [0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 17ms (View: 12, DB: 1) | 200 OK [http://localhost/memos/edit/2]
+
+
+Processing MemosController#update (for 127.0.0.1 at 2010-05-09 15:11:34) [POST]
+  Parameters: {"commit"=>"保存", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "memo"=>{"title"=>"memo1", "mode"=>"Public", "level"=>"Expert", "note"=>"テスト\r\nテスト\r\nテスト\r\nテスト\r\nテスト\r\n"}, "id"=>"2"}
+  [4;35;1mMemo Load (0.5ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 2) [0m
+  [4;36;1mMemo Update (0.4ms)[0m   [0;1mUPDATE "memos" SET "note" = 'テスト
+テスト
+テスト
+テスト
+テスト
+', "updated_at" = '2010-05-09 06:11:34' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/memos/edit/2
+Completed in 10ms (DB: 1) | 302 Found [http://localhost/memos/update/2]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-09 15:11:34) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 2) [0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 14ms (View: 9, DB: 1) | 200 OK [http://localhost/memos/edit/2]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 15:11:36) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 2) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 8ms (View: 2, DB: 1) | 200 OK [http://localhost/memos/show/2]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 15:11:40) [GET]
+  [4;35;1mMemo Load (0.5ms)[0m   [0mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 8ms (View: 4, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#new (for 127.0.0.1 at 2010-05-09 15:11:43) [GET]
+Rendering template within layouts/memos
+Rendering memos/new
+Completed in 15ms (View: 9, DB: 0) | 200 OK [http://localhost/memos/new]
+
+
+Processing MemosController#create (for 127.0.0.1 at 2010-05-09 15:11:55) [POST]
+  Parameters: {"commit"=>"作成", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "memo"=>{"title"=>"memo2", "mode"=>"Private", "level"=>"Normal", "note"=>"テスト２"}}
+  [4;36;1mMemo Create (0.4ms)[0m   [0;1mINSERT INTO "memos" ("updated_at", "title", "mode", "level", "note", "created_at") VALUES('2010-05-09 06:11:55', 'memo2', 'Private', 'Normal', 'テスト２', '2010-05-09 06:11:55')[0m
+Redirected to http://localhost:3000/memos/index
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/memos/create]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 15:11:55) [GET]
+  [4;35;1mMemo Load (0.6ms)[0m   [0mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 54ms (View: 50, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 15:12:00) [GET]
+  [4;36;1mMemo Load (0.6ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 9ms (View: 5, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#new (for 127.0.0.1 at 2010-05-09 15:23:51) [GET]
+Rendering template within layouts/memos
+Rendering memos/new
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/memos/new]
+
+
+Processing MemosController#create (for 127.0.0.1 at 2010-05-09 15:25:05) [POST]
+  Parameters: {"commit"=>"作成", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "memo"=>{"title"=>"Railsコマンド", "mode"=>"Public", "level"=>"Expert", "note"=>"◆Railsバージョン確認\r\n$ rails -v\r\n\r\n◆Gemリスト確認\r\n$ gem list\r\n\r\n◆Gemバージョン確認\r\n$ gem -v\r\n1.3.1\r\n\r\n◆Rubyバージョン確認\r\n$ ruby -v\r\nruby 1.8.6 (2008-08-11 patchlevel 287) [universal-darwin9.0]\r\n\r\n----------\r\n\r\n◆Railsプロジェクト作成\r\n$ rails rails-demo\r\n\r\n◆コントローラ作成\r\n$ script/generate controller Hello\r\n\r\n◆コントローラ削除\r\n$ script/destroy controller Hello\r\n\r\n◆コントローラ+ビュー作成\r\n$ script/generate controller top index\r\n\r\n◆モデル作成\r\n$ script/generate model Hello\r\n\r\n◆マイグレーションファイル作成\r\n$ script/generate migration add_column\r\n\r\n◆Webサーバ起動 \r\n$ script/server\r\n\r\n◆アクセス\r\nhttp://localhost:3000/\r\n\r\n----------\r\n\r\n◆スキャフォールド\r\n$ script/generate scaffold sites name:text master:text url:text banner:text total_point:integer mail_address:text memo:text keyword:text\r\n\r\n◆マイグレーション\r\n$ rake db:migrate\r\n\r\n----------\r\n\r\n◆Herokuアップロード\r\n$ git add . && git commit -m \"update\"\r\n$ git push heroku master\r\n\r\n◆Herokuマイグレーション\r\n$ heroku rake db:migrate\r\n"}}
+  [4;35;1mMemo Create (0.4ms)[0m   [0mINSERT INTO "memos" ("updated_at", "title", "mode", "level", "note", "created_at") VALUES('2010-05-09 06:25:05', 'Railsコマンド', 'Public', 'Expert', '◆Railsバージョン確認
+$ rails -v
+
+◆Gemリスト確認
+$ gem list
+
+◆Gemバージョン確認
+$ gem -v
+1.3.1
+
+◆Rubyバージョン確認
+$ ruby -v
+ruby 1.8.6 (2008-08-11 patchlevel 287) [universal-darwin9.0]
+
+----------
+
+◆Railsプロジェクト作成
+$ rails rails-demo
+
+◆コントローラ作成
+$ script/generate controller Hello
+
+◆コントローラ削除
+$ script/destroy controller Hello
+
+◆コントローラ+ビュー作成
+$ script/generate controller top index
+
+◆モデル作成
+$ script/generate model Hello
+
+◆マイグレーションファイル作成
+$ script/generate migration add_column
+
+◆Webサーバ起動 
+$ script/server
+
+◆アクセス
+http://localhost:3000/
+
+----------
+
+◆スキャフォールド
+$ script/generate scaffold sites name:text master:text url:text banner:text total_point:integer mail_address:text memo:text keyword:text
+
+◆マイグレーション
+$ rake db:migrate
+
+----------
+
+◆Herokuアップロード
+$ git add . && git commit -m "update"
+$ git push heroku master
+
+◆Herokuマイグレーション
+$ heroku rake db:migrate
+', '2010-05-09 06:25:05')[0m
+Redirected to http://localhost:3000/memos/index
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/memos/create]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 15:25:05) [GET]
+  [4;36;1mMemo Load (0.7ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 15:25:59) [GET]
+  [4;35;1mMemo Load (1.5ms)[0m   [0mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 16ms (View: 10, DB: 2) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 15:26:04) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 4) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/memos/show/4]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 15:28:04) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 4) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://localhost/memos/show/4]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 15:28:56) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mMemo Load (0.6ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 4) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 15ms (View: 7, DB: 1) | 200 OK [http://localhost/memos/show/4]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 15:30:23) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mMemo Load (0.4ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 4) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 19ms (View: 13, DB: 1) | 200 OK [http://localhost/memos/show/4]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 15:31:13) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 4) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 11ms (View: 3, DB: 1) | 200 OK [http://localhost/memos/show/4]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 15:31:33) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mMemo Load (0.4ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 4) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/memos/show/4]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 15:32:10) [GET]
+  [4;36;1mMemo Load (0.7ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 9ms (View: 5, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#new (for 127.0.0.1 at 2010-05-09 15:32:11) [GET]
+Rendering template within layouts/memos
+Rendering memos/new
+Completed in 53ms (View: 48, DB: 0) | 200 OK [http://localhost/memos/new]
+
+
+Processing MemosController#create (for 127.0.0.1 at 2010-05-09 15:32:35) [POST]
+  Parameters: {"commit"=>"作成", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "memo"=>{"title"=>"Gitコマンド", "mode"=>"Public", "level"=>"Normal", "note"=>"\r\n◆Gitインストール(MacPorts)\r\n$ sudo port install git-core +doc+gitweb+svn\r\n---> Cleaning git-core\r\n\r\n$ git --version\r\ngit version 1.6.5\r\n\r\n-----\r\n\r\n◆Gitセットアップ\r\n$ cd /Users/(ユーザ名)/Rails/Project/rails-demo\r\n$ git init && git add . && git commit -m \"first commit\"\r\ncreate mode 〜\r\n\r\n$ git status\r\n# On branch master\r\nnothing to commit (working directory clean)\r\n\r\n◆Herokuソースアップ\r\n$ git push heroku master\r\nAre you sure you want to continue connecting (yes/no)? [ yes ]\r\n\r\n-----\r\n\r\n◆ステータス確認\r\n$ git status\r\n\r\n◆新規ファイル追加\r\n$ git add app/controllers/hello_controller.rb \r\n\r\n◆ファイル削除\r\n$ git rm ファイル名\r\n\r\n◆変更が加えられたファイルを自動検出してコミット(新規作成ファイルは対象外)\r\n$ git commit -a -m \"test\"\r\n$ git commit -a -m \"update\"\r\n\r\n◆公開リポジトリに自分のリポジトリの内容を送信する\r\n$ git push heroku master\r\n\r\n◆ログ\r\n$ git log\r\n\r\n◆リポジトリ最適化\r\n$ git gc\r\n"}}
+  [4;35;1mMemo Create (0.4ms)[0m   [0mINSERT INTO "memos" ("updated_at", "title", "mode", "level", "note", "created_at") VALUES('2010-05-09 06:32:35', 'Gitコマンド', 'Public', 'Normal', '
+◆Gitインストール(MacPorts)
+$ sudo port install git-core +doc+gitweb+svn
+---> Cleaning git-core
+
+$ git --version
+git version 1.6.5
+
+-----
+
+◆Gitセットアップ
+$ cd /Users/(ユーザ名)/Rails/Project/rails-demo
+$ git init && git add . && git commit -m "first commit"
+create mode 〜
+
+$ git status
+# On branch master
+nothing to commit (working directory clean)
+
+◆Herokuソースアップ
+$ git push heroku master
+Are you sure you want to continue connecting (yes/no)? [ yes ]
+
+-----
+
+◆ステータス確認
+$ git status
+
+◆新規ファイル追加
+$ git add app/controllers/hello_controller.rb 
+
+◆ファイル削除
+$ git rm ファイル名
+
+◆変更が加えられたファイルを自動検出してコミット(新規作成ファイルは対象外)
+$ git commit -a -m "test"
+$ git commit -a -m "update"
+
+◆公開リポジトリに自分のリポジトリの内容を送信する
+$ git push heroku master
+
+◆ログ
+$ git log
+
+◆リポジトリ最適化
+$ git gc
+', '2010-05-09 06:32:35')[0m
+Redirected to http://localhost:3000/memos/index
+Completed in 10ms (DB: 1) | 302 Found [http://localhost/memos/create]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 15:32:35) [GET]
+  [4;36;1mMemo Load (0.8ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 15:32:39) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/memos/show/5]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-09 15:32:42) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 18ms (View: 12, DB: 1) | 200 OK [http://localhost/memos/edit/5]
+
+
+Processing MemosController#update (for 127.0.0.1 at 2010-05-09 15:32:48) [POST]
+  Parameters: {"commit"=>"保存", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "memo"=>{"title"=>"Gitコマンド", "mode"=>"Public", "level"=>"Normal", "note"=>"\r\n◆Gitインストール(MacPorts)\r\n$ sudo port install git-core +doc+gitweb+svn\r\n---> Cleaning git-core\r\n\r\n$ git --version\r\ngit version 1.6.5\r\n\r\n-----\r\n\r\n◆Gitセットアップ\r\n$ cd /Users/(ユーザ名)/Rails/Project/rails-demo\r\n$ git init && git add . && git commit -m \"first commit\"\r\ncreate mode 〜\r\n\r\n$ git status\r\n# On branch master\r\nnothing to commit (working directory clean)\r\n\r\n◆Herokuソースアップ\r\n$ git push heroku master\r\nAre you sure you want to continue connecting (yes/no)? [ yes ]\r\n\r\n-----\r\n\r\n◆ステータス確認\r\n$ git status\r\n\r\n◆新規ファイル追加\r\n$ git add app/controllers/hello_controller.rb \r\n\r\n◆ファイル削除\r\n$ git rm ファイル名\r\n\r\n◆変更が加えられたファイルを自動検出してコミット(新規作成ファイルは対象外)\r\n$ git commit -a -m \"test\"\r\n$ git commit -a -m \"update\"\r\n\r\n◆公開リポジトリに自分のリポジトリの内容を送信する\r\n$ git push heroku master\r\n\r\n◆ログ\r\n$ git log\r\n\r\n◆リポジトリ最適化\r\n$ git gc\r\n"}, "id"=>"5"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+Redirected to http://localhost:3000/memos/edit/5
+Completed in 8ms (DB: 1) | 302 Found [http://localhost/memos/update/5]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-09 15:32:48) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 55ms (View: 50, DB: 1) | 200 OK [http://localhost/memos/edit/5]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 15:32:50) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/memos/show/5]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 15:32:52) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 11ms (View: 3, DB: 1) | 200 OK [http://localhost/memos/show/5]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-09 15:33:11) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/memos/edit/5]
+
+
+Processing MemosController#update (for 127.0.0.1 at 2010-05-09 15:33:42) [POST]
+  Parameters: {"commit"=>"保存", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "memo"=>{"title"=>"Gitコマンド", "mode"=>"Public", "level"=>"Normal", "note"=>"◆Gitインストール(MacPorts)\r\n$ sudo port install git-core +doc+gitweb+svn\r\n---> Cleaning git-core\r\n$ git --version\r\ngit version 1.6.5\r\n\r\n-----\r\n\r\n◆Gitセットアップ\r\n$ cd /Users/(ユーザ名)/Rails/Project/rails-demo\r\n$ git init && git add . && git commit -m \"first commit\"\r\ncreate mode 〜\r\n\r\n$ git status\r\n# On branch master\r\nnothing to commit (working directory clean)\r\n\r\n◆Herokuソースアップ\r\n$ git push heroku master\r\nAre you sure you want to continue connecting (yes/no)? [ yes ]\r\n\r\n-----\r\n\r\n◆ステータス確認\r\n$ git status\r\n\r\n◆新規ファイル追加\r\n$ git add app/controllers/hello_controller.rb \r\n\r\n◆ファイル削除\r\n$ git rm ファイル名\r\n\r\n◆変更が加えられたファイルを自動検出してコミット(新規作成ファイルは対象外)\r\n$ git commit -a -m \"test\"\r\n$ git commit -a -m \"update\"\r\n\r\n◆公開リポジトリに自分のリポジトリの内容を送信する\r\n$ git push heroku master\r\n\r\n◆ログ\r\n$ git log\r\n\r\n◆リポジトリ最適化\r\n$ git gc\r\n"}, "id"=>"5"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+  [4;35;1mMemo Update (0.3ms)[0m   [0mUPDATE "memos" SET "note" = '◆Gitインストール(MacPorts)
+$ sudo port install git-core +doc+gitweb+svn
+---> Cleaning git-core
+$ git --version
+git version 1.6.5
+
+-----
+
+◆Gitセットアップ
+$ cd /Users/(ユーザ名)/Rails/Project/rails-demo
+$ git init && git add . && git commit -m "first commit"
+create mode 〜
+
+$ git status
+# On branch master
+nothing to commit (working directory clean)
+
+◆Herokuソースアップ
+$ git push heroku master
+Are you sure you want to continue connecting (yes/no)? [ yes ]
+
+-----
+
+◆ステータス確認
+$ git status
+
+◆新規ファイル追加
+$ git add app/controllers/hello_controller.rb 
+
+◆ファイル削除
+$ git rm ファイル名
+
+◆変更が加えられたファイルを自動検出してコミット(新規作成ファイルは対象外)
+$ git commit -a -m "test"
+$ git commit -a -m "update"
+
+◆公開リポジトリに自分のリポジトリの内容を送信する
+$ git push heroku master
+
+◆ログ
+$ git log
+
+◆リポジトリ最適化
+$ git gc
+', "updated_at" = '2010-05-09 06:33:42' WHERE "id" = 5[0m
+Redirected to http://localhost:3000/memos/edit/5
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/memos/update/5]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-09 15:33:42) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/memos/edit/5]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 15:33:43) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 47ms (View: 42, DB: 1) | 200 OK [http://localhost/memos/show/5]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-09 15:34:16) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mMemo Load (0.5ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 18ms (View: 12, DB: 1) | 200 OK [http://localhost/memos/edit/5]
+
+
+Processing MemosController#update (for 127.0.0.1 at 2010-05-09 15:34:37) [POST]
+  Parameters: {"commit"=>"保存", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "memo"=>{"title"=>"Gitコマンド", "mode"=>"Public", "level"=>"Normal", "note"=>"◆Gitインストール(MacPorts)\r\n$ sudo port install git-core +doc+gitweb+svn\r\n---> Cleaning git-core\r\n\r\n$ git --version\r\ngit version 1.6.5\r\n\r\n-----\r\n\r\n◆Gitセットアップ\r\n$ cd /Users/(ユーザ名)/Rails/Project/rails-demo\r\n$ git init && git add . && git commit -m \"first commit\"\r\ncreate mode 〜\r\n\r\n$ git status\r\n# On branch master\r\nnothing to commit (working directory clean)\r\n\r\n◆Herokuソースアップ\r\n$ git push heroku master\r\nAre you sure you want to continue connecting (yes/no)? [ yes ]\r\n\r\n-----\r\n\r\n◆ステータス確認\r\n$ git status\r\n\r\n◆新規ファイル追加\r\n$ git add app/controllers/hello_controller.rb \r\n\r\n◆ファイル削除\r\n$ git rm ファイル名\r\n\r\n◆変更が加えられたファイルを自動検出してコミット(新規作成ファイルは対象外)\r\n$ git commit -a -m \"test\"\r\n$ git commit -a -m \"update\"\r\n\r\n◆公開リポジトリに自分のリポジトリの内容を送信する\r\n$ git push heroku master\r\n\r\n◆ログ\r\n$ git log\r\n\r\n◆リポジトリ最適化\r\n$ git gc\r\n"}, "id"=>"5"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+  [4;36;1mMemo Update (51.9ms)[0m   [0;1mUPDATE "memos" SET "note" = '◆Gitインストール(MacPorts)
+$ sudo port install git-core +doc+gitweb+svn
+---> Cleaning git-core
+
+$ git --version
+git version 1.6.5
+
+-----
+
+◆Gitセットアップ
+$ cd /Users/(ユーザ名)/Rails/Project/rails-demo
+$ git init && git add . && git commit -m "first commit"
+create mode 〜
+
+$ git status
+# On branch master
+nothing to commit (working directory clean)
+
+◆Herokuソースアップ
+$ git push heroku master
+Are you sure you want to continue connecting (yes/no)? [ yes ]
+
+-----
+
+◆ステータス確認
+$ git status
+
+◆新規ファイル追加
+$ git add app/controllers/hello_controller.rb 
+
+◆ファイル削除
+$ git rm ファイル名
+
+◆変更が加えられたファイルを自動検出してコミット(新規作成ファイルは対象外)
+$ git commit -a -m "test"
+$ git commit -a -m "update"
+
+◆公開リポジトリに自分のリポジトリの内容を送信する
+$ git push heroku master
+
+◆ログ
+$ git log
+
+◆リポジトリ最適化
+$ git gc
+', "updated_at" = '2010-05-09 06:34:37' WHERE "id" = 5[0m
+Redirected to http://localhost:3000/memos/show/5
+Completed in 62ms (DB: 53) | 302 Found [http://localhost/memos/update/5]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 15:34:38) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/memos/show/5]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 15:35:02) [GET]
+  [4;36;1mMemo Load (0.8ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 15:35:04) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 4) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/memos/show/4]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 15:36:03) [GET]
+  [4;36;1mMemo Load (0.8ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#new (for 127.0.0.1 at 2010-05-09 15:36:05) [GET]
+Rendering template within layouts/memos
+Rendering memos/new
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/memos/new]
+
+
+Processing MemosController#create (for 127.0.0.1 at 2010-05-09 15:36:15) [POST]
+  Parameters: {"commit"=>"作成", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "memo"=>{"title"=>"Git + Heroku アップロード", "mode"=>"Private", "level"=>"Normal", "note"=>"$ git status\r\n\r\n$ git add . && git commit -m \"update\"\r\n\r\n$ git push heroku master\r\n\r\n$ git log\r\n\r\n[ http://thanksberry.heroku.com/ ]\r\n\r\n-----\r\n\r\n◆Herokuマイグレーション\r\n$ heroku rake db:migrate \r\n"}}
+  [4;35;1mMemo Create (0.5ms)[0m   [0mINSERT INTO "memos" ("updated_at", "title", "mode", "level", "note", "created_at") VALUES('2010-05-09 06:36:15', 'Git + Heroku アップロード', 'Private', 'Normal', '$ git status
+
+$ git add . && git commit -m "update"
+
+$ git push heroku master
+
+$ git log
+
+[ http://thanksberry.heroku.com/ ]
+
+-----
+
+◆Herokuマイグレーション
+$ heroku rake db:migrate 
+', '2010-05-09 06:36:15')[0m
+Redirected to http://localhost:3000/memos/index
+Completed in 10ms (DB: 1) | 302 Found [http://localhost/memos/create]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 15:36:15) [GET]
+  [4;36;1mMemo Load (0.9ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#destroy (for 127.0.0.1 at 2010-05-09 15:36:26) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 3) [0m
+  [4;36;1mMemo Destroy (0.3ms)[0m   [0;1mDELETE FROM "memos" WHERE "id" = 3[0m
+Redirected to http://localhost:3000/memos/index
+Completed in 11ms (DB: 1) | 302 Found [http://localhost/memos/destroy/3]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 15:36:26) [GET]
+  [4;35;1mMemo Load (0.9ms)[0m   [0mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#destroy (for 127.0.0.1 at 2010-05-09 15:36:28) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 2) [0m
+  [4;35;1mMemo Destroy (0.3ms)[0m   [0mDELETE FROM "memos" WHERE "id" = 2[0m
+Redirected to http://localhost:3000/memos/index
+Completed in 7ms (DB: 1) | 302 Found [http://localhost/memos/destroy/2]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 15:36:28) [GET]
+  [4;36;1mMemo Load (0.7ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 9ms (View: 5, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 15:36:35) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 6) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/memos/show/6]

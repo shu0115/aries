@@ -1,0 +1,27 @@
+<h1>メモ一覧</h1>
+
+<table>
+  <tr>
+    <th>タイトル</th>
+    <!--<th>テキスト</th>-->
+    <th>モード</th>
+    <!--<th>レベル</th>-->
+  </tr>
+
+<% @memos.each do |memo| %>
+  <tr>
+    <td><%=h memo.title %></td>
+    <!--<td><%=h memo.note %></td>-->
+    <td><%=h memo.mode %></td>
+    <!--<td><%=h memo.level %></td>-->
+
+    <td><%= link_to '閲覧', "/memos/show/#{memo.id}" %></td>
+    <td><%= link_to '編集', "/memos/edit/#{memo.id}" %></td>
+    <td><%= link_to '削除', "/memos/destroy/#{memo.id}", :confirm => '本当に削除してよろしいですか？' %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to '新規作成', '/memos/new' %>

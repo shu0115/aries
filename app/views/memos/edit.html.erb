@@ -1,0 +1,35 @@
+<h1>編集</h1>
+
+<%= link_to '閲覧', "/memos/show/#{@memo.id}" %>
+ | <%= link_to '一覧', '/memos/index' %>
+
+<% form_for :memo, :url => "/memos/update/#{@memo.id}" do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :note %><br />
+    <%= f.text_area :note %>
+  </p>
+
+  <p>
+    <%= f.label :mode, 'モード' %>：
+    <%= select( :memo, :mode, Memo.mode_choices, :mode => @memo.mode ) %>
+  </p>
+
+  <p>
+    <%= f.label :level, 'レベル' %>：
+    <%= select( :memo, :level, Memo.level_choices, :level => @memo.level ) %>
+  </p>
+
+  <p>
+    <%= f.submit '保存', :disable_with => "保存中..." %>
+  </p>
+<% end %>
+
+<%= link_to '閲覧', "/memos/show/#{@memo.id}" %>
+ | <%= link_to '一覧', '/memos/index' %>

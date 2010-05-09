@@ -14,8 +14,6 @@ class MemosController < ApplicationController
     conditions = "category = '#{category}'" unless category.blank?
     @all_memos = Memo.all( :conditions => conditions, :order => "category ASC, title ASC" )
     @categorys = Memo.categorys
-    
-    print "【 @categorys 】>> " ; p @categorys ;
   end
   
   #---------------#
@@ -38,7 +36,7 @@ class MemosController < ApplicationController
   #-----#
   def new
     @memo = Memo.new
-    @categorys = Memo.find( :all, :select => "DISTINCT category", :order => "category ASC" )
+    @categorys = Memo.categorys
   end
 
   #------#
@@ -46,7 +44,7 @@ class MemosController < ApplicationController
   #------#
   def edit
     @memo = Memo.find( params[:id] )
-    @categorys = Memo.find( :all, :select => "DISTINCT category", :order => "category ASC" )
+    @categorys = Memo.categorys
   end
 
   #--------#
@@ -54,6 +52,7 @@ class MemosController < ApplicationController
   #--------#
   def create
     @memo = Memo.new( params[:memo] )
+    @memo.category = "None" if @memo.category.blank?
 
     if @memo.save
       flash[:notice] = 'メモの新規作成が完了しました。'
@@ -69,8 +68,10 @@ class MemosController < ApplicationController
   #--------#
   def update
     @memo = Memo.find( params[:id] )
+    update_params = params[:memo]
+    update_params[:category] = "None" if update_params[:category].blank?
 
-    if @memo.update_attributes( params[:memo] )
+    if @memo.update_attributes( update_params )
       flash[:notice] = 'メモの更新が完了しました。'
       redirect_to "/memos/show/#{@memo.id}"
     else

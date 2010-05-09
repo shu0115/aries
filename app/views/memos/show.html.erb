@@ -1,6 +1,6 @@
-<p>
-  [<%=h @memo.category %>] <%=h @memo.title %>
-</p>
+<span id="menu_title">[<%=h @memo.category %>] <%=h @memo.title %></span><br />
+
+<br />
 
 <%= link_to '編集', "/memos/edit/#{@memo.id}" %>
  | <%= link_to '一覧', "/memos/index" %>

@@ -3,9 +3,9 @@
 <br />
 
 <%= link_to '編集', "/memos/edit/#{@memo.id}" %>
- | <%= link_to '一覧', "/memos/index" %>
+ | <%= link_to '一覧', "/memos/index/#{@category}" %>
 
 <pre><%=h @memo.note %></pre>
 
 <%= link_to '編集', "/memos/edit/#{@memo.id}" %>
- | <%= link_to '一覧', "/memos/index" %>
+ | <%= link_to '一覧', "/memos/index/#{@category}" %>

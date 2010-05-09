@@ -5004,3 +5004,691 @@ Processing MemosController#index (for 127.0.0.1 at 2010-05-09 21:29:43) [GET]
 Rendering template within layouts/memos
 Rendering memos/index
 Completed in 26ms (View: 18, DB: 3) | 200 OK [http://localhost/memos/index/none]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:39:09) [GET]
+  Parameters: {"id"=>"none"}
+  [4;35;1mMemo Load (2.9ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'none') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (2.0ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 81ms (View: 34, DB: 25) | 200 OK [http://localhost/memos/index/none]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:39:31) [GET]
+  Parameters: {"id"=>"none"}
+  [4;35;1mMemo Load (0.9ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'none') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.1ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 67ms (View: 60, DB: 2) | 200 OK [http://localhost/memos/index/none]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:39:32) [GET]
+  [4;35;1mMemo Load (2.8ms)[0m   [0mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.6ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 37ms (View: 25, DB: 5) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:40:59) [GET]
+  [4;35;1mMemo Load (2.6ms)[0m   [0mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.1ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 135ms (View: 121, DB: 4) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:41:02) [GET]
+  Parameters: {"option"=>"Git", "id"=>"0"}
+  [4;35;1mMemo Load (0.9ms)[0m   [0mSELECT * FROM "memos" WHERE (category = '0') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.0ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 11ms (View: 4, DB: 2) | 200 OK [http://localhost/memos/index/0/Git]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:41:04) [GET]
+  Parameters: {"option"=>"Git／Heroku", "id"=>"0"}
+  [4;35;1mMemo Load (0.8ms)[0m   [0mSELECT * FROM "memos" WHERE (category = '0') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.4ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 12ms (View: 5, DB: 3) | 200 OK [http://localhost/memos/index/0/Git%EF%BC%8FHeroku]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:41:16) [GET]
+  Parameters: {"option"=>"Heroku", "id"=>"0"}
+  [4;35;1mMemo Load (0.9ms)[0m   [0mSELECT * FROM "memos" WHERE (category = '0') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.0ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 20ms (View: 14, DB: 2) | 200 OK [http://localhost/memos/index/0/Heroku]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:41:43) [GET]
+  [4;35;1mMemo Load (1.6ms)[0m   [0mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (0.9ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 31ms (View: 24, DB: 3) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:41:45) [GET]
+  Parameters: {"id"=>"Git"}
+  [4;35;1mMemo Load (1.1ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'Git') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.0ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 21ms (View: 14, DB: 2) | 200 OK [http://localhost/memos/index/Git]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:41:46) [GET]
+  Parameters: {"id"=>"Git／Heroku"}
+  [4;35;1mMemo Load (1.8ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'Git／Heroku') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.1ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 60ms (View: 6, DB: 3) | 200 OK [http://localhost/memos/index/Git%EF%BC%8FHeroku]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:41:47) [GET]
+  Parameters: {"id"=>"Heroku"}
+  [4;35;1mMemo Load (1.1ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'Heroku') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.6ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 16ms (View: 8, DB: 3) | 200 OK [http://localhost/memos/index/Heroku]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:41:48) [GET]
+  Parameters: {"id"=>"Memo"}
+  [4;35;1mMemo Load (1.4ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'Memo') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.5ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 17ms (View: 9, DB: 3) | 200 OK [http://localhost/memos/index/Memo]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:41:49) [GET]
+  Parameters: {"id"=>"Rails"}
+  [4;35;1mMemo Load (1.4ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'Rails') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.0ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 14ms (View: 7, DB: 3) | 200 OK [http://localhost/memos/index/Rails]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:41:50) [GET]
+  [4;35;1mMemo Load (1.7ms)[0m   [0mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.2ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 21ms (View: 13, DB: 3) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 22:41:55) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 15ms (View: 8, DB: 1) | 200 OK [http://localhost/memos/show/5]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:41:57) [GET]
+  Parameters: {"id"=>"Git"}
+  [4;36;1mMemo Load (1.0ms)[0m   [0;1mSELECT * FROM "memos" WHERE (category = 'Git') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.4ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 13ms (View: 6, DB: 3) | 200 OK [http://localhost/memos/index/Git]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:42:04) [GET]
+  Parameters: {"id"=>"Git／Heroku"}
+  [4;36;1mMemo Load (1.2ms)[0m   [0;1mSELECT * FROM "memos" WHERE (category = 'Git／Heroku') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.3ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 14ms (View: 7, DB: 3) | 200 OK [http://localhost/memos/index/Git%EF%BC%8FHeroku]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:42:06) [GET]
+  Parameters: {"id"=>"Heroku"}
+  [4;36;1mMemo Load (0.9ms)[0m   [0;1mSELECT * FROM "memos" WHERE (category = 'Heroku') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (0.9ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 12ms (View: 6, DB: 2) | 200 OK [http://localhost/memos/index/Heroku]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:42:08) [GET]
+  Parameters: {"id"=>"Memo"}
+  [4;36;1mMemo Load (1.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE (category = 'Memo') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.1ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 15ms (View: 7, DB: 3) | 200 OK [http://localhost/memos/index/Memo]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:42:12) [GET]
+  [4;36;1mMemo Load (4.3ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.2ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 35ms (View: 20, DB: 6) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:46:25) [GET]
+  [4;36;1mMemo Load (0.7ms)[0m   [0;1mSELECT * FROM "memos" WHERE (category = 'None') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.6ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 14ms (View: 4, DB: 3) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:46:29) [GET]
+  [4;36;1mMemo Load (1.5ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (2.5ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 23ms (View: 13, DB: 5) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:46:30) [GET]
+  [4;36;1mMemo Load (1.5ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.2ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 22ms (View: 12, DB: 3) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:46:50) [GET]
+  [4;36;1mMemo Load (2.1ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.2ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 37ms (View: 13, DB: 16) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:46:51) [GET]
+  Parameters: {"id"=>"Git／Heroku"}
+  [4;36;1mMemo Load (1.2ms)[0m   [0;1mSELECT * FROM "memos" WHERE (category = 'Git／Heroku') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.0ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 15ms (View: 6, DB: 3) | 200 OK [http://localhost/memos/index/Git%EF%BC%8FHeroku]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:46:52) [GET]
+  Parameters: {"id"=>"Git"}
+  [4;36;1mMemo Load (0.9ms)[0m   [0;1mSELECT * FROM "memos" WHERE (category = 'Git') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.0ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 14ms (View: 6, DB: 3) | 200 OK [http://localhost/memos/index/Git]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 22:46:53) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mMemo Load (0.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 11ms (View: 4, DB: 1) | 200 OK [http://localhost/memos/show/5]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:46:55) [GET]
+  Parameters: {"id"=>"Git"}
+  [4;35;1mMemo Load (0.7ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'Git') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (0.9ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 14ms (View: 7, DB: 2) | 200 OK [http://localhost/memos/index/Git]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:46:57) [GET]
+  [4;35;1mMemo Load (0.9ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'Git') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.2ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 18ms (View: 10, DB: 3) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:47:49) [GET]
+  [4;35;1mMemo Load (2.0ms)[0m   [0mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.0ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 34ms (View: 13, DB: 16) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:47:51) [GET]
+  [4;35;1mMemo Load (1.6ms)[0m   [0mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.0ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 24ms (View: 16, DB: 3) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:47:52) [GET]
+  Parameters: {"id"=>"Git"}
+  [4;35;1mMemo Load (0.9ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'Git') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.1ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 59ms (View: 51, DB: 3) | 200 OK [http://localhost/memos/index/Git]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:47:53) [GET]
+  [4;35;1mMemo Load (0.9ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'Git') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.3ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 16ms (View: 7, DB: 3) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:49:26) [GET]
+  Parameters: {"id"=>"Git"}
+  [4;35;1mMemo Load (1.0ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'Git') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.1ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 40ms (View: 7, DB: 20) | 200 OK [http://localhost/memos/index/Git]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:49:31) [GET]
+  [4;35;1mMemo Load (0.8ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'Git') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (3.8ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 21ms (View: 10, DB: 5) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:49:42) [GET]
+  [4;35;1mMemo Load (1.6ms)[0m   [0mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.0ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 31ms (View: 11, DB: 15) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:49:44) [GET]
+  Parameters: {"id"=>"Git"}
+  [4;35;1mMemo Load (0.7ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'Git') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.4ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 15ms (View: 6, DB: 3) | 200 OK [http://localhost/memos/index/Git]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:49:46) [GET]
+  [4;35;1mMemo Load (0.8ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'Git') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.2ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 68ms (View: 6, DB: 3) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:50:48) [GET]
+  [4;35;1mMemo Load (1.7ms)[0m   [0mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.2ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 43ms (View: 15, DB: 22) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:50:52) [GET]
+  Parameters: {"id"=>"Git"}
+  [4;35;1mMemo Load (1.8ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'Git') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.1ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 16ms (View: 8, DB: 3) | 200 OK [http://localhost/memos/index/Git]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:50:53) [GET]
+  [4;35;1mMemo Load (0.7ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'Git') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (0.9ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 12ms (View: 6, DB: 2) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:52:49) [GET]
+  [4;35;1mMemo Load (1.9ms)[0m   [0mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (3.0ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 51ms (View: 13, DB: 32) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:52:50) [GET]
+  [4;35;1mMemo Load (2.8ms)[0m   [0mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.0ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 94ms (View: 83, DB: 4) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:52:50) [GET]
+  Parameters: {"id"=>"Git"}
+  [4;35;1mMemo Load (1.7ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'Git') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.3ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 14ms (View: 6, DB: 3) | 200 OK [http://localhost/memos/index/Git]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:52:51) [GET]
+  [4;35;1mMemo Load (1.8ms)[0m   [0mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.1ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 19ms (View: 11, DB: 3) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:52:55) [GET]
+  Parameters: {"id"=>"Git"}
+  [4;35;1mMemo Load (1.1ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'Git') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.1ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 16ms (View: 7, DB: 3) | 200 OK [http://localhost/memos/index/Git]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:52:56) [GET]
+  Parameters: {"id"=>"Git／Heroku"}
+  [4;35;1mMemo Load (1.2ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'Git／Heroku') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.6ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 16ms (View: 8, DB: 3) | 200 OK [http://localhost/memos/index/Git%EF%BC%8FHeroku]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 22:52:57) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 6) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 10ms (View: 3, DB: 1) | 200 OK [http://localhost/memos/show/6]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:52:58) [GET]
+  Parameters: {"id"=>"Git／Heroku"}
+  [4;36;1mMemo Load (1.1ms)[0m   [0;1mSELECT * FROM "memos" WHERE (category = 'Git／Heroku') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.1ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 15ms (View: 6, DB: 3) | 200 OK [http://localhost/memos/index/Git%EF%BC%8FHeroku]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:53:00) [GET]
+  [4;36;1mMemo Load (3.3ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.2ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 27ms (View: 13, DB: 5) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 22:53:01) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mMemo Load (0.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 11ms (View: 4, DB: 1) | 200 OK [http://localhost/memos/show/5]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:53:02) [GET]
+  Parameters: {"id"=>"Git"}
+  [4;35;1mMemo Load (1.1ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'Git') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.1ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 24ms (View: 7, DB: 3) | 200 OK [http://localhost/memos/index/Git]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:53:31) [GET]
+  Parameters: {"id"=>"Git"}
+  [4;35;1mMemo Load (1.2ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'Git') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.2ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 16ms (View: 7, DB: 3) | 200 OK [http://localhost/memos/index/Git]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:53:33) [GET]
+  [4;35;1mMemo Load (12.0ms)[0m   [0mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.1ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 105ms (View: 85, DB: 13) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:53:34) [GET]
+  Parameters: {"id"=>"Git"}
+  [4;35;1mMemo Load (1.8ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'Git') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.2ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 18ms (View: 10, DB: 3) | 200 OK [http://localhost/memos/index/Git]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:56:12) [GET]
+  Parameters: {"id"=>"Git"}
+
+NameError (undefined local variable or method `category' for #<MemosController:0x18f2f2c>):
+  app/controllers/memos_controller.rb:25:in `index'
+
+Rendered rescues/_trace (45.7ms)
+Rendered rescues/_request_and_response (24.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:56:39) [GET]
+  Parameters: {"id"=>"Git"}
+  [4;35;1mMemo Load (1.9ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'Git') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.1ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 27ms (View: 18, DB: 3) | 200 OK [http://localhost/memos/index/Git]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:56:42) [GET]
+  Parameters: {"id"=>"Git"}
+  [4;35;1mMemo Load (1.2ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'Git') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.1ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 23ms (View: 13, DB: 3) | 200 OK [http://localhost/memos/index/Git]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 22:56:45) [GET]
+  Parameters: {"option"=>"Git", "id"=>"5"}
+  [4;35;1mMemo Load (0.6ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 16ms (View: 9, DB: 1) | 200 OK [http://localhost/memos/show/5/Git]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:56:48) [GET]
+  Parameters: {"id"=>"Git"}
+  [4;36;1mMemo Load (1.2ms)[0m   [0;1mSELECT * FROM "memos" WHERE (category = 'Git') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.4ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 14ms (View: 7, DB: 3) | 200 OK [http://localhost/memos/index/Git]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:56:49) [GET]
+  [4;36;1mMemo Load (1.8ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.1ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 18ms (View: 10, DB: 3) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 22:56:51) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://localhost/memos/show/5/]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:56:53) [GET]
+  [4;35;1mMemo Load (2.1ms)[0m   [0mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.0ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 34ms (View: 16, DB: 11) | 200 OK [http://localhost/memos/index/]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:57:45) [GET]
+  [4;35;1mMemo Load (2.4ms)[0m   [0mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.4ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 72ms (View: 13, DB: 4) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 22:57:53) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mMemo Load (0.4ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 12ms (View: 4, DB: 1) | 200 OK [http://localhost/memos/show/5/]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:57:54) [GET]
+  [4;36;1mMemo Load (2.4ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.3ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 23ms (View: 14, DB: 4) | 200 OK [http://localhost/memos/index/]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-09 22:57:56) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+  [4;35;1mMemo Load (1.0ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 52ms (View: 27, DB: 20) | 200 OK [http://localhost/memos/edit/5/]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:57:58) [GET]
+  [4;36;1mMemo Load (1.8ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.3ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 70ms (View: 62, DB: 4) | 200 OK [http://localhost/memos/index/]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:58:00) [GET]
+  Parameters: {"id"=>"Heroku"}
+  [4;36;1mMemo Load (1.1ms)[0m   [0;1mSELECT * FROM "memos" WHERE (category = 'Heroku') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.1ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 18ms (View: 10, DB: 3) | 200 OK [http://localhost/memos/index/Heroku]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 22:58:01) [GET]
+  Parameters: {"option"=>"Heroku", "id"=>"7"}
+  [4;36;1mMemo Load (0.5ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 7) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://localhost/memos/show/7/Heroku]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:58:03) [GET]
+  Parameters: {"id"=>"Heroku"}
+  [4;35;1mMemo Load (1.3ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'Heroku') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.0ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 14ms (View: 7, DB: 3) | 200 OK [http://localhost/memos/index/Heroku]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:58:05) [GET]
+  Parameters: {"id"=>"Git／Heroku"}
+  [4;35;1mMemo Load (1.6ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'Git／Heroku') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.3ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 18ms (View: 7, DB: 3) | 200 OK [http://localhost/memos/index/Git%EF%BC%8FHeroku]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 22:58:06) [GET]
+  Parameters: {"option"=>"Git／Heroku", "id"=>"6"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 6) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 11ms (View: 4, DB: 1) | 200 OK [http://localhost/memos/show/6/Git%EF%BC%8FHeroku]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:58:07) [GET]
+  Parameters: {"id"=>"Git／Heroku"}
+  [4;36;1mMemo Load (1.5ms)[0m   [0;1mSELECT * FROM "memos" WHERE (category = 'Git／Heroku') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.2ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 62ms (View: 55, DB: 3) | 200 OK [http://localhost/memos/index/Git%EF%BC%8FHeroku]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:58:09) [GET]
+  Parameters: {"id"=>"Rails"}
+  [4;36;1mMemo Load (1.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE (category = 'Rails') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.2ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 16ms (View: 9, DB: 3) | 200 OK [http://localhost/memos/index/Rails]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 22:58:10) [GET]
+  Parameters: {"option"=>"Rails", "id"=>"11"}
+  [4;36;1mMemo Load (0.5ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 11) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 13ms (View: 5, DB: 1) | 200 OK [http://localhost/memos/show/11/Rails]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:58:11) [GET]
+  Parameters: {"id"=>"Rails"}
+  [4;35;1mMemo Load (1.9ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'Rails') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.2ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 24ms (View: 10, DB: 3) | 200 OK [http://localhost/memos/index/Rails]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:58:13) [GET]
+  [4;35;1mMemo Load (1.7ms)[0m   [0mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.8ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 20ms (View: 11, DB: 4) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:58:14) [GET]
+  [4;35;1mMemo Load (2.6ms)[0m   [0mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.2ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 22ms (View: 14, DB: 4) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#new (for 127.0.0.1 at 2010-05-09 22:58:17) [GET]
+  [4;35;1mMemo Load (1.2ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/new
+Completed in 29ms (View: 21, DB: 2) | 200 OK [http://localhost/memos/new]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 22:58:19) [GET]
+  [4;36;1mMemo Load (1.8ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.2ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 28ms (View: 20, DB: 3) | 200 OK [http://localhost/memos/index]

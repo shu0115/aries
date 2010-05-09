@@ -3,7 +3,7 @@
 <br />
 
 <%= link_to '閲覧', "/memos/show/#{@memo.id}" %>
- | <%= link_to '一覧', '/memos/index' %>
+ | <%= link_to '一覧', "/memos/index/#{@category}" %>
 
 <% form_for :memo, :url => "/memos/update/#{@memo.id}" do |f| %>
   <%= f.error_messages %>
@@ -40,4 +40,4 @@
 <% end %>
 
 <%= link_to '閲覧', "/memos/show/#{@memo.id}" %>
- | <%= link_to '一覧', '/memos/index' %>
+ | <%= link_to '一覧', "/memos/index/#{@category}" %>

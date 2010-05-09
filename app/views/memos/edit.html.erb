@@ -7,12 +7,18 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :title %><br />
+    <%= f.label :category, 'カテゴリ' %><br />
+    <% @categorys.each{ |category| %><%= link_to_remote( category[:category], :update => "memo_category_set", :url => { :action => :memo_category, :category => category[:category] } ) %>　<% } %><br />
+    <span id="memo_category_set"><%= f.text_field :category %></span><br />
+  </p>
+
+  <p>
+    <%= f.label :title, 'タイトル' %><br />
     <%= f.text_field :title %>
   </p>
 
   <p>
-    <%= f.label :note %><br />
+    <%= f.label :note, 'テキスト' %><br />
     <%= f.text_area :note %>
   </p>
 

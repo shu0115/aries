@@ -4,7 +4,26 @@ class MemosController < ApplicationController
   # index #
   #-------#
   def index
-    @memos = Memo.all( :order => :title )
+    session[:search_category] = params[:option] unless params[:option].blank?
+    if params[:option].blank? and params[:id].to_s != "none"
+      category = session[:search_category]
+    else
+      category = params[:option]
+    end
+    
+    conditions = "category = '#{category}'" unless category.blank?
+    @all_memos = Memo.all( :conditions => conditions, :order => "category ASC, title ASC" )
+    @categorys = Memo.categorys
+    
+    print "【 @categorys 】>> " ; p @categorys ;
+  end
+  
+  #---------------#
+  # memo_category #
+  #---------------#
+  def memo_category
+    @category = params[:category]
+    render(:layout => false)
   end
 
   #------#
@@ -19,6 +38,7 @@ class MemosController < ApplicationController
   #-----#
   def new
     @memo = Memo.new
+    @categorys = Memo.find( :all, :select => "DISTINCT category", :order => "category ASC" )
   end
 
   #------#
@@ -26,6 +46,7 @@ class MemosController < ApplicationController
   #------#
   def edit
     @memo = Memo.find( params[:id] )
+    @categorys = Memo.find( :all, :select => "DISTINCT category", :order => "category ASC" )
   end
 
   #--------#

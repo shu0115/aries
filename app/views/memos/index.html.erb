@@ -1,9 +1,11 @@
-<h3>メモ一覧</h3>
+<span id="menu_title">一覧</span><br />
 
-<p>
+<br />
+
 <%= link_to 'ALL', "/memos/index/none" %>
-<% @categorys.each{ |category| %>　<%= link_to category[:category], "/memos/index/0/#{category[:category]}" %><% } %>
-</p>
+<% @categorys.each{ |category| %>　<%= link_to category[:category], "/memos/index/0/#{category[:category]}" %><% } %><br />
+
+<br />
 
 <table>
   <tr>
@@ -29,7 +31,6 @@
   </tr>
 <% end %>
 </table>
-
 
 <br />
 

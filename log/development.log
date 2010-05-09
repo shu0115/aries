@@ -1737,3 +1737,18 @@ Processing MemosController#show (for 127.0.0.1 at 2010-05-09 16:29:55) [GET]
 Rendering template within layouts/memos
 Rendering memos/show
 Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/memos/show/6]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:31:48) [GET]
+  [4;36;1mMemo Load (1.6ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY title[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 85ms (View: 79, DB: 2) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 16:32:07) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/memos/show/5]

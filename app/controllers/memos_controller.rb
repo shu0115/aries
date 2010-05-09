@@ -52,7 +52,7 @@ class MemosController < ApplicationController
 
     if @memo.save
       flash[:notice] = 'メモの新規作成が完了しました。'
-      redirect_to '/memos/index/none'
+      redirect_to '/memos/index'
     else
       flash[:notice] = 'メモの新規作成に失敗しました。'
       redirect_to '/memos/new'
@@ -88,6 +88,6 @@ class MemosController < ApplicationController
       flash[:notice] = 'メモの削除に失敗しました。'
     end
 
-    redirect_to '/memos/index/none'
+    redirect_to '/memos/index'
   end
 end

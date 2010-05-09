@@ -4952,3 +4952,55 @@ Processing MemosController#index (for 127.0.0.1 at 2010-05-09 21:12:20) [GET]
 Rendering template within layouts/memos
 Rendering memos/index
 Completed in 30ms (View: 11, DB: 15) | 200 OK [http://localhost/memos/index/none]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 21:13:32) [GET]
+  Parameters: {"id"=>"none"}
+  [4;36;1mMemo Load (1.6ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (0.9ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 17ms (View: 11, DB: 3) | 200 OK [http://localhost/memos/index/none]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-09 21:13:35) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mMemo Load (0.5ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+  [4;35;1mMemo Load (1.1ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 75ms (View: 20, DB: 49) | 200 OK [http://localhost/memos/edit/5]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 21:13:38) [GET]
+  Parameters: {"id"=>"none"}
+  [4;36;1mMemo Load (1.7ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.1ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 18ms (View: 11, DB: 3) | 200 OK [http://localhost/memos/index/none]
+
+
+Processing MemosController#new (for 127.0.0.1 at 2010-05-09 21:13:40) [GET]
+  [4;36;1mMemo Load (1.5ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/new
+Completed in 28ms (View: 18, DB: 2) | 200 OK [http://localhost/memos/new]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 21:13:42) [GET]
+  Parameters: {"id"=>"none"}
+  [4;35;1mMemo Load (1.7ms)[0m   [0mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.3ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 27ms (View: 19, DB: 3) | 200 OK [http://localhost/memos/index/none]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 21:29:43) [GET]
+  Parameters: {"id"=>"none"}
+  [4;35;1mMemo Load (1.8ms)[0m   [0mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.0ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 26ms (View: 18, DB: 3) | 200 OK [http://localhost/memos/index/none]

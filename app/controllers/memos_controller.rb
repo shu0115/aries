@@ -4,7 +4,7 @@ class MemosController < ApplicationController
   # index #
   #-------#
   def index
-    @memos = Memo.all
+    @memos = Memo.all( :order => :title )
   end
 
   #------#
@@ -38,6 +38,7 @@ class MemosController < ApplicationController
       flash[:notice] = 'メモの新規作成が完了しました。'
       redirect_to '/memos/index'
     else
+      flash[:notice] = 'メモの新規作成に失敗しました。'
       redirect_to '/memos/new'
     end
   end

@@ -1250,3 +1250,490 @@ Processing MemosController#show (for 127.0.0.1 at 2010-05-09 15:36:35) [GET]
 Rendering template within layouts/memos
 Rendering memos/show
 Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/memos/show/6]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 15:38:33) [GET]
+  [4;36;1mMemo Load (0.9ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 87ms (View: 82, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#new (for 127.0.0.1 at 2010-05-09 15:38:35) [GET]
+Rendering template within layouts/memos
+Rendering memos/new
+Completed in 17ms (View: 12, DB: 0) | 200 OK [http://localhost/memos/new]
+
+
+Processing MemosController#create (for 127.0.0.1 at 2010-05-09 15:38:45) [POST]
+  Parameters: {"commit"=>"作成", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "memo"=>{"title"=>"Herokuコマンド", "mode"=>"Private", "level"=>"Normal", "note"=>"◆herokuインストール\r\n$ sudo gem install heroku\r\n\r\n$ gem list heroku\r\nheroku (1.2.2)\r\n\r\n-----\r\n\r\n◆Herokuアプリ作成\r\n$ heroku create\r\n$ heroku create (アプリ名)\r\n\r\n◆Herokuアプリ情報\r\n$ heroku info\r\n\r\n◆Herokuアプリリスト\r\n$ heroku list\r\n\r\n◆Herokuアプリリネーム\r\n$ heroku rename test000\r\n\r\n◆Herokuアプリオープン\r\n$ heroku open\r\n\r\n◆Herokuアプリログ\r\n$ heroku logs\r\n\r\n-----\r\n\r\n◆Herokuマイグレーション\r\n$ heroku rake db:migrate"}}
+  [4;35;1mMemo Create (0.5ms)[0m   [0mINSERT INTO "memos" ("updated_at", "title", "mode", "level", "note", "created_at") VALUES('2010-05-09 06:38:45', 'Herokuコマンド', 'Private', 'Normal', '◆herokuインストール
+$ sudo gem install heroku
+
+$ gem list heroku
+heroku (1.2.2)
+
+-----
+
+◆Herokuアプリ作成
+$ heroku create
+$ heroku create (アプリ名)
+
+◆Herokuアプリ情報
+$ heroku info
+
+◆Herokuアプリリスト
+$ heroku list
+
+◆Herokuアプリリネーム
+$ heroku rename test000
+
+◆Herokuアプリオープン
+$ heroku open
+
+◆Herokuアプリログ
+$ heroku logs
+
+-----
+
+◆Herokuマイグレーション
+$ heroku rake db:migrate', '2010-05-09 06:38:45')[0m
+Redirected to http://localhost:3000/memos/index
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/memos/create]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 15:38:45) [GET]
+  [4;36;1mMemo Load (0.8ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 11ms (View: 7, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 15:38:51) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 7) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 50ms (View: 7, DB: 1) | 200 OK [http://localhost/memos/show/7]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 15:39:23) [GET]
+  [4;36;1mMemo Load (1.0ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 38ms (View: 33, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 15:39:26) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 7) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/memos/show/7]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 15:39:30) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 6) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/memos/show/6]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-09 15:39:35) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 6) [0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 19ms (View: 14, DB: 1) | 200 OK [http://localhost/memos/edit/6]
+
+
+Processing MemosController#update (for 127.0.0.1 at 2010-05-09 15:39:53) [POST]
+  Parameters: {"commit"=>"保存", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "memo"=>{"title"=>"Git + Heroku アップロード", "mode"=>"Private", "level"=>"Normal", "note"=>"$ git status\r\n\r\n$ git add . && git commit -m \"update\"\r\n\r\n$ git push heroku master\r\n\r\n$ git log\r\n\r\n$ heroku open\r\n\r\n-----\r\n\r\n◆Herokuマイグレーション\r\n$ heroku rake db:migrate \r\n"}, "id"=>"6"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 6) [0m
+  [4;35;1mMemo Update (0.4ms)[0m   [0mUPDATE "memos" SET "note" = '$ git status
+
+$ git add . && git commit -m "update"
+
+$ git push heroku master
+
+$ git log
+
+$ heroku open
+
+-----
+
+◆Herokuマイグレーション
+$ heroku rake db:migrate 
+', "updated_at" = '2010-05-09 06:39:53' WHERE "id" = 6[0m
+Redirected to http://localhost:3000/memos/show/6
+Completed in 49ms (DB: 1) | 302 Found [http://localhost/memos/update/6]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 15:39:53) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 6) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/memos/show/6]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-09 15:40:13) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 6) [0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/memos/edit/6]
+
+
+Processing MemosController#update (for 127.0.0.1 at 2010-05-09 15:40:23) [POST]
+  Parameters: {"commit"=>"保存", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "memo"=>{"title"=>"Git + Heroku アップロード", "mode"=>"Private", "level"=>"Normal", "note"=>"◆アップロード\r\n$ git status\r\n\r\n$ git add . && git commit -m \"update\"\r\n\r\n$ git push heroku master\r\n\r\n$ git log\r\n\r\n$ heroku open\r\n\r\n-----\r\n\r\n◆Herokuマイグレーション\r\n$ heroku rake db:migrate \r\n"}, "id"=>"6"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 6) [0m
+  [4;35;1mMemo Update (0.3ms)[0m   [0mUPDATE "memos" SET "note" = '◆アップロード
+$ git status
+
+$ git add . && git commit -m "update"
+
+$ git push heroku master
+
+$ git log
+
+$ heroku open
+
+-----
+
+◆Herokuマイグレーション
+$ heroku rake db:migrate 
+', "updated_at" = '2010-05-09 06:40:23' WHERE "id" = 6[0m
+Redirected to http://localhost:3000/memos/show/6
+Completed in 15ms (DB: 7) | 302 Found [http://localhost/memos/update/6]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 15:40:24) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 6) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/memos/show/6]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 15:45:09) [GET]
+  [4;35;1mMemo Load (0.9ms)[0m   [0mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 29ms (View: 6, DB: 20) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:02:27) [GET]
+  [4;36;1mMemo Load (1.2ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 27ms (View: 10, DB: 12) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:05:19) [GET]
+  [4;35;1mMemo Load (0.9ms)[0m   [0mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 19ms (View: 6, DB: 9) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:06:00) [GET]
+  [4;36;1mMemo Load (1.2ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 19ms (View: 6, DB: 10) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:07:20) [GET]
+  [4;35;1mMemo Load (0.9ms)[0m   [0mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 34ms (View: 6, DB: 21) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:08:14) [GET]
+  [4;36;1mMemo Load (1.0ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 25ms (View: 6, DB: 14) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:12:30) [GET]
+  [4;35;1mMemo Load (0.8ms)[0m   [0mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 19ms (View: 6, DB: 9) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:13:16) [GET]
+  [4;36;1mMemo Load (0.8ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:13:40) [GET]
+  [4;35;1mMemo Load (0.9ms)[0m   [0mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 68ms (View: 6, DB: 13) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:13:53) [GET]
+  [4;36;1mMemo Load (1.0ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:14:07) [GET]
+  [4;35;1mMemo Load (0.9ms)[0m   [0mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:14:56) [GET]
+  [4;36;1mMemo Load (1.1ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 24ms (View: 6, DB: 15) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:15:12) [GET]
+  [4;35;1mMemo Load (0.8ms)[0m   [0mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:15:40) [GET]
+  [4;36;1mMemo Load (2.9ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 43ms (View: 7, DB: 27) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:15:50) [GET]
+  [4;35;1mMemo Load (0.9ms)[0m   [0mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 63ms (View: 46, DB: 13) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:16:58) [GET]
+  [4;36;1mMemo Load (1.1ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 16:17:45) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 6) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 25ms (View: 3, DB: 17) | 200 OK [http://localhost/memos/show/6]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-09 16:17:47) [GET]
+  Parameters: {"id"=>"6"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 6) [0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/memos/edit/6]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:17:48) [GET]
+  [4;35;1mMemo Load (0.9ms)[0m   [0mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:18:30) [GET]
+  [4;36;1mMemo Load (0.9ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 24ms (View: 6, DB: 15) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:18:41) [GET]
+  [4;35;1mMemo Load (0.8ms)[0m   [0mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 21ms (View: 6, DB: 11) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:18:55) [GET]
+  [4;36;1mMemo Load (1.0ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:19:06) [GET]
+  [4;35;1mMemo Load (1.7ms)[0m   [0mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 18ms (View: 9, DB: 2) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:20:47) [GET]
+  [4;36;1mMemo Load (0.9ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 25ms (View: 6, DB: 15) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:20:59) [GET]
+  [4;35;1mMemo Load (0.9ms)[0m   [0mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 14ms (View: 6, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:21:58) [GET]
+  [4;36;1mMemo Load (1.1ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 31ms (View: 7, DB: 19) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:22:43) [GET]
+  [4;35;1mMemo Load (1.0ms)[0m   [0mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 22ms (View: 6, DB: 12) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:23:53) [GET]
+  [4;36;1mMemo Load (0.8ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:24:15) [GET]
+  [4;35;1mMemo Load (1.0ms)[0m   [0mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 12ms (View: 6, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:24:25) [GET]
+  [4;36;1mMemo Load (0.8ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 16:26:06) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 6) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 28ms (View: 3, DB: 20) | 200 OK [http://localhost/memos/show/6]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:26:07) [GET]
+  [4;36;1mMemo Load (0.9ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:26:18) [GET]
+  [4;35;1mMemo Load (0.9ms)[0m   [0mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 11ms (View: 6, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:26:38) [GET]
+  [4;36;1mMemo Load (0.8ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 12ms (View: 7, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:26:57) [GET]
+  [4;35;1mMemo Load (0.9ms)[0m   [0mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 29ms (View: 9, DB: 16) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:27:15) [GET]
+  [4;36;1mMemo Load (0.9ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:27:32) [GET]
+  [4;35;1mMemo Load (3.3ms)[0m   [0mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 23ms (View: 13, DB: 4) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:27:47) [GET]
+  [4;36;1mMemo Load (0.8ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 16:28:16) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 4) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/memos/show/4]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:28:23) [GET]
+  [4;36;1mMemo Load (0.9ms)[0m   [0;1mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 23ms (View: 5, DB: 13) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-09 16:28:24) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mMemo Load (0.4ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 4) [0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 53ms (View: 8, DB: 1) | 200 OK [http://localhost/memos/edit/4]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 16:28:28) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 4) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/memos/show/4]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:28:30) [GET]
+  [4;35;1mMemo Load (0.9ms)[0m   [0mSELECT * FROM "memos" [0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-09 16:29:33) [GET]
+  [4;36;1mMemo Load (1.2ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY title[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 11ms (View: 6, DB: 2) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-09 16:29:55) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 6) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/memos/show/6]

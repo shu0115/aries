@@ -20,11 +20,6 @@
   </p>
 
   <p>
-    <%= f.label :note, 'テキスト' %><br />
-    <%= f.text_area :note, :cols => "100", :rows => "30" %>
-  </p>
-
-  <p>
     <%= f.label :mode, 'モード' %>：
     <%= select( :memo, :mode, Memo.mode_choices, :mode => @memo.mode ) %>
   </p>
@@ -32,6 +27,11 @@
   <p>
     <%= f.label :level, 'レベル' %>：
     <%= select( :memo, :level, Memo.level_choices, :level => @memo.level ) %>
+  </p>
+
+  <p>
+    <%= f.label :note, 'テキスト' %><br />
+    <%= f.text_area :note, :cols => "100", :rows => "30" %>
   </p>
 
   <p>

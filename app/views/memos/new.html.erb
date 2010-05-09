@@ -16,11 +16,6 @@
   
   <br />
 
-  <%= f.label :note, 'テキスト' %><br />
-  <%= f.text_area :note, :cols => "100", :rows => "30" %><br />
-  
-  <br />
-
   <%= f.label :mode, 'モード' %>：
   <select name="memo[mode]">
     <option value="Private">Private</option>
@@ -34,6 +29,11 @@
     <option value="Normal">Normal</option>
     <option value="Expert">Expert</option>
   </select><br />
+  
+  <br />
+
+  <%= f.label :note, 'テキスト' %><br />
+  <%= f.text_area :note, :cols => "100", :rows => "30" %><br />
   
   <br />
 

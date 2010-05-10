@@ -86,6 +86,7 @@ class MemosController < ApplicationController
   #---------#
   def destroy
     @memo = Memo.find( params[:id] )
+    @category = params[:option]
 
     if @memo.destroy
       flash[:notice] = 'メモの削除が完了しました。'

@@ -2,6 +2,11 @@
 
 <br />
 
+<%= link_to '新規作成', '/memos/new' %><br />
+
+<br />
+
+<%# カテゴリ %>
 <%= link_to 'ALL', "/memos/index" %>
 <% @categorys.each{ |category| %>　<%= link_to category[:category], "/memos/index/#{category[:category]}" %><% } %><br />
 
@@ -11,9 +16,7 @@
   <tr>
     <th>カテゴリ</th>
     <th>タイトル</th>
-    <!--<th>テキスト</th>-->
     <th>モード</th>
-    <!--<th>レベル</th>-->
   </tr>
 
 <% @all_memos.each do |memo| %>
@@ -25,9 +28,9 @@
     <td><%=h memo.mode %></td>
     <!--<td><%=h memo.level %></td>-->
 
-    <td class="menu"><%= link_to '閲覧', "/memos/show/#{memo.id}/#{@category}" %></td>
+    <td class="menu"><%= link_to '閲覧', "/memos/show/#{memo.id}/#{@category}", :title => memo.note %></td>
     <td class="menu"><%= link_to '編集', "/memos/edit/#{memo.id}/#{@category}" %></td>
-    <td class="menu"><%= link_to '削除', "/memos/destroy/#{memo.id}", :confirm => '本当に削除してよろしいですか？' %></td>
+    <td class="menu delete"><%= link_to '削除', "/memos/destroy/#{memo.id}", :confirm => '本当に削除してよろしいですか？' %></td>
   </tr>
 <% end %>
 </table>

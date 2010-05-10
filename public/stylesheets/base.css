@@ -104,6 +104,18 @@ a:hover {
   border: 1px solid #00afcc;
 }
 
+.delete a {
+  color: #f00;
+  background: #fff repeat-x;
+  border: 1px solid #f00;
+}
+
+.delete a:hover {
+  color: #fff;
+  background: #f00 repeat-x;
+  border: 1px solid #f00;
+}
+
 div {
   display: inline-block;
 }

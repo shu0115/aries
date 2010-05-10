@@ -2,13 +2,13 @@
 
 <br />
 
-<%= link_to '新規作成', "/memos/new/#{@category}" %><br />
-
-<br />
-
 <%# カテゴリ %>
 <%= link_to 'ALL', "/memos/index" %>
 <% @categorys.each{ |category| %>　<%= link_to category[:category], "/memos/index/#{category[:category]}" %><% } %><br />
+
+<br />
+
+<%= link_to '新規作成', "/memos/new/#{@category}" %><br />
 
 <br />
 

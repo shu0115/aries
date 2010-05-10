@@ -5740,3 +5740,690 @@ Processing MemosController#index (for 127.0.0.1 at 2010-05-10 21:24:41) [GET]
 Rendering template within layouts/memos
 Rendering memos/index
 Completed in 40ms (View: 32, DB: 4) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-10 21:31:53) [GET]
+  Parameters: {"id"=>"Rails"}
+  [4;36;1mMemo Load (2.1ms)[0m   [0;1mSELECT * FROM "memos" WHERE (category = 'Rails') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.2ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 26ms (View: 17, DB: 4) | 200 OK [http://localhost/memos/index/Rails]
+
+
+Processing MemosController#new (for 127.0.0.1 at 2010-05-10 21:38:07) [GET]
+  [4;36;1mMemo Load (1.1ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/new
+Completed in 31ms (View: 24, DB: 1) | 200 OK [http://localhost/memos/new]
+
+
+Processing MemosController#memo_category (for 127.0.0.1 at 2010-05-10 21:38:09) [POST]
+  Parameters: {"category"=>"Memo", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "_"=>""}
+Rendering memos/memo_category
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/memos/memo_category?category=Memo]
+
+
+Processing MemosController#create (for 127.0.0.1 at 2010-05-10 21:38:15) [POST]
+  Parameters: {"commit"=>"作成", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "memo"=>{"category"=>"Memo", "title"=>"test", "mode"=>"Private", "level"=>"Normal", "note"=>"test"}}
+  [4;35;1mMemo Create (0.5ms)[0m   [0mINSERT INTO "memos" ("updated_at", "category", "title", "mode", "level", "note", "created_at") VALUES('2010-05-10 12:38:15', 'Memo', 'test', 'Private', 'Normal', 'test', '2010-05-10 12:38:15')[0m
+Redirected to http://localhost:3000/memos/show/13
+Completed in 26ms (DB: 1) | 302 Found [http://localhost/memos/create]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-10 21:38:15) [GET]
+  Parameters: {"id"=>"13"}
+  [4;36;1mMemo Load (0.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 13) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 19ms (View: 12, DB: 1) | 200 OK [http://localhost/memos/show/13]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-10 21:38:23) [GET]
+  [4;35;1mMemo Load (2.0ms)[0m   [0mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.1ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 39ms (View: 30, DB: 3) | 200 OK [http://localhost/memos/index/]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-10 21:41:03) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mMemo Load (0.4ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+  [4;36;1mMemo Load (1.3ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 41ms (View: 33, DB: 3) | 200 OK [http://localhost/memos/edit/5/]
+
+
+Processing MemosController#update (for 127.0.0.1 at 2010-05-10 21:41:05) [POST]
+  Parameters: {"commit"=>"保存", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "memo"=>{"category"=>"Git", "title"=>"Gitコマンド", "mode"=>"Public", "level"=>"Normal", "note"=>"◆Gitインストール(MacPorts)\r\n$ sudo port install git-core +doc+gitweb+svn\r\n---> Cleaning git-core\r\n\r\n$ git --version\r\ngit version 1.6.5\r\n\r\n-----\r\n\r\n◆Gitセットアップ\r\n$ cd /Users/(ユーザ名)/Rails/Project/rails-demo\r\n$ git init && git add . && git commit -m \"first commit\"\r\ncreate mode 〜\r\n\r\n$ git status\r\n# On branch master\r\nnothing to commit (working directory clean)\r\n\r\n◆Herokuソースアップ\r\n$ git push heroku master\r\nAre you sure you want to continue connecting (yes/no)? [ yes ]\r\n\r\n-----\r\n\r\n◆ステータス確認\r\n$ git status\r\n\r\n◆新規ファイル追加\r\n$ git add app/controllers/hello_controller.rb \r\n\r\n◆ファイル削除\r\n$ git rm ファイル名\r\n\r\n◆変更が加えられたファイルを自動検出してコミット(新規作成ファイルは対象外)\r\n$ git commit -a -m \"test\"\r\n$ git commit -a -m \"update\"\r\n\r\n◆公開リポジトリに自分のリポジトリの内容を送信する\r\n$ git push heroku master\r\n\r\n◆ログ\r\n$ git log\r\n\r\n◆リポジトリ最適化\r\n$ git gc\r\n"}, "id"=>"5"}
+  [4;35;1mMemo Load (1.5ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Memo without an ID):
+  app/controllers/memos_controller.rb:67:in `update'
+
+Rendered rescues/_trace (163.4ms)
+Rendered rescues/_request_and_response (19.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-10 21:42:10) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+  [4;35;1mMemo Load (1.2ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 41ms (View: 19, DB: 16) | 200 OK [http://localhost/memos/edit/5/]
+
+
+Processing MemosController#update (for 127.0.0.1 at 2010-05-10 21:42:12) [POST]
+  Parameters: {"commit"=>"保存中...", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "memo"=>{"category"=>"Git", "title"=>"Gitコマンド", "mode"=>"Public", "level"=>"Normal", "note"=>"◆Gitインストール(MacPorts)\r\n$ sudo port install git-core +doc+gitweb+svn\r\n---> Cleaning git-core\r\n\r\n$ git --version\r\ngit version 1.6.5\r\n\r\n-----\r\n\r\n◆Gitセットアップ\r\n$ cd /Users/(ユーザ名)/Rails/Project/rails-demo\r\n$ git init && git add . && git commit -m \"first commit\"\r\ncreate mode 〜\r\n\r\n$ git status\r\n# On branch master\r\nnothing to commit (working directory clean)\r\n\r\n◆Herokuソースアップ\r\n$ git push heroku master\r\nAre you sure you want to continue connecting (yes/no)? [ yes ]\r\n\r\n-----\r\n\r\n◆ステータス確認\r\n$ git status\r\n\r\n◆新規ファイル追加\r\n$ git add app/controllers/hello_controller.rb \r\n\r\n◆ファイル削除\r\n$ git rm ファイル名\r\n\r\n◆変更が加えられたファイルを自動検出してコミット(新規作成ファイルは対象外)\r\n$ git commit -a -m \"test\"\r\n$ git commit -a -m \"update\"\r\n\r\n◆公開リポジトリに自分のリポジトリの内容を送信する\r\n$ git push heroku master\r\n\r\n◆ログ\r\n$ git log\r\n\r\n◆リポジトリ最適化\r\n$ git gc\r\n"}, "id"=>"5"}
+  [4;36;1mMemo Load (0.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+Redirected to http://localhost:3000/memos/show/5/Git
+Completed in 10ms (DB: 1) | 302 Found [http://localhost/memos/update/5/]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-10 21:42:12) [GET]
+  Parameters: {"option"=>"Git", "id"=>"5"}
+  [4;35;1mMemo Load (0.4ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 23ms (View: 4, DB: 1) | 200 OK [http://localhost/memos/show/5/Git]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-10 21:42:21) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mMemo Load (1.6ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+  [4;35;1mMemo Load (1.3ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 79ms (View: 69, DB: 3) | 200 OK [http://localhost/memos/edit/5]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-10 21:42:24) [GET]
+  [4;36;1mMemo Load (2.0ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.3ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 60ms (View: 36, DB: 19) | 200 OK [http://localhost/memos/index/]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-10 21:42:26) [GET]
+  Parameters: {"id"=>"Rails"}
+  [4;36;1mMemo Load (1.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE (category = 'Rails') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.1ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 23ms (View: 16, DB: 3) | 200 OK [http://localhost/memos/index/Rails]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-10 21:42:27) [GET]
+  Parameters: {"option"=>"Rails", "id"=>"11"}
+  [4;36;1mMemo Load (0.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 11) [0m
+  [4;35;1mMemo Load (1.2ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 74ms (View: 67, DB: 2) | 200 OK [http://localhost/memos/edit/11/Rails]
+
+
+Processing MemosController#update (for 127.0.0.1 at 2010-05-10 21:42:29) [POST]
+  Parameters: {"commit"=>"保存", "option"=>"Rails", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "memo"=>{"category"=>"Rails", "title"=>"Aries", "mode"=>"Private", "level"=>"Expert", "note"=>"ユーザ機能"}, "id"=>"11"}
+  [4;36;1mMemo Load (0.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 11) [0m
+Redirected to http://localhost:3000/memos/show/11/Rails
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/memos/update/11/Rails]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-10 21:42:30) [GET]
+  Parameters: {"option"=>"Rails", "id"=>"11"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 11) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/memos/show/11/Rails]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-10 21:42:31) [GET]
+  Parameters: {"id"=>"Rails"}
+  [4;36;1mMemo Load (1.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE (category = 'Rails') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (2.9ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 34ms (View: 23, DB: 5) | 200 OK [http://localhost/memos/index/Rails]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-10 21:42:33) [GET]
+  Parameters: {"option"=>"Rails", "id"=>"11"}
+  [4;36;1mMemo Load (0.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 11) [0m
+  [4;35;1mMemo Load (1.3ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 46ms (View: 19, DB: 20) | 200 OK [http://localhost/memos/edit/11/Rails]
+
+
+Processing MemosController#update (for 127.0.0.1 at 2010-05-10 21:42:35) [POST]
+  Parameters: {"commit"=>"保存", "option"=>"Rails", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "memo"=>{"category"=>"Rails", "title"=>"Aries", "mode"=>"Private", "level"=>"Expert", "note"=>"ユーザ機能"}, "id"=>"11"}
+  [4;36;1mMemo Load (0.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 11) [0m
+Redirected to http://localhost:3000/memos/show/11/Rails
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/memos/update/11/Rails]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-10 21:42:35) [GET]
+  Parameters: {"option"=>"Rails", "id"=>"11"}
+  [4;35;1mMemo Load (0.4ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 11) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 13ms (View: 6, DB: 1) | 200 OK [http://localhost/memos/show/11/Rails]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-10 21:42:37) [GET]
+  Parameters: {"id"=>"11"}
+  [4;36;1mMemo Load (0.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 11) [0m
+  [4;35;1mMemo Load (1.3ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 41ms (View: 28, DB: 2) | 200 OK [http://localhost/memos/edit/11]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-10 21:43:03) [GET]
+  [4;36;1mMemo Load (3.0ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.1ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 55ms (View: 29, DB: 21) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-10 21:43:04) [GET]
+  Parameters: {"id"=>"Rails"}
+  [4;36;1mMemo Load (1.6ms)[0m   [0;1mSELECT * FROM "memos" WHERE (category = 'Rails') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.2ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 31ms (View: 21, DB: 3) | 200 OK [http://localhost/memos/index/Rails]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-10 21:43:05) [GET]
+  Parameters: {"option"=>"Rails", "id"=>"11"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 11) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/memos/show/11/Rails]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-10 21:43:07) [GET]
+  Parameters: {"id"=>"11"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 11) [0m
+  [4;36;1mMemo Load (1.3ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 35ms (View: 28, DB: 2) | 200 OK [http://localhost/memos/edit/11]
+
+
+Processing MemosController#update (for 127.0.0.1 at 2010-05-10 21:43:08) [POST]
+  Parameters: {"commit"=>"保存", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "memo"=>{"category"=>"Rails", "title"=>"Aries", "mode"=>"Private", "level"=>"Expert", "note"=>"ユーザ機能"}, "id"=>"11"}
+  [4;35;1mMemo Load (0.4ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 11) [0m
+Redirected to http://localhost:3000/memos/show/11/Rails
+Completed in 10ms (DB: 1) | 302 Found [http://localhost/memos/update/11/]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-10 21:43:08) [GET]
+  Parameters: {"option"=>"Rails", "id"=>"11"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 11) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 68ms (View: 61, DB: 1) | 200 OK [http://localhost/memos/show/11/Rails]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-10 21:43:12) [GET]
+  Parameters: {"id"=>"11"}
+  [4;35;1mMemo Load (0.4ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 11) [0m
+  [4;36;1mMemo Load (2.3ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 33ms (View: 22, DB: 3) | 200 OK [http://localhost/memos/edit/11]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-10 21:43:18) [GET]
+  Parameters: {"option"=>"Rails", "id"=>"11"}
+  [4;35;1mMemo Load (0.4ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 11) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 37ms (View: 9, DB: 20) | 200 OK [http://localhost/memos/show/11/Rails]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-10 21:43:38) [GET]
+  [4;36;1mMemo Load (2.3ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.2ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 37ms (View: 27, DB: 4) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-10 21:43:41) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mMemo Load (1.0ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+  [4;35;1mMemo Load (1.3ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 89ms (View: 25, DB: 14) | 200 OK [http://localhost/memos/edit/5/]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-10 21:43:43) [GET]
+  [4;36;1mMemo Load (2.3ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.1ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 34ms (View: 25, DB: 4) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-10 21:43:45) [GET]
+  Parameters: {"id"=>"Rails"}
+  [4;36;1mMemo Load (1.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE (category = 'Rails') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.0ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 22ms (View: 14, DB: 4) | 200 OK [http://localhost/memos/index/Rails]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-10 21:43:46) [GET]
+  Parameters: {"option"=>"Rails", "id"=>"11"}
+  [4;36;1mMemo Load (0.5ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 11) [0m
+  [4;35;1mMemo Load (1.2ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 80ms (View: 20, DB: 2) | 200 OK [http://localhost/memos/edit/11/Rails]
+
+
+Processing MemosController#update (for 127.0.0.1 at 2010-05-10 21:43:47) [POST]
+  Parameters: {"commit"=>"保存", "option"=>"Rails", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "memo"=>{"category"=>"Rails", "title"=>"Aries", "mode"=>"Private", "level"=>"Expert", "note"=>"ユーザ機能"}, "id"=>"11"}
+  [4;36;1mMemo Load (0.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 11) [0m
+Redirected to http://localhost:3000/memos/show/11/Rails
+Completed in 11ms (DB: 1) | 302 Found [http://localhost/memos/update/11/Rails]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-10 21:43:48) [GET]
+  Parameters: {"option"=>"Rails", "id"=>"11"}
+  [4;35;1mMemo Load (0.5ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 11) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 23ms (View: 13, DB: 1) | 200 OK [http://localhost/memos/show/11/Rails]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-10 21:43:49) [GET]
+  Parameters: {"option"=>"Rails", "id"=>"11"}
+  [4;36;1mMemo Load (0.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 11) [0m
+  [4;35;1mMemo Load (1.2ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 26ms (View: 18, DB: 2) | 200 OK [http://localhost/memos/edit/11/Rails]
+
+
+Processing MemosController#update (for 127.0.0.1 at 2010-05-10 21:43:54) [POST]
+  Parameters: {"commit"=>"保存", "option"=>"Rails", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "memo"=>{"category"=>"Rails", "title"=>"Aries", "mode"=>"Private", "level"=>"Expert", "note"=>"ユーザ機能"}, "id"=>"11"}
+  [4;36;1mMemo Load (0.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 11) [0m
+Redirected to http://localhost:3000/memos/show/11/Rails
+Completed in 20ms (DB: 12) | 302 Found [http://localhost/memos/update/11/Rails]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-10 21:43:54) [GET]
+  Parameters: {"option"=>"Rails", "id"=>"11"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 11) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 11ms (View: 4, DB: 1) | 200 OK [http://localhost/memos/show/11/Rails]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-10 21:43:57) [GET]
+  Parameters: {"id"=>"Rails"}
+  [4;36;1mMemo Load (1.6ms)[0m   [0;1mSELECT * FROM "memos" WHERE (category = 'Rails') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.4ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 22ms (View: 14, DB: 3) | 200 OK [http://localhost/memos/index/Rails]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-10 21:43:59) [GET]
+  Parameters: {"option"=>"Rails", "id"=>"11"}
+  [4;36;1mMemo Load (0.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 11) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 13ms (View: 6, DB: 1) | 200 OK [http://localhost/memos/show/11/Rails]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-10 21:44:00) [GET]
+  Parameters: {"option"=>"Rails", "id"=>"11"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 11) [0m
+  [4;36;1mMemo Load (1.1ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 27ms (View: 19, DB: 2) | 200 OK [http://localhost/memos/edit/11/Rails]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-10 21:44:02) [GET]
+  Parameters: {"id"=>"Rails"}
+  [4;35;1mMemo Load (1.2ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'Rails') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.5ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 67ms (View: 59, DB: 3) | 200 OK [http://localhost/memos/index/Rails]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-10 21:44:04) [GET]
+  [4;35;1mMemo Load (4.2ms)[0m   [0mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.8ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 60ms (View: 32, DB: 16) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#new (for 127.0.0.1 at 2010-05-10 21:44:10) [GET]
+  [4;35;1mMemo Load (3.4ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/new
+Completed in 44ms (View: 29, DB: 4) | 200 OK [http://localhost/memos/new]
+
+
+Processing MemosController#memo_category (for 127.0.0.1 at 2010-05-10 21:44:12) [POST]
+  Parameters: {"category"=>"Memo", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "_"=>""}
+Rendering memos/memo_category
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/memos/memo_category?category=Memo]
+
+
+Processing MemosController#create (for 127.0.0.1 at 2010-05-10 21:44:20) [POST]
+  Parameters: {"commit"=>"作成", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "memo"=>{"category"=>"test", "title"=>"test", "mode"=>"Private", "level"=>"Normal", "note"=>"test"}}
+  [4;36;1mMemo Create (0.5ms)[0m   [0;1mINSERT INTO "memos" ("updated_at", "category", "title", "mode", "level", "note", "created_at") VALUES('2010-05-10 12:44:20', 'test', 'test', 'Private', 'Normal', 'test', '2010-05-10 12:44:20')[0m
+Redirected to http://localhost:3000/memos/show/14
+Completed in 65ms (DB: 11) | 302 Found [http://localhost/memos/create]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-10 21:44:20) [GET]
+  Parameters: {"id"=>"14"}
+  [4;35;1mMemo Load (1.9ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 14) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 13ms (View: 4, DB: 2) | 200 OK [http://localhost/memos/show/14]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-10 21:44:54) [GET]
+  Parameters: {"id"=>"14"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 14) [0m
+  [4;35;1mMemo Load (1.7ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 33ms (View: 25, DB: 2) | 200 OK [http://localhost/memos/edit/14/]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-10 21:44:56) [GET]
+  [4;36;1mMemo Load (2.4ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.0ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 39ms (View: 31, DB: 4) | 200 OK [http://localhost/memos/index/]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-10 21:48:15) [GET]
+  [4;36;1mMemo Load (2.7ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.2ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 44ms (View: 34, DB: 4) | 200 OK [http://localhost/memos/index/]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-10 21:48:22) [GET]
+  Parameters: {"id"=>"test"}
+  [4;36;1mMemo Load (1.1ms)[0m   [0;1mSELECT * FROM "memos" WHERE (category = 'test') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.5ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 20ms (View: 12, DB: 3) | 200 OK [http://localhost/memos/index/test]
+
+
+Processing MemosController#new (for 127.0.0.1 at 2010-05-10 21:48:25) [GET]
+  Parameters: {"id"=>"test"}
+  [4;36;1mMemo Load (1.2ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/new
+Completed in 37ms (View: 30, DB: 2) | 200 OK [http://localhost/memos/new/test]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-10 21:50:44) [GET]
+  [4;35;1mMemo Load (2.3ms)[0m   [0mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.0ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 40ms (View: 31, DB: 4) | 200 OK [http://localhost/memos/index]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-10 21:50:46) [GET]
+  Parameters: {"id"=>"test"}
+  [4;35;1mMemo Load (1.1ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'test') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.5ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 24ms (View: 16, DB: 3) | 200 OK [http://localhost/memos/index/test]
+
+
+Processing MemosController#new (for 127.0.0.1 at 2010-05-10 21:50:48) [GET]
+  Parameters: {"id"=>"test"}
+  [4;35;1mMemo Load (1.3ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/new
+Completed in 39ms (View: 31, DB: 2) | 200 OK [http://localhost/memos/new/test]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-10 21:50:51) [GET]
+  Parameters: {"id"=>"test"}
+  [4;36;1mMemo Load (1.2ms)[0m   [0;1mSELECT * FROM "memos" WHERE (category = 'test') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.0ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 13ms (View: 6, DB: 3) | 200 OK [http://localhost/memos/index/test]
+
+
+Processing MemosController#new (for 127.0.0.1 at 2010-05-10 21:50:52) [GET]
+  Parameters: {"id"=>"test"}
+  [4;36;1mMemo Load (1.3ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/new
+Completed in 29ms (View: 21, DB: 2) | 200 OK [http://localhost/memos/new/test]
+
+
+Processing MemosController#create (for 127.0.0.1 at 2010-05-10 21:50:58) [POST]
+  Parameters: {"commit"=>"作成", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "memo"=>{"category"=>"test", "title"=>"test", "mode"=>"Private", "level"=>"Normal", "note"=>"test"}, "id"=>"test"}
+  [4;35;1mMemo Create (0.6ms)[0m   [0mINSERT INTO "memos" ("updated_at", "category", "title", "mode", "level", "note", "created_at") VALUES('2010-05-10 12:50:58', 'test', 'test', 'Private', 'Normal', 'test', '2010-05-10 12:50:58')[0m
+Redirected to http://localhost:3000/memos/show/15/test
+Completed in 11ms (DB: 1) | 302 Found [http://localhost/memos/create/test]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-10 21:50:58) [GET]
+  Parameters: {"option"=>"test", "id"=>"15"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 15) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/memos/show/15/test]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-10 21:51:03) [GET]
+  Parameters: {"option"=>"test", "id"=>"15"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 15) [0m
+  [4;36;1mMemo Load (1.3ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 95ms (View: 87, DB: 2) | 200 OK [http://localhost/memos/edit/15/test]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-10 21:51:06) [GET]
+  Parameters: {"option"=>"test", "id"=>"15"}
+  [4;35;1mMemo Load (2.6ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 15) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 14ms (View: 5, DB: 3) | 200 OK [http://localhost/memos/show/15/test]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-10 21:51:09) [GET]
+  Parameters: {"id"=>"test"}
+  [4;36;1mMemo Load (1.5ms)[0m   [0;1mSELECT * FROM "memos" WHERE (category = 'test') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.1ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 24ms (View: 17, DB: 3) | 200 OK [http://localhost/memos/index/test]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-10 21:52:06) [GET]
+  Parameters: {"option"=>"test", "id"=>"14"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 14) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/memos/show/14/test]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-10 21:52:11) [GET]
+  Parameters: {"id"=>"test"}
+  [4;35;1mMemo Load (2.4ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'test') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.1ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 25ms (View: 17, DB: 4) | 200 OK [http://localhost/memos/index/test]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-10 21:52:13) [GET]
+  Parameters: {"id"=>"Git"}
+  [4;35;1mMemo Load (1.8ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'Git') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.3ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 27ms (View: 17, DB: 4) | 200 OK [http://localhost/memos/index/Git]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-10 21:52:14) [GET]
+  Parameters: {"option"=>"Git", "id"=>"5"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 9ms (View: 3, DB: 1) | 200 OK [http://localhost/memos/show/5/Git]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-10 21:52:58) [GET]
+  Parameters: {"option"=>"Git", "id"=>"5"}
+  [4;36;1mMemo Load (0.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 12ms (View: 4, DB: 2) | 200 OK [http://localhost/memos/show/5/Git]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-10 21:53:33) [GET]
+  Parameters: {"option"=>"Git", "id"=>"5"}
+  [4;35;1mMemo Load (1.8ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 15ms (View: 5, DB: 2) | 200 OK [http://localhost/memos/show/5/Git]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-10 21:54:00) [GET]
+  Parameters: {"option"=>"Git", "id"=>"5"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 13ms (View: 6, DB: 1) | 200 OK [http://localhost/memos/show/5/Git]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-10 21:54:10) [GET]
+  Parameters: {"option"=>"Git", "id"=>"5"}
+  [4;35;1mMemo Load (0.4ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 11ms (View: 4, DB: 1) | 200 OK [http://localhost/memos/show/5/Git]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-10 21:54:23) [GET]
+  Parameters: {"option"=>"Git", "id"=>"5"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://localhost/memos/show/5/Git]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-10 21:54:42) [GET]
+  Parameters: {"id"=>"Git"}
+  [4;35;1mMemo Load (14.7ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'Git') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (4.6ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 130ms (View: 101, DB: 20) | 200 OK [http://localhost/memos/index/Git]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-10 21:54:45) [GET]
+  Parameters: {"id"=>"Rails"}
+  [4;35;1mMemo Load (1.2ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'Rails') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.1ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 22ms (View: 14, DB: 3) | 200 OK [http://localhost/memos/index/Rails]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-10 21:54:46) [GET]
+  Parameters: {"option"=>"Rails", "id"=>"11"}
+  [4;35;1mMemo Load (0.4ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 11) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 14ms (View: 6, DB: 1) | 200 OK [http://localhost/memos/show/11/Rails]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-10 21:54:48) [GET]
+  Parameters: {"id"=>"Rails"}
+  [4;36;1mMemo Load (1.2ms)[0m   [0;1mSELECT * FROM "memos" WHERE (category = 'Rails') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.1ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 26ms (View: 18, DB: 3) | 200 OK [http://localhost/memos/index/Rails]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-10 21:54:49) [GET]
+  Parameters: {"option"=>"Rails", "id"=>"4"}
+  [4;36;1mMemo Load (0.6ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 4) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 11ms (View: 4, DB: 1) | 200 OK [http://localhost/memos/show/4/Rails]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-10 21:55:06) [GET]
+  Parameters: {"option"=>"Rails", "id"=>"4"}
+  [4;35;1mMemo Load (0.4ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 4) [0m
+  [4;36;1mMemo Load (56.9ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 86ms (View: 21, DB: 58) | 200 OK [http://localhost/memos/edit/4/Rails]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-10 21:56:03) [GET]
+  Parameters: {"option"=>"Rails", "id"=>"4"}
+  [4;35;1mMemo Load (0.4ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 4) [0m
+  [4;36;1mMemo Load (1.5ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 48ms (View: 37, DB: 2) | 200 OK [http://localhost/memos/edit/4/Rails]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-10 21:56:58) [GET]
+  Parameters: {"option"=>"Rails", "id"=>"4"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 4) [0m
+  [4;36;1mMemo Load (1.4ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 44ms (View: 34, DB: 2) | 200 OK [http://localhost/memos/edit/4/Rails]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-10 21:57:10) [GET]
+  Parameters: {"option"=>"Rails", "id"=>"4"}
+  [4;35;1mMemo Load (0.4ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 4) [0m
+  [4;36;1mMemo Load (2.4ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 55ms (View: 44, DB: 3) | 200 OK [http://localhost/memos/edit/4/Rails]
+
+
+Processing MemosController#index (for 127.0.0.1 at 2010-05-10 21:57:26) [GET]
+  [4;35;1mMemo Load (3.4ms)[0m   [0mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (2.4ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/index
+Completed in 49ms (View: 38, DB: 6) | 200 OK [http://localhost/memos/index]

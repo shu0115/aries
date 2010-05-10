@@ -2,10 +2,10 @@
 
 <br />
 
-<%= link_to '閲覧', "/memos/show/#{@memo.id}" %>
+<%= link_to '閲覧', "/memos/show/#{@memo.id}/#{@category}" %>
  | <%= link_to '一覧', "/memos/index/#{@category}" %>
 
-<% form_for :memo, :url => "/memos/update/#{@memo.id}" do |f| %>
+<% form_for :memo, :url => "/memos/update/#{@memo.id}/#{@category}" do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -31,7 +31,7 @@
 
   <p>
     <%= f.label :note, 'テキスト' %><br />
-    <%= f.text_area :note, :cols => "100", :rows => "30" %>
+    <%= f.text_area :note %>
   </p>
 
   <p>
@@ -39,5 +39,5 @@
   </p>
 <% end %>
 
-<%= link_to '閲覧', "/memos/show/#{@memo.id}" %>
+<%= link_to '閲覧', "/memos/show/#{@memo.id}/#{@category}" %>
  | <%= link_to '一覧', "/memos/index/#{@category}" %>

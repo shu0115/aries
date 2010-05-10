@@ -2,12 +2,12 @@
 
 <br />
 
-<% form_for :memo, :url => '/memos/create' do |f| %>
+<% form_for :memo, :url => "/memos/create/#{@category}" do |f| %>
   <%= f.error_messages %>
 
   <%= f.label :category, 'カテゴリ' %><br />
   <% @categorys.each{ |category| %><%= link_to_remote( category[:category], :update => "memo_category_set", :url => { :action => :memo_category, :category => category[:category] } ) %>　<% } %><br />
-  <span id="memo_category_set"><%= f.text_field :category %></span><br />
+  <span id="memo_category_set"><%= f.text_field :category, :value => @category %></span><br />
   
   <br />
 
@@ -33,7 +33,7 @@
   <br />
 
   <%= f.label :note, 'テキスト' %><br />
-  <%= f.text_area :note, :cols => "100", :rows => "30" %><br />
+  <%= f.text_area :note %><br />
   
   <br />
 
@@ -42,4 +42,4 @@
 
 <br />
 
-<%= link_to '一覧', '/memos/index' %>
+<%= link_to '一覧', "/memos/index/#{@category}" %>

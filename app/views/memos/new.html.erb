@@ -2,6 +2,10 @@
 
 <br />
 
+<span class="menu list"><%= link_to '一覧', "/memos/list/#{@category}" %></span><br />
+
+<br />
+
 <% form_for :memo, :url => "/memos/create/#{@category}" do |f| %>
   <%= f.error_messages %>
 
@@ -42,4 +46,6 @@
 
 <br />
 
-<%= link_to '一覧', "/memos/index/#{@category}" %>
+<span class="menu list"><%= link_to '一覧', "/memos/list/#{@category}" %></span><br />
+
+<br />

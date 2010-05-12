@@ -1,0 +1,44 @@
+<span id="menu_title">一覧</span><br />
+
+<br />
+
+<%# カテゴリ %>
+<%= link_to 'ALL', "/memos/list" %>
+<% @categorys.each{ |category| %>
+<% if category[:category].to_s == @category.to_s %>
+　<span class="active_link"><%= link_to category[:category], "/memos/list/#{category[:category]}" %></span>
+<% else %>
+　<%= link_to category[:category], "/memos/list/#{category[:category]}" %>
+<% end %>
+<% } %><br />
+
+<br />
+
+<span class="menu new"><%= link_to '新規作成', "/memos/new/#{@category}" %></span><br />
+
+<br />
+
+<table>
+  <tr>
+    <th>カテゴリ</th>
+    <th>タイトル</th>
+    <th>モード</th>
+  </tr>
+
+<% @all_memos.each do |memo| %>
+  <tr>
+    <td>[<%= link_to memo.category, "/memos/list/#{memo.category}" %>]</td>
+    
+    <td><%=h memo.title %></td>
+    <td><%=h memo.mode %></td>
+
+    <td class="menu show"><%= link_to '閲覧', "/memos/show/#{memo.id}/#{@category}", :title => memo.note %></td>
+    <td class="menu edit"><%= link_to '編集', "/memos/edit/#{memo.id}/#{@category}" %></td>
+    <td class="menu delete"><%= link_to '削除', "/memos/destroy/#{memo.id}/#{@category}", :confirm => "[ #{memo.title} ]を本当に削除してよろしいですか？" %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<span class="menu new"><%= link_to '新規作成', "/memos/new/#{@category}" %></span>

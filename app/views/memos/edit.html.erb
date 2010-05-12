@@ -2,8 +2,8 @@
 
 <br />
 
-<%= link_to '閲覧', "/memos/show/#{@memo.id}/#{@category}" %>
- | <%= link_to '一覧', "/memos/index/#{@category}" %>
+<span class="menu list"><%= link_to '一覧', "/memos/list/#{@category}" %></span>
+　<span class="menu show"><%= link_to '閲覧', "/memos/show/#{@memo.id}/#{@category}" %></span>
 
 <% form_for :memo, :url => "/memos/update/#{@memo.id}/#{@category}" do |f| %>
   <%= f.error_messages %>
@@ -39,5 +39,5 @@
   </p>
 <% end %>
 
-<%= link_to '閲覧', "/memos/show/#{@memo.id}/#{@category}" %>
- | <%= link_to '一覧', "/memos/index/#{@category}" %>
+<span class="menu list"><%= link_to '一覧', "/memos/list/#{@category}" %></span>
+　<span class="menu show"><%= link_to '閲覧', "/memos/show/#{@memo.id}/#{@category}" %></span>

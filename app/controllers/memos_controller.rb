@@ -1,9 +1,9 @@
 class MemosController < ApplicationController
 
-  #-------#
-  # index #
-  #-------#
-  def index
+  #------#
+  # list #
+  #------#
+  def list
     @category = params[:id]
     conditions = "category = '#{@category}'" unless @category.blank?
     @all_memos = Memo.all( :conditions => conditions, :order => "category ASC, title ASC" )
@@ -94,6 +94,6 @@ class MemosController < ApplicationController
       flash[:notice] = 'メモの削除に失敗しました。'
     end
 
-    redirect_to "/memos/index/#{@category}"
+    redirect_to "/memos/list/#{@category}"
   end
 end

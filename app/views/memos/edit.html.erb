@@ -26,10 +26,12 @@
     <%= select( :memo, :mode, Memo.mode_choices, :mode => @memo.mode ) %>
   </p>
 
+<% if false %>
   <p>
     <%= f.label :level, 'レベル' %>：
     <%= select( :memo, :level, Memo.level_choices, :level => @memo.level ) %>
   </p>
+<% end %>
 
   <p>
     <%= f.label :note, 'テキスト' %><br />

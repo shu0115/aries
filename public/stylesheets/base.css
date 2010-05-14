@@ -196,3 +196,12 @@ a:hover, a:active {
   border: 1px solid #00afcc;
   padding: 15px;
 }
+
+/* memos */
+#memo_title, #memo_category {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border: 1px solid #aaa;
+  padding: 5px;
+}
+

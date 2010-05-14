@@ -8012,3 +8012,154 @@ Processing MemosController#new (for 127.0.0.1 at 2010-05-14 22:48:42) [GET]
 Rendering template within layouts/memos
 Rendering memos/new
 Completed in 44ms (View: 35, DB: 2) | 200 OK [http://localhost/memos/new/Git]
+
+
+Processing MemosController#new (for 127.0.0.1 at 2010-05-14 22:52:59) [GET]
+  Parameters: {"id"=>"Git"}
+  [4;35;1mMemo Load (1.6ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/new
+Completed in 40ms (View: 31, DB: 2) | 200 OK [http://localhost/memos/new/Git]
+
+
+Processing MemosController#new (for 127.0.0.1 at 2010-05-14 22:53:19) [GET]
+  Parameters: {"id"=>"Git"}
+  [4;36;1mMemo Load (1.6ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/new
+Completed in 34ms (View: 24, DB: 2) | 200 OK [http://localhost/memos/new/Git]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-05-14 22:53:35) [GET]
+  Parameters: {"id"=>"Git"}
+  [4;35;1mMemo Load (1.1ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'Git') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.4ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/list
+Completed in 35ms (View: 20, DB: 3) | 200 OK [http://localhost/memos/list/Git]
+
+
+Processing MemosController#new (for 127.0.0.1 at 2010-05-14 22:53:37) [GET]
+  Parameters: {"id"=>"Git"}
+  [4;35;1mMemo Load (2.1ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/new
+Completed in 35ms (View: 25, DB: 3) | 200 OK [http://localhost/memos/new/Git]
+
+
+Processing MemosController#create (for 127.0.0.1 at 2010-05-14 22:53:40) [POST]
+  Parameters: {"commit"=>"作成", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "memo"=>{"category"=>"Git", "title"=>"", "mode"=>"Private", "note"=>""}, "id"=>"Git"}
+  [4;36;1mMemo Create (0.5ms)[0m   [0;1mINSERT INTO "memos" ("updated_at", "category", "title", "mode", "level", "note", "created_at") VALUES('2010-05-14 13:53:40', 'Git', '', 'Private', NULL, '', '2010-05-14 13:53:40')[0m
+Redirected to http://localhost:3000/memos/show/16/Git
+Completed in 20ms (DB: 2) | 302 Found [http://localhost/memos/create/Git]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-14 22:53:40) [GET]
+  Parameters: {"option"=>"Git", "id"=>"16"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 16) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 16ms (View: 8, DB: 1) | 200 OK [http://localhost/memos/show/16/Git]
+
+
+Processing MemosController#destroy (for 127.0.0.1 at 2010-05-14 22:53:43) [GET]
+  Parameters: {"option"=>"Git", "id"=>"16"}
+  [4;36;1mMemo Load (0.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 16) [0m
+  [4;35;1mMemo Destroy (0.5ms)[0m   [0mDELETE FROM "memos" WHERE "id" = 16[0m
+Redirected to http://localhost:3000/memos/list/Git
+Completed in 25ms (DB: 1) | 302 Found [http://localhost/memos/destroy/16/Git]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-05-14 22:53:43) [GET]
+  Parameters: {"id"=>"Git"}
+  [4;36;1mMemo Load (1.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE (category = 'Git') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.2ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/list
+Completed in 22ms (View: 14, DB: 3) | 200 OK [http://localhost/memos/list/Git]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-14 22:53:45) [GET]
+  Parameters: {"option"=>"Git", "id"=>"5"}
+  [4;36;1mMemo Load (0.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+  [4;35;1mMemo Load (1.3ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 35ms (View: 27, DB: 2) | 200 OK [http://localhost/memos/edit/5/Git]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-14 22:55:29) [GET]
+  Parameters: {"option"=>"Git", "id"=>"5"}
+  [4;36;1mMemo Load (0.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+  [4;35;1mMemo Load (1.2ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 48ms (View: 23, DB: 18) | 200 OK [http://localhost/memos/edit/5/Git]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-14 22:56:04) [GET]
+  Parameters: {"option"=>"Git", "id"=>"5"}
+  [4;36;1mMemo Load (0.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+  [4;35;1mMemo Load (1.3ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 83ms (View: 62, DB: 15) | 200 OK [http://localhost/memos/edit/5/Git]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-14 22:56:21) [GET]
+  Parameters: {"option"=>"Git", "id"=>"5"}
+  [4;36;1mMemo Load (0.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+  [4;35;1mMemo Load (1.2ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 42ms (View: 23, DB: 12) | 200 OK [http://localhost/memos/edit/5/Git]
+
+
+Processing MemosController#memo_category (for 127.0.0.1 at 2010-05-14 22:56:23) [POST]
+  Parameters: {"category"=>"test", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "_"=>""}
+Rendering memos/memo_category
+Completed in 28ms (View: 26, DB: 0) | 200 OK [http://localhost/memos/memo_category?category=test]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-05-14 22:56:32) [GET]
+  Parameters: {"id"=>"Git"}
+  [4;36;1mMemo Load (1.0ms)[0m   [0;1mSELECT * FROM "memos" WHERE (category = 'Git') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.1ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/list
+Completed in 32ms (View: 12, DB: 14) | 200 OK [http://localhost/memos/list/Git]
+
+
+Processing MemosController#new (for 127.0.0.1 at 2010-05-14 22:56:34) [GET]
+  Parameters: {"id"=>"Git"}
+  [4;36;1mMemo Load (1.3ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/new
+Completed in 70ms (View: 62, DB: 2) | 200 OK [http://localhost/memos/new/Git]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-05-14 22:56:35) [GET]
+  Parameters: {"id"=>"Git"}
+  [4;35;1mMemo Load (1.1ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'Git') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.0ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/list
+Completed in 22ms (View: 14, DB: 3) | 200 OK [http://localhost/memos/list/Git]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-14 22:56:37) [GET]
+  Parameters: {"option"=>"Git", "id"=>"5"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+  [4;36;1mMemo Load (1.8ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 36ms (View: 26, DB: 3) | 200 OK [http://localhost/memos/edit/5/Git]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-05-14 22:56:38) [GET]
+  Parameters: {"id"=>"Git"}
+  [4;35;1mMemo Load (1.4ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'Git') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.4ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/list
+Completed in 30ms (View: 22, DB: 3) | 200 OK [http://localhost/memos/list/Git]

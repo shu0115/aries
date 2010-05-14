@@ -1,4 +1,6 @@
+<% if false %>
 <span id="menu_title">[<%=h @memo.category %>] <%=h @memo.title %></span><br />
+<% end %>
 
 <br />
 
@@ -6,7 +8,7 @@
 　<span class="menu edit"><%= link_to '編集', "/memos/edit/#{@memo.id}/#{@category}" %></span>
 　<span class="menu delete"><%= link_to '削除', "/memos/destroy/#{@memo.id}/#{@category}", :confirm => "[ #{@memo.title} ]を本当に削除してよろしいですか？" %></span>
 
-<pre><%=h @memo.note %></pre>
+<pre class="pre_style"><%=h @memo.note %></pre>
 
 <span class="menu list"><%= link_to '一覧', "/memos/list/#{@category}" %></span>
 　<span class="menu edit"><%= link_to '編集', "/memos/edit/#{@memo.id}/#{@category}" %></span>

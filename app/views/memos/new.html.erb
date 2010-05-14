@@ -1,4 +1,6 @@
+<% if false %>
 <span id="menu_title">新規作成</span><br />
+<% end %>
 
 <br />
 
@@ -28,6 +30,7 @@
 
   <br />
 
+<% if false %>
   <%= f.label :level, 'レベル' %>：
   <select name="memo[level]">
     <option value="Normal">Normal</option>
@@ -35,6 +38,7 @@
   </select><br />
   
   <br />
+<% end %>
 
   <%= f.label :note, 'テキスト' %><br />
   <%= f.text_area :note %><br />

@@ -8208,3 +8208,28 @@ Processing MemosController#edit (for 127.0.0.1 at 2010-05-14 23:02:14) [GET]
 Rendering template within layouts/memos
 Rendering memos/edit
 Completed in 37ms (View: 28, DB: 2) | 200 OK [http://localhost/memos/edit/11/Rails]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-05-14 23:04:48) [GET]
+  Parameters: {"id"=>"Rails"}
+  [4;35;1mMemo Load (1.2ms)[0m   [0mSELECT * FROM "memos" WHERE (category = 'Rails') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.4ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/list
+Completed in 22ms (View: 15, DB: 3) | 200 OK [http://localhost/memos/list/Rails]
+
+
+Processing MemosController#new (for 127.0.0.1 at 2010-05-14 23:04:50) [GET]
+  Parameters: {"id"=>"Rails"}
+  [4;35;1mMemo Load (1.3ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/new
+Completed in 31ms (View: 22, DB: 2) | 200 OK [http://localhost/memos/new/Rails]
+
+
+Processing MemosController#new (for 127.0.0.1 at 2010-05-14 23:05:20) [GET]
+  Parameters: {"id"=>"Rails"}
+  [4;36;1mMemo Load (1.3ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/new
+Completed in 34ms (View: 26, DB: 2) | 200 OK [http://localhost/memos/new/Rails]

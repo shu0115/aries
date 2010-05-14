@@ -65,7 +65,7 @@ pre {
 }
 
 textarea {
-  width: 100%;
+  width: 95%;
   height: 500px;
   -moz-border-radius: 20px;
   -webkit-border-radius: 20px;
@@ -204,4 +204,3 @@ a:hover, a:active {
   border: 1px solid #aaa;
   padding: 5px;
 }
-

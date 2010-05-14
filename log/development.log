@@ -7945,3 +7945,44 @@ Processing MemosController#list (for 127.0.0.1 at 2010-05-14 22:20:48) [GET]
 Rendering template within layouts/memos
 Rendering memos/list
 Completed in 90ms (View: 80, DB: 5) | 200 OK [http://localhost/memos]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-05-14 22:26:37) [GET]
+  [4;36;1mMemo Load (2.0ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.4ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/list
+Completed in 52ms (View: 43, DB: 4) | 200 OK [http://localhost/memos/list]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-14 22:26:41) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mMemo Load (0.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+  [4;35;1mMemo Load (1.5ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 35ms (View: 26, DB: 4) | 200 OK [http://localhost/memos/edit/5/]
+
+
+Processing MemosController#update (for 127.0.0.1 at 2010-05-14 22:26:45) [POST]
+  Parameters: {"commit"=>"保存", "authenticity_token"=>"5CCJLobRSuN7OA75jJMlTfo7oapm059QhdGNT+YrMb4=", "memo"=>{"category"=>"Git", "title"=>"Gitコマンド", "mode"=>"Public", "note"=>"◆Gitインストール(MacPorts)\r\n$ sudo port install git-core +doc+gitweb+svn\r\n---> Cleaning git-core\r\n\r\n$ git --version\r\ngit version 1.6.5\r\n\r\n-----\r\n\r\n◆Gitセットアップ\r\n$ cd /Users/(ユーザ名)/Rails/Project/rails-demo\r\n$ git init && git add . && git commit -m \"first commit\"\r\ncreate mode 〜\r\n\r\n$ git status\r\n# On branch master\r\nnothing to commit (working directory clean)\r\n\r\n◆Herokuソースアップ\r\n$ git push heroku master\r\nAre you sure you want to continue connecting (yes/no)? [ yes ]\r\n\r\n-----\r\n\r\n◆ステータス確認\r\n$ git status\r\n\r\n◆新規ファイル追加\r\n$ git add app/controllers/hello_controller.rb \r\n\r\n◆ファイル削除\r\n$ git rm ファイル名\r\n\r\n◆変更が加えられたファイルを自動検出してコミット(新規作成ファイルは対象外)\r\n$ git commit -a -m \"test\"\r\n$ git commit -a -m \"update\"\r\n\r\n◆公開リポジトリに自分のリポジトリの内容を送信する\r\n$ git push heroku master\r\n\r\n◆ログ\r\n$ git log\r\n\r\n◆リポジトリ最適化\r\n$ git gc\r\n"}, "id"=>"5"}
+  [4;36;1mMemo Load (0.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+Redirected to http://localhost:3000/memos/show/5/Git
+Completed in 58ms (DB: 1) | 302 Found [http://localhost/memos/update/5/]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-14 22:26:45) [GET]
+  Parameters: {"option"=>"Git", "id"=>"5"}
+  [4;35;1mMemo Load (0.4ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 21ms (View: 13, DB: 2) | 200 OK [http://localhost/memos/show/5/Git]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-05-14 22:26:54) [GET]
+  Parameters: {"id"=>"Git"}
+  [4;36;1mMemo Load (1.2ms)[0m   [0;1mSELECT * FROM "memos" WHERE (category = 'Git') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.1ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/list
+Completed in 25ms (View: 18, DB: 3) | 200 OK [http://localhost/memos/list/Git]

@@ -100,7 +100,8 @@ a:hover, a:active {
   -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.5, transparent), to(white));
 }
 
-#menu_title {
+.menu_title {
+  font-style: bold;
   font-size:   18px;
   line-height: 18px;
 }

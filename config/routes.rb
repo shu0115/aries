@@ -49,10 +49,12 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '', :controller => 'public', :action => 'list'
   map.connect '/public', :controller => 'public', :action => 'list'
 
+  # routes #
   map.connect ':controller', :action => 'index'
-
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
-
   map.connect ':controller/:action/:id/:option'
+  map.connect ':controller/:action/:id/:option/:one'
+  map.connect ':controller/:action/:id/:option/:one/:two'
+  map.connect ':controller/:action/:id/:option/:one/:two/:three'
 end

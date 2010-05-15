@@ -7,7 +7,12 @@ class MemosController < ApplicationController
   #------#
   def list
     @category = params[:id]
-    conditions = "category = '#{@category}'" unless @category.blank?
+    @mode = params[:option]
+
+    conditions = Hash.new
+    conditions[:category] = @category if ( !@category.blank? and @category.to_s != "all" )
+    conditions[:mode] = @mode unless @mode.blank?
+
     @all_memos = Memo.all( :conditions => conditions, :order => "mode ASC, category ASC, title ASC" )
     @categorys = Memo.categorys
   end

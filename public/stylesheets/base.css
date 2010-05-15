@@ -185,7 +185,7 @@ a:hover, a:active {
   border: 1px solid #f00;
 }
 
-.pre_style{
+.pre_style {
   -moz-border-radius: 20px;
   -webkit-border-radius: 20px;
 #  border: 1px solid #aaa;
@@ -193,7 +193,7 @@ a:hover, a:active {
   padding: 15px;
 }
 
-.table_style{
+.table_style {
   -moz-border-radius: 20px;
   -webkit-border-radius: 20px;
   border: 1px solid #00afcc;
@@ -209,7 +209,12 @@ a:hover, a:active {
 }
 
 /* header_menu */
-.header_menu{
+.header_menu {
   display: block;
   text-align: right;
+}
+
+/* mode */
+.mode a {
+  line-height: 24px;
 }

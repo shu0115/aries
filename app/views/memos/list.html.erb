@@ -14,6 +14,9 @@
 
 <br />
 
+<% @category = 'all' if @category.blank? %>
+<span class="mode"><%= link_to '公開', "/memos/list/#{@category}/公開" %> | <%= link_to '非公開', "/memos/list/#{@category}/非公開" %> | <%= link_to 'リセット', "/memos/list/#{@category}" %></span><br />
+
 <table class="table_style">
   <tr>
     <th>カテゴリ</th>

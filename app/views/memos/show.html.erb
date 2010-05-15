@@ -4,7 +4,7 @@
 
 <br />
 
-<span id="menu_title">[<%=h @memo.category %>] <%=h @memo.title %></span><br />
+<span id="menu_title"><% if false %>[<%=h @memo.category %>] <% end %><%=h @memo.title %></span><br />
 <pre class="pre_style"><%=h @memo.note %></pre>
 
 <span class="menu list"><%= link_to '一覧', "/memos/list/#{@category}" %></span>

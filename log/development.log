@@ -8464,3 +8464,11 @@ Processing MemosController#list (for 127.0.0.1 at 2010-05-15 10:31:38) [GET]
 Rendering template within layouts/memos
 Rendering memos/list
 Completed in 47ms (View: 38, DB: 4) | 200 OK [http://localhost/memos/list/]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-05-15 10:32:04) [GET]
+  [4;35;1mMemo Load (2.0ms)[0m   [0mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.1ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/list
+Completed in 72ms (View: 64, DB: 4) | 200 OK [http://localhost/memos/list]

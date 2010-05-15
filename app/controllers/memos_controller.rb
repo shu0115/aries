@@ -1,5 +1,7 @@
 class MemosController < ApplicationController
 
+  layout "base"
+
   #------#
   # list #
   #------#
@@ -48,17 +50,15 @@ class MemosController < ApplicationController
   # create #
   #--------#
   def create
-#    @category = params[:id]
     
     @memo = Memo.new( params[:memo] )
-#    @memo.category = "None" if @memo.category.blank?
     @category = @memo.category
 
     if @memo.save
-      flash[:notice] = 'メモの新規作成が完了しました。'
+      flash[:notice] = "「#{@memo.title}」の新規作成が完了しました。"
       redirect_to "/memos/show/#{@memo.id}/#{@category}"
     else
-      flash[:notice] = 'メモの新規作成に失敗しました。'
+      flash[:notice] = "「#{@memo.title}」の新規作成に失敗しました。"
       redirect_to "/memos/new/#{@category}"
     end
   end
@@ -74,10 +74,10 @@ class MemosController < ApplicationController
     update_params[:category] = "None" if update_params[:category].blank?
 
     if @memo.update_attributes( update_params )
-      flash[:notice] = 'メモの更新が完了しました。'
+      flash[:notice] = "「#{@memo.title}」の更新が完了しました。"
       redirect_to "/memos/show/#{@memo.id}/#{@memo.category}"
     else
-      flash[:notice] = 'メモの更新に失敗しました。'
+      flash[:notice] = "「#{@memo.title}」の更新に失敗しました。"
       redirect_to "/memos/edit/#{@memo.id}/#{@memo.category}"
     end
   end
@@ -90,9 +90,9 @@ class MemosController < ApplicationController
     @category = params[:option]
 
     if @memo.destroy
-      flash[:notice] = 'メモの削除が完了しました。'
+      flash[:notice] = "「#{@memo.title}」の削除が完了しました。"
     else
-      flash[:notice] = 'メモの削除に失敗しました。'
+      flash[:notice] = "「#{@memo.title}」の削除に失敗しました。"
     end
 
     redirect_to "/memos/list/#{@category}"

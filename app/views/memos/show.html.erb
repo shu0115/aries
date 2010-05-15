@@ -1,6 +1,6 @@
 <span class="menu list"><%= link_to '一覧', "/memos/list/#{@category}" %></span>
 　<span class="menu edit"><%= link_to '編集', "/memos/edit/#{@memo.id}/#{@category}" %></span>
-　<span class="menu delete"><%= link_to '削除', "/memos/destroy/#{@memo.id}/#{@category}", :confirm => "[ #{@memo.title} ]を本当に削除してよろしいですか？" %></span><br />
+　<span class="menu delete"><%= link_to '削除', "/memos/destroy/#{@memo.id}/#{@category}", :confirm => "「#{@memo.title}」を本当に削除してよろしいですか？" %></span><br />
 
 <br />
 
@@ -9,4 +9,4 @@
 
 <span class="menu list"><%= link_to '一覧', "/memos/list/#{@category}" %></span>
 　<span class="menu edit"><%= link_to '編集', "/memos/edit/#{@memo.id}/#{@category}" %></span>
-　<span class="menu delete"><%= link_to '削除', "/memos/destroy/#{@memo.id}/#{@category}", :confirm => "[ #{@memo.title} ]を本当に削除してよろしいですか？" %></span>
+　<span class="menu delete"><%= link_to '削除', "/memos/destroy/#{@memo.id}/#{@category}", :confirm => "「#{@memo.title}」を本当に削除してよろしいですか？" %></span>

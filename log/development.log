@@ -8677,3 +8677,44 @@ Processing MemosController#edit (for 127.0.0.1 at 2010-05-15 13:15:11) [GET]
 Rendering template within layouts/memos
 Rendering memos/edit
 Completed in 28ms (View: 20, DB: 3) | 200 OK [http://localhost/memos/edit/5/]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-15 13:17:30) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 26ms (View: 6, DB: 1) | 200 OK [http://localhost/memos/show/5/]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-15 13:18:12) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 22ms (View: 16, DB: 2) | 200 OK [http://localhost/memos/show/5/]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-15 13:18:41) [GET]
+  Parameters: {"id"=>"5"}
+  [4;35;1mMemo Load (0.4ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 12ms (View: 6, DB: 1) | 200 OK [http://localhost/memos/show/5/]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-05-15 13:18:45) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mMemo Load (0.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+  [4;35;1mMemo Load (1.3ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/memos
+Rendering memos/edit
+Completed in 27ms (View: 19, DB: 2) | 200 OK [http://localhost/memos/edit/5/]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-05-15 13:18:47) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mMemo Load (0.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 5) [0m
+Rendering template within layouts/memos
+Rendering memos/show
+Completed in 33ms (View: 5, DB: 1) | 200 OK [http://localhost/memos/show/5/]

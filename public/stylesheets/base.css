@@ -61,7 +61,7 @@ pre {
   background-color: #fff;
   padding: 10px;
   font-size: 14px;
-  border: 1px solid #aaa;
+#  border: 1px solid #aaa;
 }
 
 textarea {
@@ -188,7 +188,8 @@ a:hover, a:active {
 .pre_style{
   -moz-border-radius: 20px;
   -webkit-border-radius: 20px;
-  border: 1px solid #aaa;
+#  border: 1px solid #aaa;
+  border: 1px solid #00afcc;
   padding: 15px;
 }
 

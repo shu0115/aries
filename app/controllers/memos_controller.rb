@@ -8,7 +8,9 @@ class MemosController < ApplicationController
   def list
     @category = params[:id]
     @mode = params[:option]
-
+    @mode = "公開" if @mode.to_s == "public"
+    @mode = "非公開" if @mode.to_s == "private"
+    
     conditions = Hash.new
     conditions[:category] = @category if ( !@category.blank? and @category.to_s != "all" )
     conditions[:mode] = @mode unless @mode.blank?

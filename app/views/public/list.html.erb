@@ -1,0 +1,25 @@
+
+<%# カテゴリ %>
+<%#= link_to 'ALL', "/memos/list" %>
+<% @categorys.each_with_index{ |category, index| %><% if category[:category].to_s == @category.to_s %><span class="active_link"><%= link_to category[:category], "/public/list/#{category[:category]}" %></span><% else %><%= link_to category[:category], "/public/list/#{category[:category]}" %><% end %><% if ((index.to_i % 10) == 0) and index.to_i > 0 %><br /><% else %>　<% end %><% } %><br />
+
+<br />
+
+<table class="table_style">
+  <tr>
+    <th>カテゴリ</th>
+    <th>タイトル</th>
+    <th>モード</th>
+  </tr>
+
+<% @all_public_memos.each_with_index do |memo, index| %>
+  <tr>
+    <td>[<%= link_to memo.category, "/public/list/#{memo.category}" %>]</td>
+    
+    <td><%=h memo.title %></td>
+    <td><%=h memo.mode %></td>
+
+    <td class="menu show"><%= link_to '閲覧', "/public/show/#{memo.id}/#{@category}", :title => memo.note %></td>
+  </tr>
+<% end %>
+</table>

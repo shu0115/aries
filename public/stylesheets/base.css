@@ -207,3 +207,9 @@ a:hover, a:active {
   border: 1px solid #aaa;
   padding: 5px;
 }
+
+/* header_menu */
+.header_menu{
+  display: block;
+  text-align: right;
+}

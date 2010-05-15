@@ -5,14 +5,19 @@
 
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title>Aries:Memos:<%= controller.action_name %></title>
+  <% if false %><title>Aries：<%= controller.controller_name %>：<%= controller.action_name %></title><% end %>
+  <title>Aries</title>
   <%= javascript_include_tag "prototype" %>
   <%= stylesheet_link_tag 'base' %>
 </head>
 
 <body>
 
-<center><span id="title"><%= link_to "Aries", "/memos/list" %></span></center>
+<div class="header_menu">
+<%= link_to "Top", "/public/list" %>　<%= link_to "MyMemo", "/memos/list" %>
+</div>
+
+<center><span id="title"><%= link_to "Aries", "/#{controller.controller_name}/list" %></span></center>
 
 <br />
 

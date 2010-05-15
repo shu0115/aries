@@ -9216,3 +9216,75 @@ Processing MemosController#list (for 127.0.0.1 at 2010-05-15 21:36:10) [GET]
 Rendering template within layouts/base
 Rendering memos/list
 Completed in 33ms (View: 25, DB: 3) | 200 OK [http://localhost/memos/list/]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-05-15 21:41:17) [GET]
+  [4;36;1mMemo Load (3.5ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.3ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 83ms (View: 73, DB: 5) | 200 OK [http://localhost/memos/list]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-05-15 21:41:44) [GET]
+  [4;36;1mMemo Load (2.1ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (0.9ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 51ms (View: 44, DB: 3) | 200 OK [http://localhost/memos/list]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-05-15 21:41:45) [GET]
+  [4;36;1mMemo Load (2.1ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.0ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 86ms (View: 79, DB: 3) | 200 OK [http://localhost/memos/list]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-05-15 21:42:27) [GET]
+  [4;36;1mMemo Load (2.4ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.3ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 45ms (View: 35, DB: 4) | 200 OK [http://localhost/memos/list]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-05-15 21:43:04) [GET]
+  [4;36;1mMemo Load (2.5ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (2.5ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 86ms (View: 76, DB: 5) | 200 OK [http://localhost/memos/list]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-05-15 21:43:17) [GET]
+  [4;36;1mMemo Load (2.3ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.3ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 56ms (View: 39, DB: 4) | 200 OK [http://localhost/memos/list]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-05-15 21:43:31) [GET]
+  [4;36;1mMemo Load (2.8ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (2.7ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 84ms (View: 73, DB: 6) | 200 OK [http://localhost/memos/list]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-05-15 21:45:02) [GET]
+  [4;36;1mMemo Load (2.2ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.2ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 49ms (View: 40, DB: 4) | 200 OK [http://localhost/memos/list]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-05-15 21:45:36) [GET]
+  [4;36;1mMemo Load (2.2ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.5ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 83ms (View: 74, DB: 4) | 200 OK [http://localhost/memos/list]

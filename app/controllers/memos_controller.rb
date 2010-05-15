@@ -48,10 +48,11 @@ class MemosController < ApplicationController
   # create #
   #--------#
   def create
-    @category = params[:id]
+#    @category = params[:id]
     
     @memo = Memo.new( params[:memo] )
-    @memo.category = "None" if @memo.category.blank?
+#    @memo.category = "None" if @memo.category.blank?
+    @category = @memo.category
 
     if @memo.save
       flash[:notice] = 'メモの新規作成が完了しました。'

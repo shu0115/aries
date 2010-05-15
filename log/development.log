@@ -9288,3 +9288,11 @@ Processing MemosController#list (for 127.0.0.1 at 2010-05-15 21:45:36) [GET]
 Rendering template within layouts/base
 Rendering memos/list
 Completed in 83ms (View: 74, DB: 4) | 200 OK [http://localhost/memos/list]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-05-15 21:46:14) [GET]
+  [4;36;1mMemo Load (2.0ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (1.1ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 33ms (View: 26, DB: 3) | 200 OK [http://localhost/memos/list]

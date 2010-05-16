@@ -17,6 +17,7 @@ class MemosController < ApplicationController
 
     @all_memos = Memo.all( :conditions => conditions, :order => "mode ASC, category ASC, title ASC" )
     @categorys = Memo.categorys
+    print "【 @categorys 】>> " ; p @categorys ;
   end
   
   #---------------#
@@ -60,6 +61,7 @@ class MemosController < ApplicationController
     
     @memo = Memo.new( params[:memo] )
     @category = @memo.category
+    @memo.user_id = session[:user_id]
 
     if @memo.save
       flash[:notice] = "「#{@memo.title}」の新規作成が完了しました。"
@@ -76,6 +78,7 @@ class MemosController < ApplicationController
   def update
     @memo = Memo.find( params[:id] )
     @category = params[:option]
+    @memo.user_id = session[:user_id]
 
     update_params = params[:memo]
     update_params[:category] = "None" if update_params[:category].blank?

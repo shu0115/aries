@@ -1,5 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-#  map.resources :memos
 
   # The priority is based upon order of creation: first created -> highest priority.
 
@@ -48,6 +47,10 @@ ActionController::Routing::Routes.draw do |map|
   # public #
   map.connect '', :controller => 'public', :action => 'list'
   map.connect '/public', :controller => 'public', :action => 'list'
+
+  # users #
+  map.connect '', :controller => 'users', :action => 'entry'
+  map.connect '/users', :controller => 'users', :action => 'entry'
 
   # routes #
   map.connect ':controller', :action => 'index'

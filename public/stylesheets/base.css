@@ -52,6 +52,9 @@ a:hover { color: #fff; background-color:#000; }
 }
 
 
+form {
+	display: inline;	
+}
 
 div {
   display: inline-block;
@@ -210,7 +213,7 @@ a:hover, a:active {
 
 /* header_menu */
 .header_menu {
-  display: block;
+	display: block;
   text-align: right;
 }
 

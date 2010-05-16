@@ -1,0 +1,46 @@
+<h3>ユーザ情報編集</h3>
+
+<% form_for :user, :url => "/users/update/#{@user.id}" do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :email, "メールアドレス" %><br />
+    <%= f.text_field :email %>
+  </p>
+
+  <p>
+    <%= f.label :password, "パスワード" %><br />
+    <%= f.text_field :password %>
+  </p>
+
+  <p>
+    <%= f.label :name, "ユーザ名" %><br />
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :twitter_id, "Twitter ID" %><br />
+    <%= f.text_field :twitter_id %>
+  </p>
+
+  <p>
+    <%= f.label :birthday, "生年月日" %><br />
+    <%= f.date_select :birthday %>
+  </p>
+
+  <p>
+    <%= f.label :blog_url, "ブログ URL" %><br />
+    <%= f.text_field :blog_url %>
+  </p>
+
+  <p>
+    <%= f.label :website_url, "Webサイト URL" %><br />
+    <%= f.text_field :website_url %>
+  </p>
+	
+  <p>
+    <%= f.submit '更新' %>
+  </p>
+<% end %>
+
+<span class="menu show"><%= link_to '閲覧', "/users/show/#{@user.id}" %></span>

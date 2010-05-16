@@ -1,0 +1,37 @@
+
+<p>
+  <b>Email:</b>
+  <%=h @user.email %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%=h @user.password %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @user.name %>
+</p>
+
+<p>
+  <b>Twitter:</b>
+  <%=h @user.twitter_id %>
+</p>
+
+<p>
+  <b>Birthday:</b>
+  <%=h @user.birthday %>
+</p>
+
+<p>
+  <b>Blog url:</b>
+  <%=h @user.blog_url %>
+</p>
+
+<p>
+  <b>Website url:</b>
+  <%=h @user.website_url %>
+</p>
+
+<span class="menu edit"><%= link_to '編集', "/users/edit/#{@user.id}" %></span>

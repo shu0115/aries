@@ -18,7 +18,7 @@
     
     <td><%=h memo.title %></td>
     <td><%=h memo.mode %></td>
-
+    
     <td class="menu show"><%= link_to '閲覧', "/public/show/#{memo.id}/#{@category}", :title => memo.note %></td>
   </tr>
 <% end %>

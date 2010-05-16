@@ -31,7 +31,7 @@
     <span id="title"><%= link_to "Aries", "/public/list" %></span>
   <% else %>
     <%# ログイン後 %>
-    <span id="title"><%= link_to "Aries", "/memos/list/all/reset" %></span>
+    <span id="title"><%= link_to "Aries", "/memos/list" %></span>
   <% end %>
 </center>
 

@@ -1,11 +1,11 @@
 class Memo < ActiveRecord::Base
 
   def self.mode_choices
-    [ ["非公開", "非公開"], ["公開", "公開"] ]
+    [ ["公開", "public"], ["非公開", "private"] ]
   end
 
   def self.level_choices
-    [ ["Normal", "Normal"], ["Expert", "Expert"] ]
+    [ ["Normal", "normal"], ["Expert", "expert"] ]
   end
 
   def self.categorys

@@ -3,6 +3,8 @@ class MemosController < ApplicationController
   before_filter :login_check
 
   layout "base"
+  
+  $mode_hash = { "public" => "公開", "private" => "非公開" }
 
   #-------------#
   # login_check #
@@ -18,16 +20,18 @@ class MemosController < ApplicationController
   # list #
   #------#
   def list
-    @category = params[:id]
-    @mode = params[:option]
-    @mode = "公開" if @mode.to_s == "public"
-    @mode = "非公開" if @mode.to_s == "private"
+    @category = params[:id] unless params[:id].to_s == "all"
     
+    @mode = session[:memo_mode] unless session[:memo_mode].blank?  # [ session[:memo_mode] ]が空白で無ければ、[ session[:memo_mode] ]を格納
+    @mode = params[:option] unless params[:option].blank?          # [ params[:option] ]が空白で無ければ、[ params[:option] ]で上書き
+    @mode = nil if params[:option].to_s == "reset" or session[:memo_mode].to_s == "reset"                 # [ params[:option] ]が「reset」だったら、[ nil ]で上書き
+    session[:memo_mode] = params[:option]                          # paramsをsessionに保存
+
     conditions = Hash.new
-    conditions[:category] = @category if ( !@category.blank? and @category.to_s != "all" )
+    conditions[:category] = @category unless @category.blank?
     conditions[:mode] = @mode unless @mode.blank?
 
-    @all_memos = Memo.all( :conditions => conditions, :order => "mode ASC, category ASC, title ASC" )
+    @all_memos = Memo.all( :conditions => conditions, :order => "category ASC, mode ASC, title ASC" )
     @categorys = Memo.categorys
     print "【 @categorys 】>> " ; p @categorys ;
   end
@@ -54,6 +58,7 @@ class MemosController < ApplicationController
   def new
     @category = params[:id]
     @memo = Memo.new
+    @memo.mode = "private"
     @categorys = Memo.categorys
   end
 
@@ -77,10 +82,10 @@ class MemosController < ApplicationController
 
     if @memo.save
       flash[:notice] = "「#{@memo.title}」の新規作成が完了しました。"
-      redirect_to "/memos/show/#{@memo.id}/#{@category}"
+      redirect_to "/memos/show/#{@memo.id}/#{@category}/#{@mode}"
     else
       flash[:notice] = "「#{@memo.title}」の新規作成に失敗しました。"
-      redirect_to "/memos/new/#{@category}"
+      redirect_to "/memos/new/#{@category}/#{@mode}"
     end
   end
 
@@ -97,10 +102,10 @@ class MemosController < ApplicationController
 
     if @memo.update_attributes( update_params )
       flash[:notice] = "「#{@memo.title}」の更新が完了しました。"
-      redirect_to "/memos/show/#{@memo.id}/#{@memo.category}"
+      redirect_to "/memos/show/#{@memo.id}/#{@memo.category}/#{@mode}"
     else
       flash[:notice] = "「#{@memo.title}」の更新に失敗しました。"
-      redirect_to "/memos/edit/#{@memo.id}/#{@memo.category}"
+      redirect_to "/memos/edit/#{@memo.id}/#{@memo.category}/#{@mode}"
     end
   end
 
@@ -117,6 +122,6 @@ class MemosController < ApplicationController
       flash[:notice] = "「#{@memo.title}」の削除に失敗しました。"
     end
 
-    redirect_to "/memos/list/#{@category}"
+    redirect_to "/memos/list/#{@category}/#{@mode}"
   end
 end

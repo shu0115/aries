@@ -24,7 +24,7 @@ class MemosController < ApplicationController
     
     @mode = session[:memo_mode] unless session[:memo_mode].blank?  # [ session[:memo_mode] ]が空白で無ければ、[ session[:memo_mode] ]を格納
     @mode = params[:option] unless params[:option].blank?          # [ params[:option] ]が空白で無ければ、[ params[:option] ]で上書き
-    @mode = nil if params[:option].to_s == "reset" or session[:memo_mode].to_s == "reset"                 # [ params[:option] ]が「reset」だったら、[ nil ]で上書き
+    @mode = nil if params[:option].to_s == "reset" or ( params[:option].blank? and session[:memo_mode].to_s == "reset" )  # [ params[:option] ]が「reset」だったら、[ nil ]で上書き
     session[:memo_mode] = params[:option]                          # paramsをsessionに保存
 
     conditions = Hash.new

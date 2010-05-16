@@ -13,7 +13,7 @@ class Memo < ActiveRecord::Base
   end
 
   def self.public_categorys
-    Memo.find( :all, :conditions => "category != '' AND mode = '公開' ", :select => "DISTINCT category", :order => "category ASC" )
+    Memo.find( :all, :conditions => "category != '' AND mode = 'public' ", :select => "DISTINCT category", :order => "category ASC" )
   end
 
 end

@@ -82,6 +82,7 @@ td {
   padding: 5px;
 }
 
+/* Link */
 a {
   color: #00afcc;
   text-decoration: none;
@@ -92,7 +93,8 @@ a:hover, a:active {
 }
 
 .active_link a {
-  text-decoration: underline;
+  font-weight: bold;
+#  text-decoration: underline;
 }
 
 #title {

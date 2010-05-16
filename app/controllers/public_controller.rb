@@ -9,7 +9,7 @@ class PublicController < ApplicationController
     @category = params[:id]
 
     conditions = Hash.new
-    conditions[:mode] = "公開"
+    conditions[:mode] = "public"
     conditions[:category] = @category unless @category.blank?
 
     @all_public_memos = Memo.all( :conditions => conditions, :order => "category ASC, title ASC" )

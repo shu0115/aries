@@ -14482,3 +14482,37 @@ Processing MemosController#list (for 127.0.0.1 at 2010-05-16 19:42:38) [GET]
 Rendering template within layouts/base
 Rendering memos/list
 Completed in 21ms (View: 12, DB: 3) | 200 OK [http://localhost/memos/list/Rails]
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-05-16 19:46:10) [GET]
+  [4;35;1mMemo Load (0.9ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."mode" = '公開') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (0.6ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND mode = '公開' ) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering public/list
+Completed in 10ms (View: 3, DB: 2) | 200 OK [http://localhost/public/list]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-05-16 19:47:06) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (2.3ms)[0m   [0mSELECT * FROM "memos" ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (1.0ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 36ms (View: 26, DB: 4) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-05-16 19:47:08) [GET]
+  [4;35;1mMemo Load (1.0ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."mode" = 'public') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (0.7ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND mode = '公開' ) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering public/list
+Completed in 13ms (View: 8, DB: 2) | 200 OK [http://localhost/public/list]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-05-16 19:47:11) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (1.6ms)[0m   [0mSELECT * FROM "memos" ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (0.9ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 35ms (View: 26, DB: 3) | 200 OK [http://localhost/memos/list/all/reset]

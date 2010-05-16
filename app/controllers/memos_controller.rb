@@ -1,6 +1,18 @@
 class MemosController < ApplicationController
 
+  before_filter :login_check
+
   layout "base"
+
+  #-------------#
+  # login_check #
+  #-------------#
+  def login_check
+    if session[:user_id].blank?
+      flash[:notice] = "ページ上部よりメールアドレス、パスワードを入力しログインして下さい。"
+      redirect_to "/public/list"
+    end
+  end
 
   #------#
   # list #

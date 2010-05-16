@@ -35,7 +35,7 @@
   <% end %>
 </center>
 
-<br /><br />
+<br />
 
 <% unless flash[:notice].blank? %><p style="color: green"><%= flash[:notice] %></p><% end %>
 

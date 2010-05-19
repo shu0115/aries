@@ -1,6 +1,7 @@
 class MemosController < ApplicationController
 
   before_filter :login_check
+  before_filter :params_cleaning
 
   layout "base"
   
@@ -16,11 +17,20 @@ class MemosController < ApplicationController
     end
   end
 
+  #-----------------#
+  # params_cleaning #
+  #-----------------#
+  def params_cleaning
+    params[:id] = nil if params[:id].to_s == "all"
+    params[:option] = nil if params[:option].to_s == "all"
+    params[:one] = nil if params[:one].to_s == "all"
+  end
+
   #------#
   # list #
   #------#
   def list
-    @category = params[:id] unless params[:id].to_s == "all"
+    @category = params[:id]
     
     @mode = session[:memo_mode] unless session[:memo_mode].blank?  # [ session[:memo_mode] ]が空白で無ければ、[ session[:memo_mode] ]を格納
     @mode = params[:option] unless params[:option].blank?          # [ params[:option] ]が空白で無ければ、[ params[:option] ]で上書き

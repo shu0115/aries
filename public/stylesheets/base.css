@@ -223,3 +223,8 @@ a:hover, a:active {
 .mode a {
   line-height: 24px;
 }
+
+/* memo_title */
+.memo_title_field {
+  width: 300px;
+}

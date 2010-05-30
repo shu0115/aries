@@ -18,7 +18,7 @@
 
   <p>
     <%= f.label :title, 'タイトル' %><br />
-    <%= f.text_field :title, :class => "memo_title_field" %>
+    <%= f.text_field :title %>
   </p>
 
   <p>

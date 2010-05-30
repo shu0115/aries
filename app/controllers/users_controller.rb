@@ -42,7 +42,7 @@ class UsersController < ApplicationController
     print "【 session[:user_id] 】>> " ; p session[:user_id] ;
 
     unless session[:user_id].blank?
-      flash[:notice] = 'ログインが完了しました。'
+      #flash[:notice] = 'ログインが完了しました。'
     else
       flash[:notice] = 'ログインに失敗しました。'
     end

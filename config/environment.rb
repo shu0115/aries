@@ -40,5 +40,5 @@ Rails::Initializer.run do |config|
   # config.i18n.default_locale = :de
   
   config.action_controller.session_store = :active_record_store
-  config.logger = Logger.new( config.log_path, 10, 10 )
+  config.logger = Logger.new( config.log_path, 5, 10*1024*1024 )  # 10MB／5ファイル
 end

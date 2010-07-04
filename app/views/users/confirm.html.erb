@@ -1,12 +1,12 @@
 <h3>ユーザ登録</h3>
 
-<% form_for :user, :url => "/users/create" do |f| %>
+<% form_for :user, :url => { :controller => "users", :action => "create" } do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :email, "メールアドレス" %><br />
-    <%= @user.email %>
-    <%= f.hidden_field :email, :value => @user.email %>
+    <%= f.label :login_id, "ログインID" %><br />
+    <%= @user.login_id %>
+    <%= f.hidden_field :login_id, :value => @user.login_id %>
   </p>
 
   <p>
@@ -16,33 +16,8 @@
   </p>
 
   <p>
-    <%= f.label :name, "ユーザ名" %><br />
-    <%= @user.name %>
-    <%= f.hidden_field :name, :value => @user.name %>
-  </p>
-
-<% if false %>
-  <p>
-    <%= f.label :twitter_id %><br />
-    <%= f.text_field :twitter_id %>
-  </p>
-  <p>
-    <%= f.label :birthday %><br />
-    <%= f.date_select :birthday %>
-  </p>
-  <p>
-    <%= f.label :blog_url %><br />
-    <%= f.text_field :blog_url %>
-  </p>
-  <p>
-    <%= f.label :website_url %><br />
-    <%= f.text_field :website_url %>
-  </p>
-<% end %>
-
-  <p>
     <%= f.submit '登録' %>
   </p>
-<% end %>
+<% end # form_for do - END %>
 
 <%= link_to 'Top', "" %>

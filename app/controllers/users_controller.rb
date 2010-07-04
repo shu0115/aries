@@ -21,12 +21,12 @@ class UsersController < ApplicationController
   #--------#
   def create
     @user = User.new( params[:user] )
-
     if @user.save
-      flash[:notice] = 'ユーザ登録が完了しました。'
-      redirect_to "/memos/list"
+      flash[:notice] = 'ユーザの新規登録が完了しました。'
+      redirect_to :controller => "memos", :action => "list"
     else
-      render :action => "new"
+      flash[:notice] = 'ユーザの新規登録に失敗しました。'
+      redirect_to :controller => "users", :action => "new"
     end
   end
 
@@ -34,7 +34,9 @@ class UsersController < ApplicationController
   # login #
   #-------#
   def login
-    @login = Hash.new
+
+=begin
+      @login = Hash.new
     @login = params[:login]
     print "【 @login 】>> " ; p @login ;
     
@@ -46,8 +48,37 @@ class UsersController < ApplicationController
     else
       flash[:notice] = 'ログインに失敗しました。'
     end
+=end    
+    print "【 params[:login] 】>> " ; p params[:login] ;
+    
+    login = params[:login]
 
-    redirect_to params[:request_url]
+    print "【 login 】>> " ; p login ;
+
+    session[:user_id] = nil
+    if login.blank?
+      flash[:notice] = "ログイン情報がありません。"
+      redirect_to params[:request_url]
+      return
+    end
+      
+    if !login[:login_id].blank? and !login[:password].blank?
+      # ユーザ認証
+      user = User.authenticate( login[:login_id], login[:password] )
+      print "【 user 】>> " ; p user ;
+     
+      unless user.blank?
+        session[:user_id] = user.id  # IDをセッションに格納
+        session[:login_id] = user.login_id  # IDをセッションに格納
+        flash[:notice] = "ログインに成功しました。"
+        redirect_to :controller => "memos", :action => "list"
+        return
+      else
+        flash[:notice] = "無効なユーザ／パスワードの組み合わせです。"
+        redirect_to params[:request_url]
+        return
+      end
+    end
   end
 
   #--------#
@@ -55,7 +86,7 @@ class UsersController < ApplicationController
   #--------#
   def logout
     session[:user_id] = nil
-    session[:user_name] = nil
+    session[:login_id] = nil
 
     redirect_to params[:request_url]
   end

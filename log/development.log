@@ -1060,3 +1060,63 @@ Processing PublicController#list (for 127.0.0.1 at 2010-07-04 16:32:27) [GET]
 Rendering template within layouts/base
 Rendering public/list
 Completed in 149ms (View: 62, DB: 80) | 200 OK [http://localhost/public/list]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-07-04 16:40:38) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+Redirected to http://localhost:3000/public/list
+Filter chain halted as [:login_check] rendered_or_redirected.
+Completed in 2ms (DB: 1) | 302 Found [http://localhost/memos/list/all/reset]
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-07-04 16:40:38) [GET]
+  [4;36;1mSession Load (0.6ms)[0m   [0;1mSELECT * FROM "sessions" WHERE (updated_at < '2010-07-03 16:40:38') [0m
+  [4;35;1mSession Destroy (0.4ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 95[0m
+  [4;36;1mSession Destroy (0.2ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 96[0m
+  [4;35;1mMemo Load (3.5ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."mode" = 'public') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (1.5ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND mode = 'public' ) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering public/list
+Completed in 91ms (View: 72, DB: 7) | 200 OK [http://localhost/public/list]
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-07-04 16:41:00) [GET]
+  [4;35;1mSession Load (0.5ms)[0m   [0mSELECT * FROM "sessions" WHERE (updated_at < '2010-07-03 16:41:00') [0m
+  [4;36;1mMemo Load (3.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."mode" = 'public') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (0.4ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND mode = 'public' ) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering public/list
+Completed in 75ms (View: 64, DB: 5) | 200 OK [http://localhost/public/list]
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-07-04 16:43:55) [GET]
+  [4;36;1mSession Load (0.6ms)[0m   [0;1mSELECT * FROM "sessions" WHERE (updated_at < '2010-07-03 16:43:55') [0m
+  [4;35;1mMemo Load (3.6ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."mode" = 'public') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (0.4ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND mode = 'public' ) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering public/list
+Completed in 200ms (View: 126, DB: 5) | 200 OK [http://localhost/public/list]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-07-04 16:44:47) [POST]
+  Parameters: {"authenticity_token"=>"+KQU521lpcypwzXiiKm1PM4xS8que7DprWNeHFZSrUI=", "login"=>{"login_id"=>"shu_0115", "password"=>"password"}, "request_url"=>"http://localhost:3000/public/list"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login_id" = 'shu_0115') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 17ms (DB: 1) | 302 Found [http://localhost/users/login]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-07-04 16:44:47) [GET]
+  [4;36;1mMemo Load (19.1ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (1.8ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 995ms (View: 959, DB: 22) | 200 OK [http://localhost/]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-07-04 16:46:39) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;36;1mMemo Load (52.6ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (2.1ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 1404ms (View: 1292, DB: 60) | 200 OK [http://localhost/memos/list/all/reset]

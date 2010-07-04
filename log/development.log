@@ -566,3 +566,497 @@ Processing MemosController#show (for 127.0.0.1 at 2010-07-04 15:38:30) [GET]
 Rendering template within layouts/base
 Rendering memos/show
 Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/memos/show/139/01_Aries]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-07-04 15:44:15) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (36.3ms)[0m   [0mSELECT * FROM "memos" ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (1.7ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 1035ms (View: 979, DB: 39) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-07-04 15:48:45) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (104.1ms)[0m   [0mSELECT * FROM "memos" ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (1.7ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 1006ms (View: 886, DB: 106) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-07-04 15:53:51) [GET]
+  [4;35;1mSession Load (7.4ms)[0m   [0mSELECT * FROM "sessions" [0m
+  [4;36;1mMemo Load (4.0ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."mode" = 'public') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (0.4ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND mode = 'public' ) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering public/list
+Completed in 152ms (View: 75, DB: 12) | 200 OK [http://localhost/public/list]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-07-04 15:54:52) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;36;1mMemo Load (23.5ms)[0m   [0;1mSELECT * FROM "memos" ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (1.7ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 1091ms (View: 1052, DB: 26) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-07-04 15:55:04) [GET]
+  [4;36;1mSession Load (6.0ms)[0m   [0;1mSELECT * FROM "sessions" [0m
+  [4;35;1mMemo Load (3.4ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."mode" = 'public') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (0.4ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND mode = 'public' ) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering public/list
+Completed in 81ms (View: 62, DB: 10) | 200 OK [http://localhost/public/list]
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-07-04 16:08:22) [GET]
+
+NoMethodError (undefined method `hour_ago' for Sun Jul 04 16:08:22 +0900 2010:Time):
+  app/controllers/application_controller.rb:16:in `session_clear'
+  app/controllers/public_controller.rb:9:in `list'
+
+
+Rendered rescues/_trace (148.8ms)
+Rendered rescues/_request_and_response (2.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-07-04 16:12:17) [GET]
+
+ArgumentError (Unknown key(s): old_time):
+  app/controllers/application_controller.rb:18:in `session_clear'
+  app/controllers/public_controller.rb:9:in `list'
+
+
+Rendered rescues/_trace (40.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-07-04 16:17:12) [GET]
+
+ArgumentError (Unknown key(s): old_time):
+  app/controllers/application_controller.rb:18:in `session_clear'
+  app/controllers/public_controller.rb:9:in `list'
+
+
+Rendered rescues/_trace (44.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-07-04 16:17:17) [GET]
+
+ArgumentError (Unknown key(s): old_time):
+  app/controllers/application_controller.rb:18:in `session_clear'
+  app/controllers/public_controller.rb:9:in `list'
+
+
+Rendered rescues/_trace (43.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+/!\ FAILSAFE /!\  Sun Jul 04 16:18:18 +0900 2010
+  Status: 500 Internal Server Error
+  /Users/shu/Mine/workspace/aries/app/controllers/application_controller.rb:19: syntax error, unexpected tASSOC, expecting '}'
+...at <= :old_time", :old_time => old_time } )
+                              ^
+    /Users/shu/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
+    /Users/shu/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:380:in `load_file'
+    /Users/shu/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/shu/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:379:in `load_file'
+    /Users/shu/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:259:in `require_or_load'
+    /Users/shu/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:425:in `load_missing_constant'
+    /Users/shu/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:80:in `const_missing'
+    /Users/shu/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:92:in `const_missing'
+    /Users/shu/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:89:in `dispatch'
+    /Users/shu/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+    /Users/shu/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/session/abstract_store.rb:122:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Users/shu/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/shu/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+    /Users/shu/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+    /Users/shu/.gem/ruby/1.8/gems/rails-2.3.4/lib/commands/server.rb:111
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Sun Jul 04 16:19:59 +0900 2010
+  Status: 500 Internal Server Error
+  /Users/shu/Mine/workspace/aries/app/controllers/application_controller.rb:19: syntax error, unexpected tASSOC, expecting '}'
+..._at < :old_time", :old_time => old_time } )
+                              ^
+    /Users/shu/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
+    /Users/shu/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:380:in `load_file'
+    /Users/shu/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/shu/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:379:in `load_file'
+    /Users/shu/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:259:in `require_or_load'
+    /Users/shu/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:425:in `load_missing_constant'
+    /Users/shu/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:80:in `const_missing'
+    /Users/shu/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:92:in `const_missing'
+    /Users/shu/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:89:in `dispatch'
+    /Users/shu/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+    /Users/shu/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/session/abstract_store.rb:122:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Users/shu/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/shu/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+    /Users/shu/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+    /Users/shu/.gem/ruby/1.8/gems/rails-2.3.4/lib/commands/server.rb:111
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Sun Jul 04 16:20:32 +0900 2010
+  Status: 500 Internal Server Error
+  /Users/shu/Mine/workspace/aries/app/controllers/application_controller.rb:19: syntax error, unexpected tASSOC, expecting '}'
+..._at < :old_time", :old_time => old_time } )
+                              ^
+    /Users/shu/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
+    /Users/shu/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:380:in `load_file'
+    /Users/shu/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/shu/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:379:in `load_file'
+    /Users/shu/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:259:in `require_or_load'
+    /Users/shu/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:425:in `load_missing_constant'
+    /Users/shu/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:80:in `const_missing'
+    /Users/shu/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:92:in `const_missing'
+    /Users/shu/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:89:in `dispatch'
+    /Users/shu/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+    /Users/shu/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/session/abstract_store.rb:122:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Users/shu/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/shu/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+    /Users/shu/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+    /Users/shu/.gem/ruby/1.8/gems/rails-2.3.4/lib/commands/server.rb:111
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Sun Jul 04 16:20:39 +0900 2010
+  Status: 500 Internal Server Error
+  /Users/shu/Mine/workspace/aries/app/controllers/application_controller.rb:19: syntax error, unexpected tASSOC, expecting '}'
+..._at < :old_time", :old_time => old_time } )
+                              ^
+    /Users/shu/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
+    /Users/shu/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:380:in `load_file'
+    /Users/shu/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/shu/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:379:in `load_file'
+    /Users/shu/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:259:in `require_or_load'
+    /Users/shu/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:425:in `load_missing_constant'
+    /Users/shu/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:80:in `const_missing'
+    /Users/shu/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/dependencies.rb:92:in `const_missing'
+    /Users/shu/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:89:in `dispatch'
+    /Users/shu/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+    /Users/shu/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/session/abstract_store.rb:122:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Users/shu/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/shu/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+    /Users/shu/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/shu/.gem/ruby/1.8/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+    /Users/shu/.gem/ruby/1.8/gems/rails-2.3.4/lib/commands/server.rb:111
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-07-04 16:21:39) [GET]
+  [4;35;1mSession Load (6.9ms)[0m   [0mSELECT * FROM "sessions" [0m
+  [4;36;1mMemo Load (4.9ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."mode" = 'public') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (0.5ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND mode = 'public' ) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering public/list
+Completed in 86ms (View: 63, DB: 13) | 200 OK [http://localhost/public/list]
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-07-04 16:21:58) [GET]
+  [4;36;1mSession Load (7.2ms)[0m   [0;1mSELECT * FROM "sessions" [0m
+  [4;35;1mMemo Load (3.4ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."mode" = 'public') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (0.5ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND mode = 'public' ) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering public/list
+Completed in 91ms (View: 70, DB: 12) | 200 OK [http://localhost/public/list]
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-07-04 16:22:49) [GET]
+
+ArgumentError (Unknown key(s): old_time):
+  app/controllers/application_controller.rb:20:in `session_clear'
+  app/controllers/public_controller.rb:9:in `list'
+
+
+Rendered rescues/_trace (61.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-07-04 16:25:26) [GET]
+  [4;35;1mSession Load (6.9ms)[0m   [0mSELECT * FROM "sessions" WHERE (updated_at < '2010-07-03 16:25:26') [0m
+  [4;36;1mMemo Load (4.7ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."mode" = 'public') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (0.4ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND mode = 'public' ) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering public/list
+Completed in 173ms (View: 151, DB: 12) | 200 OK [http://localhost/public/list]
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-07-04 16:30:34) [GET]
+  [4;36;1mSession Load (7.1ms)[0m   [0;1mSELECT * FROM "sessions" WHERE (updated_at < '2010-07-03 16:30:34') [0m
+
+NoMethodError (undefined method `destroy_all' for #<PublicController:0x1042e6940>):
+  app/controllers/application_controller.rb:22:in `session_clear'
+  app/controllers/public_controller.rb:9:in `list'
+
+
+Rendered rescues/_trace (39.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-07-04 16:31:05) [GET]
+  [4;35;1mSession Load (8.1ms)[0m   [0mSELECT * FROM "sessions" WHERE (updated_at < '2010-07-03 16:31:05') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE (updated_at < '2010-07-03 16:31:05') [0m
+  [4;35;1mSession Destroy (0.4ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 3[0m
+  [4;36;1mSession Destroy (0.2ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 1[0m
+  [4;35;1mSession Destroy (0.6ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 4[0m
+  [4;36;1mSession Destroy (0.3ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 5[0m
+  [4;35;1mSession Destroy (0.2ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 6[0m
+  [4;36;1mSession Destroy (1.3ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 7[0m
+  [4;35;1mSession Destroy (0.3ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 8[0m
+  [4;36;1mSession Destroy (0.3ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 9[0m
+  [4;35;1mSession Destroy (0.3ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 11[0m
+  [4;36;1mSession Destroy (0.3ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 10[0m
+  [4;35;1mSession Destroy (0.3ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 12[0m
+  [4;36;1mSession Destroy (0.4ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 13[0m
+  [4;35;1mSession Destroy (0.3ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 14[0m
+  [4;36;1mSession Destroy (0.3ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 15[0m
+  [4;35;1mSession Destroy (0.3ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 16[0m
+  [4;36;1mSession Destroy (0.2ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 17[0m
+  [4;35;1mSession Destroy (0.3ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 18[0m
+  [4;36;1mSession Destroy (0.4ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 19[0m
+  [4;35;1mSession Destroy (0.3ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 20[0m
+  [4;36;1mSession Destroy (0.3ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 21[0m
+  [4;35;1mSession Destroy (0.2ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 22[0m
+  [4;36;1mSession Destroy (0.4ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 23[0m
+  [4;35;1mSession Destroy (0.2ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 25[0m
+  [4;36;1mSession Destroy (0.2ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 24[0m
+  [4;35;1mSession Destroy (0.3ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 26[0m
+  [4;36;1mSession Destroy (0.2ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 27[0m
+  [4;35;1mSession Destroy (0.3ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 28[0m
+  [4;36;1mSession Destroy (0.4ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 29[0m
+  [4;35;1mSession Destroy (0.2ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 30[0m
+  [4;36;1mSession Destroy (0.3ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 31[0m
+  [4;35;1mSession Destroy (0.2ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 32[0m
+  [4;36;1mSession Destroy (0.2ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 33[0m
+  [4;35;1mSession Destroy (0.4ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 34[0m
+  [4;36;1mSession Destroy (0.3ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 35[0m
+  [4;35;1mSession Destroy (0.3ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 37[0m
+  [4;36;1mSession Destroy (0.2ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 36[0m
+  [4;35;1mSession Destroy (0.4ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 38[0m
+  [4;36;1mSession Destroy (0.2ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 39[0m
+  [4;35;1mSession Destroy (0.3ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 40[0m
+  [4;36;1mSession Destroy (0.5ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 41[0m
+  [4;35;1mSession Destroy (0.3ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 42[0m
+  [4;36;1mSession Destroy (0.3ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 44[0m
+  [4;35;1mSession Destroy (0.2ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 43[0m
+  [4;36;1mSession Destroy (0.8ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 45[0m
+  [4;35;1mSession Destroy (0.2ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 46[0m
+  [4;36;1mSession Destroy (0.3ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 47[0m
+  [4;35;1mSession Destroy (0.2ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 48[0m
+  [4;36;1mSession Destroy (0.3ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 49[0m
+  [4;35;1mSession Destroy (0.2ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 50[0m
+  [4;36;1mSession Destroy (0.2ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 51[0m
+  [4;35;1mSession Destroy (0.3ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 52[0m
+  [4;36;1mSession Destroy (0.2ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 53[0m
+  [4;35;1mSession Destroy (0.5ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 55[0m
+  [4;36;1mSession Destroy (0.4ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 54[0m
+  [4;35;1mSession Destroy (0.3ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 56[0m
+  [4;36;1mSession Destroy (0.3ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 57[0m
+  [4;35;1mSession Destroy (0.3ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 59[0m
+  [4;36;1mSession Destroy (0.3ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 58[0m
+  [4;35;1mSession Destroy (0.3ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 60[0m
+  [4;36;1mSession Destroy (0.2ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 61[0m
+  [4;35;1mSession Destroy (0.3ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 62[0m
+  [4;36;1mSession Destroy (0.3ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 63[0m
+  [4;35;1mSession Destroy (0.4ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 64[0m
+  [4;36;1mSession Destroy (0.3ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 65[0m
+  [4;35;1mSession Destroy (0.2ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 66[0m
+  [4;36;1mSession Destroy (0.2ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 67[0m
+  [4;35;1mSession Destroy (0.3ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 68[0m
+  [4;36;1mSession Destroy (0.3ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 69[0m
+  [4;35;1mSession Destroy (0.3ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 70[0m
+  [4;36;1mSession Destroy (0.2ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 71[0m
+  [4;35;1mSession Destroy (0.2ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 73[0m
+  [4;36;1mSession Destroy (0.2ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 74[0m
+  [4;35;1mSession Destroy (0.3ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 75[0m
+  [4;36;1mSession Destroy (0.2ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 76[0m
+  [4;35;1mSession Destroy (0.3ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 77[0m
+  [4;36;1mSession Destroy (0.3ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 72[0m
+  [4;35;1mSession Destroy (0.3ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 79[0m
+  [4;36;1mSession Destroy (0.3ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 78[0m
+  [4;35;1mSession Destroy (0.3ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 80[0m
+  [4;36;1mSession Destroy (0.2ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 81[0m
+  [4;35;1mSession Destroy (0.3ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 82[0m
+  [4;36;1mSession Destroy (0.2ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 83[0m
+  [4;35;1mSession Destroy (0.3ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 84[0m
+  [4;36;1mSession Destroy (0.2ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 85[0m
+  [4;35;1mSession Destroy (0.3ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 87[0m
+  [4;36;1mSession Destroy (0.2ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 86[0m
+  [4;35;1mSession Destroy (0.3ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 88[0m
+  [4;36;1mSession Destroy (0.2ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 90[0m
+  [4;35;1mSession Destroy (0.3ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 89[0m
+  [4;36;1mSession Destroy (0.2ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 91[0m
+  [4;35;1mSession Destroy (0.3ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 92[0m
+  [4;36;1mSession Destroy (1.1ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 2[0m
+  [4;35;1mSession Destroy (0.4ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 93[0m
+  [4;36;1mSession Destroy (0.2ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 94[0m
+  [4;35;1mSession Destroy (0.3ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 95[0m
+  [4;36;1mSession Destroy (0.2ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 96[0m
+  [4;35;1mMemo Load (4.1ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."mode" = 'public') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (0.4ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND mode = 'public' ) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering public/list
+Completed in 396ms (View: 66, DB: 43) | 200 OK [http://localhost/public/list]
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-07-04 16:31:52) [GET]
+  [4;35;1mSession Load (0.5ms)[0m   [0mSELECT * FROM "sessions" WHERE (updated_at < '2010-07-03 16:31:52') [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "sessions" WHERE (updated_at < '2010-07-03 16:31:52') [0m
+  [4;35;1mMemo Load (3.4ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."mode" = 'public') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (0.4ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND mode = 'public' ) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering public/list
+Completed in 74ms (View: 62, DB: 5) | 200 OK [http://localhost/public/list]
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-07-04 16:32:27) [GET]
+  [4;35;1mSession Load (0.5ms)[0m   [0mSELECT * FROM "sessions" WHERE (updated_at < '2010-07-03 16:32:27') [0m
+  [4;36;1mMemo Load (78.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."mode" = 'public') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (0.6ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND mode = 'public' ) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering public/list
+Completed in 149ms (View: 62, DB: 80) | 200 OK [http://localhost/public/list]

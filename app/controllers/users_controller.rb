@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   layout "base"
+  before_filter :authorize, :except => [ :entry, :create, :login, :logout ]
 
   #-------#
   # entry #

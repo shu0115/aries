@@ -6,6 +6,8 @@ class PublicController < ApplicationController
   # list #
   #------#
   def list
+    session_clear()
+    
     @category = params[:id]
 
     conditions = Hash.new

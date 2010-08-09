@@ -43,7 +43,7 @@ class MemosController < ApplicationController
     conditions[:mode] = @mode unless @mode.blank?
     conditions[:user_id] = session[:user_id] unless session[:user_id].blank?
 
-    print "【 conditions 】>> " ; p conditions ;
+#    print "【 conditions 】>> " ; p conditions ;
 
     # メモ検索
     @all_memos = Memo.all( :conditions => conditions, :order => "category ASC, mode ASC, title ASC" )
@@ -51,7 +51,7 @@ class MemosController < ApplicationController
     # カテゴリ取得
     @categorys = Memo.user_categorys( :user_id => session[:user_id] )
 
-    print "【 @categorys 】>> " ; p @categorys ;
+#    print "【 @categorys 】>> " ; p @categorys ;
   end
   
   #---------------#

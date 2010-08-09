@@ -9,17 +9,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100704050820) do
+ActiveRecord::Schema.define(:version => 20100809141015) do
 
   create_table "memos", :force => true do |t|
-    t.string    "title"
-    t.text      "note"
-    t.string    "level"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.string    "mode"
-    t.string    "category"
-    t.string    "user_id"
+    t.string   "title"
+    t.text     "note"
+    t.string   "level"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "mode"
+    t.string   "category"
+    t.integer  "user_id",    :limit => 255
   end
 
   create_table "sessions", :force => true do |t|

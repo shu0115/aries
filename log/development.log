@@ -2251,3 +2251,29 @@ Migrating to ChangeColumn02 (20100809141015)
   [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_info('index_sessions_on_updated_at')[0m
   [4;36;1mSQL (0.5ms)[0m   [0;1mPRAGMA index_info('index_sessions_on_session_id')[0m
   [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("users")[0m
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-09 23:12:36) [GET]
+  Parameters: {"id"=>"Git"}
+  [4;36;1mMemo Load (5.5ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = 2 AND "memos"."category" = 'Git') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (4.5ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = 2) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 98ms (View: 71, DB: 12) | 200 OK [http://localhost/memos/list/Git]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-09 23:12:38) [GET]
+  Parameters: {"id"=>"01_Aries"}
+  [4;36;1mMemo Load (6.2ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = 2 AND "memos"."category" = '01_Aries') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (5.0ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = 2) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 196ms (View: 168, DB: 13) | 200 OK [http://localhost/memos/list/01_Aries]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-08-09 23:12:40) [GET]
+  Parameters: {"option"=>"01_Aries", "id"=>"139"}
+  [4;36;1mMemo Load (0.8ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 139) [0m
+Rendering template within layouts/base
+Rendering memos/show
+Completed in 70ms (View: 47, DB: 3) | 200 OK [http://localhost/memos/show/139/01_Aries]

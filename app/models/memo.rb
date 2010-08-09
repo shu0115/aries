@@ -8,8 +8,9 @@ class Memo < ActiveRecord::Base
     [ ["Normal", "normal"], ["Expert", "expert"] ]
   end
 
-  def self.categorys
-    Memo.find( :all, :conditions => "category != ''", :select => "DISTINCT category", :order => "category ASC" )
+  def self.user_categorys( args )
+    print "【 args 】>> " ; p args ;
+    Memo.find( :all, :conditions => [ "category != '' AND user_id = :user_id", { :user_id => args[:user_id] } ], :select => "DISTINCT category", :order => "category ASC" )
   end
 
   def self.public_categorys

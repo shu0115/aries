@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   layout "base"
-  before_filter :authorize, :except => [ :entry, :create, :login, :logout ]
+  before_filter :authorize, :except => [ :entry, :confirm, :create, :login, :logout ]
 
   #-------#
   # entry #
@@ -50,6 +50,8 @@ class UsersController < ApplicationController
       flash[:notice] = 'ログインに失敗しました。'
     end
 =end    
+
+    print "【 params 】>> " ; p params ;
     print "【 params[:login] 】>> " ; p params[:login] ;
     
     login = params[:login]
@@ -57,9 +59,10 @@ class UsersController < ApplicationController
     print "【 login 】>> " ; p login ;
 
     session[:user_id] = nil
+    
     if login.blank?
       flash[:notice] = "ログイン情報がありません。"
-      redirect_to params[:request_url]
+      redirect_to params[:request_url].to_s
       return
     end
       

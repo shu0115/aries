@@ -4,8 +4,8 @@
 <br />
 <% end %>
 
-<span class="menu list"><%= link_to $link[:list], "/memos/list/#{@category}" %></span>
-　<span class="menu show"><%= link_to $link[:show], "/memos/show/#{@memo.id}/#{@category}" %></span>
+<span class="menu list"><%= link_to '一覧', "/memos/list/#{@category}" %></span>
+　<span class="menu show"><%= link_to '閲覧', "/memos/show/#{@memo.id}/#{@category}" %></span>
 
 <% form_for :memo, :url => "/memos/update/#{@memo.id}/#{@category}" do |f| %>
   <%= f.error_messages %>
@@ -43,5 +43,5 @@
   </p>
 <% end %>
 
-<span class="menu list"><%= link_to $link[:list], "/memos/list/#{@category}" %></span>
-　<span class="menu show"><%= link_to $link[:show], "/memos/show/#{@memo.id}/#{@category}" %></span>
+<span class="menu list"><%= link_to '一覧', "/memos/list/#{@category}" %></span>
+　<span class="menu show"><%= link_to '閲覧', "/memos/show/#{@memo.id}/#{@category}" %></span>

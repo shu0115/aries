@@ -64,21 +64,21 @@ class User < ActiveRecord::Base
   # ユーザ認証メソッド(ログイン)
   def self.authenticate( login_id, password )
     # ユーザ検索
-    user = self.find_by_login_id( login_id )
+    current_user = self.find_by_login_id( login_id )
 
-    unless user.blank?
+    unless current_user.blank?
       # 暗号化パスワード生成
-      expected_password = encrypted_password( password, user.salt )
+      expected_password = encrypted_password( password, current_user.salt )
 
       # 暗号化パスワードとハッシュパスワードが一致しなければ
-      if user.hashed_password != expected_password
+      if current_user.hashed_password != expected_password
         # ユーザに[ nil ]を設定
-        user = nil
+        current_user = nil
       end
     end
 
     # ユーザを返す
-    user
+    current_user
   end
 
 #  def self.login( args )

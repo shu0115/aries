@@ -1,0 +1,19 @@
+<h3>ユーザ登録</h3>
+
+<% form_for :user, :url => { :controller => "users", :action => "confirm" } do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :login_id, "ログインID" %><br />
+    <%= f.text_field :login_id %>
+  </p>
+
+  <p>
+    <%= f.label :password, "パスワード" %><br />
+    <%= f.password_field :password %>
+  </p>
+
+  <p>
+    <%= f.submit '確認' %>
+  </p>
+<% end # form_for do - END %>

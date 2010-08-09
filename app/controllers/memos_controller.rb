@@ -37,12 +37,20 @@ class MemosController < ApplicationController
     @mode = nil if params[:option].to_s == "reset" or ( params[:option].blank? and session[:memo_mode].to_s == "reset" )  # [ params[:option] ]が「reset」だったら、[ nil ]で上書き
     session[:memo_mode] = params[:option]                          # paramsをsessionに保存
 
+    # 検索条件
     conditions = Hash.new
     conditions[:category] = @category unless @category.blank?
     conditions[:mode] = @mode unless @mode.blank?
+    conditions[:user_id] = session[:user_id] unless session[:user_id].blank?
 
+    print "【 conditions 】>> " ; p conditions ;
+
+    # メモ検索
     @all_memos = Memo.all( :conditions => conditions, :order => "category ASC, mode ASC, title ASC" )
-    @categorys = Memo.categorys
+
+    # カテゴリ取得
+    @categorys = Memo.user_categorys( :user_id => session[:user_id] )
+
     print "【 @categorys 】>> " ; p @categorys ;
   end
   
@@ -69,7 +77,7 @@ class MemosController < ApplicationController
     @category = params[:id]
     @memo = Memo.new
     @memo.mode = "private"
-    @categorys = Memo.categorys
+    @categorys = Memo.user_categorys( :user_id => session[:user_id] )
   end
 
   #------#
@@ -78,7 +86,7 @@ class MemosController < ApplicationController
   def edit
     @category = params[:option]
     @memo = Memo.find( params[:id] )
-    @categorys = Memo.categorys
+    @categorys = Memo.user_categorys( :user_id => session[:user_id] )
   end
 
   #--------#
@@ -87,7 +95,7 @@ class MemosController < ApplicationController
   def create
     
     @memo = Memo.new( params[:memo] )
-    @category = @memo.category
+    @category = @memo.user_categorys( :user_id => session[:user_id] )
     @memo.user_id = session[:user_id]
 
     if @memo.save

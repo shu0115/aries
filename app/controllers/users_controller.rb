@@ -72,7 +72,7 @@ class UsersController < ApplicationController
       print "【 user 】>> " ; p user ;
      
       unless user.blank?
-        session[:user_id] = user.id  # IDをセッションに格納
+        session[:user_id] = user.id.to_s  # IDをセッションに格納
         session[:login_id] = user.login_id  # IDをセッションに格納
         flash[:notice] = "ログインに成功しました。"
         redirect_to :controller => "memos", :action => "list"

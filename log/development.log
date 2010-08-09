@@ -2147,3 +2147,72 @@ Processing MemosController#list (for 127.0.0.1 at 2010-08-09 22:38:02) [GET]
 Rendering template within layouts/base
 Rendering memos/list
 Completed in 4040ms (View: 3858, DB: 137) | 200 OK [http://localhost/]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-09 22:56:13) [GET]
+  Parameters: {"id"=>"01_Aries"}
+  [4;35;1mMemo Load (7.6ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = 2 AND "memos"."category" = '01_Aries') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (4.6ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = 2) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 214ms (View: 185, DB: 14) | 200 OK [http://localhost/memos/list/01_Aries]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-08-09 22:56:20) [GET]
+  Parameters: {"option"=>"01_Aries", "id"=>"139"}
+  [4;35;1mMemo Load (0.7ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 139) [0m
+Rendering template within layouts/base
+Rendering memos/show
+Completed in 41ms (View: 25, DB: 2) | 200 OK [http://localhost/memos/show/139/01_Aries]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-09 22:56:28) [GET]
+  Parameters: {"id"=>"01_Aries"}
+  [4;36;1mMemo Load (6.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = 2 AND "memos"."category" = '01_Aries') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (4.8ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = 2) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 283ms (View: 246, DB: 15) | 200 OK [http://localhost/memos/list/01_Aries]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-09 22:56:39) [GET]
+  Parameters: {"id"=>"Heroku"}
+  [4;36;1mMemo Load (5.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = 2 AND "memos"."category" = 'Heroku') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (4.5ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = 2) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 106ms (View: 79, DB: 11) | 200 OK [http://localhost/memos/list/Heroku]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-08-09 22:56:43) [GET]
+  Parameters: {"option"=>"Heroku", "id"=>"8"}
+  [4;36;1mMemo Load (0.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 8) [0m
+Rendering template within layouts/base
+Rendering memos/show
+Completed in 20ms (View: 12, DB: 1) | 200 OK [http://localhost/memos/show/8/Heroku]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-09 22:57:00) [GET]
+  Parameters: {"id"=>"Heroku"}
+  [4;35;1mMemo Load (5.5ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = 2 AND "memos"."category" = 'Heroku') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (6.9ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = 2) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 93ms (View: 63, DB: 15) | 200 OK [http://localhost/memos/list/Heroku]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-09 22:57:03) [GET]
+  Parameters: {"id"=>"Git"}
+  [4;35;1mMemo Load (5.6ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = 2 AND "memos"."category" = 'Git') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (4.5ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = 2) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 103ms (View: 76, DB: 12) | 200 OK [http://localhost/memos/list/Git]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-08-09 22:57:09) [GET]
+  Parameters: {"option"=>"Git", "id"=>"6"}
+  [4;35;1mMemo Load (0.7ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 6) [0m
+Rendering template within layouts/base
+Rendering memos/show
+Completed in 46ms (View: 26, DB: 3) | 200 OK [http://localhost/memos/show/6/Git]

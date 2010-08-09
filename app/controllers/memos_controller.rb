@@ -41,7 +41,7 @@ class MemosController < ApplicationController
     conditions = Hash.new
     conditions[:category] = @category unless @category.blank?
     conditions[:mode] = @mode unless @mode.blank?
-    conditions[:user_id] = session[:user_id] unless session[:user_id].blank?
+    conditions[:user_id] = session[:user_id].to_i unless session[:user_id].blank?
 
 #    print "【 conditions 】>> " ; p conditions ;
 

@@ -2277,3 +2277,182 @@ Processing MemosController#show (for 127.0.0.1 at 2010-08-09 23:12:40) [GET]
 Rendering template within layouts/base
 Rendering memos/show
 Completed in 70ms (View: 47, DB: 3) | 200 OK [http://localhost/memos/show/139/01_Aries]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-10 20:50:56) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+Redirected to http://localhost:3000/public/list
+Filter chain halted as [:login_check] rendered_or_redirected.
+Completed in 18ms (DB: 3) | 302 Found [http://localhost/memos/list/all/reset]
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-08-10 20:50:56) [GET]
+  [4;35;1mSession Load (0.5ms)[0m   [0mSELECT * FROM "sessions" WHERE (updated_at < '2010-08-03 20:50:56') [0m
+  [4;36;1mMemo Load (28.6ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."mode" = 'public') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (0.5ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND mode = 'public' ) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering public/list
+Completed in 79ms (View: 23, DB: 30) | 200 OK [http://localhost/public/list]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-08-10 20:50:58) [POST]
+  Parameters: {"commit"=>"ログイン", "authenticity_token"=>"lJgJaAFCPTq2zdMSPzgJrjadSkiStHc5oUvwevAFrMg=", "login"=>{"login_id"=>"shu_0115", "password"=>"password"}, "request_url"=>"http://localhost:3000/public/list"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login_id" = 'shu_0115') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 484ms (DB: 1) | 302 Found [http://localhost/users/login]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-10 20:50:59) [GET]
+  [4;35;1mMemo Load (25.0ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (1.9ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 1099ms (View: 1058, DB: 28) | 200 OK [http://localhost/]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-10 20:51:03) [GET]
+  Parameters: {"id"=>"Work"}
+  [4;35;1mMemo Load (4.8ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2' AND "memos"."category" = 'Work') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (2.0ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 130ms (View: 117, DB: 7) | 200 OK [http://localhost/memos/list/Work]
+
+
+Processing MemosController#new (for 127.0.0.1 at 2010-08-10 20:51:10) [GET]
+  Parameters: {"id"=>"Work"}
+  [4;35;1mMemo Load (3.2ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/new
+Completed in 68ms (View: 58, DB: 4) | 200 OK [http://localhost/memos/new/Work]
+
+
+Processing MemosController#create (for 127.0.0.1 at 2010-08-10 20:51:13) [POST]
+  Parameters: {"commit"=>"作成", "authenticity_token"=>"lJgJaAFCPTq2zdMSPzgJrjadSkiStHc5oUvwevAFrMg=", "memo"=>{"category"=>"Work", "title"=>"", "mode"=>"private", "note"=>""}, "id"=>"Work"}
+  [4;36;1mMemo Create (0.4ms)[0m   [0;1mINSERT INTO "memos" ("created_at", "category", "title", "updated_at", "mode", "level", "user_id", "note") VALUES('2010-08-10 11:51:13', 'Work', '', '2010-08-10 11:51:13', 'private', NULL, 2, '')[0m
+Redirected to http://localhost:3000/memos/show/248//
+Completed in 11ms (DB: 1) | 302 Found [http://localhost/memos/create/Work]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-08-10 20:51:13) [GET]
+
+ActionController::RoutingError (No route matches "/memos/show/248//" with {:method=>:get}):
+  
+
+
+Rendering rescues/layout (not_found)
+
+
+Processing MemosController#new (for 127.0.0.1 at 2010-08-10 20:52:45) [GET]
+  Parameters: {"id"=>"Work"}
+  [4;35;1mMemo Load (3.2ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/new
+Completed in 68ms (View: 56, DB: 4) | 200 OK [http://localhost/memos/new/Work]
+
+
+Processing MemosController#create (for 127.0.0.1 at 2010-08-10 20:52:48) [POST]
+  Parameters: {"commit"=>"作成", "authenticity_token"=>"lJgJaAFCPTq2zdMSPzgJrjadSkiStHc5oUvwevAFrMg=", "memo"=>{"category"=>"Work", "title"=>"", "mode"=>"private", "note"=>""}, "id"=>"Work"}
+  [4;36;1mMemo Create (0.4ms)[0m   [0;1mINSERT INTO "memos" ("created_at", "category", "title", "updated_at", "mode", "level", "user_id", "note") VALUES('2010-08-10 11:52:48', 'Work', '', '2010-08-10 11:52:48', 'private', NULL, 2, '')[0m
+Redirected to http://localhost:3000/memos/show/249/Work/
+Completed in 11ms (DB: 1) | 302 Found [http://localhost/memos/create/Work]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-08-10 20:52:48) [GET]
+  Parameters: {"option"=>"Work", "id"=>"249"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 249) [0m
+Rendering template within layouts/base
+Rendering memos/show
+Completed in 15ms (View: 8, DB: 1) | 200 OK [http://localhost/memos/show/249/Work/]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-10 20:52:50) [GET]
+  Parameters: {"id"=>"Work"}
+  [4;36;1mMemo Load (2.0ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2' AND "memos"."category" = 'Work') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (1.7ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 39ms (View: 30, DB: 4) | 200 OK [http://localhost/memos/list/Work]
+
+
+Processing MemosController#destroy (for 127.0.0.1 at 2010-08-10 20:52:54) [GET]
+  Parameters: {"option"=>"Work", "id"=>"249"}
+  [4;36;1mMemo Load (0.2ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 249) [0m
+  [4;35;1mMemo Destroy (0.2ms)[0m   [0mDELETE FROM "memos" WHERE "id" = 249[0m
+Redirected to http://localhost:3000/memos/list/Work/
+Completed in 10ms (DB: 1) | 302 Found [http://localhost/memos/destroy/249/Work]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-10 20:52:54) [GET]
+  Parameters: {"id"=>"Work"}
+  [4;36;1mMemo Load (3.2ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2' AND "memos"."category" = 'Work') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (1.8ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 42ms (View: 31, DB: 6) | 200 OK [http://localhost/memos/list/Work/]
+
+
+Processing MemosController#destroy (for 127.0.0.1 at 2010-08-10 20:52:56) [GET]
+  Parameters: {"option"=>"Work", "id"=>"248"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 248) [0m
+  [4;35;1mMemo Destroy (0.3ms)[0m   [0mDELETE FROM "memos" WHERE "id" = 248[0m
+Redirected to http://localhost:3000/memos/list/Work/
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/memos/destroy/248/Work]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-10 20:52:56) [GET]
+  Parameters: {"id"=>"Work"}
+  [4;36;1mMemo Load (2.5ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2' AND "memos"."category" = 'Work') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (1.8ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 112ms (View: 102, DB: 5) | 200 OK [http://localhost/memos/list/Work/]
+
+
+Processing MemosController#new (for 127.0.0.1 at 2010-08-10 20:53:13) [GET]
+  Parameters: {"id"=>"Work"}
+  [4;36;1mMemo Load (3.2ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/new
+Completed in 81ms (View: 71, DB: 4) | 200 OK [http://localhost/memos/new/Work]
+
+
+Processing MemosController#create (for 127.0.0.1 at 2010-08-10 20:53:15) [POST]
+  Parameters: {"commit"=>"作成", "authenticity_token"=>"lJgJaAFCPTq2zdMSPzgJrjadSkiStHc5oUvwevAFrMg=", "memo"=>{"category"=>"Work", "title"=>"", "mode"=>"private", "note"=>""}, "id"=>"Work"}
+  [4;35;1mMemo Create (0.4ms)[0m   [0mINSERT INTO "memos" ("created_at", "category", "title", "updated_at", "mode", "level", "user_id", "note") VALUES('2010-08-10 11:53:15', 'Work', '', '2010-08-10 11:53:15', 'private', NULL, 2, '')[0m
+Redirected to http://localhost:3000/memos/show/250/Work/
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/memos/create/Work]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-08-10 20:53:15) [GET]
+  Parameters: {"option"=>"Work", "id"=>"250"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 250) [0m
+Rendering template within layouts/base
+Rendering memos/show
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/memos/show/250/Work/]
+
+
+Processing MemosController#destroy (for 127.0.0.1 at 2010-08-10 20:53:29) [GET]
+  Parameters: {"option"=>"Work", "id"=>"250"}
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 250) [0m
+  [4;36;1mMemo Destroy (0.3ms)[0m   [0;1mDELETE FROM "memos" WHERE "id" = 250[0m
+Redirected to http://localhost:3000/memos/list/Work/
+Completed in 10ms (DB: 1) | 302 Found [http://localhost/memos/destroy/250/Work]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-10 20:53:29) [GET]
+  Parameters: {"id"=>"Work"}
+  [4;35;1mMemo Load (1.8ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2' AND "memos"."category" = 'Work') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (1.6ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 38ms (View: 29, DB: 4) | 200 OK [http://localhost/memos/list/Work/]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-10 20:53:31) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (22.9ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (1.9ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 1092ms (View: 1053, DB: 25) | 200 OK [http://localhost/memos/list/all/reset]

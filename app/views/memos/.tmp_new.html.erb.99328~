@@ -1,0 +1,44 @@
+<span class="menu list"><%= link_to $link[:list], "/memos/list/#{@category}" %></span><br />
+
+<br />
+
+<% form_for :memo, :url => "/memos/create/#{@category}" do |f| %>
+  <%= f.error_messages %>
+
+  <%= f.label :category, 'カテゴリ' %><br />
+  <% @categorys.each_with_index{ |category, index| %><%= link_to_remote( category[:category], :update => "memo_category_set", :url => { :action => :memo_category, :category => category[:category] } ) %>　<% if ((index.to_i % 10) == 0) and index.to_i > 0 %><br /><% end %><% } %><br />
+  <span id="memo_category_set"><%= f.text_field :category, :value => @category %></span><br />
+  
+  <br />
+
+  <%= f.label :title, 'タイトル' %><br />
+  <%= f.text_field :title, :class => "memo_title_field" %><br />
+  
+  <br />
+
+  <%= f.label :mode, 'モード' %>：
+  <%= select( :memo, :mode, Memo.mode_choices, :mode => @memo.mode ) %><br />
+
+  <br />
+
+<% if false %>
+  <%= f.label :level, 'レベル' %>：
+  <select name="memo[level]">
+    <option value="Normal">Normal</option>
+    <option value="Expert">Expert</option>
+  </select><br />
+  
+  <br />
+<% end %>
+
+  <%= f.label :note, 'テキスト' %><br />
+  <%= f.text_area :note %><br />
+  
+  <br />
+
+  <%= f.submit '作成', :disable_with => "作成中..." %><br />
+<% end %>
+
+<br />
+
+<span class="menu list"><%= link_to $link[:list], "/memos/list/#{@category}" %></span>

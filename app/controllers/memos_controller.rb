@@ -95,7 +95,7 @@ class MemosController < ApplicationController
   def create
     
     @memo = Memo.new( params[:memo] )
-    @category = @memo.user_categorys( :user_id => session[:user_id] )
+    @category = @memo.category
     @memo.user_id = session[:user_id]
 
     if @memo.save

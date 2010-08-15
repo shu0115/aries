@@ -15,3 +15,6 @@ config.action_controller.perform_caching             = false
 
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = false
+
+# log
+config.logger = Logger.new( config.log_path, 1, 10*1024*1024 )  # 10MB／1ファイル

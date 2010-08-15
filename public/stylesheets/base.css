@@ -244,3 +244,12 @@ a:hover, a:active {
   padding: 5px;
   width: 95%;
 }
+
+/* text_fieldクラス */
+.text_field {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border: 1px solid #aaa;
+  padding: 5px;
+  width: 200px;
+}

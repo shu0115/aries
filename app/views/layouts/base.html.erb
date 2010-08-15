@@ -12,6 +12,8 @@
 
 <body>
 
+<div class="page_box">
+
 <%# ヘッダメニュー %>
 <span class="header_menu">
 	<% if session[:user_id].blank? %>
@@ -36,11 +38,15 @@
 
 <br /><br />
 
+<%# 通知メッセージ %>
 <% unless flash[:notice].blank? %><p style="color: green"><%= flash[:notice] %></p><% end %>
 
+<%# ページ内容 %>
 <%= yield %><br />
 
 <br />
+
+</div>
 
 </body>
 

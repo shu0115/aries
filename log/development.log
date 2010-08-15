@@ -2722,3 +2722,840 @@ Processing MemosController#list (for 127.0.0.1 at 2010-08-15 16:15:25) [GET]
 Rendering template within layouts/base
 Rendering memos/list
 Completed in 5841ms (View: 5662, DB: 123) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 16:36:18) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (104.8ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (5.1ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 6624ms (View: 6452, DB: 112) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 16:36:43) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (121.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (7.9ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 6075ms (View: 5871, DB: 131) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 16:37:10) [GET]
+  Parameters: {"id"=>"Work"}
+  [4;35;1mMemo Load (6.0ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2' AND "memos"."category" = 'Work') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (21.3ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 280ms (View: 156, DB: 52) | 200 OK [http://localhost/memos/list/Work]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 16:39:09) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (97.7ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (6.2ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 5267ms (View: 5112, DB: 106) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 16:40:22) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (121.9ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (7.8ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 6345ms (View: 6156, DB: 137) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 16:40:58) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (71.5ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (7.5ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 4482ms (View: 4340, DB: 84) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 16:41:26) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (84.8ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (5.0ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 4926ms (View: 4779, DB: 97) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 16:43:47) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (83.5ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (5.8ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 4823ms (View: 4668, DB: 91) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 16:44:17) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (82.6ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (5.0ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 5151ms (View: 5005, DB: 89) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 16:44:51) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (86.8ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (5.3ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 4797ms (View: 4649, DB: 94) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 16:51:08) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (202.9ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (7.1ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 6194ms (View: 5880, DB: 213) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 16:54:41) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (488.4ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (5.4ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 6289ms (View: 5720, DB: 498) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 16:55:54) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (152.1ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (10.7ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 5981ms (View: 5752, DB: 165) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 16:57:02) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (90.6ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (5.0ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 5409ms (View: 5261, DB: 100) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 16:57:24) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (103.6ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (13.0ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 5897ms (View: 5703, DB: 118) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 16:58:16) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (89.6ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (13.9ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 5495ms (View: 5343, DB: 106) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 16:59:43) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (175.1ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (16.6ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 6638ms (View: 6338, DB: 208) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 17:08:04) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (184.6ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (13.0ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 5222ms (View: 4974, DB: 201) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 17:10:29) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (95.9ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (6.0ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 5915ms (View: 5747, DB: 104) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 17:12:09) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (97.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (5.0ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 5382ms (View: 5234, DB: 105) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 17:14:26) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (104.6ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (9.2ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 4859ms (View: 4674, DB: 117) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 17:15:05) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (81.1ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (7.7ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 4803ms (View: 4669, DB: 93) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 17:16:31) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (79.1ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (5.1ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 4990ms (View: 4515, DB: 88) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 17:20:33) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (80.5ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (6.3ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 4377ms (View: 4237, DB: 89) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 17:26:37) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (74.9ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (5.7ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 4391ms (View: 4264, DB: 85) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 17:27:00) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (92.9ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (5.0ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 4580ms (View: 4424, DB: 101) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 17:27:19) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (83.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (6.8ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 4868ms (View: 4702, DB: 94) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 17:27:56) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (83.7ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (5.8ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 6403ms (View: 6241, DB: 92) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 17:28:19) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (372.8ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (91.4ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 8129ms (View: 7472, DB: 489) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 17:29:28) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (80.7ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (5.9ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 4152ms (View: 4022, DB: 90) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 17:29:46) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (207.1ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (6.6ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 4982ms (View: 4371, DB: 219) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#new (for 127.0.0.1 at 2010-08-15 17:31:18) [GET]
+  [4;35;1mMemo Load (11.2ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/new
+Completed in 326ms (View: 290, DB: 13) | 200 OK [http://localhost/memos/new/]
+
+
+Processing MemosController#create (for 127.0.0.1 at 2010-08-15 17:31:28) [POST]
+  Parameters: {"commit"=>"作成", "authenticity_token"=>"Qj/KP/MPUaGJl82syxougwXvrnrG9Qpsi3MqJmqc/jc=", "memo"=>{"category"=>"テスト", "title"=>"テスト", "mode"=>"private", "note"=>"テスト"}}
+  [4;36;1mMemo Create (1.5ms)[0m   [0;1mINSERT INTO "memos" ("created_at", "category", "title", "updated_at", "mode", "level", "user_id", "note") VALUES('2010-08-15 08:31:28', 'テスト', 'テスト', '2010-08-15 08:31:28', 'private', NULL, 2, 'テスト')[0m
+Redirected to http://localhost:3000/memos/show/252/テスト/
+Completed in 42ms (DB: 6) | 302 Found [http://localhost/memos/create/]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-08-15 17:31:28) [GET]
+  Parameters: {"option"=>"テスト", "id"=>"252"}
+  [4;35;1mMemo Load (1.1ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 252) [0m
+Rendering template within layouts/base
+Rendering memos/show
+Completed in 74ms (View: 32, DB: 3) | 200 OK [http://localhost/memos/show/252/%E3%83%86%E3%82%B9%E3%83%88/]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 17:31:30) [GET]
+  Parameters: {"id"=>"テスト"}
+  [4;36;1mMemo Load (7.5ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2' AND "memos"."category" = 'テスト') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (4.5ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 81ms (View: 51, DB: 14) | 200 OK [http://localhost/memos/list/%E3%83%86%E3%82%B9%E3%83%88]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 17:35:25) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;36;1mMemo Load (102.8ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (7.9ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 5860ms (View: 5689, DB: 112) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 17:35:59) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;36;1mMemo Load (154.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (6.9ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 5157ms (View: 4920, DB: 163) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 17:37:10) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;36;1mMemo Load (83.8ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (7.6ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 5653ms (View: 5519, DB: 93) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 17:38:42) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;36;1mMemo Load (104.0ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (7.9ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 5300ms (View: 5120, DB: 114) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 17:40:12) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;36;1mMemo Load (120.5ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (17.9ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 7369ms (View: 7064, DB: 142) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 17:40:34) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;36;1mMemo Load (241.0ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (6.2ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 5518ms (View: 4919, DB: 250) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 17:41:58) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;36;1mMemo Load (76.7ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (5.4ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 4809ms (View: 4676, DB: 84) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 17:42:36) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;36;1mMemo Load (68.1ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (17.7ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 4950ms (View: 4792, DB: 88) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 17:43:01) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;36;1mMemo Load (70.2ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (5.8ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 4491ms (View: 4378, DB: 77) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 17:44:11) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;36;1mMemo Load (85.8ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (9.6ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 4229ms (View: 4090, DB: 97) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 17:44:35) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;36;1mMemo Load (88.6ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (11.8ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 5542ms (View: 5388, DB: 102) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 17:45:22) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;36;1mMemo Load (101.9ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (9.4ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 4408ms (View: 4244, DB: 114) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 17:45:53) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;36;1mMemo Load (90.5ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (7.9ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 4599ms (View: 4091, DB: 100) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 17:46:42) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;36;1mMemo Load (84.5ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (9.5ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 5490ms (View: 5345, DB: 96) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 17:49:01) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;36;1mMemo Load (34.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (2.9ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 4005ms (View: 3949, DB: 38) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 17:52:39) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;36;1mMemo Load (107.2ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (6.8ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 4732ms (View: 4563, DB: 116) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 17:56:42) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;36;1mMemo Load (97.0ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (6.0ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 5247ms (View: 5099, DB: 105) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 17:57:06) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;36;1mMemo Load (75.7ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (11.5ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 4764ms (View: 4595, DB: 89) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 18:09:29) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;36;1mMemo Load (122.6ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (22.6ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 11969ms (View: 11703, DB: 152) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#search (for 127.0.0.1 at 2010-08-15 18:10:09) [POST]
+  Parameters: {"commit"=>"検索", "search_word"=>"Si", "authenticity_token"=>"Qj/KP/MPUaGJl82syxougwXvrnrG9Qpsi3MqJmqc/jc="}
+  [4;36;1mMemo Load (5.7ms)[0m   [0;1mSELECT * FROM "memos" WHERE (title LIKE 'Si') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (18.3ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/search
+Completed in 261ms (View: 199, DB: 33) | 200 OK [http://localhost/memos/search]
+
+
+Processing MemosController#search (for 127.0.0.1 at 2010-08-15 18:10:18) [POST]
+  Parameters: {"commit"=>"検索", "search_word"=>"", "authenticity_token"=>"Qj/KP/MPUaGJl82syxougwXvrnrG9Qpsi3MqJmqc/jc="}
+  [4;36;1mMemo Load (3.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE (title LIKE '') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (7.9ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/search
+Completed in 634ms (View: 177, DB: 13) | 200 OK [http://localhost/memos/search]
+
+
+Processing MemosController#search (for 127.0.0.1 at 2010-08-15 18:10:43) [POST]
+  Parameters: {"commit"=>"検索", "search_word"=>"", "authenticity_token"=>"Qj/KP/MPUaGJl82syxougwXvrnrG9Qpsi3MqJmqc/jc="}
+  [4;36;1mMemo Load (5.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE (title LIKE '*' + '' + '*') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (6.7ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/search
+Completed in 98ms (View: 69, DB: 14) | 200 OK [http://localhost/memos/search]
+
+
+Processing MemosController#search (for 127.0.0.1 at 2010-08-15 18:10:51) [POST]
+  Parameters: {"commit"=>"検索", "search_word"=>"Memo", "authenticity_token"=>"Qj/KP/MPUaGJl82syxougwXvrnrG9Qpsi3MqJmqc/jc="}
+  [4;36;1mMemo Load (8.1ms)[0m   [0;1mSELECT * FROM "memos" WHERE (title LIKE '*' + 'Memo' + '*') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (9.0ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/search
+Completed in 121ms (View: 77, DB: 19) | 200 OK [http://localhost/memos/search]
+
+
+Processing MemosController#search (for 127.0.0.1 at 2010-08-15 18:11:32) [POST]
+  Parameters: {"commit"=>"検索", "search_word"=>"Memo", "authenticity_token"=>"Qj/KP/MPUaGJl82syxougwXvrnrG9Qpsi3MqJmqc/jc="}
+  [4;36;1mMemo Load (0.0ms)[0m   [0;1mSQLite3::SQLException: near "Memo": syntax error: SELECT * FROM "memos" WHERE (title LIKE '*'Memo'*') ORDER BY category ASC, title ASC[0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near "Memo": syntax error: SELECT * FROM "memos" WHERE (title LIKE '*'Memo'*')  ORDER BY category ASC, title ASC):
+  app/controllers/memos_controller.rb:64:in `search'
+
+
+Rendered rescues/_trace (178.8ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MemosController#search (for 127.0.0.1 at 2010-08-15 18:15:26) [POST]
+  Parameters: {"commit"=>"検索", "search_word"=>"Memo", "authenticity_token"=>"Qj/KP/MPUaGJl82syxougwXvrnrG9Qpsi3MqJmqc/jc="}
+  [4;35;1mMemo Load (1.2ms)[0m   [0mSELECT * FROM "memos" WHERE (title LIKE '*Memo*') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (3.8ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/search
+Completed in 196ms (View: 182, DB: 6) | 200 OK [http://localhost/memos/search]
+
+
+Processing MemosController#search (for 127.0.0.1 at 2010-08-15 18:15:28) [POST]
+  Parameters: {"commit"=>"検索", "search_word"=>"Memo", "authenticity_token"=>"Qj/KP/MPUaGJl82syxougwXvrnrG9Qpsi3MqJmqc/jc="}
+  [4;35;1mMemo Load (2.4ms)[0m   [0mSELECT * FROM "memos" WHERE (title LIKE '*Memo*') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (14.7ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/search
+Completed in 118ms (View: 82, DB: 19) | 200 OK [http://localhost/memos/search]
+
+
+Processing MemosController#search (for 127.0.0.1 at 2010-08-15 18:15:58) [POST]
+  Parameters: {"commit"=>"検索", "search_word"=>"01", "authenticity_token"=>"Qj/KP/MPUaGJl82syxougwXvrnrG9Qpsi3MqJmqc/jc="}
+  [4;35;1mMemo Load (2.5ms)[0m   [0mSELECT * FROM "memos" WHERE (title LIKE '*01*') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (16.1ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/search
+Completed in 118ms (View: 81, DB: 21) | 200 OK [http://localhost/memos/search]
+
+
+Processing MemosController#search (for 127.0.0.1 at 2010-08-15 18:17:00) [POST]
+  Parameters: {"commit"=>"検索", "search_word"=>"01", "authenticity_token"=>"Qj/KP/MPUaGJl82syxougwXvrnrG9Qpsi3MqJmqc/jc="}
+  [4;35;1mMemo Load (5.9ms)[0m   [0mSELECT * FROM "memos" WHERE (title LIKE '%01%') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (7.5ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/search
+Completed in 314ms (View: 268, DB: 16) | 200 OK [http://localhost/memos/search]
+
+
+Processing MemosController#search (for 127.0.0.1 at 2010-08-15 18:17:29) [POST]
+  Parameters: {"commit"=>"検索", "search_word"=>"text", "authenticity_token"=>"Qj/KP/MPUaGJl82syxougwXvrnrG9Qpsi3MqJmqc/jc="}
+  [4;35;1mMemo Load (4.3ms)[0m   [0mSELECT * FROM "memos" WHERE (title LIKE '%text%') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (8.8ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/search
+Completed in 121ms (View: 87, DB: 15) | 200 OK [http://localhost/memos/search]
+
+
+Processing MemosController#search (for 127.0.0.1 at 2010-08-15 18:17:33) [POST]
+  Parameters: {"commit"=>"検索", "search_word"=>"", "authenticity_token"=>"Qj/KP/MPUaGJl82syxougwXvrnrG9Qpsi3MqJmqc/jc="}
+  [4;35;1mMemo Load (95.5ms)[0m   [0mSELECT * FROM "memos" WHERE (title LIKE '%%') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (13.1ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/search
+Completed in 5056ms (View: 4904, DB: 110) | 200 OK [http://localhost/memos/search]
+
+
+Processing MemosController#search (for 127.0.0.1 at 2010-08-15 18:20:31) [POST]
+  Parameters: {"commit"=>"検索", "search_word"=>"部分", "authenticity_token"=>"Qj/KP/MPUaGJl82syxougwXvrnrG9Qpsi3MqJmqc/jc="}
+  [4;35;1mMemo Load (4.5ms)[0m   [0mSELECT * FROM "memos" WHERE (title LIKE '%部分%') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (6.9ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/search
+Completed in 160ms (View: 119, DB: 13) | 200 OK [http://localhost/memos/search]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 18:20:36) [GET]
+  Parameters: {"id"=>"Rails_Tips"}
+  [4;35;1mMemo Load (38.9ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2' AND "memos"."category" = 'Rails_Tips') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (5.8ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Completed in 1581ms (View: 1510, DB: 49) | 200 OK [http://localhost/memos/list/Rails_Tips]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-08-15 18:21:13) [GET]
+  Parameters: {"option"=>"Rails_Tips", "id"=>"80"}
+  [4;35;1mMemo Load (0.8ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 80) [0m
+Rendering template within layouts/base
+Rendering memos/show
+Completed in 26ms (View: 13, DB: 2) | 200 OK [http://localhost/memos/show/80/Rails_Tips]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 18:22:09) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;36;1mMemo Load (76.7ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (5.0ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (22.3ms)
+Completed in 4621ms (View: 4181, DB: 84) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#search (for 127.0.0.1 at 2010-08-15 18:22:23) [POST]
+  Parameters: {"commit"=>"検索", "search_word"=>"test", "authenticity_token"=>"Qj/KP/MPUaGJl82syxougwXvrnrG9Qpsi3MqJmqc/jc="}
+  [4;36;1mMemo Load (3.0ms)[0m   [0;1mSELECT * FROM "memos" WHERE (title LIKE '%test%') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (9.8ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/search
+Completed in 108ms (View: 78, DB: 14) | 200 OK [http://localhost/memos/search]
+
+
+Processing MemosController#search (for 127.0.0.1 at 2010-08-15 18:23:13) [POST]
+  Parameters: {"commit"=>"検索", "search_word"=>"radio", "authenticity_token"=>"Qj/KP/MPUaGJl82syxougwXvrnrG9Qpsi3MqJmqc/jc="}
+  [4;36;1mMemo Load (3.8ms)[0m   [0;1mSELECT * FROM "memos" WHERE (title LIKE '%radio%') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (9.0ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/search
+Rendered memos/_search_area (25.6ms)
+Completed in 160ms (View: 128, DB: 15) | 200 OK [http://localhost/memos/search]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-08-15 18:23:16) [GET]
+  Parameters: {"option"=>"all", "id"=>"197"}
+  [4;36;1mMemo Load (0.7ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 197) [0m
+Rendering template within layouts/base
+Rendering memos/show
+Completed in 59ms (View: 39, DB: 2) | 200 OK [http://localhost/memos/show/197/all]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 18:24:29) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (72.1ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (5.8ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (18.4ms)
+Completed in 4609ms (View: 4488, DB: 80) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 18:24:47) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (114.5ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (9.6ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (18.5ms)
+Completed in 6609ms (View: 6430, DB: 129) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 18:25:26) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (81.6ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (11.2ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (19.2ms)
+Completed in 4784ms (View: 4645, DB: 94) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 18:26:25) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (242.0ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (5.7ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (68.6ms)
+Completed in 7816ms (View: 7436, DB: 258) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 18:26:56) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (123.5ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (6.3ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (29.3ms)
+Completed in 4575ms (View: 4392, DB: 136) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#search (for 127.0.0.1 at 2010-08-15 18:27:07) [POST]
+  Parameters: {"commit"=>"検索", "search_word"=>"memo", "authenticity_token"=>"Qj/KP/MPUaGJl82syxougwXvrnrG9Qpsi3MqJmqc/jc="}
+  [4;35;1mMemo Load (14.7ms)[0m   [0mSELECT * FROM "memos" WHERE (title LIKE '%memo%') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (8.2ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/search
+Rendered memos/_search_area (21.3ms)
+Completed in 1408ms (View: 1360, DB: 24) | 200 OK [http://localhost/memos/search]
+
+
+Processing MemosController#search (for 127.0.0.1 at 2010-08-15 18:27:17) [POST]
+  Parameters: {"commit"=>"検索", "search_word"=>"memo", "authenticity_token"=>"Qj/KP/MPUaGJl82syxougwXvrnrG9Qpsi3MqJmqc/jc=", "search_type"=>"title"}
+  [4;35;1mMemo Load (14.2ms)[0m   [0mSELECT * FROM "memos" WHERE (title LIKE '%memo%') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (20.9ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/search
+Rendered memos/_search_area (25.5ms)
+Completed in 1464ms (View: 1396, DB: 38) | 200 OK [http://localhost/memos/search]
+
+
+Processing MemosController#search (for 127.0.0.1 at 2010-08-15 18:27:27) [POST]
+  Parameters: {"commit"=>"検索", "search_word"=>"memo", "authenticity_token"=>"Qj/KP/MPUaGJl82syxougwXvrnrG9Qpsi3MqJmqc/jc=", "search_type"=>"text"}
+  [4;35;1mMemo Load (18.6ms)[0m   [0mSELECT * FROM "memos" WHERE (title LIKE '%memo%') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (9.9ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/search
+Rendered memos/_search_area (19.3ms)
+Completed in 696ms (View: 644, DB: 30) | 200 OK [http://localhost/memos/search]
+
+
+Processing MemosController#search (for 127.0.0.1 at 2010-08-15 18:29:11) [POST]
+  Parameters: {"commit"=>"検索", "search_word"=>"memo", "authenticity_token"=>"Qj/KP/MPUaGJl82syxougwXvrnrG9Qpsi3MqJmqc/jc=", "search_type"=>"text"}
+  [4;35;1mMemo Load (1.1ms)[0m   [0mSELECT * FROM "memos" WHERE ('text' LIKE '%memo%') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (3.5ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/search
+Rendered memos/_search_area (23.7ms)
+Completed in 91ms (View: 75, DB: 7) | 200 OK [http://localhost/memos/search]
+
+
+Processing MemosController#search (for 127.0.0.1 at 2010-08-15 18:31:35) [POST]
+  Parameters: {"commit"=>"検索", "search_word"=>"memo", "authenticity_token"=>"Qj/KP/MPUaGJl82syxougwXvrnrG9Qpsi3MqJmqc/jc=", "search_type"=>"title"}
+  [4;35;1mMemo Load (15.1ms)[0m   [0mSELECT * FROM "memos" WHERE (title LIKE '%memo%') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (23.5ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/search
+Rendered memos/_search_area (20.3ms)
+Completed in 1160ms (View: 794, DB: 42) | 200 OK [http://localhost/memos/search]
+
+
+Processing MemosController#search (for 127.0.0.1 at 2010-08-15 18:31:43) [POST]
+  Parameters: {"commit"=>"検索", "search_word"=>"memo", "authenticity_token"=>"Qj/KP/MPUaGJl82syxougwXvrnrG9Qpsi3MqJmqc/jc=", "search_type"=>"note"}
+  [4;35;1mMemo Load (4.8ms)[0m   [0mSELECT * FROM "memos" WHERE (note LIKE '%memo%') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (2.3ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/search
+Rendered memos/_search_area (6.3ms)
+Completed in 146ms (View: 130, DB: 8) | 200 OK [http://localhost/memos/search]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 18:34:11) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (36.2ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (2.5ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (8.3ms)
+Completed in 4086ms (View: 4027, DB: 40) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#search (for 127.0.0.1 at 2010-08-15 18:34:25) [POST]
+  Parameters: {"commit"=>"検索", "search_word"=>"text", "authenticity_token"=>"Qj/KP/MPUaGJl82syxougwXvrnrG9Qpsi3MqJmqc/jc=", "search_type"=>"note"}
+  [4;35;1mMemo Load (25.3ms)[0m   [0mSELECT * FROM "memos" WHERE (note LIKE '%text%') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (6.6ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/search
+Rendered memos/_search_area (16.0ms)
+Completed in 903ms (View: 846, DB: 39) | 200 OK [http://localhost/memos/search]
+
+
+Processing MemosController#search (for 127.0.0.1 at 2010-08-15 18:35:19) [POST]
+  Parameters: {"commit"=>"検索", "search_word"=>"rails", "authenticity_token"=>"Qj/KP/MPUaGJl82syxougwXvrnrG9Qpsi3MqJmqc/jc=", "search_type"=>"note"}
+  [4;35;1mMemo Load (10.0ms)[0m   [0mSELECT * FROM "memos" WHERE (note LIKE '%rails%') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (2.5ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/search
+Rendered memos/_search_area (9.7ms)
+Completed in 1243ms (View: 1217, DB: 14) | 200 OK [http://localhost/memos/search]
+
+
+Processing MemosController#search (for 127.0.0.1 at 2010-08-15 18:35:27) [POST]
+  Parameters: {"commit"=>"検索", "search_word"=>"rails", "authenticity_token"=>"Qj/KP/MPUaGJl82syxougwXvrnrG9Qpsi3MqJmqc/jc=", "search_type"=>"title"}
+  [4;35;1mMemo Load (2.1ms)[0m   [0mSELECT * FROM "memos" WHERE (title LIKE '%rails%') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (3.4ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/search
+Rendered memos/_search_area (6.2ms)
+Completed in 74ms (View: 59, DB: 6) | 200 OK [http://localhost/memos/search]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 18:35:49) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (90.4ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (8.6ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (24.5ms)
+Completed in 4870ms (View: 4715, DB: 101) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#search (for 127.0.0.1 at 2010-08-15 18:35:58) [POST]
+  Parameters: {"commit"=>"検索", "search_word"=>"memo", "authenticity_token"=>"Qj/KP/MPUaGJl82syxougwXvrnrG9Qpsi3MqJmqc/jc=", "search_type"=>"title"}
+  [4;35;1mMemo Load (7.3ms)[0m   [0mSELECT * FROM "memos" WHERE (title LIKE '%memo%') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (3.8ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/search
+Rendered memos/_search_area (9.0ms)
+Completed in 669ms (View: 645, DB: 12) | 200 OK [http://localhost/memos/search]
+
+
+Processing MemosController#search (for 127.0.0.1 at 2010-08-15 18:36:02) [POST]
+  Parameters: {"commit"=>"検索", "search_word"=>"memo", "authenticity_token"=>"Qj/KP/MPUaGJl82syxougwXvrnrG9Qpsi3MqJmqc/jc=", "search_type"=>"note"}
+  [4;35;1mMemo Load (14.4ms)[0m   [0mSELECT * FROM "memos" WHERE (note LIKE '%memo%') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (25.6ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/search
+Rendered memos/_search_area (26.5ms)
+Completed in 412ms (View: 338, DB: 42) | 200 OK [http://localhost/memos/search]
+
+
+Processing MemosController#search (for 127.0.0.1 at 2010-08-15 18:36:07) [POST]
+  Parameters: {"commit"=>"検索", "search_word"=>"memo", "authenticity_token"=>"Qj/KP/MPUaGJl82syxougwXvrnrG9Qpsi3MqJmqc/jc=", "search_type"=>"title"}
+  [4;35;1mMemo Load (17.1ms)[0m   [0mSELECT * FROM "memos" WHERE (title LIKE '%memo%') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (31.6ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/search
+Rendered memos/_search_area (15.9ms)
+Completed in 756ms (View: 664, DB: 68) | 200 OK [http://localhost/memos/search]

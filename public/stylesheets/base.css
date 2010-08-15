@@ -228,3 +228,18 @@ a:hover, a:active {
 .memo_title_field {
   width: 300px;
 }
+
+/* page_boxクラス */
+.page_box {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-box-shadow: 0px 0px 2px #bbb;
+  -webkit-box-shadow: 0px 0px 2px #bbb;
+  border: 1px solid #ccc;
+  padding: 5px;
+	margin: 0px auto;
+  width: 99%;
+}
+.page_box .category_box {
+  width: 95%;
+}

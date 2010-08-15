@@ -52,6 +52,31 @@ class MemosController < ApplicationController
     @categorys = Memo.user_categorys( :user_id => session[:user_id] )
 
 #    print "【 @categorys 】>> " ; p @categorys ;
+
+    @title_checked = true
+  end
+  
+  #--------#
+  # search #
+  #--------#
+  def search
+    @search_word = params[:search_word]
+    @search_type = params[:search_type]
+
+    print "【 @search_word 】>> " ; p @search_word ;
+    print "【 @search_type 】>> " ; p @search_type ;
+    
+    # メモ検索
+    if @search_type == "note"
+      @all_memos = Memo.all( :conditions => [ "note LIKE :search_word", { :search_word => "%#{@search_word}%" } ], :order => "category ASC, title ASC" )
+      @note_checked = true
+    else
+      @all_memos = Memo.all( :conditions => [ "title LIKE :search_word", { :search_word => "%#{@search_word}%" } ], :order => "category ASC, title ASC" )
+      @title_checked = true
+    end
+
+    # ユーザカテゴリ取得
+    @categorys = Memo.user_categorys( :user_id => session[:user_id] )
   end
   
   #---------------#

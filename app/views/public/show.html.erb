@@ -1,8 +1,8 @@
-<span class="menu list"><%= link_to '一覧', "/public/list/#{@category}" %></span><br />
+<span class="menu list"><%= link_to $link[:list], "/public/list/#{@category}" %></span><br />
 
 <br />
 
 <span class="menu_title"><%=h @memo.title %></span><br />
 <pre class="pre_style"><%=h @memo.note %></pre>
 
-<span class="menu list"><%= link_to '一覧', "/public/list/#{@category}" %></span>
+<span class="menu list"><%= link_to $link[:list], "/public/list/#{@category}" %></span>

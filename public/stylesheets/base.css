@@ -233,8 +233,8 @@ a:hover, a:active {
 .page_box {
   -moz-border-radius: 20px;
   -webkit-border-radius: 20px;
-  -moz-box-shadow: 0px 0px 2px #bbb;
-  -webkit-box-shadow: 0px 0px 2px #bbb;
+  -moz-box-shadow: 0px 0px 5px #bbb;
+  -webkit-box-shadow: 0px 0px 5px #bbb;
   border: 1px solid #ccc;
   padding: 10px;
 	margin: 0px auto;

@@ -12,7 +12,8 @@
 
   <p>
     <%= f.label :category, 'カテゴリ' %><br />
-    <% @categorys.each_with_index{ |category, index| %><%= link_to_remote( category[:category], :update => "memo_category_set", :url => { :action => :memo_category, :category => category[:category] } ) %>　<% if ((index.to_i % 10) == 0) and index.to_i > 0 %><br /><% end %><% } %><br />
+    <% @categorys.each_with_index{ |category, index| %><%= link_to_remote( category[:category], :update => "memo_category_set", :url => { :action => :memo_category, :category => category[:category] } ) %>　<wbr /><% } %><br />
+		<br />
     <span id="memo_category_set"><%= f.text_field :category %></span><br />
   </p>
 

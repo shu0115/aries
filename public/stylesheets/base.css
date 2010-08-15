@@ -236,10 +236,11 @@ a:hover, a:active {
   -moz-box-shadow: 0px 0px 2px #bbb;
   -webkit-box-shadow: 0px 0px 2px #bbb;
   border: 1px solid #ccc;
-  padding: 5px;
+  padding: 10px;
 	margin: 0px auto;
-  width: 99%;
+  width: 98%;
 }
 .page_box .category_box {
+  padding: 5px;
   width: 95%;
 }

@@ -3629,3 +3629,13 @@ Rendering template within layouts/base
 Rendering memos/list
 Rendered memos/_search_area (14.1ms)
 Completed in 4300ms (View: 4129, DB: 120) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-15 21:48:05) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (33.6ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (2.6ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (6.5ms)
+Completed in 2214ms (View: 2155, DB: 39) | 200 OK [http://localhost/memos/list/all/reset]

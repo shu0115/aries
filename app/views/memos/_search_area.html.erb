@@ -1,7 +1,7 @@
 <%# 検索 %>
 <% form_tag :action => "search" do %>
 	<%= text_field_tag :search_word, @search_word, { :class => "text_field" } %>
-	<%= radio_button_tag( :search_type, "title", checked = @title_checked, options = {} ) %>タイトル
-	<%= radio_button_tag( :search_type, "note", checked = @note_checked, options = {} ) %>テキスト
+	<%= radio_button_tag( :search_type, "title", checked = @title_checked, options = {} ) %><label for="search_type_title">タイトル</label>
+	<%= radio_button_tag( :search_type, "note", checked = @note_checked, options = {} ) %><label for="search_type_note">テキスト</label>
 	<%= submit_tag "検索", :disable_with => "検索" %>
 <% end %>

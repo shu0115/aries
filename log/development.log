@@ -3874,3 +3874,34 @@ Rendering template within layouts/base
 Rendering memos/list
 Rendered memos/_search_area (8.0ms)
 Completed in 1254ms (View: 1196, DB: 44) | 200 OK [http://localhost/]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-28 17:33:50) [GET]
+Redirected to http://localhost:3000/public/list
+Filter chain halted as [:login_check] rendered_or_redirected.
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/]
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-08-28 17:33:51) [GET]
+  [4;36;1mSession Load (0.3ms)[0m   [0;1mSELECT * FROM "sessions" WHERE (updated_at < '2010-08-21 17:33:51') [0m
+  [4;35;1mMemo Load (1.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."mode" = 'public') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND mode = 'public' ) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering public/list
+Completed in 21ms (View: 15, DB: 2) | 200 OK [http://localhost/public/list]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-08-28 17:33:54) [POST]
+  Parameters: {"commit"=>"ログイン", "authenticity_token"=>"AT3wWFdSwGMwKPAzV5d0g6qRcfh3YN133YZMfIs53LY=", "login"=>{"login_id"=>"shu_0115", "password"=>"password"}, "request_url"=>"http://localhost:3000/public/list"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login_id" = 'shu_0115') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 22ms (DB: 1) | 302 Found [http://localhost/users/login]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-08-28 17:33:54) [GET]
+  [4;36;1mMemo Load (18.8ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (1.2ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (3.3ms)
+Completed in 818ms (View: 789, DB: 20) | 200 OK [http://localhost/]

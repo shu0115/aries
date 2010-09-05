@@ -125,10 +125,12 @@ class MemosController < ApplicationController
 
     if @memo.save
       flash[:notice] = "「#{@memo.title}」の新規作成が完了しました。"
-      redirect_to "/memos/show/#{@memo.id}/#{@category}/#{@mode}"
+#      redirect_to "/memos/show/#{@memo.id}/#{@category}/#{@mode}"
+      redirect_to :action =>  "show", :id => @memo.id, :option => @category, :one => @mode
     else
       flash[:notice] = "「#{@memo.title}」の新規作成に失敗しました。"
-      redirect_to "/memos/new/#{@category}/#{@mode}"
+#      redirect_to "/memos/new/#{@category}/#{@mode}"
+      redirect_to :action =>  "new", :id => @memo.id, :option => @category, :one => @mode
     end
   end
 
@@ -145,10 +147,12 @@ class MemosController < ApplicationController
 
     if @memo.update_attributes( update_params )
       flash[:notice] = "「#{@memo.title}」の更新が完了しました。"
-      redirect_to "/memos/show/#{@memo.id}/#{@memo.category}/#{@mode}"
+#      redirect_to "/memos/show/#{@memo.id}/#{@memo.category}/#{@mode}"
+      redirect_to :action =>  "show", :id => @memo.id, :option => @category, :one => @mode
     else
       flash[:notice] = "「#{@memo.title}」の更新に失敗しました。"
-      redirect_to "/memos/edit/#{@memo.id}/#{@memo.category}/#{@mode}"
+#      redirect_to "/memos/edit/#{@memo.id}/#{@memo.category}/#{@mode}"
+      redirect_to :action =>  "edit", :id => @memo.id, :option => @category, :one => @mode
     end
   end
 
@@ -165,6 +169,7 @@ class MemosController < ApplicationController
       flash[:notice] = "「#{@memo.title}」の削除に失敗しました。"
     end
 
-    redirect_to "/memos/list/#{@category}/#{@mode}"
+#    redirect_to "/memos/list/#{@category}/#{@mode}"
+    redirect_to :action =>  "list", :id => @category, :option => @mode
   end
 end

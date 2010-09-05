@@ -16,8 +16,10 @@ class UsersController < ApplicationController
   def confirm
     @user = User.new( params[:user] )
     print "【 @user 】>> " ; p @user ;
-    valid_result = @user.valid?
-    print "【 valid_result 】>> " ; p valid_result ;
+    @valid_result = @user.valid?
+    print "【 @valid_result 】>> " ; p @valid_result ;
+
+#    redirect_to :action => "entry" if @valid_result == false
   end
 
   #--------#

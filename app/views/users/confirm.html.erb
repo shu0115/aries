@@ -1,27 +1,52 @@
 <h3>ユーザ登録</h3>
 
-<% form_for :user, :url => { :controller => "users", :action => "create" } do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :login_id, "ログインID" %><br />
-    <%= @user.login_id %>
-    <%= f.hidden_field :login_id, :value => @user.login_id %>
-  </p>
-
-  <p>
-    <%= f.label :twitter_id, "Twitter ID" %><br />
-    <%= @user.twitter_id %>
-    <%= f.hidden_field :twitter_id, :value => @user.twitter_id %>
-  </p>
-
-  <p>
-    <%= f.label :password, "パスワード" %><br />
-    <%= @user.password %>
-    <%= f.hidden_field :password, :value => @user.password %>
-  </p>
-
-  <p>
-    <%= f.submit '登録' %>
-  </p>
-<% end # form_for do - END %>
+<% if @valid_result == false %>
+	<% form_for :user, :url => { :controller => "users", :action => "confirm" } do |f| %>
+	  <%= f.error_messages %>
+	
+	  <p>
+	    <%= f.label :login_id, "ログインID" %><br />
+	    <%= f.text_field :login_id %>
+	  </p>
+	
+	  <p>
+	    <%= f.label :twitter_id, "Twitter ID" %><br />
+	    <%= f.text_field :twitter_id %>
+	  </p>
+	
+	  <p>
+	    <%= f.label :password, "パスワード" %><br />
+	    <%= f.password_field :password %>
+	  </p>
+	
+	  <p>
+	    <%= f.submit '確認' %>
+	  </p>
+	<% end # form_for do - END %>
+<% else %>
+	<% form_for :user, :url => { :controller => "users", :action => "create" } do |f| %>
+	  <%= f.error_messages %>
+	
+	  <p>
+	    <%= f.label :login_id, "ログインID" %><br />
+	    <%= @user.login_id %>
+	    <%= f.hidden_field :login_id, :value => @user.login_id %>
+	  </p>
+	
+	  <p>
+	    <%= f.label :twitter_id, "Twitter ID" %><br />
+	    <%= @user.twitter_id %>
+	    <%= f.hidden_field :twitter_id, :value => @user.twitter_id %>
+	  </p>
+	
+	  <p>
+	    <%= f.label :password, "パスワード" %><br />
+	    <%= @user.password %>
+	    <%= f.hidden_field :password, :value => @user.password %>
+	  </p>
+	
+	  <p>
+	    <%= f.submit '登録' %>
+	  </p>
+	<% end # form_for do - END %>
+<% end %>

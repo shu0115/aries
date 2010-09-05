@@ -41,7 +41,7 @@ ActionController::Routing::Routes.draw do |map|
   # consider removing or commenting them out if you're using named routes and resources.
 
   # memos #
-  map.connect '', :controller => 'memos', :action => 'list'
+#  map.connect '', :controller => 'memos', :action => 'list'
   map.connect '/memos', :controller => 'memos', :action => 'list'
 
   # public #
@@ -49,7 +49,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/public', :controller => 'public', :action => 'list'
 
   # users #
-  map.connect '', :controller => 'users', :action => 'entry'
+#  map.connect '', :controller => 'users', :action => 'entry'
   map.connect '/users', :controller => 'users', :action => 'entry'
 
   # routes #

@@ -15,6 +15,9 @@ class UsersController < ApplicationController
   #---------#
   def confirm
     @user = User.new( params[:user] )
+    print "【 @user 】>> " ; p @user ;
+    valid_result = @user.valid?
+    print "【 valid_result 】>> " ; p valid_result ;
   end
 
   #--------#
@@ -123,6 +126,8 @@ class UsersController < ApplicationController
       render :action => "edit"
     end
   end
+
+
 
 
 

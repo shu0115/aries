@@ -1,22 +1,27 @@
 
+<div class="page_box category_box">
+<table>
+	<tr>
+		<td>
+<p>
+  <b>ログインID：</b>
+  <%=h @user.login_id %>
+</p>
+
+<p>
+  <b>Twitter ID：</b>
+  <%=h @user.twitter_id %>
+</p>
+
+<% if false %>
 <p>
   <b>メールアドレス：</b>
   <%=h @user.email %>
 </p>
 
 <p>
-  <b>パスワード：</b>
-  <%=h @user.password %>
-</p>
-
-<p>
   <b>ユーザ名：</b>
   <%=h @user.name %>
-</p>
-
-<p>
-  <b>Twitter ID：</b>
-  <%=h @user.twitter_id %>
 </p>
 
 <p>
@@ -33,5 +38,13 @@
   <b>Webサイト URL：</b>
   <%=h @user.website_url %>
 </p>
+<% end %>
+		</td>
+	</tr>
+</table>
+</div>
+
+<br />
+<br />
 
 <span class="menu edit"><%= link_to $link[:edit], "/users/edit/#{@user.id}" %></span>

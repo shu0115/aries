@@ -1,9 +1,9 @@
-<%# カテゴリリスト %>
-<%#= link_to 'ALL', "/memos/list" %>
 <div class="page_box category_box">
 <table>
 	<tr>
 		<td>
+<%# カテゴリリスト %>
+<%#= link_to 'ALL', "/memos/list" %>
 <% @categorys.each_with_index{ |category, index| %><% if category[:category].to_s == @category.to_s %><span class="active_link"><%= link_to category[:category], "/memos/list/#{category[:category]}" %></span><% else %><%= link_to category[:category], "/memos/list/#{category[:category]}" %><% end %>　<wbr /><% } %><br />
 		</td>
 	</tr>

@@ -239,6 +239,8 @@ a:hover, a:active {
   padding: 10px;
 	margin: 0px auto;
   width: 98%;
+	align: left;
+	/*display: block;*/
 }
 .page_box .category_box {
   padding: 5px;

@@ -10,6 +10,12 @@
   </p>
 
   <p>
+    <%= f.label :twitter_id, "Twitter ID" %><br />
+    <%= @user.twitter_id %>
+    <%= f.hidden_field :twitter_id, :value => @user.twitter_id %>
+  </p>
+
+  <p>
     <%= f.label :password, "パスワード" %><br />
     <%= @user.password %>
     <%= f.hidden_field :password, :value => @user.password %>
@@ -19,5 +25,3 @@
     <%= f.submit '登録' %>
   </p>
 <% end # form_for do - END %>
-
-<%= link_to 'Top', "" %>

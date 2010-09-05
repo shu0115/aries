@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
 
-  # リンク
+  # リンク表示テキスト
   $link = { :show => "Show", :edit => "Edit", :delete => "Delete", :new => "New", :list => "List" }
 
   #---------------#

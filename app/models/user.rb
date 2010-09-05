@@ -3,6 +3,7 @@ require 'digest/sha1'
 class User < ActiveRecord::Base
 
   validates_presence_of :login_id  # 存在検証
+  validates_presence_of :password  # 存在検証
   validates_uniqueness_of :login_id  # 一意検証
 
   attr_accessor :password_confirmation
@@ -89,5 +90,14 @@ class User < ActiveRecord::Base
 #      return nil, nil
 #    end
 #  end
+
+  #--------------------#
+  # self.get_user_name #
+  #--------------------#
+  # ユーザ名取得
+  def self.get_user_name( user_id )
+    User.find_by_id( user_id )
+  end
+
 
 end

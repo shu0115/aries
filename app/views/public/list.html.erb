@@ -1,8 +1,23 @@
 
+<div class="page_box category_box">
+<table>
+	<tr>
+		<td>
 <%# カテゴリ %>
 <%#= link_to 'ALL', "/memos/list" %>
 <% @categorys.each_with_index{ |category, index| %><% if category[:category].to_s == @category.to_s %><span class="active_link"><%= link_to category[:category], "/public/list/#{category[:category]}" %></span><% else %><%= link_to category[:category], "/public/list/#{category[:category]}" %><% end %><% if ((index.to_i % 10) == 0) and index.to_i > 0 %><br /><% else %>　<% end %><% } %><br />
+		</td>
+	</tr>
+</table>
+</div>
 
+<br />
+<br />
+
+<%# 検索 %>
+<%= render :partial => 'search_area' %>
+
+<br />
 <br />
 
 <table class="table_style">
@@ -10,14 +25,24 @@
     <th>カテゴリ</th>
     <th>タイトル</th>
     <th>モード</th>
+    <th>ユーザ</th>
   </tr>
 
 <% @all_public_memos.each_with_index do |memo, index| %>
+<% user = User.find_by_id( memo.user_id ) %>
+
   <tr>
     <td>[<%= link_to memo.category, "/public/list/#{memo.category}" %>]</td>
     
     <td><%=h memo.title %></td>
     <td><%=h memo.mode %></td>
+		<% if user.blank? %>
+  	  <td></td>
+		<% elsif !user.twitter_id.blank? %>
+	    <td><%= link_to user.login_id, "http://twitter.com/#{user.twitter_id}", :target => "blank" %></td>
+		<% else %>
+	    <td><%=h user.login_id %></td>
+		<% end %>
     
     <td class="menu show"><%= link_to $link[:show], "/public/show/#{memo.id}/#{@category}", :title => memo.note %></td>
   </tr>

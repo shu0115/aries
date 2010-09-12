@@ -32,19 +32,19 @@
 <% user = User.find_by_id( memo.user_id ) %>
 
   <tr>
-    <td>[<%= link_to memo.category, "/public/list/#{memo.category}" %>]</td>
+    <td>[<%= link_to memo.category, { :action => :list, :id => memo.category } %>]</td>
     
     <td><%=h memo.title %></td>
     <td><%=h memo.mode %></td>
 		<% if user.blank? %>
   	  <td></td>
 		<% elsif !user.twitter_id.blank? %>
-	    <td><%= link_to user.login_id, "http://twitter.com/#{user.twitter_id}", :target => "blank" %></td>
+	    <td><%= link_to user.login_id, "http://twitter.com/#{user.twitter_id}", :target => "_blank" %></td>
 		<% else %>
 	    <td><%=h user.login_id %></td>
 		<% end %>
     
-    <td class="menu show"><%= link_to $link[:show], "/public/show/#{memo.id}/#{@category}", :title => memo.note %></td>
+    <td class="menu show"><%= link_to $link[:show], { :action => :show, :id => memo.id, :option => @category }, :title => memo.note %></td>
   </tr>
 <% end %>
 </table>

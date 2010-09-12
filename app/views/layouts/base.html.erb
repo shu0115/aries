@@ -8,6 +8,9 @@
   <title>Aries</title>
   <%= javascript_include_tag "prototype" %>
   <%= stylesheet_link_tag 'base' %>
+
+	<%# アクセス解析 %>
+	<%= render :partial => "/layouts/access_analyze" %>
 </head>
 
 <body>
@@ -47,6 +50,9 @@
 <br />
 
 </div>
+
+<%# アドセンス %>
+<%= render :partial => "/layouts/access_analyze" %>
 
 </body>
 

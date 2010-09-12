@@ -8,6 +8,9 @@
   <title>Aries:Memos:<%= controller.action_name %></title>
   <%= javascript_include_tag "prototype" %>
   <%= stylesheet_link_tag 'base' %>
+
+	<%# アクセス解析 %>
+	<%= render :partial => "/layouts/access_analyze" %>
 </head>
 
 <body>
@@ -21,6 +24,9 @@
 <%= yield %><br />
 
 <br />
+
+<%# アドセンス %>
+<%= render :partial => "/layouts/access_analyze" %>
 
 </body>
 

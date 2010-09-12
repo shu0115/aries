@@ -1,0 +1,23 @@
+
+<% unless request.env["SERVER_NAME"].to_s == "localhost" %>
+	<!-- shinobi1 忍者ツールズアクセス解析 -->
+	<script type="text/javascript" src="http://x8.kusarikatabira.jp/ufo/153632000"></script>
+	<noscript><a href="http://x8.kusarikatabira.jp/bin/gg?153632000" target="_blank">
+	<img src="http://x8.kusarikatabira.jp/bin/ll?153632000" border="0"></a><br>
+	<span style="font-size:9px"><img style="margin:0;vertical-align:text-bottom;" src="http://img.shinobi.jp/tadaima/fj.gif" width="19" height="11"> <a href="http://futoko.jpnz.jp" target="_blank">不登校　高校</a></span></noscript>
+	<!-- ／shinobi2 忍者ツールズアクセス解析 -->
+
+	<!-- Google Analytics -->
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-18493390-1']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+	<!-- ／Google Analytics -->
+<% end %>

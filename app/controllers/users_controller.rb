@@ -7,19 +7,15 @@ class UsersController < ApplicationController
   # entry #
   #-------#
   def entry
-    @user = User.new
-  end
-
-  #---------#
-  # confirm #
-  #---------#
-  def confirm
-    @user = User.new( params[:user] )
-    print "【 @user 】>> " ; p @user ;
-    @valid_result = @user.valid?
-    print "【 @valid_result 】>> " ; p @valid_result ;
-
-#    redirect_to :action => "entry" if @valid_result == false
+    @commit = params[:commit]
+    
+    if @commit == "確認"
+      @user = User.new( params[:user] )
+      @valid_result = @user.valid?
+    else
+      @user = User.new
+      @valid_result = false
+    end
   end
 
   #--------#
@@ -41,20 +37,19 @@ class UsersController < ApplicationController
   #-------#
   def login
     
-    login = params[:login]
+    params_login = params[:login]
 
     session[:user_id] = nil
     
-    if login.blank?
+    if params_login.blank?
       flash[:notice] = "ログイン情報がありません。"
       redirect_to params[:request_url].to_s
       return
     end
       
-    if !login[:login_id].blank? and !login[:password].blank?
+    if !params_login[:login_id].blank? and !params_login[:password].blank?
       # ユーザ認証
-      user = User.authenticate( login[:login_id], login[:password] )
-      print "【 user 】>> " ; p user ;
+      user = User.authenticate( params_login[:login_id], params_login[:password] )
      
       unless user.blank?
         session[:user_id] = user.id.to_s  # IDをセッションに格納

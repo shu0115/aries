@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 
   attr_accessor :password_confirmation
   attr_accessor :edit_password
-  validates_confirmation_of :password  # 再入力検証
+  validates_confirmation_of :password, :message => 'が一致しません。'  # 再入力検証
 
   #----------#
   # validate #
@@ -46,14 +46,10 @@ class User < ActiveRecord::Base
   #-----------------#
   # パスワードチェック
   def password_check?( check_password )
-      print "【 check_password 】>> " ; p check_password ;
 
       # 暗号化パスワード生成
       expected_password = User.encrypted_password( check_password, self.salt )
       
-      print "【 expected_password 】>> " ; p expected_password ;
-      print "【 self.hashed_password 】>> " ; p self.hashed_password ;
-
       # 暗号化パスワードとハッシュパスワードが一致しなければ
       unless expected_password == self.hashed_password
         return false

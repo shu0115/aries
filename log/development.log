@@ -10098,3 +10098,275 @@ Processing UsersController#confirm (for 127.0.0.1 at 2010-09-12 12:58:26) [POST]
 Rendering template within layouts/base
 Rendering users/confirm
 Completed in 20ms (View: 13, DB: 0) | 200 OK [http://localhost/users/confirm]
+
+
+Processing UsersController#entry (for 127.0.0.1 at 2010-09-12 13:02:54) [GET]
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login_id" IS NULL) LIMIT 1[0m
+Rendering template within layouts/base
+Rendering users/entry
+Completed in 21ms (View: 15, DB: 0) | 200 OK [http://localhost/users/entry]
+
+
+Processing UsersController#entry (for 127.0.0.1 at 2010-09-12 13:02:57) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login_id" IS NULL) LIMIT 1[0m
+Rendering template within layouts/base
+Rendering users/entry
+Completed in 18ms (View: 12, DB: 0) | 200 OK [http://localhost/users/entry]
+
+
+Processing UsersController#entry (for 127.0.0.1 at 2010-09-12 13:02:58) [GET]
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login_id" IS NULL) LIMIT 1[0m
+Rendering template within layouts/base
+Rendering users/entry
+Completed in 18ms (View: 12, DB: 0) | 200 OK [http://localhost/users/entry]
+
+
+Processing UsersController#entry (for 127.0.0.1 at 2010-09-12 13:03:40) [GET]
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login_id" IS NULL) LIMIT 1[0m
+Rendering template within layouts/base
+Rendering users/entry
+Completed in 51ms (View: 46, DB: 0) | 200 OK [http://localhost/users/entry]
+
+
+Processing UsersController#entry (for 127.0.0.1 at 2010-09-12 13:03:48) [GET]
+Rendering template within layouts/base
+Rendering users/entry
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/users/entry]
+
+
+Processing UsersController#entry (for 127.0.0.1 at 2010-09-12 13:04:23) [GET]
+Rendering template within layouts/base
+Rendering users/entry
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/users/entry]
+
+
+Processing UsersController#entry (for 127.0.0.1 at 2010-09-12 13:10:45) [GET]
+Rendering template within layouts/base
+Rendering users/entry
+Completed in 32ms (View: 6, DB: 0) | 200 OK [http://localhost/users/entry]
+
+
+Processing UsersController#entry (for 127.0.0.1 at 2010-09-12 13:10:46) [GET]
+Rendering template within layouts/base
+Rendering users/entry
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/users/entry]
+
+
+Processing UsersController#confirm (for 127.0.0.1 at 2010-09-12 13:10:50) [POST]
+  Parameters: {"commit"=>"確認", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "user"=>{"twitter_id"=>"", "login_id"=>"test", "password"=>""}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'test') LIMIT 1[0m
+Rendering template within layouts/base
+Rendering users/confirm
+Completed in 51ms (View: 44, DB: 0) | 200 OK [http://localhost/users/confirm]
+
+
+Processing UsersController#entry (for 127.0.0.1 at 2010-09-12 13:11:16) [GET]
+Rendering template within layouts/base
+Rendering users/entry
+Completed in 13ms (View: 9, DB: 0) | 200 OK [http://localhost/users/entry]
+
+
+Processing UsersController#entry (for 127.0.0.1 at 2010-09-12 13:11:18) [POST]
+  Parameters: {"commit"=>"確認", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "user"=>{"twitter_id"=>"", "login_id"=>"", "password"=>""}}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login_id" = '') LIMIT 1[0m
+Rendering template within layouts/base
+Rendering users/entry
+Completed in 16ms (View: 10, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#entry (for 127.0.0.1 at 2010-09-12 13:11:57) [GET]
+Rendering template within layouts/base
+Rendering users/entry
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/users/entry]
+
+
+Processing UsersController#entry (for 127.0.0.1 at 2010-09-12 13:11:59) [POST]
+  Parameters: {"commit"=>"確認", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "user"=>{"twitter_id"=>"", "login_id"=>"", "password"=>""}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login_id" = '') LIMIT 1[0m
+Rendering template within layouts/base
+Rendering users/entry
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#entry (for 127.0.0.1 at 2010-09-12 13:12:40) [GET]
+Rendering template within layouts/base
+Rendering users/entry
+Completed in 49ms (View: 44, DB: 0) | 200 OK [http://localhost/users/entry]
+
+
+Processing UsersController#entry (for 127.0.0.1 at 2010-09-12 13:12:44) [POST]
+  Parameters: {"commit"=>"確認", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "user"=>{"password_confirmation"=>"", "twitter_id"=>"", "login_id"=>"", "password"=>""}}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login_id" = '') LIMIT 1[0m
+Rendering template within layouts/base
+Rendering users/entry
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#entry (for 127.0.0.1 at 2010-09-12 13:13:28) [POST]
+  Parameters: {"commit"=>"確認", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "user"=>{"password_confirmation"=>"test", "twitter_id"=>"", "login_id"=>"", "password"=>"test"}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login_id" = '') LIMIT 1[0m
+Rendering template within layouts/base
+Rendering users/entry
+Completed in 15ms (View: 8, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#entry (for 127.0.0.1 at 2010-09-12 13:13:35) [POST]
+  Parameters: {"commit"=>"確認", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "user"=>{"password_confirmation"=>"test1", "twitter_id"=>"", "login_id"=>"", "password"=>"test"}}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login_id" = '') LIMIT 1[0m
+Rendering template within layouts/base
+Rendering users/entry
+Completed in 16ms (View: 10, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#entry (for 127.0.0.1 at 2010-09-12 13:14:05) [POST]
+  Parameters: {"commit"=>"確認", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "user"=>{"password_confirmation"=>"test1", "twitter_id"=>"", "login_id"=>"", "password"=>""}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login_id" = '') LIMIT 1[0m
+Rendering template within layouts/base
+Rendering users/entry
+Completed in 54ms (View: 47, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#entry (for 127.0.0.1 at 2010-09-12 13:14:19) [POST]
+  Parameters: {"commit"=>"確認", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "user"=>{"password_confirmation"=>"test1", "twitter_id"=>"", "login_id"=>"", "password"=>"tes"}}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login_id" = '') LIMIT 1[0m
+Rendering template within layouts/base
+Rendering users/entry
+Completed in 16ms (View: 10, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#entry (for 127.0.0.1 at 2010-09-12 13:14:37) [POST]
+  Parameters: {"commit"=>"確認", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "user"=>{"password_confirmation"=>"test1", "twitter_id"=>"test", "login_id"=>"test", "password"=>"test"}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'test') LIMIT 1[0m
+Rendering template within layouts/base
+Rendering users/entry
+Completed in 17ms (View: 11, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#entry (for 127.0.0.1 at 2010-09-12 13:14:47) [POST]
+  Parameters: {"commit"=>"確認", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "user"=>{"password_confirmation"=>"test1", "twitter_id"=>"", "login_id"=>"test1", "password"=>"test"}}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'test1') LIMIT 1[0m
+Rendering template within layouts/base
+Rendering users/entry
+Completed in 17ms (View: 11, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#entry (for 127.0.0.1 at 2010-09-12 13:14:54) [POST]
+  Parameters: {"commit"=>"確認", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "user"=>{"password_confirmation"=>"test1", "twitter_id"=>"", "login_id"=>"test2", "password"=>"test"}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'test2') LIMIT 1[0m
+Rendering template within layouts/base
+Rendering users/entry
+Completed in 52ms (View: 11, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#entry (for 127.0.0.1 at 2010-09-12 13:14:59) [POST]
+  Parameters: {"commit"=>"確認", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "user"=>{"password_confirmation"=>"test1", "twitter_id"=>"", "login_id"=>"test3", "password"=>"test"}}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'test3') LIMIT 1[0m
+Rendering template within layouts/base
+Rendering users/entry
+Completed in 15ms (View: 9, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#entry (for 127.0.0.1 at 2010-09-12 13:15:06) [POST]
+  Parameters: {"commit"=>"確認", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "user"=>{"password_confirmation"=>"test", "twitter_id"=>"", "login_id"=>"test3", "password"=>"test"}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'test3') LIMIT 1[0m
+Rendering template within layouts/base
+Rendering users/entry
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#entry (for 127.0.0.1 at 2010-09-12 13:16:47) [POST]
+  Parameters: {"commit"=>"確認", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "user"=>{"password_confirmation"=>"test", "twitter_id"=>"", "login_id"=>"test3", "password"=>"test"}}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'test3') LIMIT 1[0m
+Rendering template within layouts/base
+Rendering users/entry
+Completed in 19ms (View: 12, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-09-12 13:17:09) [POST]
+  Parameters: {"commit"=>"登録", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "user"=>{"twitter_id"=>"", "login_id"=>"test3", "password"=>"test"}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'test3') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "salt", "created_at", "updated_at", "website_url", "hashed_password", "twitter_id", "birthday", "blog_url", "login_id", "password", "email") VALUES(NULL, '21900411400.954342789867542', '2010-09-12 04:17:09', '2010-09-12 04:17:09', NULL, '9bacde1c5c0e89987bc04401d93daf9c4067426a', '', NULL, NULL, 'test3', NULL, NULL)[0m
+Redirected to http://localhost:3000/memos
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/users/create]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-09-12 13:17:10) [GET]
+Redirected to http://localhost:3000/public/list
+Filter chain halted as [:login_check] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/memos]
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-09-12 13:17:10) [GET]
+  [4;36;1mSession Load (0.2ms)[0m   [0;1mSELECT * FROM "sessions" WHERE (updated_at < '2010-09-05 13:17:10') [0m
+  [4;35;1mMemo Load (1.0ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."mode" = 'public') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND mode = 'public' ) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering public/list
+Rendered public/_search_area (37.8ms)
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '4') LIMIT 1[0m
+Completed in 53ms (View: 48, DB: 2) | 200 OK [http://localhost/public/list]
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-09-12 13:17:26) [GET]
+  [4;35;1mSession Load (0.3ms)[0m   [0mSELECT * FROM "sessions" WHERE (updated_at < '2010-09-05 13:17:26') [0m
+  [4;36;1mMemo Load (1.0ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."mode" = 'public') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND mode = 'public' ) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering public/list
+Rendered public/_search_area (3.0ms)
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '4') LIMIT 1[0m
+Completed in 18ms (View: 13, DB: 2) | 200 OK [http://localhost/public/list]
+
+
+Processing UsersController#entry (for 127.0.0.1 at 2010-09-12 13:17:34) [GET]
+Rendering template within layouts/base
+Rendering users/entry
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/users/entry]
+
+
+Processing UsersController#entry (for 127.0.0.1 at 2010-09-12 13:17:38) [POST]
+  Parameters: {"commit"=>"確認", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "user"=>{"password_confirmation"=>"", "twitter_id"=>"", "login_id"=>"", "password"=>""}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login_id" = '') LIMIT 1[0m
+Rendering template within layouts/base
+Rendering users/entry
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-12 13:19:29) [POST]
+  Parameters: {"commit"=>"ログイン", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "login"=>{"login_id"=>"shu_0115", "password"=>"endless"}, "request_url"=>"http://localhost:3000/users"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login_id" = 'shu_0115') LIMIT 1[0m
+Redirected to http://localhost:3000/memos
+Completed in 7ms (DB: 1) | 302 Found [http://localhost/users/login]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-09-12 13:19:29) [GET]
+  [4;36;1mMemo Load (14.2ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (1.2ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (2.8ms)
+Completed in 727ms (View: 668, DB: 16) | 200 OK [http://localhost/memos]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-09-12 13:19:36) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;36;1mMemo Load (14.0ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (1.0ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (2.6ms)
+Completed in 686ms (View: 663, DB: 15) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-09-12 13:20:03) [GET]
+  [4;36;1mSession Load (0.3ms)[0m   [0;1mSELECT * FROM "sessions" WHERE (updated_at < '2010-09-05 13:20:03') [0m
+  [4;35;1mMemo Load (1.1ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."mode" = 'public') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND mode = 'public' ) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering public/list
+Rendered public/_search_area (3.1ms)
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '4') LIMIT 1[0m
+Completed in 19ms (View: 14, DB: 2) | 200 OK [http://localhost/public/list]

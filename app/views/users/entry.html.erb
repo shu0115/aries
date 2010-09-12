@@ -44,7 +44,7 @@
 	  </p>
 	
 	  <p>
-	    <%= f.label :password, "パスワード" %>：<%= @user.password %>
+	    <%= f.label :password, "パスワード" %>：<% @user.password.length.times{ |index| %>*<% } %>
 	    <%= f.hidden_field :password, :value => @user.password %>
 	  </p>
 	

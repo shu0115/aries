@@ -1,7 +1,8 @@
 <%# メニュー %>
-<span class="menu list"><%= link_to $link[:list], "/memos/list/#{@category}" %></span>
-　<span class="menu edit"><%= link_to $link[:edit], "/memos/edit/#{@memo.id}/#{@category}" %></span>
-　<span class="menu delete"><%= link_to $link[:delete], "/memos/destroy/#{@memo.id}/#{@category}", :confirm => "「#{@memo.title}」を本当に削除してよろしいですか？" %></span><br />
+<span class="menu list"><%= link_to $link[:list], { :action => "list", :id => @category } %></span>
+<% unless @memo.blank? %>
+　<span class="menu edit"><%= link_to $link[:edit], { :action => "edit", :id => @memo.id, :option => @category } %></span>
+　<span class="menu delete"><%= link_to $link[:delete], { :action => "destroy", :id => @memo.id, :option => @category }, :confirm => "「#{@memo.title}」を本当に削除してよろしいですか？" %></span><br />
 
 <br />
 
@@ -12,6 +13,7 @@
 <pre class="pre_style"><%=h @memo.note %></pre>
 
 <%# メニュー %>
-<span class="menu list"><%= link_to $link[:list], "/memos/list/#{@category}" %></span>
-　<span class="menu edit"><%= link_to $link[:edit], "/memos/edit/#{@memo.id}/#{@category}" %></span>
-　<span class="menu delete"><%= link_to $link[:delete], "/memos/destroy/#{@memo.id}/#{@category}", :confirm => "「#{@memo.title}」を本当に削除してよろしいですか？" %></span>
+<span class="menu list"><%= link_to $link[:list], { :action => "list", :id => @category } %></span>
+　<span class="menu edit"><%= link_to $link[:edit], { :action => "edit", :id => @memo.id, :option => @category } %></span>
+　<span class="menu delete"><%= link_to $link[:delete], { :action => "destroy", :id => @memo.id, :option => @category }, :confirm => "「#{@memo.title}」を本当に削除してよろしいですか？" %></span><br />
+<% end %>

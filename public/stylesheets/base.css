@@ -255,3 +255,11 @@ a:hover, a:active {
   padding: 5px;
   width: 200px;
 }
+
+/* radius_borderクラス */
+.radius_border {
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border: 1px solid #aaa;
+  padding: 5px;
+}

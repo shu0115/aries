@@ -1,14 +1,10 @@
 
-<div class="page_box category_box">
-<table>
-	<tr>
-		<td>
+<div class="radius_border">
+<table><tr><td>
 <%# カテゴリ %>
 <%#= link_to 'ALL', "/memos/list" %>
 <% @categorys.each_with_index{ |category, index| %><% if category[:category].to_s == @category.to_s %><span class="active_link"><%= link_to category[:category], "/public/list/#{category[:category]}" %></span><% else %><%= link_to category[:category], "/public/list/#{category[:category]}" %><% end %><% if ((index.to_i % 10) == 0) and index.to_i > 0 %><br /><% else %>　<% end %><% } %><br />
-		</td>
-	</tr>
-</table>
+</td></tr></table>
 </div>
 
 <br />

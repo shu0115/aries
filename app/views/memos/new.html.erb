@@ -1,12 +1,19 @@
-<span class="menu list"><%= link_to $link[:list], "/memos/list/#{@category}" %></span><br />
+
+<span class="menu list"><%= link_to $link[:list], { :action => "list", :id => @category } %></span><br />
 
 <br />
 
-<% form_for :memo, :url => "/memos/create/#{@category}" do |f| %>
+<% form_for :memo, :url => { :action => "create", :id => @category } do |f| %>
   <%= f.error_messages %>
 
   <%= f.label :category, 'カテゴリ' %><br />
-  <% @categorys.each_with_index{ |category, index| %><%= link_to_remote( category[:category], :update => "memo_category_set", :url => { :action => :memo_category, :category => category[:category] } ) %>　<% if ((index.to_i % 10) == 0) and index.to_i > 0 %><br /><% end %><% } %><br />
+	<div class="radius_border">
+	<table><tr><td>
+		<% @categorys.each_with_index{ |category, index| %><%= link_to_remote( category[:category], :update => "memo_category_set", :url => { :action => :memo_category, :category => category[:category] } ) %>　<wbr /><% } %><br />
+	</td></tr></table>
+	</div>
+  <br />
+  <br />
   <span id="memo_category_set"><%= f.text_field :category, :value => @category %></span><br />
   
   <br />
@@ -41,4 +48,4 @@
 
 <br />
 
-<span class="menu list"><%= link_to $link[:list], "/memos/list/#{@category}" %></span>
+<span class="menu list"><%= link_to $link[:list], { :action => "list", :id => @category } %></span>

@@ -92,7 +92,7 @@ class MemosController < ApplicationController
   #------#
   def show
     @category = params[:option]
-    @memo = Memo.find( params[:id] )
+    @memo = Memo.find_by_id_and_user_id( params[:id], session[:user_id] )
   end
 
   #-----#
@@ -110,7 +110,7 @@ class MemosController < ApplicationController
   #------#
   def edit
     @category = params[:option]
-    @memo = Memo.find( params[:id] )
+    @memo = Memo.find_by_id_and_user_id( params[:id], session[:user_id] )
     @categorys = Memo.user_categorys( :user_id => session[:user_id] )
   end
 
@@ -125,12 +125,12 @@ class MemosController < ApplicationController
 
     if @memo.save
       flash[:notice] = "「#{@memo.title}」の新規作成が完了しました。"
-#      redirect_to "/memos/show/#{@memo.id}/#{@category}/#{@mode}"
       redirect_to :action =>  "show", :id => @memo.id, :option => @category, :one => @mode
+      return
     else
       flash[:notice] = "「#{@memo.title}」の新規作成に失敗しました。"
-#      redirect_to "/memos/new/#{@category}/#{@mode}"
       redirect_to :action =>  "new", :id => @memo.id, :option => @category, :one => @mode
+      return
     end
   end
 
@@ -147,12 +147,12 @@ class MemosController < ApplicationController
 
     if @memo.update_attributes( update_params )
       flash[:notice] = "「#{@memo.title}」の更新が完了しました。"
-#      redirect_to "/memos/show/#{@memo.id}/#{@memo.category}/#{@mode}"
       redirect_to :action =>  "show", :id => @memo.id, :option => @category, :one => @mode
+      return
     else
       flash[:notice] = "「#{@memo.title}」の更新に失敗しました。"
-#      redirect_to "/memos/edit/#{@memo.id}/#{@memo.category}/#{@mode}"
       redirect_to :action =>  "edit", :id => @memo.id, :option => @category, :one => @mode
+      return
     end
   end
 
@@ -160,10 +160,10 @@ class MemosController < ApplicationController
   # destroy #
   #---------#
   def destroy
-    @memo = Memo.find( params[:id] )
+    @memo = Memo.find_by_id_and_user_id( params[:id], session[:user_id] )
     @category = params[:option]
 
-    if @memo.destroy
+    if !@memo.blank? and @memo.destroy
       flash[:notice] = "「#{@memo.title}」の削除が完了しました。"
     else
       flash[:notice] = "「#{@memo.title}」の削除に失敗しました。"

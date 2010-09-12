@@ -1,48 +1,45 @@
-<% if false %>
-<span id="menu_title">編集</span><br />
+
+<span class="menu list"><%= link_to $link[:list], { :action => "list", :id => @category } %></span>
+<% unless @memo.blank? %>
+　<span class="menu show"><%= link_to $link[:show], { :action => "show", :id => @memo.id, :option => @category } %></span><br />
 
 <br />
-<% end %>
-
-<span class="menu list"><%= link_to $link[:list], "/memos/list/#{@category}" %></span>
-　<span class="menu show"><%= link_to $link[:show], "/memos/show/#{@memo.id}/#{@category}" %></span>
 
 <% form_for :memo, :url => "/memos/update/#{@memo.id}/#{@category}" do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :category, 'カテゴリ' %><br />
+  <%= f.label :category, 'カテゴリ' %><br />
+	<div class="radius_border">
+	<table><tr><td>
     <% @categorys.each_with_index{ |category, index| %><%= link_to_remote( category[:category], :update => "memo_category_set", :url => { :action => :memo_category, :category => category[:category] } ) %>　<wbr /><% } %><br />
-		<br />
-    <span id="memo_category_set"><%= f.text_field :category %></span><br />
-  </p>
+	</td></tr></table>
+	</div>
+  <br />
+  <br />
+  <span id="memo_category_set"><%= f.text_field :category %></span><br />
 
-  <p>
-    <%= f.label :title, 'タイトル' %><br />
-    <%= f.text_field :title, :class => "memo_title_field" %>
-  </p>
+	<br />
 
-  <p>
-    <%= f.label :mode, 'モード' %>：
-    <%= select( :memo, :mode, Memo.mode_choices, :mode => @memo.mode ) %>
-  </p>
+  <%= f.label :title, 'タイトル' %><br />
+  <%= f.text_field :title, :class => "memo_title_field" %><br />
 
-<% if false %>
-  <p>
-    <%= f.label :level, 'レベル' %>：
-    <%= select( :memo, :level, Memo.level_choices, :level => @memo.level ) %>
-  </p>
+	<br />
+
+  <%= f.label :mode, 'モード' %>：
+  <%= select( :memo, :mode, Memo.mode_choices, :mode => @memo.mode ) %><br />
+
+	<br />
+
+  <%= f.label :note, 'テキスト' %><br />
+  <%= f.text_area :note %><br />
+
+	<br />
+
+  <%= f.submit '保存', :disable_with => "保存中..." %><br />
 <% end %>
 
-  <p>
-    <%= f.label :note, 'テキスト' %><br />
-    <%= f.text_area :note %>
-  </p>
+<br />
 
-  <p>
-    <%= f.submit '保存', :disable_with => "保存中..." %>
-  </p>
+<span class="menu list"><%= link_to $link[:list], { :action => "list", :id => @category } %></span>
+　<span class="menu show"><%= link_to $link[:show], { :action => "show", :id => @memo.id, :option => @category } %></span>
 <% end %>
-
-<span class="menu list"><%= link_to $link[:list], "/memos/list/#{@category}" %></span>
-　<span class="menu show"><%= link_to $link[:show], "/memos/show/#{@memo.id}/#{@category}" %></span>

@@ -1,8 +1,5 @@
-<% if false %>
-<h3>ユーザ情報編集</h3>
-<% end %>
 
-<% form_for :user, :url => "/users/update/#{@user.id}" do |f| %>
+<% form_for :user, :url => { :action => :update, :id => @user.id } do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -14,8 +11,12 @@
   </p>
 
   <p>
-    <%= f.label :password, "パスワード" %>：<%= f.password_field :password, :class => "text_field" %>
+    <%= f.label :password, "現在のパスワード" %>：<%= f.password_field :password, :class => "text_field" %>
   </p>
+
+	<%= link_to( "パスワード変更", { :action => :edit_password, :id => @user.id }, { :target => "_self" } ) %>
+
+
 
 <% if false %>
   <p>
@@ -44,11 +45,14 @@
   </p>
 <% end %>
 
+
+
   <p>
     <%= f.submit '保存', :disable_with => "保存中..." %>
   </p>
+
 <% end %>
 
 <br />
 
-<span class="menu show"><%= link_to $link[:show], "/users/show/#{@user.id}" %></span>
+<span class="menu show"><%= link_to $link[:show], { :action => :show, :id => @user.id } %></span>

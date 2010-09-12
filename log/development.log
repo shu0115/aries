@@ -7801,3 +7801,2300 @@ Rendering template within layouts/base
 Rendering memos/list
 Rendered memos/_search_area (2.7ms)
 Completed in 790ms (View: 764, DB: 17) | 200 OK [http://localhost/memos]
+
+
+Processing MemosController#destroy (for 127.0.0.1 at 2010-09-05 23:24:04) [GET]
+  Parameters: {"option"=>"all", "id"=>"278"}
+Redirected to http://localhost:3000/public/list
+Filter chain halted as [:login_check] rendered_or_redirected.
+Completed in 38ms (DB: 0) | 302 Found [http://localhost/memos/destroy/278/all]
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-09-05 23:24:04) [GET]
+  [4;35;1mSession Load (0.3ms)[0m   [0mSELECT * FROM "sessions" WHERE (updated_at < '2010-08-29 23:24:04') [0m
+  [4;36;1mMemo Load (1.0ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."mode" = 'public') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND mode = 'public' ) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering public/list
+Rendered public/_search_area (3.2ms)
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '4') LIMIT 1[0m
+Completed in 21ms (View: 14, DB: 2) | 200 OK [http://localhost/public/list]
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-09-06 08:11:35) [POST]
+  Parameters: {"commit"=>"検索", "search_word"=>"テスト", "authenticity_token"=>"YfadjkwRq8S/Om/oFFGMbleksSAf4aRGwjiHNTcZGMc=", "search_type"=>"title"}
+  [4;36;1mSession Load (0.1ms)[0m   [0;1mSELECT * FROM "sessions" WHERE (updated_at < '2010-08-30 08:11:35') [0m
+  [4;35;1mMemo Load (1.1ms)[0m   [0mSELECT * FROM "memos" WHERE (mode = 'public' AND title LIKE '%テスト%') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND mode = 'public' ) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering public/list
+Rendered public/_search_area (2.8ms)
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '4') LIMIT 1[0m
+Completed in 20ms (View: 13, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-09-12 11:09:26) [GET]
+  [4;36;1mSession Load (0.4ms)[0m   [0;1mSELECT * FROM "sessions" WHERE (updated_at < '2010-09-05 11:09:26') [0m
+  [4;35;1mSession Destroy (0.2ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 151[0m
+  [4;36;1mMemo Load (1.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."mode" = 'public') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND mode = 'public' ) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering public/list
+Rendered public/_search_area (8.0ms)
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '4') LIMIT 1[0m
+Completed in 119ms (View: 101, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-12 11:09:55) [POST]
+  Parameters: {"commit"=>"ログイン", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "login"=>{"login_id"=>"shu_0115", "password"=>"endless"}, "request_url"=>"http://localhost:3000/"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login_id" = 'shu_0115') LIMIT 1[0m
+Redirected to http://localhost:3000/memos
+Completed in 7ms (DB: 1) | 302 Found [http://localhost/users/login]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-09-12 11:09:55) [GET]
+  [4;35;1mMemo Load (16.0ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (1.2ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (32.7ms)
+Completed in 723ms (View: 697, DB: 18) | 200 OK [http://localhost/memos]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-09-12 11:09:58) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/show
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/show/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 11:10:00) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 11:24:52) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-09-12 11:24:57) [POST]
+  Parameters: {"commit"=>"保存", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"twitter_id"=>"shu_0115", "login_id"=>"shu_0115", "password"=>"test"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+
+NoMethodError (Attempt to call private method):
+  app/controllers/users_controller.rb:124:in `update'
+
+
+Rendered rescues/_trace (20.4ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 11:25:22) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-09-12 11:25:25) [POST]
+  Parameters: {"commit"=>"保存", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"twitter_id"=>"shu_0115", "login_id"=>"shu_0115", "password"=>"test"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+
+NoMethodError (undefined method `encrypted_password' for #<User:0x1053a66e0>):
+  app/models/user.rb:49:in `password_check?'
+  app/controllers/users_controller.rb:124:in `update'
+
+
+Rendered rescues/_trace (20.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 11:26:18) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-09-12 11:32:44) [POST]
+  Parameters: {"commit"=>"保存", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"twitter_id"=>"shu_0115", "login_id"=>"shu_0115", "password"=>"test"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.+):
+  app/models/user.rb:77:in `encrypted_password'
+  app/models/user.rb:49:in `password_check?'
+  app/controllers/users_controller.rb:124:in `update'
+
+
+Rendered rescues/_trace (55.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-09-12 11:34:02) [POST]
+  Parameters: {"commit"=>"保存", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"twitter_id"=>"shu_0115", "login_id"=>"shu_0115", "password"=>"test"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.+):
+  app/models/user.rb:79:in `encrypted_password'
+  app/models/user.rb:51:in `password_check?'
+  app/controllers/users_controller.rb:124:in `update'
+
+
+Rendered rescues/_trace (19.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-09-12 11:34:40) [POST]
+  Parameters: {"commit"=>"保存", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"twitter_id"=>"shu_0115", "login_id"=>"shu_0115", "password"=>"test"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.+):
+  app/models/user.rb:79:in `encrypted_password'
+  app/models/user.rb:51:in `password_check?'
+  app/controllers/users_controller.rb:126:in `update'
+
+
+Rendered rescues/_trace (56.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 11:35:17) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-09-12 11:35:49) [POST]
+  Parameters: {"commit"=>"保存", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"twitter_id"=>"shu_0115", "login_id"=>"shu_0115", "password"=>"test"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.+):
+  app/models/user.rb:79:in `encrypted_password'
+  app/models/user.rb:51:in `password_check?'
+  app/controllers/users_controller.rb:126:in `update'
+
+
+Rendered rescues/_trace (19.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 11:37:44) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-09-12 11:37:47) [POST]
+  Parameters: {"commit"=>"保存", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"twitter_id"=>"shu_0115", "login_id"=>"shu_0115", "password"=>"test"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Redirected to http://localhost:3000/users/edit
+Completed in 7ms (DB: 1) | 302 Found [http://localhost/users/update/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 11:37:47) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  app/controllers/users_controller.rb:114:in `edit'
+
+
+Rendered rescues/_trace (20.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 11:38:15) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 15ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-09-12 11:38:17) [POST]
+  Parameters: {"commit"=>"保存", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"twitter_id"=>"shu_0115", "login_id"=>"shu_0115", "password"=>"test"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Redirected to http://localhost:3000/users/edit/2
+Completed in 45ms (DB: 1) | 302 Found [http://localhost/users/update/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 11:38:18) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 11:38:21) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-09-12 11:38:24) [POST]
+  Parameters: {"commit"=>"保存", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"twitter_id"=>"shu_0115", "login_id"=>"shu_0115", "password"=>"test"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Redirected to http://localhost:3000/users/edit/2
+Completed in 7ms (DB: 1) | 302 Found [http://localhost/users/update/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 11:38:24) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-09-12 11:38:30) [POST]
+  Parameters: {"commit"=>"保存", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"twitter_id"=>"shu_0115", "login_id"=>"shu_0115", "password"=>"endless"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-12 02:38:30', "salt" = '21894647800.811221923097562', "hashed_password" = '402192ee5520e773df9cce7b2c1c141b94d3977f' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/users/show/2
+Completed in 11ms (DB: 1) | 302 Found [http://localhost/users/update/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-09-12 11:38:30) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/show
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/users/show/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 11:38:39) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 11:42:46) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 17ms (View: 11, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-09-12 11:44:39) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;36;1mMemo Load (14.7ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (1.1ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (2.6ms)
+Completed in 691ms (View: 667, DB: 16) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-09-12 11:44:41) [GET]
+  Parameters: {"id"=>"Gimmick"}
+  [4;36;1mMemo Load (1.0ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2' AND "memos"."category" = 'Gimmick') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (1.0ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (2.5ms)
+Completed in 16ms (View: 11, DB: 2) | 200 OK [http://localhost/memos/list/Gimmick]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-09-12 11:44:42) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/show
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/users/show/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 11:44:44) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 11:45:04) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 11:45:05) [POST]
+  Parameters: {"authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "_"=>""}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+
+ActionView::MissingTemplate (Missing template users/edit_password.erb in view path app/views):
+  app/controllers/users_controller.rb:136:in `edit_password'
+
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 11:46:53) [POST]
+  Parameters: {"authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "_"=>""}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+Rendering users/edit_password
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/users/edit_password]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 11:48:44) [POST]
+  Parameters: {"authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "_"=>""}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+Rendering users/edit_password
+
+ActionView::TemplateError (undefined local variable or method `f' for #<ActionView::Base:0x104fcb660>) on line #2 of app/views/users/edit_password.html.erb:
+1:   <p>
+2:     <%= f.label :password, "パスワード確認" %>：<%= f.password_field :password, :class => "text_field" %>
+3:   </p>
+
+    app/views/users/edit_password.html.erb:2
+    app/controllers/users_controller.rb:136:in `edit_password'
+
+
+Rendered rescues/_trace (23.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 11:50:34) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 17ms (View: 11, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 11:50:36) [POST]
+  Parameters: {"authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "_"=>""}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+Rendering users/edit_password
+Completed in 43ms (View: 38, DB: 1) | 200 OK [http://localhost/users/edit_password]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 11:51:08) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 16ms (View: 11, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 11:51:10) [POST]
+  Parameters: {"authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "_"=>""}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+Rendering users/edit_password
+Completed in 6ms (View: 0, DB: 1) | 200 OK [http://localhost/users/edit_password]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 11:52:15) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 11:52:16) [POST]
+  Parameters: {"authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "_"=>""}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+Rendering users/edit_password
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://localhost/users/edit_password]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-09-12 11:54:10) [POST]
+  Parameters: {"commit"=>"保存", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"password_confirmation"=>"", "edit_password"=>"", "twitter_id"=>"shu_0115", "login_id"=>"shu_0115", "password"=>""}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Redirected to http://localhost:3000/users/edit/2
+Completed in 7ms (DB: 1) | 302 Found [http://localhost/users/update/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 11:54:11) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 15ms (View: 9, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 11:54:33) [POST]
+  Parameters: {"authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "_"=>""}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+Rendering users/edit_password
+Completed in 5ms (View: 0, DB: 1) | 200 OK [http://localhost/users/edit_password]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-09-12 11:55:30) [POST]
+  Parameters: {"commit"=>"保存", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"password_confirmation"=>"", "edit_password"=>"", "twitter_id"=>"shu_0115", "login_id"=>"shu_0115", "password"=>""}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Redirected to http://localhost:3000/users/edit/2
+Completed in 7ms (DB: 1) | 302 Found [http://localhost/users/update/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 11:55:30) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-09-12 11:55:34) [POST]
+  Parameters: {"commit"=>"保存", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"twitter_id"=>"shu_0115", "login_id"=>"shu_0115", "password"=>""}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Redirected to http://localhost:3000/users/edit/2
+Completed in 7ms (DB: 1) | 302 Found [http://localhost/users/update/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 11:55:34) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-09-12 11:56:15) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/show
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/users/show/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 11:56:21) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 11:58:35) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+ERROR: compiling _run_erb_app47views47users47edit46html46erb RAISED compile error
+/Users/raisondetre0115/Mine/workspace/aries/app/views/users/edit.html.erb:20: syntax error, unexpected ')', expecting '}'
+...}, :update => "edit_password") }, { :target => "blank" } ).t...
+                              ^
+Function body:           def _run_erb_app47views47users47edit46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ;  if false ; @output_buffer.concat "\n<h3>\343\203\246\343\203\274\343\202\266\346\203\205\345\240\261\347\267\250\351\233\206</h3>\n"
+
+;  end ; @output_buffer.concat "\n\n"
+
+;  form_for :user, :url => "/users/update/#{@user.id}" do |f| ; @output_buffer.concat "\n  "
+; @output_buffer.concat(( f.error_messages ).to_s); @output_buffer.concat "\n\n  <p>\n    "
+
+
+; @output_buffer.concat(( f.label :login_id, "ログインID" ).to_s); @output_buffer.concat "\357\274\232"; @output_buffer.concat(( f.text_field :login_id, :class => "text_field" ).to_s); @output_buffer.concat "\n  </p>\n\n  <p>\n    "
+
+
+
+; @output_buffer.concat(( f.label :twitter_id, "Twitter ID" ).to_s); @output_buffer.concat "\357\274\232"; @output_buffer.concat(( f.text_field :twitter_id, :class => "text_field" ).to_s); @output_buffer.concat "\n  </p>\n\n  <p>\n    "
+
+
+
+; @output_buffer.concat(( f.label :password, "パスワード確認" ).to_s); @output_buffer.concat "\357\274\232"; @output_buffer.concat(( f.password_field :password, :class => "text_field" ).to_s); @output_buffer.concat "\n  </p>\n\n\t"
+
+
+; @output_buffer.concat(( link_to( "パスワード変更", { :url =>{ :action => :edit_password }, :update => "edit_password") }, { :target => "blank" } ).to_s); @output_buffer.concat "\n\n\n\n"
+
+
+
+;  if false ; @output_buffer.concat "\n  <p>\n    "
+
+; @output_buffer.concat(( f.label :email, "メールアドレス" ).to_s); @output_buffer.concat "<br />\n    "
+; @output_buffer.concat(( f.text_field :email ).to_s); @output_buffer.concat "\n  </p>\n\n  <p>\n    "
+
+
+
+; @output_buffer.concat(( f.label :name, "ユーザ名" ).to_s); @output_buffer.concat "<br />\n    "
+; @output_buffer.concat(( f.text_field :name ).to_s); @output_buffer.concat "\n  </p>\n\n  <p>\n    "
+
+
+
+; @output_buffer.concat(( f.label :birthday, "生年月日" ).to_s); @output_buffer.concat "<br />\n    "
+; @output_buffer.concat(( f.date_select :birthday ).to_s); @output_buffer.concat "\n  </p>\n\n  <p>\n    "
+
+
+
+; @output_buffer.concat(( f.label :blog_url, "ブログ URL" ).to_s); @output_buffer.concat "<br />\n    "
+; @output_buffer.concat(( f.text_field :blog_url ).to_s); @output_buffer.concat "\n  </p>\n\n  <p>\n    "
+
+
+
+; @output_buffer.concat(( f.label :website_url, "Webサイト URL" ).to_s); @output_buffer.concat "<br />\n    "
+; @output_buffer.concat(( f.text_field :website_url ).to_s); @output_buffer.concat "\n  </p>\n"
+
+;  end ; @output_buffer.concat "\n\n  <p>\n    "
+
+
+; @output_buffer.concat(( f.submit '保存', :disable_with => "保存中..." ).to_s); @output_buffer.concat "\n  </p>\n"
+
+;  end ; @output_buffer.concat "\n\n<br />\n\n<span class=\"menu show\">"
+
+
+
+; @output_buffer.concat(( link_to $link[:show], "/users/show/#{@user.id}" ).to_s); @output_buffer.concat "</span>\n"
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+
+Backtrace: /Users/raisondetre0115/Mine/workspace/aries/app/views/users/edit.html.erb:62:in `compile!'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:61:in `compile'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:28:in `render'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_view/template.rb:199:in `render_template'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:260:in `render'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:343:in `_render_with_layout'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:257:in `render'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1250:in `render_for_file'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1326:in `default_render'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:617:in `call_filters'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/flash.rb:146:in `perform_action'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `send'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `process_without_filters'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:606:in `process'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:391:in `process'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:386:in `call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/routing/route_set.rb:437:in `call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/session/abstract_store.rb:122:in `call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/rails-2.3.4/lib/commands/server.rb:111
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/raisondetre0115/Mine/workspace/aries/app/views/users/edit.html.erb:20: syntax error, unexpected ')', expecting '}'
+...}, :update => "edit_password") }, { :target => "blank" } ).t...
+                              ^) on line #20 of app/views/users/edit.html.erb:
+17:     <%= f.label :password, "パスワード確認" %>：<%= f.password_field :password, :class => "text_field" %>
+18:   </p>
+19: 
+20: 	<%= link_to( "パスワード変更", { :url =>{ :action => :edit_password }, :update => "edit_password") }, { :target => "blank" } %>
+21: 
+22: 
+23: 
+
+    app/views/users/edit.html.erb:62:in `compile!'
+
+
+Rendered rescues/_trace (23.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 11:59:07) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+ERROR: compiling _run_erb_app47views47users47edit46html46erb RAISED compile error
+/Users/raisondetre0115/Mine/workspace/aries/app/views/users/edit.html.erb:20: syntax error, unexpected ';', expecting ')'
+... :target => "blank" } ).to_s); @output_buffer.concat "\n\n\n...
+                              ^
+Function body:           def _run_erb_app47views47users47edit46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ;  if false ; @output_buffer.concat "\n<h3>\343\203\246\343\203\274\343\202\266\346\203\205\345\240\261\347\267\250\351\233\206</h3>\n"
+
+;  end ; @output_buffer.concat "\n\n"
+
+;  form_for :user, :url => "/users/update/#{@user.id}" do |f| ; @output_buffer.concat "\n  "
+; @output_buffer.concat(( f.error_messages ).to_s); @output_buffer.concat "\n\n  <p>\n    "
+
+
+; @output_buffer.concat(( f.label :login_id, "ログインID" ).to_s); @output_buffer.concat "\357\274\232"; @output_buffer.concat(( f.text_field :login_id, :class => "text_field" ).to_s); @output_buffer.concat "\n  </p>\n\n  <p>\n    "
+
+
+
+; @output_buffer.concat(( f.label :twitter_id, "Twitter ID" ).to_s); @output_buffer.concat "\357\274\232"; @output_buffer.concat(( f.text_field :twitter_id, :class => "text_field" ).to_s); @output_buffer.concat "\n  </p>\n\n  <p>\n    "
+
+
+
+; @output_buffer.concat(( f.label :password, "パスワード確認" ).to_s); @output_buffer.concat "\357\274\232"; @output_buffer.concat(( f.password_field :password, :class => "text_field" ).to_s); @output_buffer.concat "\n  </p>\n\n\t"
+
+
+; @output_buffer.concat(( link_to( "パスワード変更", { :url => { :action => :edit_password } }, { :target => "blank" } ).to_s); @output_buffer.concat "\n\n\n\n"
+
+
+
+;  if false ; @output_buffer.concat "\n  <p>\n    "
+
+; @output_buffer.concat(( f.label :email, "メールアドレス" ).to_s); @output_buffer.concat "<br />\n    "
+; @output_buffer.concat(( f.text_field :email ).to_s); @output_buffer.concat "\n  </p>\n\n  <p>\n    "
+
+
+
+; @output_buffer.concat(( f.label :name, "ユーザ名" ).to_s); @output_buffer.concat "<br />\n    "
+; @output_buffer.concat(( f.text_field :name ).to_s); @output_buffer.concat "\n  </p>\n\n  <p>\n    "
+
+
+
+; @output_buffer.concat(( f.label :birthday, "生年月日" ).to_s); @output_buffer.concat "<br />\n    "
+; @output_buffer.concat(( f.date_select :birthday ).to_s); @output_buffer.concat "\n  </p>\n\n  <p>\n    "
+
+
+
+; @output_buffer.concat(( f.label :blog_url, "ブログ URL" ).to_s); @output_buffer.concat "<br />\n    "
+; @output_buffer.concat(( f.text_field :blog_url ).to_s); @output_buffer.concat "\n  </p>\n\n  <p>\n    "
+
+
+
+; @output_buffer.concat(( f.label :website_url, "Webサイト URL" ).to_s); @output_buffer.concat "<br />\n    "
+; @output_buffer.concat(( f.text_field :website_url ).to_s); @output_buffer.concat "\n  </p>\n"
+
+;  end ; @output_buffer.concat "\n\n  <p>\n    "
+
+
+; @output_buffer.concat(( f.submit '保存', :disable_with => "保存中..." ).to_s); @output_buffer.concat "\n  </p>\n"
+
+;  end ; @output_buffer.concat "\n\n<br />\n\n<span class=\"menu show\">"
+
+
+
+; @output_buffer.concat(( link_to $link[:show], "/users/show/#{@user.id}" ).to_s); @output_buffer.concat "</span>\n"
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+
+Backtrace: /Users/raisondetre0115/Mine/workspace/aries/app/views/users/edit.html.erb:62:in `compile!'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:61:in `compile'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:28:in `render'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_view/template.rb:199:in `render_template'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:260:in `render'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:343:in `_render_with_layout'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:257:in `render'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1250:in `render_for_file'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1326:in `default_render'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:617:in `call_filters'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/flash.rb:146:in `perform_action'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `send'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `process_without_filters'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:606:in `process'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:391:in `process'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:386:in `call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/routing/route_set.rb:437:in `call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/session/abstract_store.rb:122:in `call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/rails-2.3.4/lib/commands/server.rb:111
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/raisondetre0115/Mine/workspace/aries/app/views/users/edit.html.erb:20: syntax error, unexpected ';', expecting ')'
+... :target => "blank" } ).to_s); @output_buffer.concat "\n\n\n...
+                              ^) on line #20 of app/views/users/edit.html.erb:
+17:     <%= f.label :password, "パスワード確認" %>：<%= f.password_field :password, :class => "text_field" %>
+18:   </p>
+19: 
+20: 	<%= link_to( "パスワード変更", { :url => { :action => :edit_password } }, { :target => "blank" } %>
+21: 
+22: 
+23: 
+
+    app/views/users/edit.html.erb:62:in `compile!'
+
+
+Rendered rescues/_trace (22.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 12:00:28) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 16ms (View: 11, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 12:00:40) [GET]
+  Parameters: {"url"=>{"action"=>"edit_password"}, "id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 49ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit/2?url%5Baction%5D=edit_password]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 12:02:11) [GET]
+  Parameters: {"url"=>{"action"=>"edit_password"}, "id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/users/edit/2?url%5Baction%5D=edit_password]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:02:17) [GET]
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/users/edit_password]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 12:02:20) [GET]
+  Parameters: {"url"=>{"action"=>"edit_password"}, "id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit/2?url%5Baction%5D=edit_password]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 12:02:23) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:02:24) [GET]
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 8ms (View: 3, DB: 1) | 200 OK [http://localhost/users/edit_password]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 12:04:05) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 16ms (View: 11, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 12:04:25) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 16ms (View: 11, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:07:33) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+
+ActionView::TemplateError (undefined method `edit_password' for #<User:0x1051fd460>) on line #9 of app/views/users/edit_password.html.erb:
+6:   </p>
+7: 
+8:   <p>
+9:     <%= f.label :edit_password, "パスワード変更" %>：<%= f.password_field :edit_password, :class => "text_field" %>
+10:   </p>
+11: 
+12:   <p>
+
+    app/views/users/edit_password.html.erb:9
+    app/views/users/edit_password.html.erb:1
+
+
+Rendered rescues/_trace (62.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:08:20) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:08:46) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:09:40) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:09:58) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-09-12 12:09:59) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/show
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/users/show/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 12:10:01) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 12:10:14) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:11:01) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 12:12:35) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 15ms (View: 10, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 12:13:24) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 16ms (View: 11, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-09-12 12:13:28) [POST]
+  Parameters: {"commit"=>"保存", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"twitter_id"=>"shu_0115", "login_id"=>"shu_0115", "password"=>""}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Redirected to http://localhost:3000/users/edit/2
+Completed in 7ms (DB: 1) | 302 Found [http://localhost/users/update/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 12:13:28) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-09-12 12:13:36) [POST]
+  Parameters: {"commit"=>"保存", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"twitter_id"=>"shu_0115", "login_id"=>"shu_0115", "password"=>"endless"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-12 03:13:36', "salt" = '21896017600.216067354264045', "hashed_password" = '67ccfae46a7afbc2a03a6f091eec40572c7cbde8' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/users/show/2
+Completed in 10ms (DB: 1) | 302 Found [http://localhost/users/update/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-09-12 12:13:36) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/show
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/users/show/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 12:13:38) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-09-12 12:13:39) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/show
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/users/show/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 12:13:40) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:13:46) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#update_password (for 127.0.0.1 at 2010-09-12 12:15:38) [POST]
+  Parameters: {"commit"=>"変更", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"password_confirmation"=>"", "edit_password"=>"", "password"=>""}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Redirected to http://localhost:3000/users/edit/2
+Completed in 42ms (DB: 1) | 302 Found [http://localhost/users/update_password/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 12:15:38) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:16:05) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#update_password (for 127.0.0.1 at 2010-09-12 12:16:08) [POST]
+  Parameters: {"commit"=>"変更", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"password_confirmation"=>"", "edit_password"=>"", "password"=>""}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Redirected to http://localhost:3000/users/edit_password/2
+Completed in 7ms (DB: 1) | 302 Found [http://localhost/users/update_password/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:16:08) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 14ms (View: 7, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:16:49) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#update_password (for 127.0.0.1 at 2010-09-12 12:16:50) [POST]
+  Parameters: {"commit"=>"変更", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"password_confirmation"=>"", "edit_password"=>"", "password"=>""}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Redirected to http://localhost:3000/users/edit_password/2
+Completed in 7ms (DB: 1) | 302 Found [http://localhost/users/update_password/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:16:50) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#update_password (for 127.0.0.1 at 2010-09-12 12:17:03) [POST]
+  Parameters: {"commit"=>"変更", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"password_confirmation"=>"test1", "edit_password"=>"test", "password"=>"endless"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+Redirected to http://localhost:3000/users/edit_password/2
+Completed in 8ms (DB: 1) | 302 Found [http://localhost/users/update_password/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:17:03) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#update_password (for 127.0.0.1 at 2010-09-12 12:20:07) [POST]
+  Parameters: {"commit"=>"変更", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"password_confirmation"=>"", "edit_password"=>"", "password"=>"endless"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+Redirected to http://localhost:3000/users/edit_password/2
+Completed in 8ms (DB: 1) | 302 Found [http://localhost/users/update_password/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:20:07) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 46ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#update_password (for 127.0.0.1 at 2010-09-12 12:22:45) [POST]
+  Parameters: {"commit"=>"変更", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"password_confirmation"=>"", "edit_password"=>"", "password"=>""}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Redirected to http://localhost:3000/users/edit_password/2
+Completed in 7ms (DB: 1) | 302 Found [http://localhost/users/update_password/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:22:45) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#update_password (for 127.0.0.1 at 2010-09-12 12:22:48) [POST]
+  Parameters: {"commit"=>"変更", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"password_confirmation"=>"", "edit_password"=>"", "password"=>"endless"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+
+NoMethodError (undefined method `error_messages' for false:FalseClass):
+  app/controllers/users_controller.rb:160:in `update_password'
+
+
+Rendered rescues/_trace (19.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#update_password (for 127.0.0.1 at 2010-09-12 12:23:08) [POST]
+  Parameters: {"commit"=>"変更", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"password_confirmation"=>"", "edit_password"=>"", "password"=>"endless"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+
+NoMethodError (undefined method `errors' for false:FalseClass):
+  app/controllers/users_controller.rb:160:in `update_password'
+
+
+Rendered rescues/_trace (19.5ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#update_password (for 127.0.0.1 at 2010-09-12 12:23:28) [POST]
+  Parameters: {"commit"=>"変更", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"password_confirmation"=>"", "edit_password"=>"", "password"=>"endless"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.errors):
+  app/controllers/users_controller.rb:160:in `update_password'
+
+
+Rendered rescues/_trace (19.4ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#update_password (for 127.0.0.1 at 2010-09-12 12:24:33) [POST]
+  Parameters: {"commit"=>"変更", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"password_confirmation"=>"", "edit_password"=>"", "password"=>"endless"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+Redirected to http://localhost:3000/users/edit_password/2
+Completed in 8ms (DB: 1) | 302 Found [http://localhost/users/update_password/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:24:34) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#update_password (for 127.0.0.1 at 2010-09-12 12:25:27) [POST]
+  Parameters: {"commit"=>"変更", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"password_confirmation"=>"", "edit_password"=>"", "password"=>"endless"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+Redirected to http://localhost:3000/users/edit_password/2
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/users/update_password/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:25:27) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:28:32) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#update_password (for 127.0.0.1 at 2010-09-12 12:28:35) [POST]
+  Parameters: {"commit"=>"変更", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"password_confirmation"=>"", "edit_password"=>"", "password"=>"endless"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+Redirected to http://localhost:3000/users/edit_password/2
+Completed in 43ms (DB: 1) | 302 Found [http://localhost/users/update_password/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:28:35) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#update_password (for 127.0.0.1 at 2010-09-12 12:28:58) [POST]
+  Parameters: {"commit"=>"変更", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"password_confirmation"=>"", "edit_password"=>"", "password"=>"endless"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+Redirected to http://localhost:3000/users/edit_password/2
+Completed in 10ms (DB: 1) | 302 Found [http://localhost/users/update_password/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:28:58) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#update_password (for 127.0.0.1 at 2010-09-12 12:29:54) [POST]
+  Parameters: {"commit"=>"変更", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"password_confirmation"=>"", "edit_password"=>"", "password"=>"endless"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+Redirected to http://localhost:3000/users/edit_password/2
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/users/update_password/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:29:54) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 53ms (View: 48, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#update_password (for 127.0.0.1 at 2010-09-12 12:30:30) [POST]
+  Parameters: {"commit"=>"変更", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"password_confirmation"=>"", "edit_password"=>"", "password"=>"endless"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+Redirected to http://localhost:3000/users/edit_password/2
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/users/update_password/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:30:30) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 15ms (View: 10, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#update_password (for 127.0.0.1 at 2010-09-12 12:30:51) [POST]
+  Parameters: {"commit"=>"変更", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"password_confirmation"=>"", "edit_password"=>"", "password"=>"endless"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+Redirected to http://localhost:3000/users/edit_password/2
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/users/update_password/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:30:51) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+
+ActionView::TemplateError (undefined method `errors' for #<ActionView::Helpers::FormBuilder:0x1050f8bc8>) on line #2 of app/views/users/edit_password.html.erb:
+1: <% form_for :user, :url => { :action => :update_password, :id => @user.id } do |f| %>
+2: <% print "【 f.errors 】>> " ; p f.errors ; %>
+3:   <%= f.error_messages %>
+4: 
+5:   <p>
+
+    app/views/users/edit_password.html.erb:2
+    app/views/users/edit_password.html.erb:1
+
+
+Rendered rescues/_trace (24.4ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:31:22) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+
+ActionView::TemplateError (undefined method `message' for #<ActionView::Helpers::FormBuilder:0x1052b4188>) on line #2 of app/views/users/edit_password.html.erb:
+1: <% form_for :user, :url => { :action => :update_password, :id => @user.id } do |f| %>
+2: <% print "【 f.message 】>> " ; p f.message ; %>
+3:   <%= f.error_messages %>
+4: 
+5:   <p>
+
+    app/views/users/edit_password.html.erb:2
+    app/views/users/edit_password.html.erb:1
+
+
+Rendered rescues/_trace (61.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:33:49) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#update_password (for 127.0.0.1 at 2010-09-12 12:34:25) [POST]
+  Parameters: {"commit"=>"変更", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"password_confirmation"=>"test", "edit_password"=>"test", "password"=>"endless"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+Redirected to http://localhost:3000/users/edit_password/2
+Completed in 10ms (DB: 1) | 302 Found [http://localhost/users/update_password/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:34:25) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#update_password (for 127.0.0.1 at 2010-09-12 12:34:37) [POST]
+  Parameters: {"commit"=>"変更", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"password_confirmation"=>"", "edit_password"=>"", "password"=>""}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Redirected to http://localhost:3000/users/edit_password/2
+Completed in 7ms (DB: 1) | 302 Found [http://localhost/users/update_password/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:34:37) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 14ms (View: 9, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#update_password (for 127.0.0.1 at 2010-09-12 12:34:47) [POST]
+  Parameters: {"commit"=>"変更", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"password_confirmation"=>"test", "edit_password"=>"test", "password"=>"endless"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+Redirected to http://localhost:3000/users/edit_password/2
+Completed in 10ms (DB: 1) | 302 Found [http://localhost/users/update_password/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:34:47) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#update_password (for 127.0.0.1 at 2010-09-12 12:36:43) [POST]
+  Parameters: {"commit"=>"変更", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"password_confirmation"=>"", "edit_password"=>"", "password"=>""}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Redirected to http://localhost:3000/users/edit_password/2
+Completed in 7ms (DB: 1) | 302 Found [http://localhost/users/update_password/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:36:43) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#update_password (for 127.0.0.1 at 2010-09-12 12:37:31) [POST]
+  Parameters: {"commit"=>"変更", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"password_confirmation"=>"", "edit_password"=>"", "password"=>""}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Redirected to http://localhost:3000/users/edit_password/2
+Completed in 41ms (DB: 1) | 302 Found [http://localhost/users/update_password/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:37:31) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#update_password (for 127.0.0.1 at 2010-09-12 12:37:38) [POST]
+  Parameters: {"commit"=>"変更", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"password_confirmation"=>"", "edit_password"=>"", "password"=>"endless"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+Redirected to http://localhost:3000/users/edit_password/2
+Completed in 10ms (DB: 1) | 302 Found [http://localhost/users/update_password/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:37:38) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#update_password (for 127.0.0.1 at 2010-09-12 12:38:35) [POST]
+  Parameters: {"commit"=>"変更", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"password_confirmation"=>"", "edit_password"=>"", "password"=>"endless"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+Redirected to http://localhost:3000/users/edit_password/2
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/users/update_password/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:38:35) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#update_password (for 127.0.0.1 at 2010-09-12 12:39:01) [POST]
+  Parameters: {"commit"=>"変更", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"password_confirmation"=>"test1", "edit_password"=>"test", "password"=>"endless"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+Redirected to http://localhost:3000/users/edit_password/2
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/users/update_password/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:39:01) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#update_password (for 127.0.0.1 at 2010-09-12 12:40:23) [POST]
+  Parameters: {"commit"=>"変更", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"password_confirmation"=>"test", "edit_password"=>"test", "password"=>"test"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Redirected to http://localhost:3000/users/edit_password/2
+Completed in 7ms (DB: 1) | 302 Found [http://localhost/users/update_password/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:40:23) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#update_password (for 127.0.0.1 at 2010-09-12 12:40:41) [POST]
+  Parameters: {"commit"=>"変更", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"password_confirmation"=>"test1", "edit_password"=>"test", "password"=>"endless"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+Redirected to http://localhost:3000/users/edit_password/2
+Completed in 9ms (DB: 1) | 302 Found [http://localhost/users/update_password/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:40:41) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 49ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:44:18) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#update_password (for 127.0.0.1 at 2010-09-12 12:44:25) [POST]
+  Parameters: {"commit"=>"変更", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"password_confirmation"=>"test1", "edit_password"=>"test", "password"=>"endless"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Redirected to http://localhost:3000/users/edit_password/2
+Completed in 7ms (DB: 1) | 302 Found [http://localhost/users/update_password/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:44:25) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:45:41) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 16ms (View: 11, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#update_password (for 127.0.0.1 at 2010-09-12 12:46:06) [POST]
+  Parameters: {"commit"=>"変更", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"password_confirmation"=>"", "edit_password"=>"", "password"=>"endle"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Redirected to http://localhost:3000/users/edit_password/2
+Completed in 7ms (DB: 1) | 302 Found [http://localhost/users/update_password/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:46:06) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#update_password (for 127.0.0.1 at 2010-09-12 12:46:13) [POST]
+  Parameters: {"commit"=>"変更", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"password_confirmation"=>"test", "edit_password"=>"tes", "password"=>"endless"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Redirected to http://localhost:3000/users/edit_password/2
+Completed in 7ms (DB: 1) | 302 Found [http://localhost/users/update_password/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:46:13) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#update_password (for 127.0.0.1 at 2010-09-12 12:46:25) [POST]
+  Parameters: {"commit"=>"変更", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"password_confirmation"=>"test", "edit_password"=>"test", "password"=>"endless"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+
+ArgumentError (wrong number of arguments (0 for 1)):
+  app/controllers/users_controller.rb:181:in `update_attributes'
+  app/controllers/users_controller.rb:181:in `update_password'
+
+
+Rendered rescues/_trace (54.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:48:40) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#update_password (for 127.0.0.1 at 2010-09-12 12:49:19) [POST]
+  Parameters: {"commit"=>"変更", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"password_confirmation"=>"test", "edit_password"=>"test", "password"=>"endless"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-12 03:49:19', "salt" = '21909222600.375834977021974', "hashed_password" = 'ef79e686a0a3f21f377355d10aae40e1a83cc377' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/users/show/2
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/users/update_password/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-09-12 12:49:19) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/show
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/users/show/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 12:50:20) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-09-12 12:50:26) [POST]
+  Parameters: {"commit"=>"保存", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"twitter_id"=>"shu_0115", "login_id"=>"shu_0115", "password"=>"endless"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Redirected to http://localhost:3000/users/edit/2
+Completed in 7ms (DB: 1) | 302 Found [http://localhost/users/update/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 12:50:27) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-09-12 12:50:31) [POST]
+  Parameters: {"commit"=>"保存", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"twitter_id"=>"shu_0115", "login_id"=>"shu_0115", "password"=>"test"}}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-12 03:50:31', "salt" = '21911351200.119620956812148', "hashed_password" = '195ae7104897a859fb42c733eb0d43868a1d21ed' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/users/show/2
+Completed in 10ms (DB: 1) | 302 Found [http://localhost/users/update/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-09-12 12:50:31) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/show
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/users/show/2]
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2010-09-12 12:51:53) [PUT]
+  Parameters: {"commit"=>"ログアウト", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "request_url"=>"http://localhost:3000/users/show/2"}
+Redirected to http://localhost:3000/users/show/2
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/users/logout]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-09-12 12:51:53) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/users/login
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 5ms (DB: 0) | 302 Found [http://localhost/users/show/2]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-12 12:51:53) [GET]
+Redirected to http://localhost:3000
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/users/login]
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-09-12 12:51:53) [GET]
+  [4;35;1mSession Load (0.3ms)[0m   [0mSELECT * FROM "sessions" WHERE (updated_at < '2010-09-05 12:51:53') [0m
+  [4;36;1mMemo Load (1.2ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."mode" = 'public') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND mode = 'public' ) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering public/list
+Rendered public/_search_area (3.2ms)
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '4') LIMIT 1[0m
+Completed in 54ms (View: 14, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-12 12:52:00) [POST]
+  Parameters: {"commit"=>"ログイン", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "login"=>{"login_id"=>"shu_0115", "password"=>"test"}, "request_url"=>"http://localhost:3000/"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login_id" = 'shu_0115') LIMIT 1[0m
+Redirected to http://localhost:3000/memos
+Completed in 7ms (DB: 1) | 302 Found [http://localhost/users/login]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-09-12 12:52:00) [GET]
+  [4;35;1mMemo Load (14.2ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (1.2ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (2.5ms)
+Completed in 692ms (View: 668, DB: 16) | 200 OK [http://localhost/memos]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-09-12 12:52:03) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/show
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/users/show/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-09-12 12:52:11) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/show
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/users/show/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 12:52:16) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 54ms (View: 48, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:52:18) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#update_password (for 127.0.0.1 at 2010-09-12 12:52:27) [POST]
+  Parameters: {"commit"=>"変更", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"password_confirmation"=>"endless", "edit_password"=>"endless", "password"=>"test"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-12 03:52:27', "salt" = '21910093800.839872150409412', "hashed_password" = '3b1140cb89ac7e32b78ba91a2d10f359d50c7392' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/users/show/2
+Completed in 10ms (DB: 1) | 302 Found [http://localhost/users/update_password/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-09-12 12:52:27) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/show
+Completed in 10ms (View: 5, DB: 1) | 200 OK [http://localhost/users/show/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 12:52:30) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-09-12 12:52:32) [POST]
+  Parameters: {"commit"=>"保存", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"twitter_id"=>"shu_0115", "login_id"=>"shu_0115", "password"=>""}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Redirected to http://localhost:3000/users/edit/2
+Completed in 7ms (DB: 1) | 302 Found [http://localhost/users/update/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 12:52:32) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 49ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 12:54:46) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 16ms (View: 11, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-09-12 12:54:48) [POST]
+  Parameters: {"commit"=>"保存", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"twitter_id"=>"shu_0115", "login_id"=>"shu_0115", "password"=>""}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Redirected to http://localhost:3000/users/edit/2
+Completed in 7ms (DB: 1) | 302 Found [http://localhost/users/update/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 12:54:48) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2010-09-12 12:54:54) [POST]
+  Parameters: {"commit"=>"保存", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "id"=>"2", "user"=>{"twitter_id"=>"shu_0115", "login_id"=>"shu_0115", "password"=>"endless"}}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login_id" = 'shu_0115' AND "users".id <> 2) LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-12 03:54:54', "salt" = '21897781200.75909042499207', "hashed_password" = 'f6479d6a2b486b09b8c3975f3fd5b3fbc931aaba' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/users/show/2
+Completed in 11ms (DB: 1) | 302 Found [http://localhost/users/update/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-09-12 12:54:54) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/show
+Completed in 44ms (View: 4, DB: 1) | 200 OK [http://localhost/users/show/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 12:55:00) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:55:02) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 15ms (View: 10, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:55:06) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-09-12 12:55:08) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/show
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/users/show/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 12:55:09) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-09-12 12:55:15) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/show
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/users/show/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 12:56:17) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 16ms (View: 10, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:56:19) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:56:30) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-09-12 12:56:31) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/show
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/users/show/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 12:56:32) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 15ms (View: 10, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:56:33) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-09-12 12:56:35) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/show
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/users/show/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 12:56:36) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:56:36) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 12:56:45) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 50ms (View: 45, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:56:46) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 13ms (View: 7, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-09-12 12:56:48) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/show
+Completed in 10ms (View: 4, DB: 1) | 200 OK [http://localhost/users/show/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 12:56:49) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 15ms (View: 10, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#edit_password (for 127.0.0.1 at 2010-09-12 12:56:54) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit_password
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit_password/2]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-09-12 12:56:56) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/show
+Completed in 9ms (View: 4, DB: 1) | 200 OK [http://localhost/users/show/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 12:56:56) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '2') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+Rendering template within layouts/base
+Rendering users/edit
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/users/edit/2]
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2010-09-12 12:58:17) [PUT]
+  Parameters: {"commit"=>"ログアウト", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "request_url"=>"http://localhost:3000/users/edit/2"}
+Redirected to http://localhost:3000/users/edit/2
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/users/logout]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2010-09-12 12:58:17) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/users/login
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 5ms (DB: 0) | 302 Found [http://localhost/users/edit/2]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-12 12:58:17) [GET]
+Redirected to http://localhost:3000
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/users/login]
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-09-12 12:58:17) [GET]
+  [4;36;1mSession Load (0.3ms)[0m   [0;1mSELECT * FROM "sessions" WHERE (updated_at < '2010-09-05 12:58:17') [0m
+  [4;35;1mMemo Load (1.1ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."mode" = 'public') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (0.4ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND mode = 'public' ) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering public/list
+Rendered public/_search_area (3.2ms)
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '4') LIMIT 1[0m
+Completed in 20ms (View: 13, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-09-12 12:58:19) [POST]
+  Parameters: {"commit"=>"ログイン", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "login"=>{"login_id"=>"shu_0115", "password"=>"endless"}, "request_url"=>"http://localhost:3000/"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login_id" = 'shu_0115') LIMIT 1[0m
+Redirected to http://localhost:3000/memos
+Completed in 7ms (DB: 1) | 302 Found [http://localhost/users/login]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-09-12 12:58:19) [GET]
+  [4;36;1mMemo Load (47.2ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (1.1ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (2.6ms)
+Completed in 666ms (View: 610, DB: 49) | 200 OK [http://localhost/memos]
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2010-09-12 12:58:22) [PUT]
+  Parameters: {"commit"=>"ログアウト", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "request_url"=>"http://localhost:3000/memos"}
+Redirected to http://localhost:3000/memos
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/users/logout]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-09-12 12:58:22) [GET]
+Redirected to http://localhost:3000/public/list
+Filter chain halted as [:login_check] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/memos]
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-09-12 12:58:22) [GET]
+  [4;36;1mSession Load (0.3ms)[0m   [0;1mSELECT * FROM "sessions" WHERE (updated_at < '2010-09-05 12:58:22') [0m
+  [4;35;1mMemo Load (1.0ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."mode" = 'public') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND mode = 'public' ) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering public/list
+Rendered public/_search_area (3.0ms)
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '4') LIMIT 1[0m
+Completed in 19ms (View: 13, DB: 2) | 200 OK [http://localhost/public/list]
+
+
+Processing UsersController#entry (for 127.0.0.1 at 2010-09-12 12:58:24) [GET]
+Rendering template within layouts/base
+Rendering users/entry
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/users/entry]
+
+
+Processing UsersController#confirm (for 127.0.0.1 at 2010-09-12 12:58:26) [POST]
+  Parameters: {"commit"=>"確認", "authenticity_token"=>"a/VEnBqn+ZY1MORTIUyuF3zBCDyBWOqxvA0SJRxJsUg=", "user"=>{"twitter_id"=>"", "login_id"=>"", "password"=>""}}
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login_id" = '') LIMIT 1[0m
+Rendering template within layouts/base
+Rendering users/confirm
+Completed in 20ms (View: 13, DB: 0) | 200 OK [http://localhost/users/confirm]

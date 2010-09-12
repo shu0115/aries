@@ -40,28 +40,8 @@ class UsersController < ApplicationController
   # login #
   #-------#
   def login
-
-=begin
-      @login = Hash.new
-    @login = params[:login]
-    print "【 @login 】>> " ; p @login ;
-    
-    session[:user_id], session[:user_name] = User.login( @login )
-    print "【 session[:user_id] 】>> " ; p session[:user_id] ;
-
-    unless session[:user_id].blank?
-      #flash[:notice] = 'ログインが完了しました。'
-    else
-      flash[:notice] = 'ログインに失敗しました。'
-    end
-=end    
-
-    print "【 params 】>> " ; p params ;
-    print "【 params[:login] 】>> " ; p params[:login] ;
     
     login = params[:login]
-
-    print "【 login 】>> " ; p login ;
 
     session[:user_id] = nil
     
@@ -119,22 +99,87 @@ class UsersController < ApplicationController
   #--------#
   def update
     @user = User.find( params[:id] )
+    
+    if params[:user].blank?
+      flash[:notice] = 'ユーザ情報がありません。'
+      redirect_to :action => "edit", :id => @user.id
+      return
+    end
+    
+    # パスワードチェックがtrueで無ければ
+    unless @user.password_check?( params[:user][:password] )
+      flash[:notice] = '「現在のパスワード」が正しくありません。'
+      redirect_to :action => "edit", :id => @user.id
+      return
+    end
 
+    # ユーザ情報を更新
     if @user.update_attributes( params[:user] )
       session[:user_name] = @user.name
       flash[:notice] = 'ユーザ情報を更新しました。'
-      redirect_to "/users/show/#{@user.id}"
+      redirect_to :action => "show", :id => @user.id
+      return
     else
-      render :action => "edit"
+      flash[:notice] = 'ユーザ情報の更新に失敗しました。'
+      redirect_to :action => "edit", :id => @user.id
+      return
+    end
+  end
+
+  #---------------#
+  # edit_password #
+  #---------------#
+  def edit_password
+    @user = User.find( params[:id] )
+  end
+
+  #-----------------#
+  # update_password #
+  #-----------------#
+  def update_password
+    @user = User.find( params[:id] )
+    params_user = params[:user]
+    
+    if params_user.blank?
+      flash[:notice] = 'ユーザ情報がありません。'
+      redirect_to :action => "edit_password", :id => @user.id
+      return
+    end
+
+    # パスワードチェックがtrueで無ければ
+    unless @user.password_check?( params_user[:password] )
+      flash[:notice] = '「現在のパスワード」が正しくありません。'
+      redirect_to :action => "edit_password", :id => @user.id
+      return
+    end
+    
+    # 変更するパスワードと再入力パスワードが一致しなければ
+    unless params_user[:edit_password] == params_user[:password_confirmation]
+      flash[:notice] = '「変更するパスワード」と「変更するパスワード(再入力)」が一致しません。'
+      redirect_to :action => "edit_password", :id => @user.id
+      return
+    end
+
+    # パスワード更新
+    params_user[:password] = params_user[:edit_password]
+
+    # ユーザ情報を更新
+    if @user.update_attributes( params_user )
+#    if @user.update_attributes
+      flash[:notice] = 'パスワードを変更しました。'
+      redirect_to :action => "show", :id => @user.id
+      return
+    else
+      flash[:notice] = 'パスワードの変更に失敗しました。'
+      redirect_to :action => "edit_password", :id => @user.id
+      return
     end
   end
 
 
 
 
-
-
-
+=begin
   # GET /users
   # GET /users.xml
   def index
@@ -157,4 +202,8 @@ class UsersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+=end
+
+
+
 end

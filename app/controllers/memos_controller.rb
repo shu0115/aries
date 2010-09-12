@@ -84,7 +84,7 @@ class MemosController < ApplicationController
   #---------------#
   def memo_category
     @category = params[:category]
-    render( :layout => false )
+    render :layout => false
   end
 
   #------#

@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :login_id, :message => 'は既に登録されています。'  # 一意検証
 
   attr_accessor :password_confirmation
+  attr_accessor :edit_password
   validates_confirmation_of :password  # 再入力検証
 
   #----------#
@@ -38,6 +39,27 @@ class User < ActiveRecord::Base
 
     # ハッシュパスワード設定
     self.hashed_password = User.encrypted_password( self.password, self.salt )
+  end
+
+  #-----------------#
+  # password_check? #
+  #-----------------#
+  # パスワードチェック
+  def password_check?( check_password )
+      print "【 check_password 】>> " ; p check_password ;
+
+      # 暗号化パスワード生成
+      expected_password = User.encrypted_password( check_password, self.salt )
+      
+      print "【 expected_password 】>> " ; p expected_password ;
+      print "【 self.hashed_password 】>> " ; p self.hashed_password ;
+
+      # 暗号化パスワードとハッシュパスワードが一致しなければ
+      unless expected_password == self.hashed_password
+        return false
+      else
+        return true
+      end
   end
 
   private
@@ -81,14 +103,5 @@ class User < ActiveRecord::Base
     # ユーザを返す
     current_user
   end
-
-#  def self.login( args )
-#    login_user = User.find( :first, :conditions => args )
-#    unless login_user.blank?
-#      return login_user.id, login_user.name
-#    else
-#      return nil, nil
-#    end
-#  end
 
 end

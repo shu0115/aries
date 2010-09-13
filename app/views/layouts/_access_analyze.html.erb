@@ -1,5 +1,6 @@
 
 <% unless request.env["SERVER_NAME"].to_s == "localhost" %>
+<% unless session[:user_id] == "2" %>
 	<!-- shinobi1 忍者ツールズアクセス解析 -->
 	<script type="text/javascript" src="http://x8.kusarikatabira.jp/ufo/153632000"></script>
 	<noscript><a href="http://x8.kusarikatabira.jp/bin/gg?153632000" target="_blank">
@@ -20,4 +21,5 @@
 	  })();
 	</script>
 	<!-- ／Google Analytics -->
+<% end %>
 <% end %>

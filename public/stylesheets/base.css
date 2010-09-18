@@ -94,16 +94,21 @@ a:hover, a:active {
 
 .active_link a {
   font-weight: bold;
-#  text-decoration: underline;
 }
 
 #title {
   display: inline-block;
   font-family: "Times New Roman", verdana, arial, helvetica, sans-serif;
-#  font-style: italic;
   font-size:   50px;
   line-height: 50px;
   -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.5, transparent), to(white));
+	-webkit-text-stroke: 1px #00c0ff;
+	/*text-shadow: 0px 0px 0px #90e0ff;*/
+}
+
+#title a {
+  color: #90e0ff;
+  text-decoration: none;
 }
 
 .menu_title {
@@ -115,7 +120,6 @@ a:hover, a:active {
 .menu a {
   #top: 0px;
   #left: 0px;
-#  width: 40px;
   line-height: 12px;
   margin: 0px 0px 0px 0px;
   padding: 5px 15px 5px 15px;

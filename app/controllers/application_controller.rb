@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
 #    old_time = old_time - ( 24 * 60 * 60 )  # 24H
     old_time = old_time - ( 7 * 24 * 60 * 60 )  # 1week
 #    sessions = Session.find( :all, :conditions => [ "updated_at < :old_time", { :old_time => old_time } ] )
-#    Session.destroy_all( [ "updated_at < :old_time", { :old_time => old_time } ] )
+    Session.destroy_all( [ "updated_at < :old_time", { :old_time => old_time } ] )
   end
 
   private

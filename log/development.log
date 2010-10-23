@@ -12813,3 +12813,20 @@ Rendered memos/_search_area (2.8ms)
 Rendered layouts/_access_analyze (0.0ms)
 Rendered layouts/_adsense (0.0ms)
 Completed in 876ms (View: 852, DB: 16) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-09-18 19:49:01) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;36;1mMemo Load (14.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (1.1ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (2.5ms)
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 789ms (View: 766, DB: 16) | 200 OK [http://localhost/memos/list/all/reset]
+  [4;36;1mSQL (7.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m

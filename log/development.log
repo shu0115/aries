@@ -12910,3 +12910,863 @@ Rendered memos/_search_area (3.0ms)
 Rendered layouts/_access_analyze (0.1ms)
 Rendered layouts/_adsense (0.0ms)
 Completed in 843ms (View: 772, DB: 15) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-10-24 13:02:52) [GET]
+  [4;36;1mSession Load (0.6ms)[0m   [0;1mSELECT * FROM "sessions" WHERE (updated_at < '2010-10-17 13:02:52') [0m
+  [4;35;1mSession Destroy (0.3ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 153[0m
+  [4;36;1mSession Destroy (0.2ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 154[0m
+  [4;35;1mSession Destroy (0.2ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 155[0m
+  [4;36;1mSession Destroy (0.2ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 156[0m
+  [4;35;1mSession Destroy (0.2ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 157[0m
+  [4;36;1mMemo Load (1.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."mode" = 'public') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND mode = 'public' ) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering public/list
+Rendered public/_search_area (8.3ms)
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '4') LIMIT 1[0m
+Rendered layouts/_access_analyze (0.5ms)
+Rendered layouts/_adsense (0.4ms)
+Completed in 131ms (View: 71, DB: 4) | 200 OK [http://localhost/]
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-10-24 13:04:16) [GET]
+  [4;36;1mSession Load (0.3ms)[0m   [0;1mSELECT * FROM "sessions" WHERE (updated_at < '2010-10-17 13:04:16') [0m
+  [4;35;1mMemo Load (1.0ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."mode" = 'public') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND mode = 'public' ) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering public/list
+Rendered public/_search_area (3.0ms)
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '4') LIMIT 1[0m
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 20ms (View: 14, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-10-24 13:06:17) [POST]
+  Parameters: {"commit"=>"ログイン", "authenticity_token"=>"AvVUHgsL5sNUbUd17Yf1tilRMy1W7syMxinEzVmtI9M=", "login"=>{"login_id"=>"shu_0115", "password"=>"endless"}, "request_url"=>"http://localhost:3000/"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login_id" = 'shu_0115') LIMIT 1[0m
+Redirected to http://localhost:3000/memos
+Completed in 7ms (DB: 1) | 302 Found [http://localhost/users/login]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-10-24 13:06:17) [GET]
+  [4;36;1mMemo Load (15.1ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (1.3ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (3.3ms)
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 864ms (View: 839, DB: 17) | 200 OK [http://localhost/memos]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-10-24 13:07:24) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.length):
+  app/controllers/memos_controller.rb:14:in `login_check'
+
+
+Rendered rescues/_trace (54.8ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-10-24 13:14:26) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.length):
+  app/controllers/memos_controller.rb:14:in `login_check'
+
+
+Rendered rescues/_trace (25.1ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-10-24 13:15:40) [GET]
+
+NameError (uninitialized constant ApplicationController::Session):
+  app/controllers/application_controller.rb:22:in `session_clear'
+  app/controllers/public_controller.rb:10:in `list'
+
+
+Rendered rescues/_trace (53.4ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-10-24 13:16:06) [GET]
+  [4;36;1mMemo Load (1.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."mode" = 'public') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND mode = 'public' ) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering public/list
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.length) on line #2 of app/views/public/_search_area.html.erb:
+1: <%# 検索 %>
+2: <% form_tag :controller => "public", :action => "list" do %>
+3: <%# form_tag :action => "list" do %>
+4: 	<%= text_field_tag :search_word, @search_word, { :class => "text_field" } %>
+5: 	<%= radio_button_tag( :search_type, "title", checked = @title_checked, options = {} ) %><label for="search_type_title">タイトル</label>
+
+    (eval):2:in `send'
+    (eval):2:in `form_authenticity_token'
+    app/views/public/_search_area.html.erb:2
+    app/views/public/list.html.erb:14
+
+
+Rendered rescues/_trace (71.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-10-24 13:16:18) [GET]
+  [4;36;1mMemo Load (1.7ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."mode" = 'public') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (0.5ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND mode = 'public' ) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering public/list
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.length) on line #2 of app/views/public/_search_area.html.erb:
+1: <%# 検索 %>
+2: <% form_tag :controller => "public", :action => "list" do %>
+3: <%# form_tag :action => "list" do %>
+4: 	<%= text_field_tag :search_word, @search_word, { :class => "text_field" } %>
+5: 	<%= radio_button_tag( :search_type, "title", checked = @title_checked, options = {} ) %><label for="search_type_title">タイトル</label>
+
+    (eval):2:in `send'
+    (eval):2:in `form_authenticity_token'
+    app/views/public/_search_area.html.erb:2
+    app/views/public/list.html.erb:14
+
+
+Rendered rescues/_trace (79.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-10-24 13:16:28) [GET]
+  [4;36;1mMemo Load (1.2ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."mode" = 'public') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND mode = 'public' ) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering public/list
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.length) on line #2 of app/views/public/_search_area.html.erb:
+1: <%# 検索 %>
+2: <% form_tag :controller => "public", :action => "list" do %>
+3: <%# form_tag :action => "list" do %>
+4: 	<%= text_field_tag :search_word, @search_word, { :class => "text_field" } %>
+5: 	<%= radio_button_tag( :search_type, "title", checked = @title_checked, options = {} ) %><label for="search_type_title">タイトル</label>
+
+    (eval):2:in `send'
+    (eval):2:in `form_authenticity_token'
+    app/views/public/_search_area.html.erb:2
+    app/views/public/list.html.erb:14
+
+
+Rendered rescues/_trace (33.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-10-24 13:22:58) [GET]
+  [4;36;1mSession Load (0.3ms)[0m   [0;1mSELECT * FROM "sessions" WHERE (updated_at < '2010-10-17 13:22:58') [0m
+  [4;35;1mMemo Load (1.4ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."mode" = 'public') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND mode = 'public' ) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering public/list
+Rendered public/_search_area (4.3ms)
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '4') LIMIT 1[0m
+Rendered layouts/_access_analyze (0.7ms)
+Rendered layouts/_adsense (0.4ms)
+Completed in 83ms (View: 68, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-10-24 13:23:04) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (14.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (1.1ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (3.2ms)
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 817ms (View: 793, DB: 16) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2010-10-24 13:23:30) [PUT]
+  Parameters: {"commit"=>"ログアウト", "authenticity_token"=>"AvVUHgsL5sNUbUd17Yf1tilRMy1W7syMxinEzVmtI9M=", "request_url"=>"http://localhost:3000/memos/list/all/reset"}
+Redirected to http://localhost:3000/memos/list/all/reset
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/users/logout]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-10-24 13:23:30) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+Redirected to http://localhost:3000/
+Filter chain halted as [:login_check] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/memos/list/all/reset]
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-10-24 13:23:30) [GET]
+  [4;35;1mSession Load (0.3ms)[0m   [0mSELECT * FROM "sessions" WHERE (updated_at < '2010-10-17 13:23:30') [0m
+  [4;36;1mMemo Load (1.5ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."mode" = 'public') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND mode = 'public' ) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering public/list
+Rendered public/_search_area (3.5ms)
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '4') LIMIT 1[0m
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 22ms (View: 15, DB: 3) | 200 OK [http://localhost/]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-10-24 13:23:36) [POST]
+  Parameters: {"commit"=>"ログイン", "authenticity_token"=>"AvVUHgsL5sNUbUd17Yf1tilRMy1W7syMxinEzVmtI9M=", "login"=>{"login_id"=>"demo", "password"=>"demo"}, "request_url"=>"http://localhost:3000/"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login_id" = 'demo') LIMIT 1[0m
+Redirected to http://localhost:3000/memos
+Completed in 7ms (DB: 1) | 302 Found [http://localhost/users/login]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-10-24 13:23:36) [GET]
+  [4;35;1mMemo Load (1.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '3') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '3') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (2.7ms)
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 17ms (View: 12, DB: 2) | 200 OK [http://localhost/memos]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-10-24 13:23:43) [GET]
+  Parameters: {"option"=>"all", "id"=>"255"}
+  [4;35;1mMemo Load (0.2ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '3' AND "memos"."id" = '255') LIMIT 1[0m
+  [4;36;1mMemo Load (1.3ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '3') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/edit
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 18ms (View: 13, DB: 2) | 200 OK [http://localhost/memos/edit/255?option=all]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-10-24 13:27:51) [GET]
+  Parameters: {"option"=>"all", "id"=>"255"}
+  [4;35;1mMemo Load (0.2ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '3' AND "memos"."id" = '255') LIMIT 1[0m
+  [4;36;1mMemo Load (1.1ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '3') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/edit
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.1ms)
+Completed in 55ms (View: 49, DB: 2) | 200 OK [http://localhost/memos/edit/255?option=all]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-10-24 13:28:55) [GET]
+  Parameters: {"option"=>"all", "id"=>"255"}
+  [4;35;1mMemo Load (0.2ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '3' AND "memos"."id" = '255') LIMIT 1[0m
+  [4;36;1mMemo Load (1.1ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '3') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/edit
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 19ms (View: 13, DB: 2) | 200 OK [http://localhost/memos/edit/255?option=all]
+
+
+Processing MemosController#update (for 127.0.0.1 at 2010-10-24 13:29:50) [POST]
+  Parameters: {"commit"=>"保存", "authenticity_token"=>"AvVUHgsL5sNUbUd17Yf1tilRMy1W7syMxinEzVmtI9M=", "memo"=>{"category"=>"Test", "title"=>"公開メモ", "mode"=>"private", "note"=>"テスト"}, "id"=>"255"}
+  [4;35;1mMemo Load (0.2ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 255) [0m
+  [4;36;1mMemo Update (0.2ms)[0m   [0;1mUPDATE "memos" SET "updated_at" = '2010-10-24 04:29:50', "mode" = 'private' WHERE "id" = 255[0m
+Redirected to http://localhost:3000/memos/show/255
+Completed in 8ms (DB: 1) | 302 Found [http://localhost/memos/update/255/]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-10-24 13:29:50) [GET]
+  Parameters: {"id"=>"255"}
+  [4;35;1mMemo Load (0.2ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '3' AND "memos"."id" = '255') LIMIT 1[0m
+Rendering template within layouts/base
+Rendering memos/show
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 12ms (View: 8, DB: 1) | 200 OK [http://localhost/memos/show/255]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-10-24 13:29:53) [GET]
+  Parameters: {"id"=>"255"}
+  [4;36;1mMemo Load (0.2ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '3' AND "memos"."id" = '255') LIMIT 1[0m
+  [4;35;1mMemo Load (1.0ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '3') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/edit
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 15ms (View: 10, DB: 2) | 200 OK [http://localhost/memos/edit/255]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-10-24 13:31:29) [GET]
+  Parameters: {"id"=>"255"}
+Redirected to http://localhost:3000/
+Filter chain halted as [:login_check] rendered_or_redirected.
+Completed in 4ms (DB: 0) | 302 Found [http://localhost/memos/edit/255]
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-10-24 13:31:29) [GET]
+  [4;36;1mSession Load (0.3ms)[0m   [0;1mSELECT * FROM "sessions" WHERE (updated_at < '2010-10-17 13:31:29') [0m
+  [4;35;1mMemo Load (1.1ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."mode" = 'public') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND mode = 'public' ) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering public/list
+Rendered public/_search_area (3.2ms)
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '4') LIMIT 1[0m
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 19ms (View: 14, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-10-24 13:33:02) [POST]
+  Parameters: {"commit"=>"ログイン", "authenticity_token"=>"FxxpPhTxizff962jW3fOmUpc8/Vr5ug2D+K0K/eWDWM=", "login"=>{"login_id"=>"demo", "password"=>"demo"}, "request_url"=>"http://localhost:3000/"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login_id" = 'demo') LIMIT 1[0m
+Redirected to http://localhost:3000/memos
+Completed in 7ms (DB: 1) | 302 Found [http://localhost/users/login]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-10-24 13:33:02) [GET]
+  [4;35;1mMemo Load (1.2ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '3') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '3') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (2.7ms)
+Rendered layouts/_access_analyze (0.1ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 17ms (View: 12, DB: 2) | 200 OK [http://localhost/memos]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-10-24 13:33:06) [GET]
+  Parameters: {"option"=>"all", "id"=>"255"}
+  [4;35;1mMemo Load (0.2ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '3' AND "memos"."id" = '255') LIMIT 1[0m
+  [4;36;1mMemo Load (1.0ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '3') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/edit
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 16ms (View: 10, DB: 2) | 200 OK [http://localhost/memos/edit/255?option=all]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-10-24 13:33:12) [GET]
+  [4;35;1mMemo Load (1.1ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '3') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '3') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (2.8ms)
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 17ms (View: 13, DB: 2) | 200 OK [http://localhost/memos]
+
+
+Processing MemosController#new (for 127.0.0.1 at 2010-10-24 13:33:14) [GET]
+  Parameters: {"id"=>"all"}
+  [4;35;1mMemo Load (1.0ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '3') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/new
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 17ms (View: 12, DB: 1) | 200 OK [http://localhost/memos/new/all]
+
+
+Processing MemosController#memo_category (for 127.0.0.1 at 2010-10-24 13:33:16) [POST]
+  Parameters: {"category"=>"Test", "authenticity_token"=>"FxxpPhTxizff962jW3fOmUpc8/Vr5ug2D+K0K/eWDWM=", "_"=>""}
+Rendering memos/memo_category
+Completed in 48ms (View: 47, DB: 0) | 200 OK [http://localhost/memos/memo_category?category=Test]
+
+
+Processing MemosController#new (for 127.0.0.1 at 2010-10-24 13:35:26) [GET]
+  Parameters: {"id"=>"all"}
+  [4;36;1mMemo Load (1.3ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '3') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/new
+ERROR: compiling _run_erb_app47views47memos47new46html46erb RAISED compile error
+/Users/raisondetre0115/Mine/workspace/aries/app/views/memos/new.html.erb:28: syntax error, unexpected ')', expecting kTHEN or ':' or '\n' or ';'
+...=> (if @memo.mode == "public") ).to_s); @output_buffer.conca...
+                              ^
+/Users/raisondetre0115/Mine/workspace/aries/app/views/memos/new.html.erb:29: syntax error, unexpected ')', expecting kTHEN or ':' or '\n' or ';'
+...> (if @memo.mode == "private") ).to_s); @output_buffer.conca...
+                              ^
+/Users/raisondetre0115/Mine/workspace/aries/app/views/memos/new.html.erb:49: syntax error, unexpected kEND, expecting ')'
+;  end ; @output_buffer.concat "\n\n...
+      ^
+/Users/raisondetre0115/Mine/workspace/aries/app/views/memos/new.html.erb:55: syntax error, unexpected kENSURE, expecting ')'
+/Users/raisondetre0115/Mine/workspace/aries/app/views/memos/new.html.erb:57: syntax error, unexpected kEND, expecting ')'
+Function body:           def _run_erb_app47views47memos47new46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "\n<span class=\"menu list\">"
+; @output_buffer.concat(( link_to $link[:list], { :action => "list", :id => @category } ).to_s); @output_buffer.concat "</span><br />\n\n<br />\n\n"
+
+
+
+;  form_for :memo, :url => { :action => "create", :id => @category } do |f| ; @output_buffer.concat "\n  "
+; @output_buffer.concat(( f.error_messages ).to_s); @output_buffer.concat "\n\n  "
+
+; @output_buffer.concat(( f.label :category, 'カテゴリ' ).to_s); @output_buffer.concat "<br />\n\t<div class=\"radius_border\">\n\t<table><tr><td>\n\t\t"
+
+
+;  @categorys.each_with_index{ |category, index| ; @output_buffer.concat(( link_to_remote( category[:category], :update => "memo_category_set", :url => { :action => :memo_category, :category => category[:category] } ) ).to_s); @output_buffer.concat "\343\200\200<wbr />";  } ; @output_buffer.concat "<br />\n\t</td></tr></table>\n\t</div>\n  <br />\n  <br />\n  <span id=\"memo_category_set\">"
+
+
+
+
+; @output_buffer.concat(( f.text_field :category, :value => @category ).to_s); @output_buffer.concat "</span><br />\n  \n  <br />\n\n  "
+
+
+
+; @output_buffer.concat(( f.label :title, 'タイトル' ).to_s); @output_buffer.concat "<br />\n  "
+; @output_buffer.concat(( f.text_field :title, :class => "memo_title_field" ).to_s); @output_buffer.concat "<br />\n  \n  <br />\n\n  "
+
+
+
+; @output_buffer.concat(( f.label :mode, 'モード' ).to_s); @output_buffer.concat "\357\274\232\n  "
+; @output_buffer.concat "<br />\n  "
+; @output_buffer.concat(( f.radio_button :mode, "public", :checked => (if @memo.mode == "public") ).to_s); @output_buffer.concat "<label for=\"memo_mode_public\">\345\205\254\351\226\213</label>\n  "
+; @output_buffer.concat(( f.radio_button :mode, "private", :checked => (if @memo.mode == "private") ).to_s); @output_buffer.concat "<label for=\"memo_mode_private\">\351\235\236\345\205\254\351\226\213</label>\n\n  <br />\n\n"
+
+
+
+;  if false ; @output_buffer.concat "\n  "
+; @output_buffer.concat(( f.label :level, 'レベル' ).to_s); @output_buffer.concat "\357\274\232\n  <select name=\"memo[level]\">\n    <option value=\"Normal\">Normal</option>\n    <option value=\"Expert\">Expert</option>\n  </select><br />\n  \n  <br />\n"
+
+
+
+
+
+
+;  end ; @output_buffer.concat "\n\n  "
+
+; @output_buffer.concat(( f.label :note, 'テキスト' ).to_s); @output_buffer.concat "<br />\n  "
+; @output_buffer.concat(( f.text_area :note ).to_s); @output_buffer.concat "<br />\n  \n  <br />\n\n  "
+
+
+
+; @output_buffer.concat(( f.submit '作成', :disable_with => "作成中..." ).to_s); @output_buffer.concat "<br />\n"
+;  end ; @output_buffer.concat "\n\n<br />\n\n<span class=\"menu list\">"
+
+
+
+; @output_buffer.concat(( link_to $link[:list], { :action => "list", :id => @category } ).to_s); @output_buffer.concat "</span>\n"
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+
+Backtrace: /Users/raisondetre0115/Mine/workspace/aries/app/views/memos/new.html.erb:57:in `compile!'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:61:in `compile'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:28:in `render'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_view/template.rb:199:in `render_template'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:260:in `render'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:343:in `_render_with_layout'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:257:in `render'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1250:in `render_for_file'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1326:in `default_render'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:617:in `call_filters'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/flash.rb:146:in `perform_action'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `send'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `process_without_filters'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:606:in `process'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:391:in `process'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:386:in `call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/routing/route_set.rb:437:in `call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/session/abstract_store.rb:122:in `call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/Users/raisondetre0115/.gem/ruby/1.8/gems/rails-2.3.4/lib/commands/server.rb:111
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/raisondetre0115/Mine/workspace/aries/app/views/memos/new.html.erb:28: syntax error, unexpected ')', expecting kTHEN or ':' or '\n' or ';'
+...=> (if @memo.mode == "public") ).to_s); @output_buffer.conca...
+                              ^
+/Users/raisondetre0115/Mine/workspace/aries/app/views/memos/new.html.erb:29: syntax error, unexpected ')', expecting kTHEN or ':' or '\n' or ';'
+...> (if @memo.mode == "private") ).to_s); @output_buffer.conca...
+                              ^
+/Users/raisondetre0115/Mine/workspace/aries/app/views/memos/new.html.erb:49: syntax error, unexpected kEND, expecting ')'
+;  end ; @output_buffer.concat "\n\n...
+      ^
+/Users/raisondetre0115/Mine/workspace/aries/app/views/memos/new.html.erb:55: syntax error, unexpected kENSURE, expecting ')'
+/Users/raisondetre0115/Mine/workspace/aries/app/views/memos/new.html.erb:57: syntax error, unexpected kEND, expecting ')') on line #28 of app/views/memos/new.html.erb:
+25: 
+26:   <%= f.label :mode, 'モード' %>：
+27:   <%#= select( :memo, :mode, Memo.mode_choices, :mode => @memo.mode ) %><br />
+28:   <%= f.radio_button :mode, "public", :checked => (if @memo.mode == "public") %><label for="memo_mode_public">公開</label>
+29:   <%= f.radio_button :mode, "private", :checked => (if @memo.mode == "private") %><label for="memo_mode_private">非公開</label>
+30: 
+31:   <br />
+
+    app/views/memos/new.html.erb:57:in `compile!'
+
+
+Rendered rescues/_trace (25.2ms)
+Rendered rescues/_request_and_response (0.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MemosController#new (for 127.0.0.1 at 2010-10-24 13:39:27) [GET]
+  Parameters: {"id"=>"all"}
+  [4;35;1mMemo Load (1.1ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '3') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/new
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 17ms (View: 12, DB: 1) | 200 OK [http://localhost/memos/new/all]
+
+
+Processing MemosController#memo_category (for 127.0.0.1 at 2010-10-24 13:39:34) [POST]
+  Parameters: {"category"=>"Test", "authenticity_token"=>"FxxpPhTxizff962jW3fOmUpc8/Vr5ug2D+K0K/eWDWM=", "_"=>""}
+Rendering memos/memo_category
+Completed in 2ms (View: 0, DB: 0) | 200 OK [http://localhost/memos/memo_category?category=Test]
+
+
+Processing MemosController#create (for 127.0.0.1 at 2010-10-24 13:42:16) [POST]
+  Parameters: {"commit"=>"作成", "authenticity_token"=>"FxxpPhTxizff962jW3fOmUpc8/Vr5ug2D+K0K/eWDWM=", "memo"=>{"category"=>"Test", "title"=>"テスト", "mode"=>"private", "note"=>"テスト"}}
+  [4;36;1mMemo Create (0.2ms)[0m   [0;1mINSERT INTO "memos" ("created_at", "category", "title", "updated_at", "mode", "level", "user_id", "note") VALUES('2010-10-24 04:42:16', 'Test', 'テスト', '2010-10-24 04:42:16', 'private', NULL, '3', 'テスト')[0m
+Redirected to http://localhost:3000/memos/show/279?option=Test
+Completed in 8ms (DB: 1) | 302 Found [http://localhost/memos/create]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-10-24 13:42:16) [GET]
+  Parameters: {"option"=>"Test", "id"=>"279"}
+  [4;35;1mMemo Load (0.2ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '3' AND "memos"."id" = '279') LIMIT 1[0m
+Rendering template within layouts/base
+Rendering memos/show
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://localhost/memos/show/279?option=Test]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-10-24 13:42:19) [GET]
+  Parameters: {"id"=>"Test"}
+  [4;36;1mMemo Load (1.2ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."category" = 'Test' AND "memos"."user_id" = '3') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '3') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (2.6ms)
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 16ms (View: 11, DB: 2) | 200 OK [http://localhost/memos?id=Test]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-10-24 13:42:21) [GET]
+  Parameters: {"option"=>"Test", "id"=>"279"}
+  [4;36;1mMemo Load (0.2ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '3' AND "memos"."id" = '279') LIMIT 1[0m
+Rendering template within layouts/base
+Rendering memos/show
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.1ms)
+Completed in 45ms (View: 41, DB: 1) | 200 OK [http://localhost/memos/show/279?option=Test]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-10-24 13:42:22) [GET]
+  Parameters: {"option"=>"Test", "id"=>"279"}
+  [4;35;1mMemo Load (0.2ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '3' AND "memos"."id" = '279') LIMIT 1[0m
+  [4;36;1mMemo Load (1.1ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '3') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/edit
+Rendered layouts/_access_analyze (0.1ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 16ms (View: 10, DB: 2) | 200 OK [http://localhost/memos/edit/279?option=Test]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-10-24 13:42:45) [GET]
+  Parameters: {"option"=>"Test", "id"=>"279"}
+  [4;35;1mMemo Load (0.2ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '3' AND "memos"."id" = '279') LIMIT 1[0m
+  [4;36;1mMemo Load (1.0ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '3') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/edit
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 19ms (View: 13, DB: 2) | 200 OK [http://localhost/memos/edit/279?option=Test]
+
+
+Processing MemosController#update (for 127.0.0.1 at 2010-10-24 13:42:49) [POST]
+  Parameters: {"option"=>"Test", "commit"=>"保存", "authenticity_token"=>"FxxpPhTxizff962jW3fOmUpc8/Vr5ug2D+K0K/eWDWM=", "memo"=>{"category"=>"Test", "title"=>"テスト", "mode"=>"public", "note"=>"テスト"}, "id"=>"279"}
+  [4;35;1mMemo Load (0.2ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."id" = 279) [0m
+  [4;36;1mMemo Update (0.2ms)[0m   [0;1mUPDATE "memos" SET "updated_at" = '2010-10-24 04:42:49', "mode" = 'public' WHERE "id" = 279[0m
+Redirected to http://localhost:3000/memos/show/279?option=Test
+Completed in 50ms (DB: 1) | 302 Found [http://localhost/memos/update/279/Test]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-10-24 13:42:49) [GET]
+  Parameters: {"option"=>"Test", "id"=>"279"}
+  [4;35;1mMemo Load (0.2ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '3' AND "memos"."id" = '279') LIMIT 1[0m
+Rendering template within layouts/base
+Rendering memos/show
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://localhost/memos/show/279?option=Test]
+
+
+Processing MemosController#edit (for 127.0.0.1 at 2010-10-24 13:42:50) [GET]
+  Parameters: {"option"=>"Test", "id"=>"279"}
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '3' AND "memos"."id" = '279') LIMIT 1[0m
+  [4;35;1mMemo Load (1.1ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '3') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/edit
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 16ms (View: 11, DB: 2) | 200 OK [http://localhost/memos/edit/279?option=Test]
+
+
+Processing MemosController#update (for 127.0.0.1 at 2010-10-24 13:42:52) [POST]
+  Parameters: {"option"=>"Test", "commit"=>"保存", "authenticity_token"=>"FxxpPhTxizff962jW3fOmUpc8/Vr5ug2D+K0K/eWDWM=", "memo"=>{"category"=>"Test", "title"=>"テスト", "mode"=>"public", "note"=>"テスト"}, "id"=>"279"}
+  [4;36;1mMemo Load (0.2ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."id" = 279) [0m
+Redirected to http://localhost:3000/memos/show/279?option=Test
+Completed in 5ms (DB: 1) | 302 Found [http://localhost/memos/update/279/Test]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-10-24 13:42:52) [GET]
+  Parameters: {"option"=>"Test", "id"=>"279"}
+  [4;35;1mMemo Load (0.2ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '3' AND "memos"."id" = '279') LIMIT 1[0m
+Rendering template within layouts/base
+Rendering memos/show
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://localhost/memos/show/279?option=Test]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-10-24 13:42:54) [GET]
+  Parameters: {"id"=>"Test"}
+  [4;36;1mMemo Load (1.1ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."category" = 'Test' AND "memos"."user_id" = '3') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '3') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (2.6ms)
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 17ms (View: 12, DB: 2) | 200 OK [http://localhost/memos?id=Test]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-10-24 13:43:01) [GET]
+  Parameters: {"option"=>"Test", "id"=>"255"}
+  [4;36;1mMemo Load (0.2ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '3' AND "memos"."id" = '255') LIMIT 1[0m
+Rendering template within layouts/base
+Rendering memos/show
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 10ms (View: 6, DB: 1) | 200 OK [http://localhost/memos/show/255?option=Test]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-10-24 13:43:03) [GET]
+  Parameters: {"id"=>"Test"}
+  [4;35;1mMemo Load (1.1ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."category" = 'Test' AND "memos"."user_id" = '3') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '3') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (2.6ms)
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 16ms (View: 11, DB: 2) | 200 OK [http://localhost/memos?id=Test]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-10-24 13:43:51) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (1.2ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '3') ORDER BY category ASC, mode ASC, title ASC[0m
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '3') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (2.8ms)
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.1ms)
+Completed in 54ms (View: 49, DB: 2) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2010-10-24 13:44:25) [PUT]
+  Parameters: {"commit"=>"ログアウト", "authenticity_token"=>"FxxpPhTxizff962jW3fOmUpc8/Vr5ug2D+K0K/eWDWM=", "request_url"=>"http://localhost:3000/memos/list/all/reset"}
+Redirected to http://localhost:3000/memos/list/all/reset
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/users/logout]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-10-24 13:44:25) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+Redirected to http://localhost:3000/
+Filter chain halted as [:login_check] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/memos/list/all/reset]
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-10-24 13:44:25) [GET]
+  [4;35;1mSession Load (0.3ms)[0m   [0mSELECT * FROM "sessions" WHERE (updated_at < '2010-10-17 13:44:25') [0m
+  [4;36;1mMemo Load (1.0ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."mode" = 'public') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND mode = 'public' ) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering public/list
+Rendered public/_search_area (3.0ms)
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '4') LIMIT 1[0m
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 21ms (View: 15, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-10-24 13:44:27) [POST]
+  Parameters: {"commit"=>"ログイン", "authenticity_token"=>"FxxpPhTxizff962jW3fOmUpc8/Vr5ug2D+K0K/eWDWM=", "login"=>{"login_id"=>"demo", "password"=>"demo"}, "request_url"=>"http://localhost:3000/"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login_id" = 'demo') LIMIT 1[0m
+Redirected to http://localhost:3000/memos
+Completed in 6ms (DB: 1) | 302 Found [http://localhost/users/login]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-10-24 13:44:27) [GET]
+  [4;35;1mMemo Load (1.2ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '3') ORDER BY category ASC, mode ASC, title ASC LIMIT 100[0m
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '3') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (2.8ms)
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 18ms (View: 13, DB: 2) | 200 OK [http://localhost/memos]
+
+
+Processing UsersController#logout (for 127.0.0.1 at 2010-10-24 13:44:29) [PUT]
+  Parameters: {"commit"=>"ログアウト", "authenticity_token"=>"FxxpPhTxizff962jW3fOmUpc8/Vr5ug2D+K0K/eWDWM=", "request_url"=>"http://localhost:3000/memos"}
+Redirected to http://localhost:3000/memos
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/users/logout]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-10-24 13:44:29) [GET]
+Redirected to http://localhost:3000/
+Filter chain halted as [:login_check] rendered_or_redirected.
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/memos]
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-10-24 13:44:29) [GET]
+  [4;35;1mSession Load (0.3ms)[0m   [0mSELECT * FROM "sessions" WHERE (updated_at < '2010-10-17 13:44:29') [0m
+  [4;36;1mMemo Load (1.0ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."mode" = 'public') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND mode = 'public' ) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering public/list
+Rendered public/_search_area (3.0ms)
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '4') LIMIT 1[0m
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 21ms (View: 14, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-10-24 13:44:38) [POST]
+  Parameters: {"commit"=>"ログイン", "authenticity_token"=>"FxxpPhTxizff962jW3fOmUpc8/Vr5ug2D+K0K/eWDWM=", "login"=>{"login_id"=>"shu0115", "password"=>"endless"}, "request_url"=>"http://localhost:3000/"}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login_id" = 'shu0115') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed in 6ms (DB: 1) | 302 Found [http://localhost/users/login]
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-10-24 13:44:38) [GET]
+  [4;35;1mSession Load (0.3ms)[0m   [0mSELECT * FROM "sessions" WHERE (updated_at < '2010-10-17 13:44:38') [0m
+  [4;36;1mMemo Load (1.0ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."mode" = 'public') ORDER BY category ASC, title ASC[0m
+  [4;35;1mMemo Load (0.3ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND mode = 'public' ) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering public/list
+Rendered public/_search_area (3.1ms)
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '4') LIMIT 1[0m
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 20ms (View: 14, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing UsersController#login (for 127.0.0.1 at 2010-10-24 13:44:45) [POST]
+  Parameters: {"commit"=>"ログイン", "authenticity_token"=>"FxxpPhTxizff962jW3fOmUpc8/Vr5ug2D+K0K/eWDWM=", "login"=>{"login_id"=>"shu_0115", "password"=>"endless"}, "request_url"=>"http://localhost:3000/"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login_id" = 'shu_0115') LIMIT 1[0m
+Redirected to http://localhost:3000/memos
+Completed in 6ms (DB: 1) | 302 Found [http://localhost/users/login]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-10-24 13:44:45) [GET]
+  [4;35;1mMemo Load (44.8ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC LIMIT 100[0m
+  [4;36;1mMemo Load (1.1ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (2.6ms)
+Rendered layouts/_access_analyze (0.1ms)
+Rendered layouts/_adsense (0.1ms)
+Completed in 351ms (View: 299, DB: 46) | 200 OK [http://localhost/memos]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-10-24 13:44:47) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (8.2ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC LIMIT 100[0m
+  [4;36;1mMemo Load (1.0ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (2.6ms)
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 314ms (View: 300, DB: 10) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-10-24 13:44:58) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (53.6ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC LIMIT 10[0m
+  [4;36;1mMemo Load (1.2ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (2.7ms)
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 122ms (View: 63, DB: 55) | 200 OK [http://localhost/memos/list/all/reset]

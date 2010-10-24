@@ -17,4 +17,14 @@ class Memo < ActiveRecord::Base
     Memo.find( :all, :conditions => "category != '' AND mode = 'public' ", :select => "DISTINCT category", :order => "category ASC" )
   end
 
+  def self.mode_public?( mode )
+    return true if mode == "public"
+    return false
+  end
+
+  def self.mode_private?( mode )
+    return true if mode == "private"
+    return false
+  end
+
 end

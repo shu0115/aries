@@ -46,7 +46,7 @@ class MemosController < ApplicationController
 #    print "【 conditions 】>> " ; p conditions ;
 
     # メモ検索
-    @all_memos = Memo.all( :conditions => conditions, :order => "category ASC, mode ASC, title ASC" )
+    @all_memos = Memo.all( :conditions => conditions, :limit => 100, :order => "category ASC, mode ASC, title ASC" )
 
     # カテゴリ取得
     @categorys = Memo.user_categorys( :user_id => session[:user_id] )

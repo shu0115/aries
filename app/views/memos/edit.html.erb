@@ -25,10 +25,11 @@
 
 	<br />
 
-  <%= f.label :mode, 'モード' %>：
-  <%#= select( :memo, :mode, Memo.mode_choices, :mode => @memo.mode ) %><br />
+  <%= f.label :mode, 'モード' %>：<br />
   <%= f.radio_button :mode, "public", :checked => Memo.mode_public?( @memo.mode ) %><label for="memo_mode_public">公開</label>
   <%= f.radio_button :mode, "private", :checked => Memo.mode_private?( @memo.mode ) %><label for="memo_mode_private">非公開</label>
+	<br />
+
 	<br />
 
   <%= f.label :note, 'テキスト' %><br />

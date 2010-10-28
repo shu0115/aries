@@ -43,3 +43,6 @@ Rails::Initializer.run do |config|
   
   config.action_controller.session_store = :active_record_store
 end
+
+#gem 'mislav-will_paginate', '~> 2.2'
+require 'will_paginate'

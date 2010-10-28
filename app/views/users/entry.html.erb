@@ -2,8 +2,9 @@
 <% if @valid_result == false %>
 	<%# ユーザ情報入力 %>
 	<% form_for :user, :url => { :controller => "users", :action => "entry" } do |f| %>
-	  <%= f.error_messages %>
-	
+	  <%#= f.error_messages %>
+    <%= Utility.error_message_replace( :message => f.error_messages )   %>
+
 	  <p>
 	    <%= f.label :login_id, "*ログインID" %><br />
 	    <%= f.text_field :login_id %>

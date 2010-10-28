@@ -47,6 +47,9 @@ class MemosController < ApplicationController
 
     # メモ検索
     @all_memos = Memo.all( :conditions => conditions, :limit => 100, :order => "category ASC, mode ASC, title ASC" )
+    @paginate_memos = Memo.paginate(:page => 1, :conditions => conditions, :order => 'category ASC, mode ASC, title ASC', :per_page => 10)
+
+    print "【 @paginate_memos 】>> " ; p @paginate_memos ;
 
     # カテゴリ取得
     @categorys = Memo.user_categorys( :user_id => session[:user_id] )

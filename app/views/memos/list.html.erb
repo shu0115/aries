@@ -20,13 +20,17 @@
 
 <br />
 
+<%# ページネート %>
+<% if !@all_memos.blank? and @all_memos.total_pages > 1 %>
 <%= will_paginate @all_memos, :prev_label => 'Prev', :next_label => 'Next' %><br />
-
 <br />
+<% end %>
 
+<%# 公開／非公開 %>
 <% @category = 'all' if @category.blank? %>
 <span class="mode"><%= link_to '公開', { :action => "list", :id => @category, :option => "public" } %> | <%= link_to '非公開', { :action => "list", :id => @category, :option => "private" } %> | <%= link_to 'リセット', { :action => "list", :id => @category, :option => "reset" } %></span><br />
 
+<%# メモ %>
 <table class="table_style">
   <tr>
     <th>カテゴリ</th>
@@ -50,4 +54,5 @@
 
 <br />
 
+<%# NEW %>
 <span class="menu new"><%= link_to $link[:new], { :action => "new", :id => @category } %></span>

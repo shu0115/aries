@@ -15052,3 +15052,214 @@ DEPRECATION WARNING: WillPaginate: :prev_label view parameter is now :previous_l
 Rendered layouts/_access_analyze (0.1ms)
 Rendered layouts/_adsense (0.1ms)
 Completed in 74ms (View: 65, DB: 5) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-10-28 23:57:06) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;36;1mMemo Load (3.0ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC LIMIT 10 OFFSET 0[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "memos" WHERE ("memos"."user_id" = '2') [0m
+  [4;36;1mMemo Load (1.0ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (2.8ms)
+Rendered layouts/_access_analyze (0.1ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 123ms (View: 114, DB: 5) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-10-28 23:57:29) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (3.0ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC LIMIT 10 OFFSET 0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "memos" WHERE ("memos"."user_id" = '2') [0m
+  [4;35;1mMemo Load (1.0ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (2.7ms)
+Rendered layouts/_access_analyze (0.1ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 76ms (View: 67, DB: 5) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-10-28 23:57:32) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;36;1mMemo Load (3.4ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC LIMIT 10 OFFSET 0[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "memos" WHERE ("memos"."user_id" = '2') [0m
+  [4;36;1mMemo Load (1.1ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (2.5ms)
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 122ms (View: 112, DB: 5) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-10-28 23:58:09) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (3.1ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC LIMIT 10 OFFSET 0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "memos" WHERE ("memos"."user_id" = '2') [0m
+  [4;35;1mMemo Load (1.0ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (2.6ms)
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 71ms (View: 62, DB: 5) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-10-28 23:58:52) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;36;1mMemo Load (3.0ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC LIMIT 10 OFFSET 0[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "memos" WHERE ("memos"."user_id" = '2') [0m
+  [4;36;1mMemo Load (1.0ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (2.6ms)
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 123ms (View: 110, DB: 5) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-10-28 23:59:06) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (2.9ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC LIMIT 10 OFFSET 0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "memos" WHERE ("memos"."user_id" = '2') [0m
+  [4;35;1mMemo Load (1.0ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (2.8ms)
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 73ms (View: 64, DB: 5) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-10-29 00:02:38) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;36;1mMemo Load (2.8ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC LIMIT 10 OFFSET 0[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "memos" WHERE ("memos"."user_id" = '2') [0m
+  [4;36;1mMemo Load (1.1ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (2.6ms)
+
+ActionView::TemplateError (undefined method `page_count' for #<WillPaginate::Collection:0x103b48da0>) on line #23 of app/views/memos/list.html.erb:
+20: 
+21: <br />
+22: 
+23: <% if !@all_memos.blank? and @all_memos.page_count > 1 %>
+24: <%= will_paginate @all_memos, :prev_label => 'Prev', :next_label => 'Next' %><br />
+25: 
+26: <br />
+
+    app/views/memos/list.html.erb:23
+
+
+Rendered rescues/_trace (24.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-10-29 00:05:09) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (4.5ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC LIMIT 10 OFFSET 0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "memos" WHERE ("memos"."user_id" = '2') [0m
+  [4;35;1mMemo Load (1.2ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (2.8ms)
+DEPRECATION WARNING: WillPaginate: :prev_label view parameter is now :previous_label; the old name has been deprecated. (called from _run_erb_app47views47memos47list46html46erb at /Users/raisondetre0115/Mine/workspace/aries/app/views/memos/list.html.erb:24)
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 80ms (View: 68, DB: 7) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-10-29 00:05:30) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;36;1mMemo Load (2.9ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC LIMIT 10 OFFSET 0[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "memos" WHERE ("memos"."user_id" = '2') [0m
+
+NameError (undefined local variable or method `total_pages' for #<MemosController:0x1044923c0>):
+  app/controllers/memos_controller.rb:52:in `list'
+
+
+Rendered rescues/_trace (22.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-10-29 00:05:42) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;36;1mMemo Load (3.0ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC LIMIT 10 OFFSET 0[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "memos" WHERE ("memos"."user_id" = '2') [0m
+  [4;36;1mMemo Load (1.0ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (2.9ms)
+DEPRECATION WARNING: WillPaginate: :prev_label view parameter is now :previous_label; the old name has been deprecated. (called from _run_erb_app47views47memos47list46html46erb at /Users/raisondetre0115/Mine/workspace/aries/app/views/memos/list.html.erb:24)
+Rendered layouts/_access_analyze (0.1ms)
+Rendered layouts/_adsense (0.1ms)
+Completed in 117ms (View: 108, DB: 5) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-10-29 00:05:48) [GET]
+  Parameters: {"id"=>"Work"}
+  [4;35;1mMemo Load (1.2ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."category" = 'Work' AND "memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC LIMIT 10 OFFSET 0[0m
+  [4;36;1mMemo Load (1.0ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (2.5ms)
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 33ms (View: 27, DB: 3) | 200 OK [http://localhost/memos/list/Work]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-10-29 00:06:15) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (2.8ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC LIMIT 10 OFFSET 0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "memos" WHERE ("memos"."user_id" = '2') [0m
+  [4;35;1mMemo Load (1.0ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (2.8ms)
+DEPRECATION WARNING: WillPaginate: :prev_label view parameter is now :previous_label; the old name has been deprecated. (called from _run_erb_app47views47memos47list46html46erb at /Users/raisondetre0115/Mine/workspace/aries/app/views/memos/list.html.erb:24)
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 74ms (View: 66, DB: 4) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-10-29 00:06:19) [GET]
+  Parameters: {"id"=>"Work"}
+  [4;36;1mMemo Load (1.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."category" = 'Work' AND "memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC LIMIT 10 OFFSET 0[0m
+  [4;35;1mMemo Load (1.1ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (2.6ms)
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 76ms (View: 70, DB: 3) | 200 OK [http://localhost/memos/list/Work]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-10-29 00:07:17) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;36;1mMemo Load (2.8ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC LIMIT 10 OFFSET 0[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "memos" WHERE ("memos"."user_id" = '2') [0m
+  [4;36;1mMemo Load (1.0ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (2.8ms)
+DEPRECATION WARNING: WillPaginate: :prev_label view parameter is now :previous_label; the old name has been deprecated. (called from _run_erb_app47views47memos47list46html46erb at /Users/raisondetre0115/Mine/workspace/aries/app/views/memos/list.html.erb:25)
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 77ms (View: 68, DB: 4) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-10-29 00:07:25) [GET]
+  Parameters: {"option"=>"reset", "page"=>"23"}
+  [4;35;1mMemo Load (3.9ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC LIMIT 10 OFFSET 220[0m
+  [4;36;1mMemo Load (1.1ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (2.8ms)
+DEPRECATION WARNING: WillPaginate: :prev_label view parameter is now :previous_label; the old name has been deprecated. (called from _run_erb_app47views47memos47list46html46erb at /Users/raisondetre0115/Mine/workspace/aries/app/views/memos/list.html.erb:25)
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.1ms)
+Completed in 101ms (View: 92, DB: 5) | 200 OK [http://localhost/memos?option=reset&page=23]

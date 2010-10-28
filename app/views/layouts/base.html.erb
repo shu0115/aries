@@ -5,8 +5,12 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Aries</title>
+  <%# JavaScript %>
   <%= javascript_include_tag "prototype" %>
+
+  <%# スタイルシート %>
   <%= stylesheet_link_tag 'base' %>
+  <%= stylesheet_link_tag 'will_paginate' %>
 
 	<%# アクセス解析 %>
 	<%= render :partial => "/layouts/access_analyze" %>

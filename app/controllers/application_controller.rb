@@ -11,6 +11,9 @@ class ApplicationController < ActionController::Base
   # リンク表示テキスト
   $link = { :show => "Show", :edit => "Edit", :delete => "Delete", :new => "New", :list => "List" }
 
+  # ページネート
+  $per_page = 10
+
   #---------------#
   # session_clear #
   #---------------#

@@ -20,6 +20,10 @@
 
 <br />
 
+<%= will_paginate @all_memos, :prev_label => 'Prev', :next_label => 'Next' %><br />
+
+<br />
+
 <% @category = 'all' if @category.blank? %>
 <span class="mode"><%= link_to '公開', { :action => "list", :id => @category, :option => "public" } %> | <%= link_to '非公開', { :action => "list", :id => @category, :option => "private" } %> | <%= link_to 'リセット', { :action => "list", :id => @category, :option => "reset" } %></span><br />
 

@@ -1,0 +1,36 @@
+/* スタイルシート: public/stylesheets/will_paginate.css */
+  .pagination {
+    padding: 3px;
+    margin: 3px;
+  }
+  .pagination a {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    border: 1px solid #aaaadd;
+    text-decoration: none;
+    /*color: #000099;*/
+    color: #00afcc;
+  }
+  .pagination a:hover, .pagination a:active {
+    /*border: 1px solid #000099;*/
+    border: 1px solid #00afcc;
+    background-color: #00afcc;
+    /*color: #000;*/
+    color: #fff;
+  }
+  .pagination span.current {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    /*border: 1px solid #000099;*/
+    border: 1px solid #00afcc;
+    font-weight: bold;
+    /*background-color: #000099;*/
+    background-color: #00afcc;
+    color: #FFF;
+  }
+  .pagination span.disabled {
+    padding: 2px 5px 2px 5px;
+    margin: 2px;
+    border: 1px solid #eee;
+    color: #ddd;
+  }

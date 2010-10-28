@@ -15038,3 +15038,17 @@ DEPRECATION WARNING: WillPaginate: :prev_label view parameter is now :previous_l
 Rendered layouts/_access_analyze (0.0ms)
 Rendered layouts/_adsense (0.0ms)
 Completed in 123ms (View: 113, DB: 5) | 200 OK [http://localhost/memos/list/all/reset]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-10-28 23:51:56) [GET]
+  Parameters: {"option"=>"reset", "id"=>"all"}
+  [4;35;1mMemo Load (3.0ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC LIMIT 10 OFFSET 0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "memos" WHERE ("memos"."user_id" = '2') [0m
+  [4;35;1mMemo Load (1.0ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (2.6ms)
+DEPRECATION WARNING: WillPaginate: :prev_label view parameter is now :previous_label; the old name has been deprecated. (called from _run_erb_app47views47memos47list46html46erb at /Users/raisondetre0115/Mine/workspace/aries/app/views/memos/list.html.erb:23)
+Rendered layouts/_access_analyze (0.1ms)
+Rendered layouts/_adsense (0.1ms)
+Completed in 74ms (View: 65, DB: 5) | 200 OK [http://localhost/memos/list/all/reset]

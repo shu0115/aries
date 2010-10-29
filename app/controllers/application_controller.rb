@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   $link = { :show => "Show", :edit => "Edit", :delete => "Delete", :new => "New", :list => "List" }
 
   # ページネート
-  $per_page = 10
+  $per_page = 15
 
   #---------------#
   # session_clear #

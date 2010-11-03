@@ -53,10 +53,10 @@ class MemosController < ApplicationController
   
       # メモ検索
       if @search_type == "note"
-        @all_memos = Memo.paginate( :page => params[:page], :conditions => [ "user_id = :user_id AND note LIKE :search_word", { :user_id => session[:user_id], :search_word => "%#{@search_word}%" } ], :order => "category ASC, title ASC", :per_page => $per_page )
+        @all_memos = Memo.paginate( :page => params[:page], :conditions => [ "user_id = :user_id AND note LIKE :search_word", { :user_id => session[:user_id], :search_word => "%#{@search_word}%" } ], :order => "category ASC, sub_category ASC, title ASC", :per_page => $per_page )
         @note_checked = true
       else
-        @all_memos = Memo.paginate( :page => params[:page], :conditions => [ "user_id = :user_id AND title LIKE :search_word", { :user_id => session[:user_id], :search_word => "%#{@search_word}%" } ], :order => "category ASC, title ASC", :per_page => $per_page )
+        @all_memos = Memo.paginate( :page => params[:page], :conditions => [ "user_id = :user_id AND title LIKE :search_word", { :user_id => session[:user_id], :search_word => "%#{@search_word}%" } ], :order => "category ASC, sub_category ASC, title ASC", :per_page => $per_page )
         @title_checked = true
       end
   
@@ -71,7 +71,7 @@ class MemosController < ApplicationController
       conditions[:user_id] = session[:user_id].to_s unless session[:user_id].blank?
   
       # メモ検索
-      @all_memos = Memo.paginate( :page => params[:page], :conditions => conditions, :order => 'category ASC, mode ASC, title ASC', :per_page => $per_page )
+      @all_memos = Memo.paginate( :page => params[:page], :conditions => conditions, :order => 'category ASC, sub_category ASC, mode ASC, title ASC', :per_page => $per_page )
     end
 
     # カテゴリ取得

@@ -56,8 +56,8 @@ ActionController::Routing::Routes.draw do |map|
   map.connect ':controller', :action => 'index'
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
-  map.connect ':controller/:action/:id/:option'
-  map.connect ':controller/:action/:id/:option/:one'
-  map.connect ':controller/:action/:id/:option/:one/:two'
-  map.connect ':controller/:action/:id/:option/:one/:two/:three'
+#  map.connect ':controller/:action/:id/:option'
+#  map.connect ':controller/:action/:id/:option/:one'
+#  map.connect ':controller/:action/:id/:option/:one/:two'
+#  map.connect ':controller/:action/:id/:option/:one/:two/:three'
 end

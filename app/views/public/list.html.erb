@@ -2,7 +2,6 @@
 <div class="radius_border">
 <table><tr><td>
 <%# カテゴリ %>
-<%#= link_to 'ALL', "/memos/list" %>
 <% @categorys.each_with_index{ |category, index| %><% if category[:category].to_s == @category.to_s %><span class="active_link"><%= link_to category[:category], "/public/list/#{category[:category]}" %></span><% else %><%= link_to category[:category], "/public/list/#{category[:category]}" %><% end %><% if ((index.to_i % 10) == 0) and index.to_i > 0 %><br /><% else %>　<% end %><% } %><br />
 </td></tr></table>
 </div>
@@ -28,7 +27,7 @@
 <% user = User.find_by_id( memo.user_id ) %>
 
   <tr>
-    <td>[<%= link_to memo.category, { :action => :list, :id => memo.category } %>]</td>
+    <td>[<%= link_to memo.category, { :action => :list, :category => memo.category } %>]</td>
     
     <td><%=h memo.title %></td>
     <td><%=h memo.mode %></td>
@@ -40,7 +39,7 @@
 	    <td><%=h user.login_id %></td>
 		<% end %>
     
-    <td class="menu show"><%= link_to $link[:show], { :action => :show, :id => memo.id, :option => @category }, :title => memo.note %></td>
+    <td class="menu show"><%= link_to $link_name[:show], { :action => :show, :id => memo.id, :option => @category }, :title => memo.note %></td>
   </tr>
 <% end %>
 </table>

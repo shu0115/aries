@@ -30,31 +30,55 @@ class MemosController < ApplicationController
   # list #
   #------#
   def list
-    @category = params[:id]
+    # パラメータ
+#    @category = params[:id]
+    @category = params[:category]
+    @sub_category = params[:sub_category]
     
-    @mode = session[:memo_mode] unless session[:memo_mode].blank?  # [ session[:memo_mode] ]が空白で無ければ、[ session[:memo_mode] ]を格納
-    @mode = params[:option] unless params[:option].blank?          # [ params[:option] ]が空白で無ければ、[ params[:option] ]で上書き
-    @mode = nil if params[:option].to_s == "reset" or ( params[:option].blank? and session[:memo_mode].to_s == "reset" )  # [ params[:option] ]が「reset」だったら、[ nil ]で上書き
-    session[:memo_mode] = params[:option]                          # paramsをsessionに保存
+    # [ session[:memo_mode] ]が空白で無ければ、[ session[:memo_mode] ]を格納
+    @mode = session[:memo_mode] unless session[:memo_mode].blank?
 
-    # 検索条件
-    conditions = Hash.new
-    conditions[:category] = @category unless @category.blank?
-    conditions[:mode] = @mode unless @mode.blank?
-    conditions[:user_id] = session[:user_id].to_s unless session[:user_id].blank?
+    # [ params[:option] ]が空白で無ければ、[ params[:option] ]で上書き
+    @mode = params[:option] unless params[:option].blank?
+    
+    # [ params[:option] ]が「reset」だったら、[ nil ]で上書き
+    @mode = nil if params[:option].to_s == "reset" or ( params[:option].blank? and session[:memo_mode].to_s == "reset" )
+    
+    # paramsをsessionに保存
+    session[:memo_mode] = params[:option]
 
-#    print "【 conditions 】>> " ; p conditions ;
-
-    # メモ検索
-#    @all_memos = Memo.all( :conditions => conditions, :limit => 100, :order => "category ASC, mode ASC, title ASC" )
-    @all_memos = Memo.paginate(:page => params[:page], :conditions => conditions, :order => 'category ASC, mode ASC, title ASC', :per_page => $per_page)
-
-#    print "【 @all_memos.total_pages 】>> " ; p @all_memos.total_pages ;
+    if params[:commit] == "検索"
+      @search_word = params[:search_word]
+      @search_type = params[:search_type]
+  
+      # メモ検索
+      if @search_type == "note"
+        @all_memos = Memo.paginate( :page => params[:page], :conditions => [ "user_id = :user_id AND note LIKE :search_word", { :user_id => session[:user_id], :search_word => "%#{@search_word}%" } ], :order => "category ASC, title ASC", :per_page => $per_page )
+        @note_checked = true
+      else
+        @all_memos = Memo.paginate( :page => params[:page], :conditions => [ "user_id = :user_id AND title LIKE :search_word", { :user_id => session[:user_id], :search_word => "%#{@search_word}%" } ], :order => "category ASC, title ASC", :per_page => $per_page )
+        @title_checked = true
+      end
+  
+      # ユーザカテゴリ取得
+#      @categorys = Memo.user_categorys( :user_id => session[:user_id] )
+    else
+      # 検索条件
+      conditions = Hash.new
+      conditions[:category] = @category unless @category.blank?
+      conditions[:sub_category] = @sub_category unless @sub_category.blank?
+      conditions[:mode] = @mode unless @mode.blank?
+      conditions[:user_id] = session[:user_id].to_s unless session[:user_id].blank?
+  
+      # メモ検索
+      @all_memos = Memo.paginate( :page => params[:page], :conditions => conditions, :order => 'category ASC, mode ASC, title ASC', :per_page => $per_page )
+    end
 
     # カテゴリ取得
     @categorys = Memo.user_categorys( :user_id => session[:user_id] )
 
-#    print "【 @categorys 】>> " ; p @categorys ;
+    # サブカテゴリ取得
+    @sub_categorys = Memo.user_sub_categorys( :user_id => session[:user_id], :category => @category )
 
     @title_checked = true
   end
@@ -62,13 +86,12 @@ class MemosController < ApplicationController
   #--------#
   # search #
   #--------#
+=begin
   def search
+    print "【 params 】>> " ; p params ;
     @search_word = params[:search_word]
     @search_type = params[:search_type]
 
-    print "【 @search_word 】>> " ; p @search_word ;
-    print "【 @search_type 】>> " ; p @search_type ;
-    
     # メモ検索
     if @search_type == "note"
       @all_memos = Memo.all( :conditions => [ "note LIKE :search_word", { :search_word => "%#{@search_word}%" } ], :order => "category ASC, title ASC" )
@@ -81,7 +104,8 @@ class MemosController < ApplicationController
     # ユーザカテゴリ取得
     @categorys = Memo.user_categorys( :user_id => session[:user_id] )
   end
-  
+=end
+ 
   #---------------#
   # memo_category #
   #---------------#
@@ -90,11 +114,20 @@ class MemosController < ApplicationController
     render :layout => false
   end
 
+  #-------------------#
+  # memo_sub_category #
+  #-------------------#
+  def memo_sub_category
+    @sub_category = params[:sub_category]
+    render :layout => false
+  end
+
   #------#
   # show #
   #------#
   def show
-    @category = params[:option]
+    @category = params[:category]
+    @sub_category = params[:sub_category]
     @memo = Memo.find_by_id_and_user_id( params[:id], session[:user_id] )
   end
 
@@ -102,19 +135,23 @@ class MemosController < ApplicationController
   # new #
   #-----#
   def new
-    @category = params[:id]
+    @category = params[:category]
+    @sub_category = params[:sub_category]
     @memo = Memo.new
     @memo.mode = "private"
     @categorys = Memo.user_categorys( :user_id => session[:user_id] )
+    @sub_categorys = Memo.user_sub_categorys( :user_id => session[:user_id] )
   end
 
   #------#
   # edit #
   #------#
   def edit
-    @category = params[:option]
+    @category = params[:category]
+    @sub_category = params[:sub_category]
     @memo = Memo.find_by_id_and_user_id( params[:id], session[:user_id] )
     @categorys = Memo.user_categorys( :user_id => session[:user_id] )
+    @sub_categorys = Memo.user_sub_categorys( :user_id => session[:user_id] )
   end
 
   #--------#
@@ -124,15 +161,16 @@ class MemosController < ApplicationController
     
     @memo = Memo.new( params[:memo] )
     @category = @memo.category
+    @sub_category = params[:sub_category]
     @memo.user_id = session[:user_id]
 
     if @memo.save
       flash[:notice] = "「#{@memo.title}」の新規作成が完了しました。"
-      redirect_to :action =>  "show", :id => @memo.id, :option => @category, :one => @mode
+      redirect_to :action =>  "show", :id => @memo.id, :category => @category, :sub_category => @sub_category, :one => @mode
       return
     else
       flash[:notice] = "「#{@memo.title}」の新規作成に失敗しました。"
-      redirect_to :action =>  "new", :id => @memo.id, :option => @category, :one => @mode
+      redirect_to :action =>  "new", :id => @memo.id, :category => @category, :sub_category => @sub_category, :one => @mode
       return
     end
   end
@@ -142,7 +180,8 @@ class MemosController < ApplicationController
   #--------#
   def update
     @memo = Memo.find( params[:id] )
-    @category = params[:option]
+    @category = params[:category]
+    @sub_category = params[:sub_category]
     @memo.user_id = session[:user_id]
 
     update_params = params[:memo]
@@ -150,11 +189,11 @@ class MemosController < ApplicationController
 
     if @memo.update_attributes( update_params )
       flash[:notice] = "「#{@memo.title}」の更新が完了しました。"
-      redirect_to :action =>  "show", :id => @memo.id, :option => @category, :one => @mode
+      redirect_to :action =>  "show", :id => @memo.id, :category => @category, :sub_category => @sub_category, :one => @mode
       return
     else
       flash[:notice] = "「#{@memo.title}」の更新に失敗しました。"
-      redirect_to :action =>  "edit", :id => @memo.id, :option => @category, :one => @mode
+      redirect_to :action =>  "edit", :id => @memo.id, :category => @category, :sub_category => @sub_category, :one => @mode
       return
     end
   end
@@ -164,7 +203,8 @@ class MemosController < ApplicationController
   #---------#
   def destroy
     @memo = Memo.find_by_id_and_user_id( params[:id], session[:user_id] )
-    @category = params[:option]
+    @category = params[:category]
+    @sub_category = params[:sub_category]
 
     if !@memo.blank? and @memo.destroy
       flash[:notice] = "「#{@memo.title}」の削除が完了しました。"
@@ -172,7 +212,6 @@ class MemosController < ApplicationController
       flash[:notice] = "「#{@memo.title}」の削除に失敗しました。"
     end
 
-#    redirect_to "/memos/list/#{@category}/#{@mode}"
-    redirect_to :action =>  "list", :id => @category, :option => @mode
+    redirect_to :action =>  "list", :category => @category, :sub_category => @sub_category, :option => @mode
   end
 end

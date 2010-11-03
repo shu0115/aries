@@ -9,14 +9,11 @@ class PublicController < ApplicationController
     # セッションクリーニング
     session_clear()
     
-    @category = params[:id]
+ #   @category = params[:id]
+    @category = params[:category]
     @search_word = params[:search_word]
     @search_type = params[:search_type]
     
-    print "【 @category 】>> " ; p @category ;
-    print "【 @search_word 】>> " ; p @search_word ;
-    print "【 @search_type 】>> " ; p @search_type ;
-
     # 検索条件
 #    conditions = Hash.new
 #    conditions[:mode] = "public"

@@ -9,9 +9,9 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
 
   # リンク表示テキスト
-  $link = { :show => "Show", :edit => "Edit", :delete => "Delete", :new => "New", :list => "List" }
+  $link_name = { :show => "Show", :edit => "Edit", :delete => "Delete", :new => "New", :list => "List" }
 
-  # ページネート
+  # ページング
   $per_page = 15
 
   #---------------#

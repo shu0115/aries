@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100809141015) do
+ActiveRecord::Schema.define(:version => 20101103050130) do
 
   create_table "memos", :force => true do |t|
     t.string   "title"
@@ -19,7 +19,8 @@ ActiveRecord::Schema.define(:version => 20100809141015) do
     t.datetime "updated_at"
     t.string   "mode"
     t.string   "category"
-    t.integer  "user_id",    :limit => 255
+    t.integer  "user_id",      :limit => 255
+    t.string   "sub_category"
   end
 
   create_table "sessions", :force => true do |t|

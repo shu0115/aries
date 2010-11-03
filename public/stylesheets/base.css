@@ -210,7 +210,7 @@ a:hover, a:active {
 }
 
 /* memos */
-#memo_title, #memo_category {
+#memo_title, #memo_category, #memo_sub_category {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border: 1px solid #aaa;

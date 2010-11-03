@@ -1,19 +1,20 @@
-<%# メニュー %>
-<span class="menu list"><%= link_to $link[:list], { :action => "list", :id => @category } %></span>
+<%# リンク %>
+<span class="menu list"><%= link_to $link_name[:list], { :action => "list", :category => @category, :sub_category => @sub_category } %></span>
+
 <% unless @memo.blank? %>
-　<span class="menu edit"><%= link_to $link[:edit], { :action => "edit", :id => @memo.id, :option => @category } %></span>
-　<span class="menu delete"><%= link_to $link[:delete], { :action => "destroy", :id => @memo.id, :option => @category }, :confirm => "「#{@memo.title}」を本当に削除してよろしいですか？" %></span><br />
+　<span class="menu edit"><%= link_to $link_name[:edit], { :action => "edit", :id => @memo.id, :category => @category, :sub_category => @sub_category } %></span>
+　<span class="menu delete"><%= link_to $link_name[:delete], { :action => "destroy", :id => @memo.id, :category => @category, :sub_category => @sub_category }, :confirm => "「#{@memo.title}」を本当に削除してよろしいですか？" %></span><br />
 
 <br />
 
-<%# メモタイトル %>
-<span class="menu_title">[<%=h @memo.category %>]：<%=h @memo.title %></span><br />
+<%# メモ カテゴリ／サブカテゴリ／タイトル %>
+<span class="menu_title">[<%=h @memo.category %>]<% unless @memo.sub_category.blank? %>[<%=h @memo.sub_category %>]<% end %>：<%=h @memo.title %></span><br />
 
-<%# メモテキスト %>
+<%# メモ テキスト %>
 <pre class="pre_style"><%=h @memo.note %></pre>
 
-<%# メニュー %>
-<span class="menu list"><%= link_to $link[:list], { :action => "list", :id => @category } %></span>
-　<span class="menu edit"><%= link_to $link[:edit], { :action => "edit", :id => @memo.id, :option => @category } %></span>
-　<span class="menu delete"><%= link_to $link[:delete], { :action => "destroy", :id => @memo.id, :option => @category }, :confirm => "「#{@memo.title}」を本当に削除してよろしいですか？" %></span><br />
+<%# リンク %>
+<span class="menu list"><%= link_to $link_name[:list], { :action => "list", :category => @category, :sub_category => @sub_category } %></span>
+　<span class="menu edit"><%= link_to $link_name[:edit], { :action => "edit", :id => @memo.id, :category => @category, :sub_category => @sub_category } %></span>
+　<span class="menu delete"><%= link_to $link_name[:delete], { :action => "destroy", :id => @memo.id, :category => @category, :sub_category => @sub_category }, :confirm => "「#{@memo.title}」を本当に削除してよろしいですか？" %></span><br />
 <% end %>

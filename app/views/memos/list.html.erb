@@ -1,13 +1,26 @@
+<%# カテゴリリスト %>
+<% unless @categorys.blank? %>
 <div class="radius_border">
 <table><tr><td>
-<%# カテゴリリスト %>
-<%#= link_to 'ALL', "/memos/list" %>
-<% @categorys.each_with_index{ |category, index| %><% if category[:category].to_s == @category.to_s %><span class="active_link"><%= link_to category[:category], "/memos/list/#{category[:category]}" %></span><% else %><%= link_to category[:category], "/memos/list/#{category[:category]}" %><% end %>　<wbr /><% } %><br />
+<% @categorys.each_with_index{ |category, index| %><% if category[:category].to_s == @category.to_s %><span class="active_link"><%= link_to category[:category], { :action => "list", :category => category[:category] } %></span><% else %><%= link_to category[:category], { :action => "list", :category => category[:category] } %><% end %>　<wbr /><% } %><br />
 </td></tr></table>
 </div>
 
 <br />
 <br />
+<% end %>
+
+<%# サブカテゴリリスト %>
+<% unless @sub_categorys.blank? %>
+<div class="radius_border">
+<table><tr><td>
+<% @sub_categorys.each_with_index{ |sub_category, index| %><% if sub_category[:sub_category].to_s == @sub_category.to_s %><span class="active_link"><%= link_to sub_category[:sub_category], { :action => "list", :category => @category, :sub_category => sub_category[:sub_category] } %></span><% else %><%= link_to sub_category[:sub_category], { :action => "list", :category => @category, :sub_category => sub_category[:sub_category] } %><% end %>　<wbr /><% } %><br />
+</td></tr></table>
+</div>
+
+<br />
+<br />
+<% end %>
 
 <%# 検索 %>
 <%= render :partial =>'search_area' %>
@@ -16,7 +29,7 @@
 <br />
 
 <%# NEW %>
-<span class="menu new"><%= link_to $link[:new], { :action => "new", :id => @category } %></span><br />
+<span class="menu new"><%= link_to $link_name[:new], { :action => "new", :category => @category, :sub_category => @sub_category } %></span><br />
 
 <br />
 
@@ -27,27 +40,36 @@
 <% end %>
 
 <%# 公開／非公開 %>
-<% @category = 'all' if @category.blank? %>
-<span class="mode"><%= link_to '公開', { :action => "list", :id => @category, :option => "public" } %> | <%= link_to '非公開', { :action => "list", :id => @category, :option => "private" } %> | <%= link_to 'リセット', { :action => "list", :id => @category, :option => "reset" } %></span><br />
+<%# @category = 'all' if @category.blank? %>
+<span class="mode"><%= link_to '公開', { :action => "list", :category => @category, :option => "public" } %> | <%= link_to '非公開', { :action => "list", :id => @category, :option => "private" } %> | <%= link_to 'リセット', { :action => "list", :id => @category, :option => "reset" } %></span><br />
 
-<%# メモ %>
+<%# メモ リスト %>
 <table class="table_style">
   <tr>
     <th>カテゴリ</th>
+    <th>サブカテゴリ</th>
     <th>タイトル</th>
     <th>モード</th>
   </tr>
 
 <% @all_memos.each do |memo| %>
   <tr>
-    <td>[<%= link_to memo.category, { :action => "list", :id => memo.category } %>]</td>
+    <%# カテゴリ %>
+    <td>[<%= link_to memo.category, { :action => "list", :category => memo.category } %>]</td>
     
+    <%# サブカテゴリ %>
+    <td><% unless memo.sub_category.blank? %>[<%=h memo.sub_category %>]<% end %></td>
+
+    <%# タイトル %>
     <td><%=h memo.title %></td>
+
+    <%# モード %>
     <td><%=h $mode_hash[memo.mode.to_s] %></td>
 
-    <td class="menu show"><%= link_to $link[:show], { :action => "show", :id => memo.id, :option => @category }, :title => memo.note %></td>
-    <td class="menu edit"><%= link_to $link[:edit], { :action => "edit", :id => memo.id, :option => @category } %></td>
-    <td class="menu delete"><%= link_to $link[:delete], { :action => "destroy", :id => memo.id, :option => @category }, :confirm => "「#{memo.title}」を本当に削除してよろしいですか？" %></td>
+    <%# リンク %>
+    <td class="menu show"><%= link_to $link_name[:show], { :action => "show", :id => memo.id, :category => @category, :sub_category => @sub_category }, :title => memo.note %></td>
+    <td class="menu edit"><%= link_to $link_name[:edit], { :action => "edit", :id => memo.id, :category => @category, :sub_category => @sub_category } %></td>
+    <td class="menu delete"><%= link_to $link_name[:delete], { :action => "destroy", :id => memo.id, :category => @category, :sub_category => @sub_category }, :confirm => "「#{memo.title}」を本当に削除してよろしいですか？" %></td>
   </tr>
 <% end %>
 </table>
@@ -55,4 +77,4 @@
 <br />
 
 <%# NEW %>
-<span class="menu new"><%= link_to $link[:new], { :action => "new", :id => @category } %></span>
+<span class="menu new"><%= link_to $link_name[:new], { :action => "new", :category => @category, :sub_category => @sub_category } %></span>

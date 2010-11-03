@@ -19216,3 +19216,40 @@ Rendered public/_search_area (45.4ms)
 Rendered layouts/_access_analyze (0.0ms)
 Rendered layouts/_adsense (0.1ms)
 Completed in 65ms (View: 58, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-11-03 17:09:27) [GET]
+  [4;36;1mMemo Load (3.5ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC LIMIT 15 OFFSET 0[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "memos" WHERE ("memos"."user_id" = '2') [0m
+  [4;36;1mMemo Load (1.0ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+  [4;35;1mMemo Load (0.2ms)[0m   [0mSELECT DISTINCT sub_category FROM "memos" WHERE (sub_category != '' AND user_id = '2') ORDER BY sub_category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (2.6ms)
+DEPRECATION WARNING: WillPaginate: :prev_label view parameter is now :previous_label; the old name has been deprecated. (called from _run_erb_app47views47memos47list46html46erb at /Users/raisondetre0115/Mine/workspace/aries/app/views/memos/list.html.erb:38)
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 85ms (View: 75, DB: 5) | 200 OK [http://localhost/memos]
+
+
+Processing MemosController#list (for 127.0.0.1 at 2010-11-03 17:09:29) [GET]
+  Parameters: {"category"=>"01_Aries"}
+  [4;36;1mMemo Load (1.3ms)[0m   [0;1mSELECT * FROM "memos" WHERE ("memos"."category" = '01_Aries' AND "memos"."user_id" = '2') ORDER BY category ASC, mode ASC, title ASC LIMIT 15 OFFSET 0[0m
+  [4;35;1mMemo Load (1.0ms)[0m   [0mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND user_id = '2') ORDER BY category ASC[0m
+  [4;36;1mMemo Load (0.1ms)[0m   [0;1mSELECT DISTINCT sub_category FROM "memos" WHERE (sub_category != '' AND category = '01_Aries' AND user_id = '2') ORDER BY sub_category ASC[0m
+Rendering template within layouts/base
+Rendering memos/list
+Rendered memos/_search_area (2.5ms)
+Rendered layouts/_access_analyze (0.1ms)
+Rendered layouts/_adsense (0.1ms)
+Completed in 86ms (View: 80, DB: 3) | 200 OK [http://localhost/memos?category=01_Aries]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-11-03 17:09:30) [GET]
+  Parameters: {"category"=>"01_Aries", "id"=>"139"}
+  [4;35;1mMemo Load (0.2ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."user_id" = '2' AND "memos"."id" = '139') LIMIT 1[0m
+Rendering template within layouts/base
+Rendering memos/show
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.0ms)
+Completed in 11ms (View: 7, DB: 1) | 200 OK [http://localhost/memos/show/139?category=01_Aries]

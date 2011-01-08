@@ -19253,3 +19253,27 @@ Rendering memos/show
 Rendered layouts/_access_analyze (0.0ms)
 Rendered layouts/_adsense (0.0ms)
 Completed in 11ms (View: 7, DB: 1) | 200 OK [http://localhost/memos/show/139?category=01_Aries]
+
+
+Processing MemosController#show (for 127.0.0.1 at 2010-11-09 06:52:00) [GET]
+  Parameters: {"category"=>"01_Aries", "id"=>"139"}
+Redirected to http://localhost:3000/
+Filter chain halted as [:login_check] rendered_or_redirected.
+Completed in 29ms (DB: 0) | 302 Found [http://localhost/memos/show/139?category=01_Aries]
+
+
+Processing PublicController#list (for 127.0.0.1 at 2010-11-09 06:52:00) [GET]
+  [4;36;1mSession Load (0.6ms)[0m   [0;1mSELECT * FROM "sessions" WHERE (updated_at < '2010-11-02 06:52:00') [0m
+  [4;35;1mSession Destroy (0.4ms)[0m   [0mDELETE FROM "sessions" WHERE "id" = 162[0m
+  [4;36;1mSession Destroy (0.2ms)[0m   [0;1mDELETE FROM "sessions" WHERE "id" = 163[0m
+  [4;35;1mMemo Load (1.3ms)[0m   [0mSELECT * FROM "memos" WHERE ("memos"."mode" = 'public') ORDER BY category ASC, title ASC[0m
+  [4;36;1mMemo Load (0.3ms)[0m   [0;1mSELECT DISTINCT category FROM "memos" WHERE (category != '' AND mode = 'public' ) ORDER BY category ASC[0m
+Rendering template within layouts/base
+Rendering public/list
+Rendered public/_search_area (4.0ms)
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+Rendered layouts/_access_analyze (0.0ms)
+Rendered layouts/_adsense (0.1ms)
+Completed in 31ms (View: 18, DB: 4) | 200 OK [http://localhost/]

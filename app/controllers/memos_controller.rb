@@ -137,10 +137,12 @@ class MemosController < ApplicationController
   def new
     @category = params[:category]
     @sub_category = params[:sub_category]
+    
     @memo = Memo.new
     @memo.mode = "private"
+    
     @categorys = Memo.user_categorys( :user_id => session[:user_id] )
-    @sub_categorys = Memo.user_sub_categorys( :user_id => session[:user_id] )
+    @sub_categorys = Memo.user_sub_categorys( :user_id => session[:user_id], :category => @category )
   end
 
   #------#
@@ -149,9 +151,10 @@ class MemosController < ApplicationController
   def edit
     @category = params[:category]
     @sub_category = params[:sub_category]
+    
     @memo = Memo.find_by_id_and_user_id( params[:id], session[:user_id] )
     @categorys = Memo.user_categorys( :user_id => session[:user_id] )
-    @sub_categorys = Memo.user_sub_categorys( :user_id => session[:user_id] )
+    @sub_categorys = Memo.user_sub_categorys( :user_id => session[:user_id], :category => @category )
   end
 
   #--------#

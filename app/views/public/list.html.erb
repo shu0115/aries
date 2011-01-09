@@ -2,7 +2,7 @@
 <div class="radius_border">
 <table><tr><td>
 <%# カテゴリ %>
-<% @categorys.each_with_index{ |category, index| %><% if category[:category].to_s == @category.to_s %><span class="active_link"><%= link_to category[:category], "/public/list/#{category[:category]}" %></span><% else %><%= link_to category[:category], "/public/list/#{category[:category]}" %><% end %><% if ((index.to_i % 10) == 0) and index.to_i > 0 %><br /><% else %>　<% end %><% } %><br />
+<% @categorys.each_with_index{ |category, index| %><% if category[:category].to_s == @category.to_s %><span class="active_link"><%= link_to category[:category], { :action => "list", :category => category[:category] } %></span><% else %><%= link_to category[:category], { :action => "list", :category => category[:category] } %><% end %>　<wbr /><% } %><br />
 </td></tr></table>
 </div>
 
@@ -17,7 +17,7 @@
 
 <table class="table_style">
   <tr>
-    <th>カテゴリ</th>
+    <th colspan="2">カテゴリ</th>
     <th>タイトル</th>
     <th>モード</th>
     <th>ユーザ</th>
@@ -27,10 +27,19 @@
 <% user = User.find_by_id( memo.user_id ) %>
 
   <tr>
+    <%# カテゴリ %>
     <td>[<%= link_to memo.category, { :action => :list, :category => memo.category } %>]</td>
     
+    <%# サブカテゴリ %>
+    <td><% unless memo.sub_category.blank? %>[<%=h memo.sub_category %>]<% end %></td>
+
+    <%# タイトル %>
     <td><%=h memo.title %></td>
+
+    <%# モード %>
     <td><%=h memo.mode %></td>
+
+    <%# ユーザ %>
 		<% if user.blank? %>
   	  <td></td>
 		<% elsif !user.twitter_id.blank? %>

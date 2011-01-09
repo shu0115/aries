@@ -9,15 +9,10 @@ class PublicController < ApplicationController
     # セッションクリーニング
     session_clear()
     
- #   @category = params[:id]
     @category = params[:category]
     @search_word = params[:search_word]
     @search_type = params[:search_type]
     
-    # 検索条件
-#    conditions = Hash.new
-#    conditions[:mode] = "public"
-#    conditions[:category] = @category unless @category.blank?
     # 検索条件
     conditions_text = ""
     conditions_text += "mode = :mode"
@@ -43,12 +38,8 @@ class PublicController < ApplicationController
       @all_public_memos = Memo.all( :conditions => conditions, :order => "category ASC, title ASC" )
     end
 
-    print "【 conditions_text 】>> " ; p conditions_text ;
-    print "【 conditions 】>> " ; p conditions ;
-
     @categorys = Memo.public_categorys
     @title_checked = true if @title_checked.blank?
-
   end
 
   #------#
@@ -86,9 +77,6 @@ class PublicController < ApplicationController
       @all_public_memos = Memo.all( :conditions => [ conditions_text, conditions ], :order => "category ASC, title ASC" )
       @title_checked = true
     end
-
-    print "【 conditions_text 】>> " ; p conditions_text ;
-    print "【 conditions 】>> " ; p conditions ;
 
     @categorys = Memo.public_categorys
   end

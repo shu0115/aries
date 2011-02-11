@@ -1,8 +1,19 @@
 <%# 検索 %>
-<%# form_tag :action => "search" do %>
 <% form_tag :action => "list" do %>
+  <%# 検索ワード %>
 	<%= text_field_tag :search_word, @search_word, { :class => "text_field" } %>
+
+  <%# タイトル %>
 	<%= radio_button_tag( :search_type, "title", checked = @title_checked, options = {} ) %><label for="search_type_title">タイトル</label>
+
+  <%# テキスト %>
 	<%= radio_button_tag( :search_type, "note", checked = @note_checked, options = {} ) %><label for="search_type_note">テキスト</label>
+
+  <%# サブカテゴリ %>
+  <%= radio_button_tag( :search_type, "sub_category", checked = @sub_category_checked, options = {} ) %><label for="search_type_sub_category">サブカテゴリ</label>
+
+  <%# 検索フラグ %>
+  <%= hidden_field_tag :search_flag, "on" %>
+
 	<%= submit_tag "検索", :disable_with => "検索" %>
 <% end %>

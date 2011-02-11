@@ -47,21 +47,25 @@ class MemosController < ApplicationController
     # paramsをsessionに保存
     session[:memo_mode] = params[:option]
 
-    if params[:commit] == "検索"
+    # 検索であれば
+    if params[:commit] == "検索" or params[:search_flag] == "on"
       @search_word = params[:search_word]
       @search_type = params[:search_type]
   
       # メモ検索
-      if @search_type == "note"
-        @all_memos = Memo.paginate( :page => params[:page], :conditions => [ "user_id = :user_id AND note LIKE :search_word", { :user_id => session[:user_id], :search_word => "%#{@search_word}%" } ], :order => "category ASC, sub_category ASC, title ASC", :per_page => $per_page )
-        @note_checked = true
-      else
+      case @search_type
+      when "title"
         @all_memos = Memo.paginate( :page => params[:page], :conditions => [ "user_id = :user_id AND title LIKE :search_word", { :user_id => session[:user_id], :search_word => "%#{@search_word}%" } ], :order => "category ASC, sub_category ASC, title ASC", :per_page => $per_page )
         @title_checked = true
+      when "note"
+        @all_memos = Memo.paginate( :page => params[:page], :conditions => [ "user_id = :user_id AND note LIKE :search_word", { :user_id => session[:user_id], :search_word => "%#{@search_word}%" } ], :order => "category ASC, sub_category ASC, title ASC", :per_page => $per_page )
+        @note_checked = true
+      when "sub_category"
+        @all_memos = Memo.paginate( :page => params[:page], :conditions => [ "user_id = :user_id AND sub_category LIKE :search_word", { :user_id => session[:user_id], :search_word => "%#{@search_word}%" } ], :order => "category ASC, sub_category ASC, title ASC", :per_page => $per_page )
+        @sub_category_checked = true
+      else
+        @all_memos = Memo.paginate( :page => params[:page], :conditions => [ "user_id = :user_id", { :user_id => session[:user_id] } ], :order => "category ASC, sub_category ASC, title ASC", :per_page => $per_page )
       end
-  
-      # ユーザカテゴリ取得
-#      @categorys = Memo.user_categorys( :user_id => session[:user_id] )
     else
       # 検索条件
       conditions = Hash.new
@@ -82,29 +86,6 @@ class MemosController < ApplicationController
 
     @title_checked = true
   end
-  
-  #--------#
-  # search #
-  #--------#
-=begin
-  def search
-    print "【 params 】>> " ; p params ;
-    @search_word = params[:search_word]
-    @search_type = params[:search_type]
-
-    # メモ検索
-    if @search_type == "note"
-      @all_memos = Memo.all( :conditions => [ "note LIKE :search_word", { :search_word => "%#{@search_word}%" } ], :order => "category ASC, title ASC" )
-      @note_checked = true
-    else
-      @all_memos = Memo.all( :conditions => [ "title LIKE :search_word", { :search_word => "%#{@search_word}%" } ], :order => "category ASC, title ASC" )
-      @title_checked = true
-    end
-
-    # ユーザカテゴリ取得
-    @categorys = Memo.user_categorys( :user_id => session[:user_id] )
-  end
-=end
  
   #---------------#
   # memo_category #
@@ -154,7 +135,7 @@ class MemosController < ApplicationController
     
     @memo = Memo.find_by_id_and_user_id( params[:id], session[:user_id] )
     @categorys = Memo.user_categorys( :user_id => session[:user_id] )
-    @sub_categorys = Memo.user_sub_categorys( :user_id => session[:user_id], :category => @category )
+    @sub_categorys = Memo.user_sub_categorys( :user_id => session[:user_id], :category => @memo.category )
   end
 
   #--------#

@@ -1,13 +1,13 @@
 
 <%# リンク %>
-<span class="menu list"><%= link_to $link_name[:list], { :action => "list", :category => @category, :sub_category => @sub_category } %></span>
+<span class="menu list"><%= link_to $link_name[:list], { :action => "list", :category => @category, :sub_category => @sub_category, :search_flag => params[:search_flag], :search_word => params[:search_word], :search_type => params[:search_type] } %></span>
 <% unless @memo.blank? %>
-　<span class="menu show"><%= link_to $link_name[:show], { :action => "show", :id => @memo.id, :category => @category, :sub_category => @sub_category } %></span><br />
+　<span class="menu show"><%= link_to $link_name[:show], { :action => "show", :id => @memo.id, :category => @category, :sub_category => @sub_category, :search_flag => params[:search_flag], :search_word => params[:search_word], :search_type => params[:search_type] } %></span><br />
 
 <br />
 
 <%# 編集 %>
-<% form_for :memo, :url => { :action => "update", :id => @memo.id, :category => @category, :sub_category => @sub_category } do |f| %>
+<% form_for :memo, :url => { :action => "update", :id => @memo.id, :category => @category, :sub_category => @sub_category, :search_flag => params[:search_flag], :search_word => params[:search_word], :search_type => params[:search_type] } do |f| %>
   <%= f.error_messages %>
 
   <%# カテゴリ %>
@@ -63,6 +63,6 @@
 <br />
 
 <%# リンク %>
-<span class="menu list"><%= link_to $link_name[:list], { :action => "list", :category => @category, :sub_category => @sub_category } %></span>
-　<span class="menu show"><%= link_to $link_name[:show], { :action => "show", :id => @memo.id, :category => @category, :sub_category => @sub_category } %></span>
+<span class="menu list"><%= link_to $link_name[:list], { :action => "list", :category => @category, :sub_category => @sub_category, :search_flag => params[:search_flag], :search_word => params[:search_word], :search_type => params[:search_type] } %></span>
+　<span class="menu show"><%= link_to $link_name[:show], { :action => "show", :id => @memo.id, :category => @category, :sub_category => @sub_category, :search_flag => params[:search_flag], :search_word => params[:search_word], :search_type => params[:search_type] } %></span>
 <% end %>

@@ -173,11 +173,11 @@ class MemosController < ApplicationController
 
     if @memo.update_attributes( update_params )
       flash[:notice] = "「#{@memo.title}」の更新が完了しました。"
-      redirect_to :action =>  "show", :id => @memo.id, :category => @category, :sub_category => @sub_category, :one => @mode
+      redirect_to :action =>  "show", :id => @memo.id, :category => @category, :sub_category => @sub_category, :one => @mode, :search_flag => params[:search_flag], :search_word => params[:search_word], :search_type => params[:search_type]
       return
     else
       flash[:notice] = "「#{@memo.title}」の更新に失敗しました。"
-      redirect_to :action =>  "edit", :id => @memo.id, :category => @category, :sub_category => @sub_category, :one => @mode
+      redirect_to :action =>  "edit", :id => @memo.id, :category => @category, :sub_category => @sub_category, :one => @mode, :search_flag => params[:search_flag], :search_word => params[:search_word], :search_type => params[:search_type]
       return
     end
   end
@@ -196,6 +196,6 @@ class MemosController < ApplicationController
       flash[:notice] = "「#{@memo.title}」の削除に失敗しました。"
     end
 
-    redirect_to :action =>  "list", :category => @category, :sub_category => @sub_category, :option => @mode
+    redirect_to :action =>  "list", :category => @category, :sub_category => @sub_category, :option => @mode, :search_flag => params[:search_flag], :search_word => params[:search_word], :search_type => params[:search_type]
   end
 end

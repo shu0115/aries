@@ -66,9 +66,9 @@
     <td><%=h $mode_hash[memo.mode.to_s] %></td>
 
     <%# リンク %>
-    <td class="menu show"><%= link_to $link_name[:show], { :action => "show", :id => memo.id, :category => @category, :sub_category => @sub_category, :search_flag => params[:search_flag], :search_word => params[:search_word], :search_type => params[:search_type] }, :title => memo.note %></td>
-    <td class="menu edit"><%= link_to $link_name[:edit], { :action => "edit", :id => memo.id, :category => @category, :sub_category => @sub_category, :search_flag => params[:search_flag], :search_word => params[:search_word], :search_type => params[:search_type] } %></td>
-    <td class="menu delete"><%= link_to $link_name[:delete], { :action => "destroy", :id => memo.id, :category => @category, :sub_category => @sub_category, :search_flag => params[:search_flag], :search_word => params[:search_word], :search_type => params[:search_type] }, :confirm => "「#{memo.title}」を本当に削除してよろしいですか？" %></td>
+    <td class="menu show"><%= link_to $link_name[:show], { :action => "show", :id => memo.id,:page => params[:page], :category => @category, :sub_category => @sub_category, :search_flag => params[:search_flag], :search_word => params[:search_word], :search_type => params[:search_type] }, :title => memo.note %></td>
+    <td class="menu edit"><%= link_to $link_name[:edit], { :action => "edit", :id => memo.id,:page => params[:page], :category => @category, :sub_category => @sub_category, :search_flag => params[:search_flag], :search_word => params[:search_word], :search_type => params[:search_type] } %></td>
+    <td class="menu delete"><%= link_to $link_name[:delete], { :action => "destroy", :id => memo.id,:page => params[:page], :category => @category, :sub_category => @sub_category, :search_flag => params[:search_flag], :search_word => params[:search_word], :search_type => params[:search_type] }, :confirm => "「#{memo.title}」を本当に削除してよろしいですか？" %></td>
   </tr>
 <% end %>
 </table>

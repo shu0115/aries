@@ -3,7 +3,7 @@ body {
   color: #000;
 }
 
-body, p, ol, ul, td {
+body, p, ol, ul, td, textarea {
   font-family: monospace, verdana, arial, helvetica, sans-serif;
   font-size:   14px;
   line-height: 18px;

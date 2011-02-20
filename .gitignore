@@ -1,7 +1,10 @@
 
-#tmpファイルを無視
-.tmp_*
+# DB
+db/*.sqlite3
 
-#logディレクトリ内部を無視
-log/*
-log/**/*
+# log
+log/*.log
+
+# tmp
+.tmp_*
+tmp/**/*

@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
 
+  before_filter :ssl_redirect
+
   # リンク表示テキスト
   $link_name = { :show => "Show", :edit => "Edit", :delete => "Delete", :new => "New", :list => "List" }
 
@@ -31,6 +33,16 @@ class ApplicationController < ActionController::Base
     unless User.find_by_id( session[:user_id] )
       flash[:notice] = "ログインして下さい。"
       redirect_to :controller => "users", :action => "login"
+    end
+  end
+
+  #--------------#
+  # ssl_redirect #
+  #--------------#
+  def ssl_redirect
+    if Rails.env.production? and request.env["HTTP_X_FORWARDED_PROTO"].to_s != "https"
+      request.env["HTTP_X_FORWARDED_PROTO"] = "https"
+      redirect_to request.url
     end
   end
   

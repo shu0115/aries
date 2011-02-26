@@ -7,9 +7,9 @@
     <td>
     <% @categorys.each_with_index{ |category, index| %>
       <% if category[:category].to_s == @category.to_s %>
-        <span class="active_link"><%= link_to category[:category], { :action => "list", :category => category[:category] } -%>　<wbr /></span>
+        <span class="active_link"><%= link_to category[:category], { :action => "list", :category => category[:category] } -%> <wbr /></span>
       <% else %>
-        <%= link_to category[:category], { :action => "list", :category => category[:category] } -%>　<wbr />
+        <%= link_to category[:category], { :action => "list", :category => category[:category] } -%> <wbr />
       <% end %>
     <% } %>
     <br />

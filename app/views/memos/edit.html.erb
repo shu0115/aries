@@ -4,61 +4,89 @@
 <% unless @memo.blank? %>
 　<span class="menu show"><%= link_to $link_name[:show], { :action => "show", :id => @memo.id,:page => params[:page], :category => @category, :sub_category => @sub_category, :search_flag => params[:search_flag], :search_word => params[:search_word], :search_type => params[:search_type] } %></span><br />
 
-<br />
-
-<%# 編集 %>
-<% form_for :memo, :url => { :action => "update", :id => @memo.id,:page => params[:page], :category => @category, :sub_category => @sub_category, :search_flag => params[:search_flag], :search_word => params[:search_word], :search_type => params[:search_type] } do |f| %>
-  <%= f.error_messages %>
-
-  <%# カテゴリ %>
-  <%= f.label :category, 'カテゴリ' %><br />
-	<div class="radius_border">
-	<table><tr><td>
-    <% @categorys.each_with_index{ |category, index| %><%= link_to_remote( category[:category], :update => "memo_category_set", :url => { :action => :memo_category, :category => category[:category] } ) %>　<wbr /><% } %><br />
-	</td></tr></table>
-	</div>
   <br />
-  <br />
-  <span id="memo_category_set"><%= f.text_field :category %></span><br />
 
-	<br />
-
-  <%# サブカテゴリ %>
-  <%= f.label :sub_category, 'サブカテゴリ' %><br />
-  <div class="radius_border">
-  <table><tr><td>
-    <% @sub_categorys.each_with_index{ |sub_category, index| %><%= link_to_remote( sub_category[:sub_category], :update => "memo_sub_category_set", :url => { :action => :memo_sub_category, :sub_category => sub_category[:sub_category] } ) %>　<wbr /><% } %><br />
-  </td></tr></table>
-  </div>
-  <br />
-  <br />
-  <span id="memo_sub_category_set"><%= f.text_field :sub_category, :value => @sub_category %></span><br />
+  <%# 編集 %>
+  <% form_for :memo, :url => { :action => "update", :id => @memo.id,:page => params[:page], :category => @category, :sub_category => @sub_category, :search_flag => params[:search_flag], :search_word => params[:search_word], :search_type => params[:search_type] } do |f| %>
+    <%= f.error_messages %>
   
-  <br />
+    <%# カテゴリ %>
+    <%= f.label :category, 'カテゴリ' %><br />
+    <div class="radius_border">
+    <table>
+      <tr>
+        <td>
+        <% @categorys.each_with_index{ |category, index| %>
+          <%= link_to_remote(
+                category[:category],
+                :update => "memo_category_set",
+                :url => { :action => :memo_category, :category => category[:category] },
+                :loaded => visual_effect( :highlight, "memo_category_set", :startcolor => $base_color, :restorecolor=>"#ffffff", :duration => 0.5 )
+              )
+          %>　<wbr />
+        <% } %><br />
+      	</td>
+      </tr>
+    </table>
+  	</div>
 
-  <%# タイトル %>
-  <%= f.label :title, 'タイトル' %><br />
-  <%= f.text_field :title, :class => "memo_title_field" %><br />
+    <br />
+    <br />
 
-	<br />
-
-  <%# モード %>
-  <%= f.label :mode, 'モード' %>：<br />
-  <%= f.radio_button :mode, "public", :checked => Memo.mode_public?( @memo.mode ) %><label for="memo_mode_public">公開</label>
-  <%= f.radio_button :mode, "private", :checked => Memo.mode_private?( @memo.mode ) %><label for="memo_mode_private">非公開</label>
-	<br />
-
-	<br />
-
-  <%# テキスト %>
-  <%= f.label :note, 'テキスト' %><br />
-  <%= f.text_area :note %><br />
-
-	<br />
-
-  <%# 保存ボタン %>
-  <%= f.submit '保存', :disable_with => "保存中..." %><br />
-<% end %>
+    <div id="memo_category_set"><%= f.text_field :category %></div><br />
+  
+  	<br />
+  
+    <%# サブカテゴリ %>
+    <%= f.label :sub_category, 'サブカテゴリ' %><br />
+    <div class="radius_border">
+    <table>
+      <tr>
+        <td>
+        <% @sub_categorys.each_with_index{ |sub_category, index| %>
+        <%= link_to_remote(
+              sub_category[:sub_category],
+              :update => "memo_sub_category_set",
+              :url => { :action => :memo_sub_category, :sub_category => sub_category[:sub_category] },
+              :loaded => visual_effect( :highlight, "memo_sub_category_set", :startcolor => $base_color, :restorecolor=>"#ffffff", :duration => 0.5 )
+            )
+        %>　<wbr />
+        <% } %><br />
+        </td>
+      </tr>
+    </table>
+    </div>
+    
+    <br />
+    <br />
+    
+    <div id="memo_sub_category_set"><%= f.text_field :sub_category, :value => @sub_category %></div><br />
+    
+    <br />
+  
+    <%# タイトル %>
+    <%= f.label :title, 'タイトル' %><br />
+    <%= f.text_field :title, :class => "memo_title_field" %><br />
+  
+    <br />
+  
+    <%# モード %>
+    <%= f.label :mode, 'モード' %>：<br />
+    <%= f.radio_button :mode, "public", :checked => Memo.mode_public?( @memo.mode ) %><label for="memo_mode_public">公開</label>
+    <%= f.radio_button :mode, "private", :checked => Memo.mode_private?( @memo.mode ) %><label for="memo_mode_private">非公開</label>
+    <br />
+  
+    <br />
+  
+    <%# テキスト %>
+    <%= f.label :note, 'テキスト' %><br />
+    <%= f.text_area :note %><br />
+  
+    <br />
+  
+    <%# 保存ボタン %>
+    <%= f.submit '保存', :disable_with => "保存中..." %><br />
+  <% end %>
 
 <br />
 

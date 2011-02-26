@@ -54,7 +54,7 @@ class UsersController < ApplicationController
       unless user.blank?
         session[:user_id] = user.id.to_s  # IDをセッションに格納
         session[:login_id] = user.login_id  # IDをセッションに格納
-        flash[:notice] = "ログインに成功しました。"
+#        flash[:notice] = "ログインに成功しました。"
         redirect_to :controller => "memos", :action => "list"
         return
       else
@@ -160,7 +160,6 @@ class UsersController < ApplicationController
 
     # ユーザ情報を更新
     if @user.update_attributes( params_user )
-#    if @user.update_attributes
       flash[:notice] = 'パスワードを変更しました。'
       redirect_to :action => "show", :id => @user.id
       return
@@ -170,35 +169,5 @@ class UsersController < ApplicationController
       return
     end
   end
-
-
-
-
-=begin
-  # GET /users
-  # GET /users.xml
-  def index
-    @users = User.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @users }
-    end
-  end
-
-  # DELETE /users/1
-  # DELETE /users/1.xml
-  def destroy
-    @user = User.find(params[:id])
-    @user.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(users_url) }
-      format.xml  { head :ok }
-    end
-  end
-=end
-
-
 
 end

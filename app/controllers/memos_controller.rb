@@ -149,7 +149,7 @@ class MemosController < ApplicationController
     @memo.user_id = session[:user_id]
 
     if @memo.save
-      flash[:notice] = "「#{@memo.title}」の新規作成が完了しました。"
+#      flash[:notice] = "「#{@memo.title}」の新規作成が完了しました。"
       redirect_to :action =>  "show", :id => @memo.id, :category => @category, :sub_category => @sub_category, :one => @mode
       return
     else
@@ -172,7 +172,7 @@ class MemosController < ApplicationController
     update_params[:category] = "None" if update_params[:category].blank?
 
     if @memo.update_attributes( update_params )
-      flash[:notice] = "「#{@memo.title}」の更新が完了しました。"
+#      flash[:notice] = "「#{@memo.title}」の更新が完了しました。"
       redirect_to :action =>  "show", :id => @memo.id,:page => params[:page], :category => @category, :sub_category => @sub_category, :one => @mode, :search_flag => params[:search_flag], :search_word => params[:search_word], :search_type => params[:search_type]
       return
     else
@@ -191,7 +191,7 @@ class MemosController < ApplicationController
     @sub_category = params[:sub_category]
 
     if !@memo.blank? and @memo.destroy
-      flash[:notice] = "「#{@memo.title}」の削除が完了しました。"
+#      flash[:notice] = "「#{@memo.title}」の削除が完了しました。"
     else
       flash[:notice] = "「#{@memo.title}」の削除に失敗しました。"
     end

@@ -64,7 +64,6 @@ pre {
   background-color: #fff;
   padding: 10px;
   font-size: 14px;
-#  border: 1px solid #aaa;
 }
 
 textarea {
@@ -84,7 +83,7 @@ td {
 
 /* Link */
 a {
-  color: #00afcc;
+  color: #70c0ff;
   text-decoration: none;
 }
 
@@ -102,8 +101,7 @@ a:hover, a:active {
   font-size:   50px;
   line-height: 50px;
   -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.5, transparent), to(white));
-	-webkit-text-stroke: 1px #00c0ff;
-	/*text-shadow: 0px 0px 0px #90e0ff;*/
+	-webkit-text-stroke: 1px #70c0ff;
 }
 
 #title a {
@@ -128,7 +126,7 @@ a:hover, a:active {
   text-align: center;
   text-decoration: none;
 
-  color: #00afcc;
+  color: #70c0ff;
   #color: #40E0D0;
   background: #fff repeat-x;
   #background: #00afcc repeat-x;
@@ -145,67 +143,61 @@ a:hover, a:active {
 }
 
 .list a {
-  color: #55f;
-  border: 1px solid #55f;
-#  -webkit-box-shadow: 0px 0px 5px #55f;
+  color: #70c0ff;
+  border: 1px solid #70c0ff;
 }
 .list a:hover {
-  background: #55f repeat-x;
-  border: 1px solid #55f;
+  background: #70c0ff repeat-x;
+  border: 1px solid #70c0ff;
 }
 
 .new a {
-  color: #50a0a6;
-  border: 1px solid #50a0a6;
-#  -webkit-box-shadow: 0px 0px 5px #50a0a6;
+  color: #70c0ff;
+  border: 1px solid #70c0ff;
 }
 .new a:hover {
-  background: #50a0a6 repeat-x;
-  border: 1px solid #50a0a6;
+  background: #70c0ff repeat-x;
+  border: 1px solid #70c0ff;
 }
 
 .show a {
-  color: #00afcc;
-  border: 1px solid #00afcc;
-#  -webkit-box-shadow: 0px 0px 5px #00afcc;
+  color: #70c0ff;
+  border: 1px solid #70c0ff;
 }
 .show a:hover {
-  background: #00afcc repeat-x;
-  border: 1px solid #00afcc;
+  background: #70c0ff repeat-x;
+  border: 1px solid #70c0ff;
 }
 
 .edit a {
-  color: #0c0;
-  border: 1px solid #0c0;
-#  -webkit-box-shadow: 0px 0px 5px #0c0;
+  color: #70c0ff;
+  border: 1px solid #70c0ff;
 }
 .edit a:hover {
-  background: #0c0 repeat-x;
-  border: 1px solid #0c0;
+  background: #70c0ff repeat-x;
+  border: 1px solid #70c0ff;
 }
 
 .delete a {
-  color: #f00;
-  border: 1px solid #f00;
-#  -webkit-box-shadow: 0px 0px 5px #f00;
+  color: #70c0ff;
+  border: 1px solid #70c0ff;
 }
 .delete a:hover {
-  background: #f00 repeat-x;
-  border: 1px solid #f00;
+  background: #70c0ff repeat-x;
+  border: 1px solid #70c0ff;
 }
 
 .pre_style {
   -moz-border-radius: 20px;
   -webkit-border-radius: 20px;
-#  border: 1px solid #aaa;
-  border: 1px solid #00afcc;
+  border: 1px solid #70c0ff;
   padding: 15px;
 }
 
 .table_style {
   -moz-border-radius: 20px;
   -webkit-border-radius: 20px;
-  border: 1px solid #00afcc;
+  border: 1px solid #70c0ff;
   padding: 15px;
 }
 

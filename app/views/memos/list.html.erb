@@ -1,9 +1,21 @@
+
 <%# カテゴリリスト %>
 <% unless @categorys.blank? %>
 <div class="radius_border">
-<table><tr><td>
-<% @categorys.each_with_index{ |category, index| %><% if category[:category].to_s == @category.to_s %><span class="active_link"><%= link_to category[:category], { :action => "list", :category => category[:category] } %></span><% else %><%= link_to category[:category], { :action => "list", :category => category[:category] } %><% end %>　<wbr /><% } %><br />
-</td></tr></table>
+<table>
+  <tr>
+    <td>
+    <% @categorys.each_with_index{ |category, index| %>
+      <% if category[:category].to_s == @category.to_s %>
+        <span class="active_link"><%= link_to category[:category], { :action => "list", :category => category[:category] } -%>　<wbr /></span>
+      <% else %>
+        <%= link_to category[:category], { :action => "list", :category => category[:category] } -%>　<wbr />
+      <% end %>
+    <% } %>
+    <br />
+    </td>
+  </tr>
+</table>
 </div>
 
 <br />
@@ -29,11 +41,11 @@
 <br />
 
 <%# NEW %>
-<span class="menu new"><%= link_to $link_name[:new], { :action => "new", :category => @category, :sub_category => @sub_category } %></span><br />
+<span id="link_target" class="menu new"><%= link_to $link_name[:new], { :action => "new", :category => @category, :sub_category => @sub_category } %></span><br />
 
 <br />
 
-<%# ページネート %>
+<%# ページング %>
 <% if !@all_memos.blank? and @all_memos.total_pages > 1 %>
 <%= will_paginate @all_memos, :prev_label => 'Prev', :next_label => 'Next', :params => { :search_flag => params[:search_flag], :search_word => params[:search_word], :search_type => params[:search_type] } %><br />
 <br />

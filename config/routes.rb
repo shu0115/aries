@@ -42,18 +42,20 @@ ActionController::Routing::Routes.draw do |map|
 
   # memos #
 #  map.connect '', :controller => 'memos', :action => 'list'
-  map.connect '/memos', :controller => 'memos', :action => 'list'
+  map.connect 'memos', :controller => 'memos', :action => 'list'
 
   # public #
   map.connect '', :controller => 'public', :action => 'list'
-  map.connect '/public', :controller => 'public', :action => 'list'
+  map.connect 'public', :controller => 'public', :action => 'list'
 
   # users #
 #  map.connect '', :controller => 'users', :action => 'entry'
-  map.connect '/users', :controller => 'users', :action => 'entry'
+  map.connect '/users/index', :controller => 'users', :action => 'index'
+  map.connect 'users', :controller => 'users', :action => 'entry'
 
   # routes #
-  map.connect ':controller', :action => 'index'
+#  map.connect ':controller', :action => 'index'
+  map.connect ':controller/:action'
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 #  map.connect ':controller/:action/:id/:option'

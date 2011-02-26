@@ -4,6 +4,13 @@ class UsersController < ApplicationController
   before_filter :authorize, :except => [ :entry, :confirm, :create, :login, :logout ]
 
   #-------#
+  # index #
+  #-------#
+  def index
+    @users = User.all
+  end
+
+  #-------#
   # entry #
   #-------#
   def entry
@@ -112,15 +119,9 @@ class UsersController < ApplicationController
       return
     end
 
-    params[:user][:level] = "master"
-
-print "【 params[:user] 】>> " ; p params[:user] ;
-
     # ユーザ情報を更新
     if @user.update_attributes( params[:user] )
-print "【 @user 】>> " ; p @user ;
       session[:user_name] = @user.name
-      session[:level] = @user.level
 #      flash[:notice] = 'ユーザ情報を更新しました。'
       redirect_to :action => "show", :id => @user.id
       return
@@ -178,6 +179,21 @@ print "【 @user 】>> " ; p @user ;
       redirect_to :action => "edit_password", :id => @user.id
       return
     end
+  end
+
+  #---------#
+  # destroy #
+  #---------#
+  def destroy
+    @user = User.find_by_id( params[:id] )
+
+    if !(@user.blank?) and session[:level] == "master" and @user.destroy
+#      flash[:notice] = "「#{@user.login_id}」の削除が完了しました。"
+    else
+      flash[:notice] = "「#{@user.login_id}」の削除に失敗しました。"
+    end
+
+    redirect_to :controller => "users", :action => "index"
   end
 
 end

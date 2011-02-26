@@ -54,6 +54,7 @@ class UsersController < ApplicationController
       user = User.authenticate( params_login[:login_id], params_login[:password] )
      
       unless user.blank?
+        print "【 user 】>> " ; p user ;
         session[:user_id] = user.id.to_s  # IDをセッションに格納
         session[:login_id] = user.login_id  # IDをセッションに格納
         session[:level] = user.level
@@ -112,6 +113,8 @@ class UsersController < ApplicationController
     end
 
     params[:user][:level] = "master"
+
+print "【 params[:user] 】>> " ; p params[:user] ;
 
     # ユーザ情報を更新
     if @user.update_attributes( params[:user] )

@@ -28,7 +28,7 @@
     <td><%=h user.website_url %></td>
     <td><%= link_to 'Show', :action => "show", :id => user.id %></td>
     <td><%= link_to 'Edit', :action => "edit", :id => user.id %></td>
-    <td><%= link_to 'Destroy', { :action => "destroy", :id => user.id }, :confirm => 'Are you sure?' %></td>
+    <td><%= link_to 'Destroy', { :action => "destroy", :id => user.id }, :confirm => "#{user.login_id}を削除します。" %></td>
   </tr>
 <% end %>
 </table>

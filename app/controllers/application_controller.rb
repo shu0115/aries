@@ -18,7 +18,6 @@ class ApplicationController < ActionController::Base
 
   # 基本色
   $base_color = "#70c0ff"
-  
 
   #---------------#
   # session_clear #

@@ -7,11 +7,11 @@
   </p>
 
   <p>
-    <%= f.label :twitter_id, "Twitter ID" %>：<%= f.text_field :twitter_id, :class => "text_field" %>
+    <%= f.label :password, "現在のパスワード" %>：<%= f.password_field :password, :class => "text_field" %>
   </p>
 
   <p>
-    <%= f.label :password, "現在のパスワード" %>：<%= f.password_field :password, :class => "text_field" %>
+    <%= f.label :twitter_id, "Twitter ID" %>：<%= f.text_field :twitter_id, :class => "text_field" %>
   </p>
 
 	<%= link_to( "パスワード変更", { :action => :edit_password, :id => @user.id }, { :target => "_self" } ) %>

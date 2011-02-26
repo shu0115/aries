@@ -7,23 +7,23 @@
 
 	  <p>
 	    <%= f.label :login_id, "*ログインID" %><br />
-	    <%= f.text_field :login_id %>
-	  </p>
-	
-	  <p>
-	    <%= f.label :twitter_id, "Twitter ID" %><br />
-	    <%= f.text_field :twitter_id %>
+	    <%= f.text_field :login_id, :class => "text_field" %>
 	  </p>
 	
 	  <p>
 	    <%= f.label :password, "*パスワード" %><br />
-	    <%= f.password_field :password %>
+	    <%= f.password_field :password, :class => "text_field" %>
 	  </p>
 
 	  <p>
 	    <%= f.label :password_confirmation, "*パスワード確認" %><br />
-	    <%= f.password_field :password_confirmation %>
+	    <%= f.password_field :password_confirmation, :class => "text_field" %>
 	  </p>
+  
+    <p>
+      <%= f.label :twitter_id, "Twitter ID" %><br />
+      <%= f.text_field :twitter_id, :class => "text_field" %>
+    </p>
 	
 	  <p>
 	    <%= f.submit '確認' %>
@@ -40,14 +40,14 @@
 	  </p>
 	
 	  <p>
-	    <%= f.label :twitter_id, "Twitter ID" %>：<%= @user.twitter_id %>
-	    <%= f.hidden_field :twitter_id, :value => @user.twitter_id %>
-	  </p>
-	
-	  <p>
 	    <%= f.label :password, "パスワード" %>：<% @user.password.length.times{ |index| %>*<% } %>
 	    <%= f.hidden_field :password, :value => @user.password %>
 	  </p>
+
+    <p>
+      <%= f.label :twitter_id, "Twitter ID" %>：<%= @user.twitter_id %>
+      <%= f.hidden_field :twitter_id, :value => @user.twitter_id %>
+    </p>
 	
 	  <p>
 	    <%= f.submit '登録' %>

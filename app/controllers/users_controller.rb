@@ -23,6 +23,8 @@ class UsersController < ApplicationController
   #--------#
   def create
     @user = User.new( params[:user] )
+    @user.level = "user"
+    
     if @user.save
       flash[:notice] = 'ユーザの新規登録が完了しました。'
       redirect_to :controller => "memos", :action => "list"
@@ -54,6 +56,7 @@ class UsersController < ApplicationController
       unless user.blank?
         session[:user_id] = user.id.to_s  # IDをセッションに格納
         session[:login_id] = user.login_id  # IDをセッションに格納
+        session[:level] = user.level
 #        flash[:notice] = "ログインに成功しました。"
         redirect_to :controller => "memos", :action => "list"
         return
@@ -108,10 +111,12 @@ class UsersController < ApplicationController
       return
     end
 
+    params[:user][:level] = "master"
+
     # ユーザ情報を更新
     if @user.update_attributes( params[:user] )
       session[:user_name] = @user.name
-      flash[:notice] = 'ユーザ情報を更新しました。'
+#      flash[:notice] = 'ユーザ情報を更新しました。'
       redirect_to :action => "show", :id => @user.id
       return
     else

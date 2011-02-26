@@ -1,16 +1,17 @@
 
 <%# カテゴリリスト %>
 <% unless @categorys.blank? %>
-<div class="radius_border">
+<div class="radius_border category">
 <table>
   <tr>
     <td>
     <% @categorys.each_with_index{ |category, index| %>
       <% if category[:category].to_s == @category.to_s %>
-        <span class="active_link"><%= link_to category[:category], { :action => "list", :category => category[:category] } -%> <wbr /></span>
+        <span class="active_link"><%= link_to category[:category], { :action => "list", :category => category[:category] } -%></span>
       <% else %>
-        <%= link_to category[:category], { :action => "list", :category => category[:category] } -%> <wbr />
+        <%= link_to category[:category], { :action => "list", :category => category[:category] } -%>
       <% end %>
+      <wbr />
     <% } %>
     <br />
     </td>
@@ -24,10 +25,22 @@
 
 <%# サブカテゴリリスト %>
 <% unless @sub_categorys.blank? %>
-<div class="radius_border">
-<table><tr><td>
-<% @sub_categorys.each_with_index{ |sub_category, index| %><% if sub_category[:sub_category].to_s == @sub_category.to_s %><span class="active_link"><%= link_to sub_category[:sub_category], { :action => "list", :category => @category, :sub_category => sub_category[:sub_category] } %></span><% else %><%= link_to sub_category[:sub_category], { :action => "list", :category => @category, :sub_category => sub_category[:sub_category] } %><% end %>　<wbr /><% } %><br />
-</td></tr></table>
+<div class="radius_border category">
+<table>
+  <tr>
+    <td>
+    <% @sub_categorys.each_with_index{ |sub_category, index| %>
+      <% if sub_category[:sub_category].to_s == @sub_category.to_s %>
+        <span class="active_link"><%= link_to sub_category[:sub_category], { :action => "list", :category => @category, :sub_category => sub_category[:sub_category] } %></span>
+      <% else %>
+        <%= link_to sub_category[:sub_category], { :action => "list", :category => @category, :sub_category => sub_category[:sub_category] } %>
+      <% end %>
+      <wbr />
+    <% } %>
+    <br />
+    </td>
+  </tr>
+</table>
 </div>
 
 <br />

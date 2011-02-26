@@ -118,7 +118,9 @@ print "【 params[:user] 】>> " ; p params[:user] ;
 
     # ユーザ情報を更新
     if @user.update_attributes( params[:user] )
+print "【 @user 】>> " ; p @user ;
       session[:user_name] = @user.name
+      session[:level] = @user.level
 #      flash[:notice] = 'ユーザ情報を更新しました。'
       redirect_to :action => "show", :id => @user.id
       return

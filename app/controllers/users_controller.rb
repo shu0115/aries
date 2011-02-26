@@ -7,6 +7,8 @@ class UsersController < ApplicationController
   # index #
   #-------#
   def index
+    redirect_to :root and return unless session[:level] == "master"
+
     @users = User.all
   end
 
@@ -185,6 +187,8 @@ class UsersController < ApplicationController
   # destroy #
   #---------#
   def destroy
+    redirect_to :root and return unless session[:level] == "master"
+
     @user = User.find_by_id( params[:id] )
 
     if !(@user.blank?) and session[:level] == "master" and @user.destroy

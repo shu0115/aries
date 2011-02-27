@@ -23,7 +23,7 @@
 <% end %>
 
 <%# サブカテゴリリスト %>
-<% unless @sub_categorys.blank? %>
+<% if !(@category.blank?) and !(@sub_categorys.blank?) %>
 <div class="radius_border category">
 <table>
   <tr>

@@ -31,7 +31,6 @@ class MemosController < ApplicationController
   #------#
   def list
     # パラメータ
-#    @category = params[:id]
     @category = params[:category]
     @sub_category = params[:sub_category]
     
@@ -84,6 +83,7 @@ class MemosController < ApplicationController
     # サブカテゴリ取得
     @sub_categorys = Memo.user_sub_categorys( :user_id => session[:user_id], :category => @category )
 
+    # 検索タイトルチェックド
     @title_checked = true
   end
  

@@ -4,11 +4,3 @@
 .category a {
   margin: 0px 5px 0px 0px;
 }
-
-a:hover, a:active {
-  text-decoration: underline;
-}
-
-.active_link a {
-  font-weight: bold;
-}

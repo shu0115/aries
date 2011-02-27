@@ -122,7 +122,7 @@ a:hover, a:active {
   margin: 0px 0px 0px 0px;
   padding: 5px 15px 5px 15px;
   display: inline-block;
-  font-weight: bold;
+  /*font-weight: bold;*/
   text-align: center;
   text-decoration: none;
 

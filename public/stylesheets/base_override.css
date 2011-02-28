@@ -1,6 +1,23 @@
 
-
 /* Link */
 .category a {
   margin: 0px 5px 0px 0px;
+}
+
+/* テキストフィールド */
+.login_text_field {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border: 1px solid #aaa;
+  padding: 5px;
+  width: 100px;
+}
+
+/* パスワードフィールド */
+.login_password_field {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border: 1px solid #aaa;
+  padding: 5px;
+  width: 100px;
 }

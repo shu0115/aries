@@ -98,5 +98,11 @@
 
 <br />
 
+<%# ページング %>
+<% if !@all_memos.blank? and @all_memos.total_pages > 1 %>
+<%= will_paginate @all_memos, :prev_label => 'Prev', :next_label => 'Next', :params => { :search_flag => params[:search_flag], :search_word => params[:search_word], :search_type => params[:search_type] } %><br />
+<br />
+<% end %>
+
 <%# NEW %>
 <span class="menu new"><%= link_to $link_name[:new], { :action => "new", :category => @category, :sub_category => @sub_category } %></span>

@@ -93,6 +93,7 @@ a:hover, a:active {
 
 .active_link a {
   font-weight: bold;
+  text-decoration: underline;
 }
 
 #title {

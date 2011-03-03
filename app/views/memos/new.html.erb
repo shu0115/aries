@@ -42,6 +42,7 @@
   <table>
     <tr>
       <td>
+        <%# サブカテゴリリスト %>
         <% @sub_categorys.each_with_index{ |sub_category, index| %>
           <%=
             link_to_remote(
@@ -64,18 +65,18 @@
   
   <br />
 
-  <%# タイトル %>
-  <%= f.label :title, 'タイトル' %><br />
-  <%= f.text_field :title, :class => "memo_title_field" %><br />
-  
-  <br />
-
   <%# モード %>
   <%= f.label :mode, 'モード' %>：<br />
   <%= f.radio_button :mode, "public", :checked => Memo.mode_public?( @memo.mode ) %><label for="memo_mode_public">公開</label>
   <%= f.radio_button :mode, "private", :checked => Memo.mode_private?( @memo.mode ) %><label for="memo_mode_private">非公開</label>
   <br />
 
+  <br />
+
+  <%# タイトル %>
+  <%= f.label :title, 'タイトル' %><br />
+  <%= f.text_field :title, :class => "memo_title_field" %><br />
+  
   <br />
 
 <% if false %>

@@ -28,6 +28,10 @@
 <table>
   <tr>
     <td>
+      <% if "blank" == @sub_category.to_s %>
+        <% set_class = "active_link" %>
+      <% end %>
+      <span class=<%= set_class %>><%= link_to "blank", { :action => "list", :category => @category, :sub_category => "blank" } -%><wbr /></span>
     <% @sub_categorys.each_with_index{ |sub_category, index| %>
       <% if sub_category[:sub_category].to_s == @sub_category.to_s %>
         <span class="active_link"><%= link_to sub_category[:sub_category], { :action => "list", :category => @category, :sub_category => sub_category[:sub_category] } -%><wbr /></span>

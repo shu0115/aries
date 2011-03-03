@@ -70,6 +70,7 @@ class MemosController < ApplicationController
       conditions = Hash.new
       conditions[:category] = @category unless @category.blank?
       conditions[:sub_category] = @sub_category unless @sub_category.blank?
+      conditions[:sub_category] = "" if @sub_category == "blank"
       conditions[:mode] = @mode unless @mode.blank?
       conditions[:user_id] = session[:user_id].to_s unless session[:user_id].blank?
   
@@ -83,7 +84,7 @@ class MemosController < ApplicationController
     # サブカテゴリ取得
     @sub_categorys = Memo.user_sub_categorys( :user_id => session[:user_id], :category => @category )
 
-    # 検索タイトルチェックド
+    # 検索タイトルチェックド(ラジオボタン)
     @title_checked = true
   end
  
@@ -92,6 +93,7 @@ class MemosController < ApplicationController
   #---------------#
   def memo_category
     @category = params[:category]
+
     render :layout => false
   end
 
@@ -100,6 +102,8 @@ class MemosController < ApplicationController
   #-------------------#
   def memo_sub_category
     @sub_category = params[:sub_category]
+    @sub_category = "" if params[:sub_category] == "blank"
+
     render :layout => false
   end
 

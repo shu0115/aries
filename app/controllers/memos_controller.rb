@@ -125,6 +125,7 @@ class MemosController < ApplicationController
   def new
     @category = params[:category]
     @sub_category = params[:sub_category]
+    @sub_category = "" if params[:sub_category] == "blank"
     
     @memo = Memo.new
     @memo.mode = "private"
@@ -139,6 +140,7 @@ class MemosController < ApplicationController
   def edit
     @category = params[:category]
     @sub_category = params[:sub_category]
+    @sub_category = "" if params[:sub_category] == "blank"
     
     @memo = Memo.find_by_id_and_user_id( params[:id], session[:user_id] )
     @categorys = Memo.user_categorys( :user_id => session[:user_id] )

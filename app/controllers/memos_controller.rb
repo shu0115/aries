@@ -51,7 +51,7 @@ class MemosController < ApplicationController
       @search_word = params[:search_word]
       @search_type = params[:search_type]
   
-      # メモ検索
+      # 検索
       case @search_type
       when "title"
         @all_memos = Memo.paginate( :page => params[:page], :conditions => [ "user_id = :user_id AND title LIKE :search_word", { :user_id => session[:user_id], :search_word => "%#{@search_word}%" } ], :order => "category ASC, sub_category ASC, title ASC", :per_page => $per_page )
@@ -59,6 +59,9 @@ class MemosController < ApplicationController
       when "note"
         @all_memos = Memo.paginate( :page => params[:page], :conditions => [ "user_id = :user_id AND note LIKE :search_word", { :user_id => session[:user_id], :search_word => "%#{@search_word}%" } ], :order => "category ASC, sub_category ASC, title ASC", :per_page => $per_page )
         @note_checked = true
+      when "category"
+        @all_memos = Memo.paginate( :page => params[:page], :conditions => [ "user_id = :user_id AND category LIKE :search_word", { :user_id => session[:user_id], :search_word => "%#{@search_word}%" } ], :order => "category ASC, sub_category ASC, title ASC", :per_page => $per_page )
+        @category_checked = true
       when "sub_category"
         @all_memos = Memo.paginate( :page => params[:page], :conditions => [ "user_id = :user_id AND sub_category LIKE :search_word", { :user_id => session[:user_id], :search_word => "%#{@search_word}%" } ], :order => "category ASC, sub_category ASC, title ASC", :per_page => $per_page )
         @sub_category_checked = true
@@ -66,7 +69,7 @@ class MemosController < ApplicationController
         @all_memos = Memo.paginate( :page => params[:page], :conditions => [ "user_id = :user_id", { :user_id => session[:user_id] } ], :order => "category ASC, sub_category ASC, title ASC", :per_page => $per_page )
       end
     else
-      # 検索条件
+      # 抽出条件
       conditions = Hash.new
       conditions[:category] = @category unless @category.blank?
       conditions[:sub_category] = @sub_category unless @sub_category.blank?

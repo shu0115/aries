@@ -9,6 +9,9 @@
   <%# テキスト %>
 	<%= radio_button_tag( :search_type, "note", checked = @note_checked, options = {} ) %><label for="search_type_note">テキスト</label>
 
+  <%# カテゴリ %>
+  <%= radio_button_tag( :search_type, "category", checked = @category_checked, options = {} ) %><label for="search_type_category">カテゴリ</label>
+
   <%# サブカテゴリ %>
   <%= radio_button_tag( :search_type, "sub_category", checked = @sub_category_checked, options = {} ) %><label for="search_type_sub_category">サブカテゴリ</label>
 

@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   $base_color = "#70c0ff"
 
   # メモ最大数
-  $memo_full = 0
+  $memo_full = 100
 
   # ユーザ最大数
   $user_full = 100

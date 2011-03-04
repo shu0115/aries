@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
 
+  # httpsリダイレクト
   before_filter :ssl_redirect
 
   # リンク表示テキスト
@@ -43,9 +44,14 @@ class ApplicationController < ActionController::Base
   # ssl_redirect #
   #--------------#
   def ssl_redirect
+    if Rails.env.production? and request.env["HTTP_X_FORWARDED_PROTO"].to_s == "https" and params[:controller] == "public"
+      request.env["HTTP_X_FORWARDED_PROTO"] = "http"
+      redirect_to request.url and return
+    end
+
     if Rails.env.production? and request.env["HTTP_X_FORWARDED_PROTO"].to_s != "https"
       request.env["HTTP_X_FORWARDED_PROTO"] = "https"
-      redirect_to request.url
+      redirect_to request.url and return
     end
   end
   

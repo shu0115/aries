@@ -3,6 +3,10 @@
 <span class="menu list"><%= link_to $link_name[:list], { :action => "list", :category => @category, :sub_category => @sub_category } %></span><br />
 
 <br />
+Now:<%= @memo_count %>／Max:<%= $memo_full %><br />
+<br />
+
+<% unless @memo_count >= $memo_full %>
 
 <%# 新規作成 %>
 <% form_for :memo, :url => { :action => "create", :category => @category, :sub_category => @sub_category } do |f| %>
@@ -98,6 +102,10 @@
 
   <%# 作成ボタン %>
   <%= f.submit '作成', :disable_with => "作成中..." %><br />
+<% end %>
+
+<% else %>
+Sorry, Memo is full.<br />
 <% end %>
 
 <br />

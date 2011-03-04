@@ -20,6 +20,12 @@ class ApplicationController < ActionController::Base
   # 基本色
   $base_color = "#70c0ff"
 
+  # メモ最大数
+  $memo_full = 100
+
+  # ユーザ最大数
+  $user_full = 100
+
   #---------------#
   # session_clear #
   #---------------#

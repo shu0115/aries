@@ -132,6 +132,7 @@ class MemosController < ApplicationController
     
     @categorys = Memo.user_categorys( :user_id => session[:user_id] )
     @sub_categorys = Memo.user_sub_categorys( :user_id => session[:user_id], :category => @category )
+    @memo_count = Memo.user_memos( session[:user_id] ).count
   end
 
   #------#

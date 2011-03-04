@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   # entry #
   #-------#
   def entry
+    @level_user_count = User.level_users.count
     @commit = params[:commit]
     
     if @commit == "確認"

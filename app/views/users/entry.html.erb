@@ -1,3 +1,7 @@
+<br />
+Now:<%= @level_user_count %>／Max:<%= $user_full %><br />
+
+<% unless @level_user_count >= $user_full %>
 
 <% if @valid_result == false %>
 	<%# ユーザ情報入力 %>
@@ -53,4 +57,10 @@
 	    <%= f.submit '登録' %>
 	  </p>
 	<% end # form_for do - END %>
+<% end %>
+
+<% else %>
+<br />
+Sorry, User is full.<br />
+<br />
 <% end %>

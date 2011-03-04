@@ -1,5 +1,8 @@
 class Memo < ActiveRecord::Base
 
+  # ユーザメモ
+  named_scope :user_memos, lambda { |user_id| { :conditions => ['user_id = :user_id', { :user_id => user_id }] } }
+
   #-------------------#
   # self.mode_choices #
   #-------------------#

@@ -1,6 +1,8 @@
 require 'digest/sha1'
 
 class User < ActiveRecord::Base
+  # レベル：ユーザ
+  named_scope :level_users, :conditions => ["level = 'user'"]
                       
   validates_presence_of :login_id, :message => 'が入力されていません。'  # 存在検証
   validates_presence_of :password, :message => 'が入力されていません。'  # 存在検証

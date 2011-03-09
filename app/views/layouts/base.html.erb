@@ -29,14 +29,13 @@
     <%# ログイン前 %>
     <%= link_to "Public", { :controller => "public", :action => "list" } -%>
     　<%= link_to "Entry", { :controller => "users", :action => "entry" } -%>
-    <% unless params[:controller] == "public" and params[:action] == "show" %>
-      <% form_tag :controller => "users", :action => "login" do %>
+      <%# ログインフォーム %>
+      <% form_tag :controller => "users", :action => "login", :protocol => $login_protocol, :only_path => false do %>
         　ID:<input type="text" name="login[login_id]" size="15" class='login_text_field' />
         PASS:<input type="password" name="login[password]" size="7" class='login_password_field' />
         <input type="hidden" name="request_url" value="<%= request.url %>" />
         <%= submit_tag "ログイン", :disable_with => "ログイン" -%>
       <% end %>
-    <% end %>
   <% else %>
     <%# ログイン後 %>
     <%= session[:login_id] -%>
@@ -84,6 +83,11 @@
 Produced by <%= link_to "Clowns Rondo", "http://twitter.com/#!/clowns_rondo", :target => "_blank" %>
  | <%= link_to "Developer", "http://twitter.com/#!/shu_0115", :target => "_blank" %>
  | <%= link_to "Supporter", "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7XXWD8FDC3XJS", :target => "_blank" %>
+<% if params[:controller] == "public" %>
+<br /><br />
+<a href="http://twitter.com/share" class="twitter-share-button" data-url="<%= request.url %>" data-text="Aries - #clowns_rondo" data-count="horizontal" data-via="clowns_rondo" data-related="shu_0115:Developer" data-lang="ja">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+<iframe src="http://www.facebook.com/plugins/like.php?href=<%= request.url %>&amp;layout=button_count&amp;show_faces=true&amp;width=450&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:110px; height:21px;" allowTransparency="true"></iframe>
+<% end %>
 </center>
 
 <br />

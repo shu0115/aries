@@ -55,8 +55,7 @@ class UsersController < ApplicationController
     
     if params_login.blank?
       flash[:notice] = "ログイン情報がありません。"
-      redirect_to params[:request_url].to_s
-      return
+      redirect_to params[:request_url].to_s and return
     end
       
     if !params_login[:login_id].blank? and !params_login[:password].blank?
@@ -69,14 +68,12 @@ class UsersController < ApplicationController
         session[:login_id] = user.login_id  # IDをセッションに格納
         session[:level] = user.level
 #        flash[:notice] = "ログインに成功しました。"
-        redirect_to :controller => "memos", :action => "list"
-        return
-      else
-        flash[:notice] = "無効なユーザ／パスワードの組み合わせです。"
-        redirect_to params[:request_url]
-        return
+        redirect_to :controller => "memos", :action => "list" and return
       end
     end
+
+    flash[:notice] = "無効なユーザ／パスワードの組み合わせです。"
+    redirect_to params[:request_url] and return
   end
 
   #--------#

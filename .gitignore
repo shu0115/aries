@@ -8,3 +8,7 @@ log/*.log
 # tmp
 .tmp_*
 tmp/**/*
+
+# Redcar
+.redcar
+.redcar/*

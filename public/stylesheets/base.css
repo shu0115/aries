@@ -139,9 +139,11 @@ a:hover, a:active {
   border: 1px solid #00afcc;
 }
 
+/*
 .menu a:hover {
   color: #fff;
 }
+*/
 
 .list a {
   color: #70c0ff;

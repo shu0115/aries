@@ -25,3 +25,13 @@
 iframe {
   text-align: left;
 }
+
+.menu a {
+  color: #70c0ff;
+  border: 1px solid #70c0ff;
+}
+
+.menu a:hover {
+  color: #fff;
+  background: #70c0ff repeat-x;
+}

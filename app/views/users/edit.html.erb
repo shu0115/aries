@@ -1,35 +1,3 @@
-<% if false %>
-<% form_for :user, :url => { :action => :update, :id => @user.id } do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :login_id, "ログインID" %>：<%= f.text_field :login_id, :class => "text_field" %>
-  </p>
-
-  <p>
-    <%= f.label :password, "現在のパスワード" %>：<%= f.password_field :password, :class => "text_field" %>
-  </p>
-
-  <p>
-    <%= f.label :twitter_id, "Twitter ID" %>：<%= f.text_field :twitter_id, :class => "text_field" %>
-  </p>
-
-	<%= link_to( "パスワード変更", { :action => :edit_password, :id => @user.id }, { :target => "_self" } ) %>
-
-  <p>
-    <%= f.submit '保存', :disable_with => "保存中..." %>
-  </p>
-
-<% end %>
-
-<br />
-
-<span class="menu show"><%= link_to $link_name[:show], { :action => :show, :id => @user.id } %></span>
-<% end %>
-
-
-
-
 
 <% unless @user.blank? %>
   <% form_for :user, :url => { :action => :update } do |f| %>

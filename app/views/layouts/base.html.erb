@@ -27,8 +27,8 @@
 <span class="header_menu menu">
   <% if session[:user_id].blank? %>
     <%# ログイン前 %>
-    <%= link_to "Public", { :controller => "public", :action => "list" } -%>
-    <%= link_to "Entry", { :controller => "users", :action => "entry" } -%>
+    <span class="<%= "now_page" if params[:controller] == "public" %>"><%= link_to "Public", { :controller => "public", :action => "list" } -%></span>
+    <span class="<%= "now_page" if params[:controller] == "users" %>"><%= link_to "Entry", { :controller => "users", :action => "entry" } -%></span>
     <%# ログインフォーム %>
     <% form_tag :controller => "users", :action => "login", :protocol => $login_protocol, :only_path => false do %>
       ID:<input type="text" name="login[login_id]" size="15" class='login_text_field' />
@@ -39,9 +39,9 @@
   <% else %>
     <%# ログイン後 %>
     <%= session[:login_id] -%>
-     : <%= link_to "Public", { :controller => "public", :action => "list" } -%>
-    <%= link_to "Memo", { :controller => "memos", :action => "list" } -%>
-    <%= link_to "Edit", { :controller => "users", :action => "edit", :id => session[:user_id] } -%>
+     : <span class="<%= "now_page" if params[:controller] == "public" %>"><%= link_to "Public", { :controller => "public", :action => "list" } -%></span>
+    <span class="<%= "now_page" if params[:controller] == "memos" %>"><%= link_to "Memo", { :controller => "memos", :action => "list" } -%></span>
+    <span class="<%= 'now_page' if params[:controller] == 'users' and params[:action] != 'index' %>"><%= link_to "Profile", { :controller => "users", :action => "edit", :id => session[:user_id] } -%></span>
     <% if session[:level] == "master" %>
       <%= link_to "Users", { :controller => "users", :action => "index" } -%>
     <% end %>

@@ -35,3 +35,9 @@ iframe {
   color: #fff;
   background: #70c0ff repeat-x;
 }
+
+.now_page a {
+  color: #fff;
+  background: #70c0ff repeat-x;
+  text-decoration: none;
+}

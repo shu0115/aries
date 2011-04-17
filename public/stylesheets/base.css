@@ -294,4 +294,36 @@ a:hover, a:active {
     border: 1px solid #eee;
     color: #ddd;
   }
+
+.input_field_width_100 {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border: 1px solid #aaa;
+  width: 100px;
+  padding: 5px;
+}
+
+.input_field_width_150 {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border: 1px solid #aaa;
+  width: 150px;
+  padding: 5px;
+}
+
+.input_field_width_200 {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border: 1px solid #aaa;
+  width: 200px;
+  padding: 5px;
+}
+
+.input_field_width_300 {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border: 1px solid #aaa;
+  width: 300px;
+  padding: 5px;
+}
   

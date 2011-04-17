@@ -1,4 +1,4 @@
-
+<% if false %>
 <% form_for :user, :url => { :action => :update, :id => @user.id } do |f| %>
   <%= f.error_messages %>
 
@@ -16,37 +16,6 @@
 
 	<%= link_to( "パスワード変更", { :action => :edit_password, :id => @user.id }, { :target => "_self" } ) %>
 
-
-
-<% if false %>
-  <p>
-    <%= f.label :email, "メールアドレス" %><br />
-    <%= f.text_field :email %>
-  </p>
-
-  <p>
-    <%= f.label :name, "ユーザ名" %><br />
-    <%= f.text_field :name %>
-  </p>
-
-  <p>
-    <%= f.label :birthday, "生年月日" %><br />
-    <%= f.date_select :birthday %>
-  </p>
-
-  <p>
-    <%= f.label :blog_url, "ブログ URL" %><br />
-    <%= f.text_field :blog_url %>
-  </p>
-
-  <p>
-    <%= f.label :website_url, "Webサイト URL" %><br />
-    <%= f.text_field :website_url %>
-  </p>
-<% end %>
-
-
-
   <p>
     <%= f.submit '保存', :disable_with => "保存中..." %>
   </p>
@@ -56,3 +25,46 @@
 <br />
 
 <span class="menu show"><%= link_to $link_name[:show], { :action => :show, :id => @user.id } %></span>
+<% end %>
+
+
+
+
+
+<% unless @user.blank? %>
+  <% form_for :user, :url => { :action => :update } do |f| %>
+    <%= f.error_messages %>
+  
+    <%= f.label :login_id, "ログインID" %>：<br />
+    <%= f.text_field :login_id, :class => "input_field_width_200" %><br />
+    
+    <br />
+    
+    <%= f.label :password, "現在のパスワード" %>：<br />
+    <%= f.password_field :password, :class => "input_field_width_200" %><br />
+    
+    <br />
+  
+    <%= f.label :twitter_id, "Twitter ID" %>：<br />
+    <%= f.text_field :twitter_id, :class => "input_field_width_200" %><br />
+    
+    <br />
+  
+    <%= f.submit "変更", :disable_with => "変更" %><br />
+    
+    <br />
+    
+    <span class="menu"><%= link_to( "パスワード変更", { :action => :edit_password }, { :target => "_self" } ) %></span><br />
+  <% end %>
+  
+  <br />
+  <br />
+
+  <span class="menu"><%= link_to $link_name[:show], { :action => :show } %></span>
+  
+  <br />
+<% else %>
+  <span class="menu">
+    <%= link_to t("menu.top"), :root %>
+  </span>
+<% end %>

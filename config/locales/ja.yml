@@ -1,0 +1,58 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+ja:
+  # メニュー
+  menu:
+    title: Aries
+    list: List
+    show: Show
+    edit: Edit
+    delete: Delete
+    new: New
+    top: Top
+    entry: Entry
+    public: Public
+    create: 作成
+    update: 更新
+    save: 保存
+    done: 完了
+    undo: 取消
+
+  entry:
+    edit: 変更
+    password: 現在のパスワード
+    edit_password: 変更するパスワード
+    edit_password_confirmation: 変更するパスワード(再入力)
+
+  # date_select対応
+  date:
+    order:
+    - :year
+    - :month
+    - :day
+
+  user:
+    login_id: ログインID
+    display_name: 表示名
+    level: レベル
+    twitter_id: Twitter ID
+    mail_address: メールアドレス
+    updated_at: 更新時刻
+    created_at: 作成時刻
+
+  activerecord:
+    attributes:
+      user:
+        login_id: ログインID
+        display_name: 表示名
+        level: レベル
+        twitter_id: Twitter ID
+        mail_address: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード確認
+    errors:
+      template:
+        header: エラー
+        body: ""
+        

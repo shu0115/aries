@@ -90,21 +90,21 @@ class UsersController < ApplicationController
   # show #
   #------#
   def show
-    @user = User.find( params[:id] )
+    @user = User.find( session[:user_id] )
   end
 
   #------#
   # edit #
   #------#
   def edit
-    @user = User.find( params[:id] )
+    @user = User.find( session[:user_id] )
   end
 
   #--------#
   # update #
   #--------#
   def update
-    @user = User.find( params[:id] )
+    @user = User.find( session[:user_id] )
     
     if params[:user].blank?
       flash[:notice] = 'ユーザ情報がありません。'
@@ -136,14 +136,14 @@ class UsersController < ApplicationController
   # edit_password #
   #---------------#
   def edit_password
-    @user = User.find( params[:id] )
+    @user = User.find( session[:user_id] )
   end
 
   #-----------------#
   # update_password #
   #-----------------#
   def update_password
-    @user = User.find( params[:id] )
+    @user = User.find( session[:user_id] )
     params_user = params[:user]
     
     if params_user.blank?
@@ -187,7 +187,7 @@ class UsersController < ApplicationController
   def destroy
     redirect_to :root and return unless session[:level] == "master"
 
-    @user = User.find_by_id( params[:id] )
+    @user = User.find_by_id( session[:user_id] )
 
     if !(@user.blank?) and session[:level] == "master" and @user.destroy
 #      flash[:notice] = "「#{@user.login_id}」の削除が完了しました。"

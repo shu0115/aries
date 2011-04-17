@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   $link_name = { :show => "Show", :edit => "Edit", :delete => "Delete", :new => "New", :list => "List" }
 
   # ページング
-  $per_page = 1
+  $per_page = 15
 
   # 基本色
   $base_color = "#70c0ff"

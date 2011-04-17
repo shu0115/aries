@@ -2,7 +2,7 @@
 <%# リンク %>
 <span class="menu list"><%= link_to $link_name[:list], { :action => "list",:page => params[:page], :category => @category, :sub_category => @sub_category, :search_flag => params[:search_flag], :search_word => params[:search_word], :search_type => params[:search_type] } %></span>
 <% unless @memo.blank? %>
-　<span class="menu show"><%= link_to $link_name[:show], { :action => "show", :id => @memo.id,:page => params[:page], :category => @category, :sub_category => @sub_category, :search_flag => params[:search_flag], :search_word => params[:search_word], :search_type => params[:search_type] } %></span><br />
+<span class="menu show"><%= link_to $link_name[:show], { :action => "show", :id => @memo.id,:page => params[:page], :category => @category, :sub_category => @sub_category, :search_flag => params[:search_flag], :search_word => params[:search_word], :search_type => params[:search_type] } %></span><br />
 
   <br />
 
@@ -101,5 +101,5 @@
 
 <%# リンク %>
 <span class="menu list"><%= link_to $link_name[:list], { :action => "list",:page => params[:page], :category => @category, :sub_category => @sub_category, :search_flag => params[:search_flag], :search_word => params[:search_word], :search_type => params[:search_type] } %></span>
-　<span class="menu show"><%= link_to $link_name[:show], { :action => "show", :id => @memo.id,:page => params[:page], :category => @category, :sub_category => @sub_category, :search_flag => params[:search_flag], :search_word => params[:search_word], :search_type => params[:search_type] } %></span>
+<span class="menu show"><%= link_to $link_name[:show], { :action => "show", :id => @memo.id,:page => params[:page], :category => @category, :sub_category => @sub_category, :search_flag => params[:search_flag], :search_word => params[:search_word], :search_type => params[:search_type] } %></span>
 <% end %>

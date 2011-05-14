@@ -12,3 +12,6 @@ tmp/**/*
 # Redcar
 .redcar
 .redcar/*
+
+# Not Use
+._____*

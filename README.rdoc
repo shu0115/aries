@@ -1,8 +1,8 @@
-= Aries
+== Aries
 
 Memo App.
 
-= Heroku Setup
+== Heroku Setup
 
   $ git clone git@github.com:shu0115/aries.git
   $ cd aries
@@ -11,4 +11,4 @@ Memo App.
 
 == Copyright
 
-Copyright (c) 2011 Shun Matsumoto. See LICENSE for details.
+Copyright (c) 2011 Shun Matsumoto.

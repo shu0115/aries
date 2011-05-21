@@ -1,1 +1,14 @@
+= Aries
+
 Memo App.
+
+= Heroku Setup
+
+  $ git clone git@github.com:shu0115/aries.git
+  $ cd aries
+  $ heroku create YOUR-APP-NAME
+  $ git push heroku master
+
+== Copyright
+
+Copyright (c) 2011 Shun Matsumoto. See LICENSE for details.
